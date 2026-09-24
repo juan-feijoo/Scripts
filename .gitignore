@@ -1,1 +1,111 @@
-./__pycache__/
+# ==============================================================================
+# .gitignore para Repositorio de Scripts Odoo (Odoo.sh / Shell / XML-RPC / SQL)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Bytecode y Caches de Python
+# (IMPORTANTE: Sin './' al inicio para que Git lo reconozca en cualquier nivel)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------------------------
+# 2. Entornos Virtuales
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 3. Credenciales, Secretos y Configuraciones Locales
+# (Evitar exponer logins de Odoo, API keys, credenciales de BD)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+!*.env.example
+odoo.conf
+*.conf
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ------------------------------------------------------------------------------
+# 4. Logs, Salidas de Consola y Archivos Temporales
+# ------------------------------------------------------------------------------
+*.log
+logs/
+*.out
+temp/
+tmp/
+scratch/
+
+# ------------------------------------------------------------------------------
+# 5. Dumps de Base de Datos y Backups
+# ------------------------------------------------------------------------------
+*.sql
+*.dump
+*.backup
+*.tar.gz
+*.zip
+
+# ------------------------------------------------------------------------------
+# 6. Datos Sensibles y Archivos de Salida de Auditorías
+# (Evita subir reportes con CUITs, saldos contables, cheques o datos reales de clientes)
+# ------------------------------------------------------------------------------
+exports/
+output/
+reports/
+*.xlsx
+*.xls
+*.csv
+# Excepciones: descomentar si necesitas versionar plantillas de ejemplo
+# !*.example.csv
+# !*.example.xlsx
+
+# ------------------------------------------------------------------------------
+# 7. Editores e IDEs (VS Code, PyCharm, Sublime)
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------------------------------------------------------
+# 8. Archivos de Sistema Operativo (Windows, macOS, Linux)
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+./__pycache__
