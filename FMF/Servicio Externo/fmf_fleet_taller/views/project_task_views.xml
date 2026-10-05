@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vista Formulario Heredada de project.task para Taller de Flota -->
+    <record id="view_task_form2_inherit_fmf_taller" model="ir.ui.view">
+        <field name="name">project.task.form.fmf.taller</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <!-- Botones en Header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_consumir_repuestos" 
+                        string="Descontar Repuestos de Stock" 
+                        type="object" 
+                        class="btn-primary"
+                        invisible="not has_repuestos_pendientes or ot_finalizada"/>
+                <button name="action_finalizar_ot" 
+                        string="Finalizar OT de Taller" 
+                        type="object" 
+                        class="btn-success"
+                        invisible="ot_finalizada"/>
+                <button name="action_reabrir_ot" 
+                        string="Reabrir OT" 
+                        type="object" 
+                        class="btn-secondary"
+                        invisible="not ot_finalizada"/>
+            </xpath>
+
+            <!-- Smart Button para Vale de Salida de Stock -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_ver_picking" 
+                        type="object" 
+                        class="oe_stat_button" 
+                        icon="fa-truck" 
+                        invisible="not picking_id">
+                    <field name="picking_id" string="Entrega Stock" widget="statinfo"/>
+                </button>
+            </xpath>
+
+            <!-- Cinta / Ribbon de Estado Finalizada -->
+            <xpath expr="//sheet" position="before">
+                <field name="ot_finalizada" invisible="1"/>
+                <field name="has_repuestos_pendientes" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet/*[1]" position="before">
+                <widget name="web_ribbon" title="OT Finalizada" bg_color="text-bg-success" invisible="not ot_finalizada"/>
+            </xpath>
+
+            <!-- Datos principales de OT debajo del Título -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="tipo_ot" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                <field name="numero_ot" placeholder="Ej: 2215" readonly="ot_finalizada"/>
+                <field name="hora_ot" readonly="ot_finalizada"/>
+            </xpath>
+
+            <!-- Pestañas Específicas de Taller FMF -->
+            <xpath expr="//notebook" position="inside">
+                
+                <!-- Pestaña 1: Datos de Flota -->
+                <page string="Datos de Flota" name="flota_info">
+                    <!-- Sección Pesados (Tractor y Arrastre) -->
+                    <group string="Datos del Tractor" invisible="tipo_ot != 'tmec_01'">
+                        <group>
+                            <field name="tractor_id" options="{'no_create': True}" readonly="ot_finalizada"/>
+                            <field name="tractor_dominio"/>
+                        </group>
+                        <group>
+                            <field name="tractor_marca"/>
+                            <field name="tractor_modelo"/>
+                        </group>
+                        <field name="obs_tractor" placeholder="Observaciones generales del tractor..." readonly="ot_finalizada"/>
+                    </group>
+
+                    <group string="Datos del Equipo de Arrastre" invisible="tipo_ot != 'tmec_01'">
+                        <group>
+                            <field name="arrastre_id" options="{'no_create': True}" readonly="ot_finalizada"/>
+                            <field name="arrastre_dominio"/>
+                        </group>
+                        <group>
+                            <field name="arrastre_tipo"/>
+                            <field name="arrastre_modelo"/>
+                        </group>
+                        <field name="obs_arrastre" placeholder="Observaciones de equipo de arrastre (ej: hojas rotas, reparaciones)..." readonly="ot_finalizada"/>
+                    </group>
+
+                    <group string="Segundo Arrastre (Bitren)" invisible="tipo_ot != 'tmec_01'">
+                        <field name="arrastre_2_id" options="{'no_create': True}" readonly="ot_finalizada"/>
+                        <field name="obs_arrastre_2" placeholder="Observaciones segundo arrastre..." readonly="ot_finalizada"/>
+                    </group>
+
+                    <!-- Sección Unidad Liviana -->
+                    <group string="Datos Unidad Liviana" invisible="tipo_ot != 'tmec_02'">
+                        <field name="vehiculo_liviano_id" options="{'no_create': True}" readonly="ot_finalizada"/>
+                        <field name="obs_liviano" placeholder="Observaciones de la unidad liviana..." readonly="ot_finalizada"/>
+                    </group>
+
+                    <!-- Chofer y Odómetro -->
+                    <group string="Chofer y Kilometraje">
+                        <group>
+                            <field name="chofer_id" readonly="ot_finalizada"/>
+                            <field name="km_actual" readonly="ot_finalizada"/>
+                        </group>
+                        <group>
+                            <field name="km_service" readonly="ot_finalizada"/>
+                            <field name="km_restantes"/>
+                        </group>
+                    </group>
+                </page>
+
+                <!-- Pestaña 2: Checklist Tractor (OT-TMEC-01) -->
+                <page string="Checklist Tractor" name="chk_tractor" invisible="tipo_ot != 'tmec_01'">
+                    <group>
+                        <group string="Fluidos">
+                            <field name="chk_tr_aceite_motor" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_liq_refrigerante" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_liq_frenos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_aceite_diferencial" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_aceite_transmision" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_limpiaparabrisas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_combustible" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_fuga_fluidos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Neumáticos">
+                            <field name="chk_tr_estado_neumaticos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_rueda_auxilio" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_checkpoint" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_calibrado_neumaticos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_torque_rueda" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Sistema Eléctrico y Luces">
+                            <field name="chk_tr_bateria_bornes" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_bocina" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_alarma_retroceso" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_calefaccion_aa" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_delanteras_traseras" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_posicion" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_bajas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_altas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_freno" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_retroceso" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_giro" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_balizas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_antinieblas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_luces_testigos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Frenos y Amortiguadores">
+                            <field name="chk_tr_tren_delantero" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_tren_trasero" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_frenos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_cintas_pastillas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_amortiguadores" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_paquetes_elasticos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_bujes" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Motor">
+                            <field name="chk_tr_correa" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_radiador" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_arranque" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_mangueras_cableado" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Revisión Externa o Repuestos">
+                            <field name="chk_tr_req_tercero" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_tr_req_repuesto" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+                </page>
+
+                <!-- Pestaña 3: Checklist Arrastre (OT-TMEC-01) -->
+                <page string="Checklist Arrastre" name="chk_arrastre" invisible="tipo_ot != 'tmec_01'">
+                    <group>
+                        <group string="Sistema Eléctrico y Luces">
+                            <field name="chk_ar_sistema_electrico" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_luces_posicion" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_luces_giro" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_luces_freno" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_luces_marcha_atras" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_luces_3_marias" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_alarma_retroceso" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Neumáticos">
+                            <field name="chk_ar_estado_neumaticos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_rueda_auxilio" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_checkpoint" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_calibrado_neumaticos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_torque_rueda" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Sistema de Frenos">
+                            <field name="chk_ar_cintas_pastillas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_campanas_discos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_levas_registros" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_engrase_freno" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_sensores_abs_ebs" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_sistema_abs_ebs" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_pulmones_spring" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Sistema de Aire">
+                            <field name="chk_ar_mangueras_acoples" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_tanque_aire" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_valvulas_aire" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_pulmones_fuelle" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_manguera_espiral" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_perdida_aire" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Sistema de Suspensión y Ejes">
+                            <field name="chk_ar_amortiguadores" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_estabilizadores" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_paq_elasticos_grampas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_tensores_bujes_pernos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_balancines_bujes_pernos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_estado_mazas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_rulemanes_reten" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_esparragos" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_tapa_maza" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_engrase_mazas" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                        <group string="Revisión Externa o Repuestos">
+                            <field name="chk_ar_req_tercero" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                            <field name="chk_ar_req_repuesto" widget="radio" options="{'horizontal': true}" readonly="ot_finalizada"/>
+                        </group>
+                    </group>
+                </page>
+
+                <!-- Pestaña 4: Repuestos Utilizados (Descuento de Stock) -->
+                <page string="Repuestos Utilizados" name="repuestos_taller">
+                    <group>
+                        <field name="taller_warehouse_id" options="{'no_create': True}" readonly="ot_finalizada"/>
+                    </group>
+                    <field name="repuesto_line_ids" readonly="ot_finalizada">
+                        <tree editable="bottom">
+                            <field name="product_uom_qty"/>
+                            <field name="product_id"/>
+                            <field name="default_code"/>
+                            <field name="medidas"/>
+                            <field name="observaciones"/>
+                            <field name="product_uom_id"/>
+                            <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state == 'draft'"/>
+                        </tree>
+                    </field>
+                </page>
+
+                <!-- Pestaña 5: Firmas y Autorizaciones -->
+                <page string="Firmas y Cierre" name="firmas_taller">
+                    <group>
+                        <group string="Supervisor de Taller">
+                            <field name="supervisor_id"/>
+                            <field name="firma_supervisor" widget="signature"/>
+                        </group>
+                        <group string="Jefe de Taller Mecánico">
+                            <field name="jefe_taller_id"/>
+                            <field name="firma_jefe_taller" widget="signature"/>
+                        </group>
+                    </group>
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

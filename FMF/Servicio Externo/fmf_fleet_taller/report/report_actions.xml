@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Acción de Reporte PDF QWeb para la Orden de Trabajo de Taller -->
+    <record id="action_report_ot_taller_fmf" model="ir.actions.report">
+        <field name="name">Orden de Trabajo - Taller Mecánico (Rev. 9)</field>
+        <field name="model">project.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fmf_fleet_taller.report_ot_taller_document</field>
+        <field name="report_file">fmf_fleet_taller.report_ot_taller_document</field>
+        <field name="print_report_name">'OT - TMEC - %s' % (object.numero_ot or object.name)</field>
+        <field name="binding_model_id" ref="project.model_project_task"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
