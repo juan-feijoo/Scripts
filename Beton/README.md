@@ -8,14 +8,29 @@
 
 ## 1. Contenido del Directorio
 
-1. **[auditoria_impuestos_posiciones_fiscales.py](file:///C:/Users/juanf/Documents/Scripts/Beton/auditoria_impuestos_posiciones_fiscales.py)**:
-   - Script para ejecutar en `odoo-bin shell`.
-   - Incluye **Modo DRY-RUN** (`DRY_RUN = True`) por defecto (ejecuta `env.cr.rollback()`).
-   - Audita módulos instalados, impuestos de percepciones (IIBB CABA, ARBA, CM, IVA, Ganancias), posiciones fiscales, y contactos con inconsistencias o sin configuración.
-   - Permite activar creación automática (`AUTO_CREATE_TAXES`), enlace de posiciones fiscales (`AUTO_LINK_FISCAL_POS`) y asignación masiva a contactos (`AUTO_FIX_PARTNERS`).
+1. **[implementar_posiciones_fiscales_iibb_odoo19.py](file:///C:/Users/juanf/Documents/Scripts/Beton/implementar_posiciones_fiscales_iibb_odoo19.py)**:
+   - Script para Percepciones de IIBB en Odoo 19.
+   - Configura las Posiciones Fiscales de IIBB con el modelo `account.fiscal.position.l10n_ar_tax`.
+   - Ajusta `l10n_ar_tax_type = 'perception'`, limpia auto-reemplazos en `account.tax` y enlaza posiciones base (RI / Consumidor Final).
+   - Soporte **DRY-RUN** estricto (`DRY_RUN = True`).
 
-2. **[diagnostico_contactos_impuestos.sql](file:///C:/Users/juanf/Documents/Scripts/Beton/diagnostico_contactos_impuestos.sql)**:
-   - Consultas SQL directas para ejecutar en la consola `psql` de Odoo.sh para diagnósticos rápidos de volumen y discrepancias.
+2. **[implementar_posiciones_fiscales_retenciones_odoo19.py](file:///C:/Users/juanf/Documents/Scripts/Beton/implementar_posiciones_fiscales_retenciones_odoo19.py)**:
+   - Script para Retenciones (Withholdings) a Proveedores en Odoo 19.
+   - Crea y configura las Posiciones Fiscales de Retención por Jurisdicción (Salta, Jujuy, Tucumán, CABA, PBA, etc.) y Nacionales (Ganancias/IVA).
+   - Configura `l10n_ar_tax_type = 'withholding'` y crea la posición unificada 'Retenciones Proveedores'.
+   - Soporte **DRY-RUN** estricto (`DRY_RUN = True`).
+
+3. **[configurar_posiciones_fiscales_odoo19.py](file:///C:/Users/juanf/Documents/Scripts/Beton/configurar_posiciones_fiscales_odoo19.py)**:
+   - Script de diagnóstico técnico de metadata y campos nuevos en Odoo 19 (`l10n_ar_tax_type`, `l10n_ar_tax_ids`, `is_domestic`).
+
+4. **[resolver_ticket_percepciones_posiciones.py](file:///C:/Users/juanf/Documents/Scripts/Beton/resolver_ticket_percepciones_posiciones.py)**:
+   - Crea los impuestos de percepción en ventas para las 24 jurisdicciones provinciales a partir de los impuestos de compras.
+
+5. **[auditoria_impuestos_posiciones_fiscales.py](file:///C:/Users/juanf/Documents/Scripts/Beton/auditoria_impuestos_posiciones_fiscales.py)**:
+   - Auditoría general de módulos, impuestos, posiciones fiscales y contactos.
+
+6. **[diagnostico_contactos_impuestos.sql](file:///C:/Users/juanf/Documents/Scripts/Beton/diagnostico_contactos_impuestos.sql)**:
+   - Consultas SQL para `psql` compatibles con Odoo 17, 18 y 19.
 
 ---
 

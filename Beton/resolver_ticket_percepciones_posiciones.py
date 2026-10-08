@@ -35,7 +35,7 @@ if 'env' not in globals():
 # ==============================================================================
 # CONFIGURACIÓN
 # ==============================================================================
-DRY_RUN = True                  # True: Simula y ejecuta rollback. False: Aplica commit.
+DRY_RUN = False                  # True: Simula y ejecuta rollback. False: Aplica commit.
 COMPANY_ID = 1                  # BETON SRL
 CREAR_PERCEPCIONES_VENTA = True # Crear impuestos de percepción en Venta para las provincias
 VINCULAR_RESP_AFIP = True       # Enlazar Responsabilidades AFIP a Posiciones Fiscales
@@ -71,10 +71,17 @@ def execute():
     if fp_domestic.exists():
         print(f"Nombre: {fp_domestic.name} | Auto-apply: {fp_domestic.auto_apply}")
         print("Mapeos de Impuestos configurados actualmente:")
+        has_legacy_fp_tax = 'account.fiscal.position.tax' in env
         for map_tax in fp_domestic.tax_ids:
-            src = map_tax.tax_src_id.name if map_tax.tax_src_id else '[Cualquiera]'
-            dest = map_tax.tax_dest_id.name if map_tax.tax_dest_id else '[Exento/Ninguno]'
-            print(f"  • Origen: {src:<35} -> Destino: {dest}")
+            if has_legacy_fp_tax:
+                src = map_tax.tax_src_id.name if map_tax.tax_src_id else '[Cualquiera]'
+                dest = map_tax.tax_dest_id.name if map_tax.tax_dest_id else '[Exento/Ninguno]'
+                print(f"  • Origen: {src:<35} -> Destino: {dest}")
+            else:
+                # Odoo 19: map_tax es account.tax directamente
+                orig = [ot.name for ot in getattr(map_tax, 'original_tax_ids', [])]
+                orig_str = ', '.join(orig) if orig else '[Sin sustitución directa / Aplica directo]'
+                print(f"  • Impuesto: [{map_tax.id}] {map_tax.name:<30} (Reemplaza a: {orig_str})")
     else:
         print("Posición Fiscal ID 7 no encontrada.")
 
