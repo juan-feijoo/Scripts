@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- REGLA APROBACIÓN ORDEN DE VENTA -->
+    <record id="rule_approval_sale_order_atlas" model="studio.approval.rule">
+        <field name="name">[ATLAS] Aprobación de Orden de Venta</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="method">action_confirm</field>
+        <field name="approval_group_id" ref="atlas_security_approvals.group_atlas_aprob_venta"/>
+        <field name="message">Aprobación requerida por Resp. Operaciones, Resp. Administración o Resp. General</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- REGLA APROBACIÓN REQUERIMIENTO DE COMPRA -->
+    <record id="rule_approval_purchase_order_atlas" model="studio.approval.rule">
+        <field name="name">[ATLAS] Aprobación Requerimiento de Compra</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="method">button_confirm</field>
+        <field name="approval_group_id" ref="atlas_security_approvals.group_atlas_aprob_compra"/>
+        <field name="message">Aprobación requerida por Resp. Administración o Resp. General</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

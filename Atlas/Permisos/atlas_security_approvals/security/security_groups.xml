@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- CATEGORÍA DEL MÓDULO -->
+    <record id="cat_atlas_aprobaciones" model="ir.module.category">
+        <field name="name">Atlas / Aprobaciones y Roles</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <!-- GRUPOS DE PERMISO FUNCIONAL ESPECÍFICO -->
+    <record id="group_atlas_can_unlink" model="res.groups">
+        <field name="name">Atlas: Permitir Eliminación de Movimientos</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+    </record>
+
+    <record id="group_atlas_aprob_venta" model="res.groups">
+        <field name="name">Atlas: Aprobador de Órdenes de Venta</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+    </record>
+
+    <record id="group_atlas_aprob_compra" model="res.groups">
+        <field name="name">Atlas: Aprobador de Requerimiento de Compras</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+    </record>
+
+    <record id="group_atlas_can_manage_contacts" model="res.groups">
+        <field name="name">Atlas: Permitir Carga de Contactos</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+    </record>
+
+    <record id="group_atlas_can_manage_products" model="res.groups">
+        <field name="name">Atlas: Permitir Carga de Productos</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+    </record>
+
+    <!-- ROLES DE LA EMPRESA (Jerarquía e Implicancias de Matriz Atlas) -->
+    
+    <!-- 1. Operador: Acceso base, venta de documentos propios, compras, sin aprobación, sin borrado, sin alta contactos/prod -->
+    <record id="group_role_operador" model="res.groups">
+        <field name="name">Rol: Operador</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- 2. Responsable Operaciones: Ventas todos los documentos + Aprobador de Ventas, compras sin aprobación, sin borrado -->
+    <record id="group_role_resp_operaciones" model="res.groups">
+        <field name="name">Rol: Responsable Operaciones</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+        <field name="implied_ids" eval="[
+            (4, ref('base.group_user')),
+            (4, ref('group_atlas_aprob_venta'))
+        ]"/>
+    </record>
+
+    <!-- 3. Administrativo: Operación contable y facturación, alta de contactos/prod, sin aprobaciones de OV/OC, sin borrado -->
+    <record id="group_role_administrativo" model="res.groups">
+        <field name="name">Rol: Administrativo</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+        <field name="implied_ids" eval="[
+            (4, ref('base.group_user')),
+            (4, ref('group_atlas_can_manage_contacts')),
+            (4, ref('group_atlas_can_manage_products'))
+        ]"/>
+    </record>
+
+    <!-- 4. Responsable Administración: Acceso total de gestión, aprobador OV, aprobador OC y habilitado para eliminación -->
+    <record id="group_role_resp_administracion" model="res.groups">
+        <field name="name">Rol: Responsable Administración</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+        <field name="implied_ids" eval="[
+            (4, ref('group_role_administrativo')),
+            (4, ref('group_atlas_aprob_venta')),
+            (4, ref('group_atlas_aprob_compra')),
+            (4, ref('group_atlas_can_unlink'))
+        ]"/>
+    </record>
+
+    <!-- 5. Responsable General: Máxima jerarquía, hereda todos los permisos de Resp. Administración -->
+    <record id="group_role_resp_general" model="res.groups">
+        <field name="name">Rol: Responsable General</field>
+        <field name="category_id" ref="cat_atlas_aprobaciones"/>
+        <field name="implied_ids" eval="[
+            (4, ref('group_role_resp_administracion'))
+        ]"/>
+    </record>
+</odoo>
