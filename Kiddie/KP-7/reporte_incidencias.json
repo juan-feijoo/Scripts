@@ -1,0 +1,2308 @@
+[
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "83",
+    "descri": "ACEITE SILICONADO 500 CC",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "140",
+    "descri": "ACUSE DE RECIBO",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "2760",
+    "descri": "LIMPIADOR DE CHAPA COMUN SK5 X 1 LT",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "2766",
+    "descri": "CHAPA 280 X 460-0.15 MM MULTILIT CAJA/100",
+    "stock_actual": -9.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "3629",
+    "descri": "CUADERNO EXITO N3 TAPA DURA P/FORRAR- 48 HJ RAYADO AZUL",
+    "stock_actual": -17.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "3951",
+    "descri": "ENCUADERNACION 40",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "3952",
+    "descri": "ENCUADERNACION 45/50",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "4391",
+    "descri": "FOTOCOPIAS",
+    "stock_actual": -100.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "4590",
+    "descri": "ILUST. UPM BRILLANTE 74 X 110 - 220-GRS.-P/125-HJ",
+    "barcode": "7792540223607",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "4599",
+    "descri": "ILUST. UPM BRILLANTE 74 X 110 - 170 GRS - P/250 HJ",
+    "barcode": "7792540223607",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "8707",
+    "descri": "RESMITAS AUTOR A4 - 70 GR - 500 HJ",
+    "stock_actual": -115.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "9334",
+    "descri": "SERVICIO DE CORTE",
+    "stock_actual": -19569.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "9990",
+    "descri": "TINTA SUN CHEMICAL DIAMOND NEGRA X 2.5 KG- - - -",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "10197",
+    "descri": "TONER 1054/1085 (104 B)-CARTUCHO/270g",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "12139",
+    "descri": "CARPETA OFICIO - CARATULA IGLU FICHA 55 KG.- ROSA",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "12141",
+    "descri": "CARPETA OFICIO - CARATULA IGLU FICHA 55 KG.-AMARILLO",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "12146",
+    "descri": "CARPETA OFICIO - VELOX IGLU FICHA 55 KG.- VERDE",
+    "barcode": "7798161461732",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "12726",
+    "descri": "ARO PLASTICO SIFAP DE 40 MM. X 30 UNIDADES",
+    "barcode": "7792533111775",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "12918",
+    "descri": "BOLIGRAFO BIC CRISTAL SOFT 1.2 NEGRO",
+    "stock_actual": -17.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "13142",
+    "descri": "BROCHE MIT 21/6 X 5000 UNID.",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "13151",
+    "descri": "BROCHE MIT 64 X 5000 UNID.",
+    "stock_actual": -24.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "13176",
+    "descri": "CAJA DE FIBRA NEGRA C/ELASTICO UTIL-OF DE 4 CM.",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "13365",
+    "descri": "CARPETA FIBRA NEGRA UTIL-OF A4/ CARTA 2 X 40 MM.RED.",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "13626",
+    "descri": "COMPAS MAPED SY 110 (ESCOLAR) (119450)",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "14386",
+    "descri": "LAPICES DE COLORES BIC KIDS X 6 CORTOS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "14442",
+    "descri": "LAPICES DE COLORES HEXA PELIKAN X 6 CORTOS",
+    "stock_actual": -14.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "14789",
+    "descri": "MARCADOR SHARPIE PERMANENTE ULTRAFINO ROJO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "14860",
+    "descri": "MINA 0.7 MM PILOT ENO (TUBITO X 12 UNIDADES)",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15240",
+    "descri": "PAPEL SECANTE CONGRESO 80 X 30 X 100 HJS.",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15303",
+    "descri": "PERFORADORA OTA BASE DE MADERA",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15620",
+    "descri": "PORTAMINAS BIC ATLANTIS 0,5 MM.",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15639",
+    "descri": "PORTAROLLO OTA 898 L P/OFICINA GRANDE",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15774",
+    "descri": "REPUESTO PENTAGRAMADO Nº3 X 8 HJS.",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "15775",
+    "descri": "REPUESTO RIVADAVIA NRO.5 X 8 HJS.CUADRICULADO",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "16556",
+    "descri": "MARCADOR SHARPIE PERMANENTE ULTRAFINO AZUL",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "16601",
+    "descri": "CUADERNO EXITO NUMERO 3 FANTASIA T. DURA X 48 HJS. RAY AZUL",
+    "barcode": "7791762497070",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "16609",
+    "descri": "ROLLER BALL MICRO TANK PEN V/COLORES NEGRO",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "18225",
+    "descri": "ETIQUETA COMERCIAL PEGASOLA LISA V/MODELOS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20643",
+    "descri": "BOLIGRAFO BIC CRISTAL SOFT 1.2 AZUL",
+    "stock_actual": -48.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20739",
+    "descri": "MINA 0.5 MM FABER CASTELL 2B (TUBITO X 12 UNIDADES)",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20794",
+    "descri": "PAPELES ESPECIALES A4-FINE ARTS CANVAS COLOR BLANCO -180 GR-25 HJ",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20801",
+    "descri": "PAPELES ESPECIALES A4-OPALINA LISA COLOR CREMA -220 GR-25 HJ",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20835",
+    "descri": "RODILLO TEFLON SUPERIOR RICOH AFICIO 2015/2018",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "20842",
+    "descri": "SOBR.BLIST/10S- 1001 COLBLANCO 125 X 190(1001BL)",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "21134",
+    "descri": "MARCADOR SHARPIE PERMANENTE ULTRAFINO NEGRO",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "21185",
+    "descri": "ROLLO P/FAX HUSARES X 210 MM. X 25 MTS. (ART0220)",
+    "barcode": "7792564002202",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "21743",
+    "descri": "CARP TAPA TRANSP DU-F15A OFICIO BASE OP AZUL",
+    "barcode": "4716982041790",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "21745",
+    "descri": "CARP TAPA TRANSP DU-F15A OFICIO BASE OP NEGRA",
+    "barcode": "4716982145337",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "21747",
+    "descri": "CARP TAPA TRANSP DU-F15A OFICIO BASE OP BORDO",
+    "barcode": "4716982145290",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "29968",
+    "descri": "GOMA ARABIGA SINTETICA SK7 X 2.5 LT",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "29995",
+    "descri": "SOBRE BOLSA BCO OBR 90 GR 27 X 37 - 250 UN",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30015",
+    "descri": "CARPETA 3 X 40 POOH - OFERTA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30029",
+    "descri": "PORTA BLOCK PLATIL A4 COLOR NEGRO",
+    "barcode": "7798161465013",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30030",
+    "descri": "PORTA BLOCK PLATIL A4 COLOR VIOLETA",
+    "barcode": "7798161465013",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30031",
+    "descri": "PORTA BLOCK PLATIL A4 COLORES SURTIDOS",
+    "barcode": "7798161465013",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30051",
+    "descri": "CARP TAPA TRANSP DU-F14A A4 BASE OP BORDO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30095",
+    "descri": "RESALTADOR BIC BRITE LINER TEXT ROSA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30101",
+    "descri": "BOLIGRAFO GEL GLITTER X 5 U SIMBALL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30114",
+    "descri": "LAPIZ NEGRO X 10 U PELIKAN JUMBO-DISCONTINUADO",
+    "barcode": "7501015218969",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30131",
+    "descri": "MARCADOR P/PIZARRA BIC AZUL LIQUIDACION",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30142",
+    "descri": "MARCADOR TOYO ROL. V6 FINO NEGRO",
+    "barcode": "6932413901589",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30191",
+    "descri": "TACO COLOR 300 HJ 9 X 9 SARANDI",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30195",
+    "descri": "SEPARADORES DE MATERIAS N 3 X 6 UNID",
+    "stock_actual": -28.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30200",
+    "descri": "TINTA P/LAP CARTUCHOS X 3 UNID SIMBALL COLE",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30208",
+    "descri": "AROS METALICOS 35 MMM",
+    "stock_actual": -26.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30211",
+    "descri": "PAPEL CREPE PLANCHA AMARILLO",
+    "barcode": "845",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30212",
+    "descri": "PAPEL CREPE PLANCHA CELESTE",
+    "barcode": "845",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "30929",
+    "descri": "CUADERNO MENSUAL 30 HOJAS",
+    "stock_actual": -24.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30942",
+    "descri": "RESALTADORES MAPED 742635 ROSA- OFERTAS",
+    "barcode": "3154147426371",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "30943",
+    "descri": "RESALTADORES MAPED 742635 CELESTE- OFERTAS",
+    "barcode": "3154147426371",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31004",
+    "descri": "AUTOAD. ILUSTRACION(SEMI GLOOS)50 X 65 C/CORTE-200 HJ-FASSON",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31020",
+    "descri": "CUADERNO ESPIRAL EXECUTIVE 22X29 84 HJS. CUAD POL. NEGRO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31185",
+    "descri": "CARPETA A4 CARTONE FOLDERS 2 X 40 COLOR (CHUICK)",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31289",
+    "descri": "GOMA DE BORRAR DOS BANDERAS 211 TINTA/LAPIZ X 36 U. (211)",
+    "stock_actual": -14.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31863",
+    "descri": "CANOPLA DE PVC REVER PASS 2 PISO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "31871",
+    "descri": "TINTA P/SELLOS DE GOMA PELIKAN 4K X 28 CC - AZUL",
+    "barcode": "7792700996228",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "31872",
+    "descri": "TINTA P/SELLOS DE GOMA PELIKAN 4K X 28 CC - NEGRO",
+    "barcode": "7792700996235",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "31892",
+    "descri": "CUADERNO ESPIRAL ACUAREL 3D 22X29 84 HJS. RAY .PASTEL",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "31917",
+    "descri": "CONTROL DUPLICADO 7.5 X 9 CM POR 50 JUEGOS",
+    "barcode": "7792564018319",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "31979",
+    "descri": "CLIP CORAZON GDE. X 6 UDS BLISTER SIFAP",
+    "barcode": "7792533001823",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32297",
+    "descri": "MARCADOR DELGADO LAVABLE P.M. SYLVAPEN X6 U.",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32302",
+    "descri": "MARCADOR SHARPIE TANK PERMANENTE PUNT. BISELADA CELESTE",
+    "barcode": "71641033863",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32303",
+    "descri": "LAPICES DE COLORES SYLVAPEN PAPER MATE CORTO(MINI) X 12 U.",
+    "barcode": "6951572903548",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32378",
+    "descri": "MARCADOR PELIKAN 441 - VERDE PERMANENTE P/REDONDA",
+    "barcode": "7501015213711",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32432",
+    "descri": "TINTA PANTONE WARM RED X 1 KG 135703",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32455",
+    "descri": "TEMPERA ESCOLAR SURTIDA - 8 GR./10 TEMPERAS",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32885",
+    "descri": "ETIQ. MINI Nº 19 - 35 X 10 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32887",
+    "descri": "ETIQ. MINI Nº 23 - 50 X 15 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32889",
+    "descri": "ETIQ. MINI Nº 25 - 50 X 20 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32890",
+    "descri": "ETIQ. MINI Nº 26 - 20 X 70 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32894",
+    "descri": "ETIQ. MINI Nº 32 - 88 X 22 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32896",
+    "descri": "ETIQ. MINI Nº 40 - 103 X 70 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32897",
+    "descri": "ETIQ. MINI Nº 50 - 139 X 55 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32899",
+    "descri": "CINTA 48 MMM X 45 MTS TRANSPARENTE",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32900",
+    "descri": "CINTA 48 MMM X 45 MTS MARRON",
+    "stock_actual": -22.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32923",
+    "descri": "PAPEL ARAÑA LUMA 50 X 70 CM. 50 HJS. ROJO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "32929",
+    "descri": "FOLIO LUMA OFICIO LIVIANO X 10 UNIDADES",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "32976",
+    "descri": "LIBRO ACTA CORONA 4 MANOS TAPA BORDO",
+    "barcode": "2251",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33021",
+    "descri": "MARCADOR PINCEL PERMANENTE BIC MANAOS NEGRO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33022",
+    "descri": "MARCADOR PIZARRA BIC MANAOS NEGRO",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33049",
+    "descri": "PAPELES ESPECIALES A4- METALLIKA/MAJESTIC ROYAL LIGHT BLUE -120 GR-25 HJ",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33063",
+    "descri": "CLAVA PAPEL OTA Nº 17 PINTADO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33068",
+    "descri": "CAJAS DE CLIP FORRADO PLAST.. OTA Nº 3 (28MM) X 100 UNID.",
+    "barcode": "6926341830233",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33099",
+    "descri": "TANQUE PARKER REFILL AZUL M BP",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33147",
+    "descri": "REPUESTO PILOT FRIXION 2 AZUL",
+    "barcode": "7798100960913",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33174",
+    "descri": "MULTIBASE 150 UN GOMA EVA",
+    "stock_actual": -9.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33241",
+    "descri": "BIBL. FORR A4/CTA 75 MM AZUL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33289",
+    "descri": "RECIBO ORIGINAL 40 HJ 14 X 8 CM",
+    "barcode": "7797711002289",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33291",
+    "descri": "ETIQ. MINI Nº 28 - 69 X 50 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33292",
+    "descri": "ETIQ. MINI Nº 29 - 65 X 38 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33293",
+    "descri": "ETIQ. MINI Nº 39 - 100 X 45 MM / CAJA 25 HJ BLANCO",
+    "barcode": "7797711040007",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33390",
+    "descri": "CINTA DE PAPEL 24 MMM X 40 MTS",
+    "barcode": "DOYCO",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33391",
+    "descri": "CINTA DE PAPEL 36 MMM X 40 MTS",
+    "barcode": "DOYCO",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33392",
+    "descri": "CINTA DE PAPEL 48 MMM X 40 MTS",
+    "barcode": "DOYCO",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33412",
+    "descri": "CARPETA A4 C/10 FOLIOS MT 10",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33415",
+    "descri": "CARPETA BASE OPACA A4 GRIS FOUR WITCH",
+    "stock_actual": -20.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33417",
+    "descri": "CARPETA BASE OPACA A4 ROJO FOUR WITCH",
+    "stock_actual": -82.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33457",
+    "descri": "BOLSA PAPEL KP-COLOR 7 35 X 47 C/U",
+    "barcode": "7",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33532",
+    "descri": "CARPETA FUELLE PORTA DOCUMENTO CON VISOR",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33554",
+    "descri": "PORTA TACO DE ACRILICO 9.5 X 9.5 X 4.5",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33555",
+    "descri": "NUMEROS DE ROLLO P/ TURNO X 2000",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33577",
+    "descri": "AGENDA FW ESCOLAR 2 DIA/PAG.12.5X16 (PERPETUA)",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33606",
+    "descri": "CARPETA FIBRA NEGRA A4 ( 2X40 2X30)",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33617",
+    "descri": "MARCADOR SHARPIE METALIC ORO-BLISTER-",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33618",
+    "descri": "MARCADOR SHARPIE METALIC BRONCE-BLISTER-",
+    "barcode": "71641063228",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33623",
+    "descri": "MARCADOR SHARPIE P/PIZARRA VERDE",
+    "barcode": "71641027886",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33623",
+    "descri": "MARCADOR SHARPIE P/PIZARRA VERDE",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33640",
+    "descri": "MARCADOR SHARPIE PERMANENTE ULTRAFINO TURQUESA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33653",
+    "descri": "PAPEL CREPE VERDE OPACO-MUSGO",
+    "barcode": "CREPE",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33657",
+    "descri": "MOÑO BALLOU P/ARMAR MINI COMUN 25CM X100 MOÑOS",
+    "stock_actual": -296.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33659",
+    "descri": "CINTA EXTRANJERA NRO.3 X 10 MTS.",
+    "barcode": "7796295032194",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33682",
+    "descri": "CARTUCHERA TUBO NEOPRENE LISA FW",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33704",
+    "descri": "ETIQUETA SKRIBE P/MAQUINA ETIQUETADORA VERDE",
+    "barcode": "6936399300060",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33712",
+    "descri": "FOLIO LMF A4 LIVIANO X 10",
+    "barcode": "7798046510111",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33722",
+    "descri": "CARPETA 3 X 40 FW COLORES",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33724",
+    "descri": "CARPETA 3 X 40 FW MANCHAS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33725",
+    "descri": "CARPETA 3 X 40 FW VARONES",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33729",
+    "descri": "CARPETA N3 C/CORDON FW VARONES",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33738",
+    "descri": "CARPETA A4 C/60 FOLIOS MT 60",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33739",
+    "descri": "CARPETA A4 C/40 FOLIOS MT 40",
+    "stock_actual": -8.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33742",
+    "descri": "CARPETA 3 SOLAPAS OFICIO PLASTICA CON ELASTICO",
+    "stock_actual": -21.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33755",
+    "descri": "CARPETA OFICIO C/80 FOLIOS CON ESTUCHE FT 80",
+    "barcode": "6934274141302",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33768",
+    "descri": "PORTAMINAS BIC CRITERIUM 0.5",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33866",
+    "descri": "PAPEL AFICHE COLOR BLANCO X 25 HJS",
+    "stock_actual": -20.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "33910",
+    "descri": "BROCHE MIT 23/8 X 1000",
+    "barcode": "7793928102095",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "33956",
+    "descri": "CUADERNO ESPIRAL ASAMBLEA OFFICE 80 HJS RAY",
+    "stock_actual": -18.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34008",
+    "descri": "MICROFIBRA EDDING 39/55 PTA EXTRA FINA SURTIDO X 10",
+    "barcode": "7796568106836",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34043",
+    "descri": "ROLLO P/MAQUINA MT 5720 - 57MM X 20MTS -P/10- TERMICO-",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34063",
+    "descri": "CARPETA A4 2 X 40 BOCA JUNIORS 1 DISEÑO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34065",
+    "descri": "CARPETA 3 X 40 BOCA JUNIORS 3 DISEÑOS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34066",
+    "descri": "CARPETA A4 2 X 40 IGLU DESIGN SURTIDA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34073",
+    "descri": "CAJA PLATIL 4 CM C/ELASTICO OFICIO FUCSIA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34113",
+    "descri": "CARPETA OFICIO PLATIL 3 SOLAPAS C/ELAST. FUCSIA",
+    "barcode": "7798161460810",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34115",
+    "descri": "CARPETA OFICIO PLATIL 3 SOLAPAS C/ELAST. PLATEADA",
+    "barcode": "7798161460827",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34218",
+    "descri": "BASE ACRILICA 200 CC -MANTECA 214-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34239",
+    "descri": "BASE ACRILICA 200 CC -MAGENTA 500-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34241",
+    "descri": "ACRILICO 50 CC -MAGENTA PRIMARIO 501-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34247",
+    "descri": "ACRILICO 50 CC -ROSADO 710-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34251",
+    "descri": "ACRILICO 50 CC -ROJO BERMELLON 705-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34258",
+    "descri": "ACRILICO 50 CC -VERDE PASTEL 915-",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34289",
+    "descri": "ACRILICO 50 CC -AMARILLO LIMON 303-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34290",
+    "descri": "ACRILICO 50 CC -AZUL COBALTO 404-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34294",
+    "descri": "ACRILICO 50 CC -AZUL TALO 407-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34299",
+    "descri": "ACRILICO 50 CC -AMARILLO PASTEL 307-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34305",
+    "descri": "PINCEL EQ ARTE REDONDO N 00 - 660",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34312",
+    "descri": "BOLIGRAFO BIC CRISTAL SOFT 1.6 NEGRO",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34347",
+    "descri": "CARPETA C/CIERRE N 3 LISA I FW",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34350",
+    "descri": "CARPETA 3 X 40 FW LOVE",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34408",
+    "descri": "CARPETA C/CIERRE A4 LISO WINDSOR 2 FW",
+    "stock_actual": -13.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34412",
+    "descri": "CARPETA 3 X 40 FW BIGLI",
+    "barcode": "9990000500765",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34413",
+    "descri": "CARPETA 3 X 40 FW BLACK SKATE",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34415",
+    "descri": "MOCHILA FW WINDSOR 18\" 2",
+    "stock_actual": -8.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34419",
+    "descri": "CARPETA N3 C/CORDON FW FLOWERS",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34422",
+    "descri": "PAPEL FELPA 60 X 80 VARIOS COLORES",
+    "stock_actual": -25.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34446",
+    "descri": "CINTA GR24 CALCULADORA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34460",
+    "descri": "GOMA EVA TOALLA BLANCO",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34488",
+    "descri": "REPUESTO P/CALIGRAFIA N3 DISEÑO DOBLE RAYA X 8 HJS.",
+    "barcode": "7798082560156",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34503",
+    "descri": "SEPARADOR A4 FW DE POLIPROPILENO X 5 UDS",
+    "stock_actual": -63.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34512",
+    "descri": "TAPA PP A3 COLOR CRISTAL X 50",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34538",
+    "descri": "GOMA EVA FANTASIA CORAZONES ROJO/VERDE",
+    "barcode": "5631201007113",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34543",
+    "descri": "PLASTICO CRISTAL 70CM X 50 CM",
+    "stock_actual": -40.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34545",
+    "descri": "TONER P/ TOSHIBA ESTUDIO 206/7/356/7/456/7/506 CARTUCHO 700 GRS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34557",
+    "descri": "PAPEL A LUNARES 70 X 50 X 50 HOJAS NARANJA",
+    "stock_actual": -38.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34640",
+    "descri": "MAPA N6 CROMO ARGENTINA POL X 25",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34709",
+    "descri": "CARPETA 3 X 40 PVC CARTOPEL AZUL",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34768",
+    "descri": "SACABOCADO GOMA EVA, PAPEL Y CARTULINA 38MM-ASB",
+    "barcode": "6920499988150",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34776",
+    "descri": "NAIPES ESPAÑOLES",
+    "stock_actual": -9.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34879",
+    "descri": "CAJA PORTADOCUMENTO A4 PC6100A",
+    "stock_actual": -24.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34880",
+    "descri": "CAJA PORTADOCUMENTO OFICIO PC6100F",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34881",
+    "descri": "CARPETA C/CIERRE N 3 C/DETALLE RECTO LONA FW",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34884",
+    "descri": "CARPETA C/CIERRE N 3 C/DETALLE TRIANGULAR LONA FW",
+    "stock_actual": -11.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34890",
+    "descri": "PAPEL CREPE ASAMBLEA AMARILLO 0.5 X 2 MTS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34916",
+    "descri": "PAPEL CREPE ASAMBLEA METALIZADO ORO 0.5 X 1.5 MTS",
+    "barcode": "7798010925637",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34972",
+    "descri": "CARPETA 3 X 40 LEYSA SWEET LIFE - OFERTA",
+    "barcode": "7798100511450",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34973",
+    "descri": "CARPETA 3 X 40 LEYSA LOLITA POP - OFERTA",
+    "barcode": "7798100511450",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "34974",
+    "descri": "CARPETA 3 X 40 LEYSA FRUIT - OFERTA",
+    "barcode": "7798100517049",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "34978",
+    "descri": "CARPETA 3 X 40 LEYSA CARITAS",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35029",
+    "descri": "UÑAS FUSORA P/RICOH MP301",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35066",
+    "descri": "CARPETA OF 3 SOLAPAS C/ELAST. AZUL UTIL-OF",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35141",
+    "descri": "MOCHILA BONNE B514 26 LTS 289",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35144",
+    "descri": "MOCHILA BONNE B517 14 LTS 292",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35159",
+    "descri": "MI LIBRO GIGANTE PARA COLOREAR",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35205",
+    "descri": "CINTA BEBE/RASO N2 X 10 MTS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35221",
+    "descri": "PINTURA DIMENSIONAL 3D 40 CC -GLITTER ROJO 085-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35233",
+    "descri": "PINTURA DIMENSIONAL 3D 40 CC -BRILLANTE NEGRO 102-",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35239",
+    "descri": "PINTURA DIMENSIONAL 3D 40 CC -METALIZADO AZUL 025-",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35243",
+    "descri": "AGENDA PERPETUA PPR 16X 21 SEMANAL \"MARINO\"",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35294",
+    "descri": "PINCEL EQ ARTE LINNER N 1 - 780",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35351",
+    "descri": "STENCILES MINI -ARABESCO N251-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35389",
+    "descri": "STENCILES MINI -VARIOS CACTUS 318-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35439",
+    "descri": "STENCILES CHICOS -PUNTILLA DE FLORES N707-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "35460",
+    "descri": "STENCILES CHICOS -SIGUE TUS SUEÑOS N728-",
+    "barcode": "7798130624038",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "35471",
+    "descri": "STENCILES 10 X 10 -CUPCAKE GRANDE N802-",
+    "barcode": "7798157319658",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "BARCODE_DUPLICADO_IGNORADO",
+    "numpro": "35473",
+    "descri": "STENCILES 10 X 10 -VAQUITA Y PUNTOS N804-",
+    "barcode": "7798157319542",
+    "detalle": "Se omitió el barcode porque ya fue asignado a otro producto previamente."
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35547",
+    "descri": "MOCHILA FW 18.5\" WANDERLUST 5684",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35549",
+    "descri": "MOCHILA FW 17\" FLOWERS DETALLES EN CUERO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35550",
+    "descri": "MOCHILA FW 17\" AZTECA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35552",
+    "descri": "BOLIGRAFO RETRACTIL SIMBALL CITY NEGRO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35553",
+    "descri": "SACAPUNTA SIMBALL SPEENDER X 36",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35573",
+    "descri": "CARTUCHERA WINDSOR OVAL 2 CIERRES FW",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35574",
+    "descri": "CARPETA N5 C/CORDON FW FREE SPIRIT",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35608",
+    "descri": "FORRO ARAÑA VERDE CLARO",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35654",
+    "descri": "ESCARAPELA SALTA BOLSA X 30",
+    "stock_actual": -30.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35672",
+    "descri": "CINTA DECORATIVA/REGALO BALLOU 20MM X 50 MTS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35684",
+    "descri": "PAPELES ESPECIALES A4-FINE ARTS DESIGN COLOR BLANCO -180 GR-25 HJ",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35695",
+    "descri": "PINTURA A LA TIZA 200 CC -VERDE INTENSO 931-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35714",
+    "descri": "GLAZING Y RETARDADOR DE SECADO 50 CC",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35726",
+    "descri": "PINCEL EQ ARTE PLANO N 14 - 650",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35764",
+    "descri": "ACRILICO 150 CC -BLANCO DE TITANIO 210-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35780",
+    "descri": "BASE ACRILICA 900 CC -ROJO 700-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35784",
+    "descri": "BASE ACRILICA 900 CC -BLANCO 210-",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35893",
+    "descri": "LAMINA DECUPAGE 33 X 33 Nº01-120",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "35965",
+    "descri": "PINCELETA 35 MM EQ ARTE",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36005",
+    "descri": "CARTUCHO CB 435A-436A-CE 285 A UNIVERSAL COMP GLOBAL",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36014",
+    "descri": "PORTALAPICES PELIKAN VERDE LIMON 4 CAVIDADES",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36101",
+    "descri": "PINTURA A LA TIZA 900 CC -HUESO 215-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36133",
+    "descri": "CINTA BEBE/RASO N1 X 50 MTS",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36138",
+    "descri": "ACRILICO 150 CC -NEGRO MARFIL 102-",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36150",
+    "descri": "CARTUCHO CE-390 A COMP GLOBAL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36250",
+    "descri": "CARTUCHERA 1 PISO GLITTER DA-MASS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36266",
+    "descri": "GOMA DE BORRAR DOS BANDERAS LAPIZ X 36 U.",
+    "stock_actual": -50.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36278",
+    "descri": "SOBRES/POUCH P/PLASTIFICAR -225 X 303 MM - A4 X 100-GLOBAL-",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36293",
+    "descri": "BANDA ELASTICA CAUCH BAND BOLSA X 100 GS",
+    "stock_actual": -23.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36301",
+    "descri": "FLAUTA DULCE BESTLER",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36304",
+    "descri": "GUIRNALDA FLOR PRIM Nº4034",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36319",
+    "descri": "PINCELETA QUALITY N°3 - 13.8 MM EQ",
+    "stock_actual": -20.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36335",
+    "descri": "GIBRE X 25 GRS EQ RAINBOW CELESTE",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36369",
+    "descri": "BIBLIORATO KIDDIE OFICIO PALANCA ALTA CELESTE",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36370",
+    "descri": "BIBLIORATO KIDDIE OFICIO PALANCA ALTA FUCSIA",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36375",
+    "descri": "BIBLIORATO KIDDIE OFICIO PALANCA ALTA VIOLETA/MORADO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36381",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA BAJA NEGRO",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36385",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA BAJA ROJO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36386",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA ALTA AZUL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36390",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA ALTA GRIS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36394",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA ALTA ROJO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36396",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA ALTA VERDE",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36397",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA ALTA VERDE CLARO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36405",
+    "descri": "FIGURAS DE GOMA EVA KIDDIE",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36426",
+    "descri": "CLIP METALICO PARA BILLETES Y TARJETAS",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36431",
+    "descri": "LAMPARA UV DETECTORA DE BILLETES FALSOS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36442",
+    "descri": "LIBRO INFANTIL 2019",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36444",
+    "descri": "AUTOADHESIVO OBRA CORTADO A4 X 20 HJS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "IVA_CORREGIDO",
+    "numpro": "36447",
+    "descri": "JUEGO DIDACTICO '' DOS ''",
+    "tasa_original": "10.4",
+    "tasa_normalizada": 10.5
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36457",
+    "descri": "CARPETA A4 IGLU PASTEL METAL 2 X 25 MM LIGHT BLUE",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36458",
+    "descri": "CARPETA A4 IGLU PASTEL METAL 2 X 25 MM LIGHT GREEN",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36512",
+    "descri": "HOJAS A4 BLANCAS X 50",
+    "stock_actual": -198.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36513",
+    "descri": "HOJAS OFICIO 70GR BLANCAS X 50",
+    "stock_actual": -116.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36557",
+    "descri": "CANOPLA FW -STARS DOBLE CIERRE -(9136)",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36593",
+    "descri": "ROLLO P/MAQUINA DE 80 MM X 60 MTS. MEDORO (TERMICO) X 10 ROLLOS (MT8060)",
+    "stock_actual": -18.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36595",
+    "descri": "CARPETA 3 X 40 FW FAST",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36598",
+    "descri": "CARPETA 3 X 40 FW MAGIC",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36609",
+    "descri": "SEPARADOR N3 FW C/LENGUETA LOVELY",
+    "stock_actual": -11.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36610",
+    "descri": "SEPARADOR N3 FW C/LENGUETA MAGIC",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36615",
+    "descri": "CARPETA A4 FW GALAXY",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36654",
+    "descri": "CINTA DOBLE FAZ 18MM X 30",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36668",
+    "descri": "BANDA ELASTICA CAUCH BAND BOLSA X 50 GR",
+    "stock_actual": -18.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36681",
+    "descri": "MASCARA SANITARIA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36687",
+    "descri": "ACUARELA ALBA X 12 COLORES",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36701",
+    "descri": "MARCADOR FABER CASTELL PERMANENTE Nº52 -AZUL",
+    "stock_actual": -9.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36754",
+    "descri": "TABLA PERIODICA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36755",
+    "descri": "BIBLIORATO KIDDIE A4 PALANCA BAJA VERDE CLARO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36795",
+    "descri": "ILUST. GALERIE. BRILLANTE - 65 X 95 - 170-GRS.-P/125-HJ",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "IVA_CORREGIDO",
+    "numpro": "36838",
+    "descri": "CRAYONES PELIKAN METALICO",
+    "tasa_original": "2",
+    "tasa_normalizada": 21.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36855",
+    "descri": "CINTA TRANSPARENTE 24 X 50 - ADELBRAS",
+    "stock_actual": -128.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36856",
+    "descri": "CINTA DE PAPEL 18 X 50 - ADELBRAS",
+    "stock_actual": -14.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36857",
+    "descri": "CINTA DE PAPEL 24 X 50 - ADELBRAS",
+    "stock_actual": -13.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36861",
+    "descri": "CINTA DE PAPEL 12 X 50 - ADELBRAS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36862",
+    "descri": "CINTA DE PAPEL 48 X 50 - ADELBRAS",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36911",
+    "descri": "BANDA ELASTICA KAUCHITAS CAJA X 250 GR",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36960",
+    "descri": "CORDONES EL NUDITO 80CM X PAR",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "36967",
+    "descri": "TECLADO NUMERICO NETMAK NM-KB250",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37006",
+    "descri": "LAPIZ NEGRO GOLDFABER 1221 (DOCENA) (7026) HB",
+    "stock_actual": -14.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37007",
+    "descri": "ABECEDARIO DE GOMA EVA CON IMAGENES 30 PIEZAS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37008",
+    "descri": "LIBRO MOVIL DE MADERA U.D.C.UM",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37028",
+    "descri": "PAPEL AFICHE COLORES VARIOS",
+    "stock_actual": -119.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37029",
+    "descri": "CARTULINA ESCOLAR EXITO COLORES VARIOS",
+    "stock_actual": -189.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37047",
+    "descri": "PAPEL AFICHE COLORES VARIOS FLUO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37058",
+    "descri": "BOLIGRAFO RETRACTIL NEGRO - FILGO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37060",
+    "descri": "CINTA AUCA 12 X 50 MT",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37074",
+    "descri": "MOUSE INALAMBRICO NGM-680 NOGA",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37078",
+    "descri": "CINTA CORRECTORA KATANA 5 MT ART. 513617",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37086",
+    "descri": "CARTUCHO HP CF287A - GLOBAL",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37108",
+    "descri": "CARPETA Nº5 C/ CORDON - GUARDIA DEL LEON",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37124",
+    "descri": "CINTA DECORATIVA/REGALO BALLOU 12MM X 50 MTS",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37129",
+    "descri": "CANOPLA RECTANGULAR - DORY",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37146",
+    "descri": "CANOPLA RECTANGULAR CON RELIEVE - MINION",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37151",
+    "descri": "CINTA CORRECTORA BIC EXACT LINER",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37152",
+    "descri": "BANDERA DE TELA ARGENTINA 60 X 96",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37156",
+    "descri": "MINA 0.5 MM HB - FABER CASTELL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37159",
+    "descri": "CARPETA A4 FW - FUN",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37160",
+    "descri": "CARPETA A4 FW - HAPPY",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37161",
+    "descri": "CARPETA A4 FW - MILITARY",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37163",
+    "descri": "MOCHILA FW - SELF LOVE",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37168",
+    "descri": "PAPEL CREPE LUMA 2 X 0.50 MTRS - ROJO",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37192",
+    "descri": "ROLLER PEN 0.7 MM - DELI THINK NEGRO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37193",
+    "descri": "CINTA CORRECTORA 12MT - DELI",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37198",
+    "descri": "PILA AAA BESTON - BLISTER X 4",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37210",
+    "descri": "RESALTADOR PASTEL X 4 BLISTER G-14 - SKYCOLOR",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37213",
+    "descri": "ROLLER GEL S-90 NEGRO - SKYCOLOR",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37259",
+    "descri": "BOLIGRAFO NEGRO 1MM - PIZZINI",
+    "stock_actual": -8.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37274",
+    "descri": "ESPIRALES 50MM X 9 TRANSPARENTE - 1º",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37279",
+    "descri": "CARTUCHO P/ RICOH MP 305 230GR - INTEGRAL",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37320",
+    "descri": "BANDA ELASTICA CLASICA BOLSA X 1 KG - INDUCA",
+    "stock_actual": -15.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37321",
+    "descri": "BANDA ELASTICA CLASICA BOLSA X 500 GR - INDUCA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37342",
+    "descri": "CUADERNO GLORIA FORRADO AZUL T. DURA X 168 HJS. RAYADO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37348",
+    "descri": "CINTA ARGENTINA NRO.1 X 10 MTS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37383",
+    "descri": "ROLLO CONTACT COLORES VARIOS SELF 45CM X 3 MTS",
+    "stock_actual": -12.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37400",
+    "descri": "BOLIGRAFO RETRACTIL NEGRO 1MM - PIZZINI",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37408",
+    "descri": "BIBL FORR A4 - 75MM CELESTE PASTEL - THE PEL",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37428",
+    "descri": "TINTA TOYO KING NEGRA X 2.5 KG",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37438",
+    "descri": "PAPEL FOTOGRAFICO A4 AUTOADHESIVO X 100 HJS - 135 GRS",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37445",
+    "descri": "LIBRITO CHIQUICUENTOS",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37462",
+    "descri": "RODILLO GOMA ESPUMA OLAMI 2.5 CM",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37472",
+    "descri": "CINTA 24 X 50 TRANSPARENTE - SKYCOLOR",
+    "stock_actual": -35.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37521",
+    "descri": "PORTALAPICES DE MALLA COLORES - DELI",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37522",
+    "descri": "PORTALAPICES DE MALLA NEGRO - DELI",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37523",
+    "descri": "ORGANIZADOR ESCRITORIO DE MALLA NEGRO - DELI",
+    "stock_actual": -7.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37541",
+    "descri": "SACAPUNTAS DOBLE C/ DEPOSITO - PIZZINI",
+    "stock_actual": -8.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37574",
+    "descri": "PILAS ALCALINAS AA X 4 - PANASONIC",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37598",
+    "descri": "BOLIGRAFO JAZZ NOBLE",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37673",
+    "descri": "MOCHILA EVERLAST 16203",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37713",
+    "descri": "BOLIGRAFO BORRAMIO AZUL-TINTA AZUL PIZZINI",
+    "stock_actual": -25.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37717",
+    "descri": "PLASTICOLA VERDE FLUO 40G",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37749",
+    "descri": "BANDA ELASTICA CLASICA BOLSA X 250 GR - INDUCA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37754",
+    "descri": "BIBL FORR A4 - 75MM ROJO - ONIX",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37843",
+    "descri": "TAPAS A4 X 20 - OFERTA",
+    "stock_actual": -70.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37866",
+    "descri": "BOLIGRAFO FILGO GINZA 027 RT 1MM AZUL",
+    "stock_actual": -32.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37913",
+    "descri": "MARCADORES FILGO PINTO JUMBP X10",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "IVA_CORREGIDO",
+    "numpro": "37916",
+    "descri": "PAPEL PARA FORRAR FTSIA. COMUN",
+    "tasa_original": "2",
+    "tasa_normalizada": 21.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37916",
+    "descri": "PAPEL PARA FORRAR FTSIA. COMUN",
+    "stock_actual": -15.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37962",
+    "descri": "CESTO PAPELERO 6LTS. DESES PLAST",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37963",
+    "descri": "PORTAROLLO P/CINTA GDE. 8898L",
+    "stock_actual": -5.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "37996",
+    "descri": "BOLIGRAFO BORRABLE CUTE GIRAFFE",
+    "stock_actual": -2.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38026",
+    "descri": "CUAD ESPIRAL 22X29.7 ASAMBLEA ANIMALES SALVAJES 80 HJS CUAD",
+    "stock_actual": -6.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38086",
+    "descri": "GLOBOS SURTIDOS LISOS X 50 GLOBOS",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38087",
+    "descri": "GLOBOS PERLADOS X 50 GLOBOS",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38132",
+    "descri": "PORTA LAPIZ PIZZINI SPAZIO",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38152",
+    "descri": "SACABROCHES - ONIX",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38168",
+    "descri": "LAPIZ PUNTA INTERCAMBIABLE (7050/C)",
+    "stock_actual": -15.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38174",
+    "descri": "AGENDA 2026 SEMANAL OFERTA 16X22",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38218",
+    "descri": "CARPETA 3X40 SPEED - ONIX",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38256",
+    "descri": "CARPETA 3X40 MULTICOLOR- ASAMBLEA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38275",
+    "descri": "ETIQUETA ESCOLAR / ROTULO TODOS X12UN",
+    "stock_actual": -45.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38348",
+    "descri": "PORTAROLLO OTA 898 S P/OFICINA CHICO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38377",
+    "descri": "PILA ALCALINA CANDELA AAA BLISTER X 4UN",
+    "stock_actual": -10.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38378",
+    "descri": "PILA ALCALINA CANDELA AA BLISTER X 4UN",
+    "stock_actual": -3.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38379",
+    "descri": "TIJERA NIVEL NICIAL PELIKAN FILO PLASTICO",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38386",
+    "descri": "BOLIGRAFO RETRACTIL GEL M202 NEGRO-SKYCOLOR",
+    "stock_actual": -4.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38469",
+    "descri": "LIBRO MARCADOR DE AGUA DINOSAURIOS-ARTEMISA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38472",
+    "descri": "LIBRO MEGA PUZZLE DINOSAURIOS-ARTEMISA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38525",
+    "descri": "TINTA EPSON ORIGINAL S/CONT 544 NEGRA",
+    "stock_actual": -1.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38636",
+    "descri": "KRAF 85 X 120 - 120 GR P/PAQUETE DE 125HS C GRAF",
+    "stock_actual": -20.0
+  },
+  {
+    "tipo": "STOCK_NEGATIVO_ORIGEN",
+    "numpro": "38749",
+    "descri": "GOMA PUZZLE TOY STORY WERO (WE4438)",
+    "stock_actual": -2.0
+  }
+]

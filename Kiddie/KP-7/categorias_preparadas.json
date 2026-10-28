@@ -1,0 +1,3915 @@
+{
+  "padres": [
+    "LIBRERIA",
+    "JUGUETERIA",
+    "VARIOS",
+    "INSUMOS GRAFICOS",
+    "GENERAL",
+    "ENCUADERNACION Y OTROS",
+    "PAPELERIA",
+    "INSUMOS COMPUTACION",
+    "INSUMOS FOTOCOPIADORAS",
+    "ARTISTICA"
+  ],
+  "hijas": [
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. FELPAS/ACEITES",
+      "codrub": "1005",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. FELPAS/ACEITES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "OCA",
+      "codrub": "1100",
+      "codsub": "7",
+      "full_path": "VARIOS / OCA"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORA/DUPLIC. REVELADOR",
+      "codrub": "1067",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORA/DUPLIC. REVELADOR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "AUTOADHESIVO",
+      "codrub": "1071",
+      "codsub": "2",
+      "full_path": "PAPELERIA / AUTOADHESIVO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCK",
+      "codrub": "1020",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCK"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "BOLSILLOS PLASTICOS PARA SISTEMAS DE IDE",
+      "codrub": "1048",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / BOLSILLOS PLASTICOS PARA SISTEMAS DE IDE"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "TONER LASER",
+      "codrub": "1123",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / TONER LASER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLICA. RODILLOS",
+      "codrub": "1007",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLICA. RODILLOS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CAJITAS PLASTICAS",
+      "codrub": "1026",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CAJITAS PLASTICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS DE CARTULINA",
+      "codrub": "153",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS DE CARTULINA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS",
+      "codrub": "1024",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTON",
+      "codrub": "1029",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTON"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CARTON",
+      "codrub": "1029",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CARTON"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TONER LASER",
+      "codrub": "1123",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TONER LASER"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CARTULINA OBRA",
+      "codrub": "1081",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CARTULINA OBRA"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CARTULINA TAPA",
+      "codrub": "1082",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CARTULINA TAPA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTULINA ESCOLAR",
+      "codrub": "180",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTULINA ESCOLAR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "REVELADOR",
+      "codrub": "1077",
+      "codsub": "0",
+      "full_path": "GENERAL / REVELADOR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LIQUIDO LIMPIADOR",
+      "codrub": "473",
+      "codsub": "0",
+      "full_path": "GENERAL / LIQUIDO LIMPIADOR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CHAPAS",
+      "codrub": "1075",
+      "codsub": "0",
+      "full_path": "GENERAL / CHAPAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. CILINDROS",
+      "codrub": "1001",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. CILINDROS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. CILINDROS",
+      "codrub": "1001",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. CILINDROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS ESPIRALES",
+      "codrub": "1101",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS ESPIRALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS TAPA CARTON",
+      "codrub": "253",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS TAPA CARTON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS FORRADOS",
+      "codrub": "255",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS FORRADOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. CUCHILLAS",
+      "codrub": "1000",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. CUCHILLAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. CUCHILLAS",
+      "codrub": "1000",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. CUCHILLAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "DIARIO",
+      "codrub": "1098",
+      "codsub": "1",
+      "full_path": "LIBRERIA / DIARIO"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "OTROS",
+      "codrub": "1011",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / OTROS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "ENCUADERNACION",
+      "codrub": "1091",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / ENCUADERNACION"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "MAQUINAS FOTOCOPIADORAS",
+      "codrub": "1078",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / MAQUINAS FOTOCOPIADORAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "ESPIRALES PARA ENCUADERNACION",
+      "codrub": "1042",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / ESPIRALES PARA ENCUADERNACION"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. FELPAS/ACEITES",
+      "codrub": "1005",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. FELPAS/ACEITES"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "FORMULARIOS CONTINUOS",
+      "codrub": "360",
+      "codsub": "2",
+      "full_path": "PAPELERIA / FORMULARIOS CONTINUOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MAQUINAS FOTOCOPIADORAS",
+      "codrub": "1078",
+      "codsub": "0",
+      "full_path": "GENERAL / MAQUINAS FOTOCOPIADORAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIAS",
+      "codrub": "1092",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "RUEDAS",
+      "codrub": "1070",
+      "codsub": "0",
+      "full_path": "GENERAL / RUEDAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "HOJAS AUTOADHESIVAS PARA PLASTIFICAR EN",
+      "codrub": "1046",
+      "codsub": "1",
+      "full_path": "LIBRERIA / HOJAS AUTOADHESIVAS PARA PLASTIFICAR EN"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "ILUSTRACION",
+      "codrub": "1074",
+      "codsub": "2",
+      "full_path": "PAPELERIA / ILUSTRACION"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORA/DUPLIC. UÑAS",
+      "codrub": "1068",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORA/DUPLIC. UÑAS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "KRAF BLANQUEADO",
+      "codrub": "1089",
+      "codsub": "2",
+      "full_path": "PAPELERIA / KRAF BLANQUEADO"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "KRAF MONOLUCIDO",
+      "codrub": "1086",
+      "codsub": "2",
+      "full_path": "PAPELERIA / KRAF MONOLUCIDO"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "PAPEL MADERA",
+      "codrub": "563",
+      "codsub": "2",
+      "full_path": "PAPELERIA / PAPEL MADERA"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "MAQUINAS VARIAS",
+      "codrub": "490",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / MAQUINAS VARIAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. MASTER",
+      "codrub": "1003",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. MASTER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. MASTER",
+      "codrub": "1003",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. MASTER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES BOLSA OBRA",
+      "codrub": "1035",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES BOLSA OBRA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "SOBRES BOLSA OBRA",
+      "codrub": "1035",
+      "codsub": "0",
+      "full_path": "GENERAL / SOBRES BOLSA OBRA"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "OPALINA",
+      "codrub": "1031",
+      "codsub": "2",
+      "full_path": "PAPELERIA / OPALINA"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "ROLLOS P/FAX",
+      "codrub": "785",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / ROLLOS P/FAX"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PAPELES ESPECIALES A4",
+      "codrub": "1021",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PAPELES ESPECIALES A4"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPELES ESPECIALES A4",
+      "codrub": "1021",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPELES ESPECIALES A4"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "VARIOS",
+      "codrub": "1102",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / VARIOS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS 70 GR",
+      "codrub": "1059",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS 70 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS 80 GR",
+      "codrub": "1060",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS 80 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS 90 GR",
+      "codrub": "1061",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS 90 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS 118 GR",
+      "codrub": "1062",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS 118 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMITAS 70 GR",
+      "codrub": "1055",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMITAS 70 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMITAS 80 GR",
+      "codrub": "1056",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMITAS 80 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMITAS 75 GR",
+      "codrub": "1057",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMITAS 75 GR"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMITAS OTRAS",
+      "codrub": "1058",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMITAS OTRAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORA/DUPLIC. REVELADOR",
+      "codrub": "1067",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORA/DUPLIC. REVELADOR"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLICA. RODILLOS",
+      "codrub": "1007",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLICA. RODILLOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ROLLO DE FILAMENTOS",
+      "codrub": "1084",
+      "codsub": "0",
+      "full_path": "GENERAL / ROLLO DE FILAMENTOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "REPESTOS LANIER 7313/6713",
+      "codrub": "1079",
+      "codsub": "0",
+      "full_path": "GENERAL / REPESTOS LANIER 7313/6713"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CORTE",
+      "codrub": "1099",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CORTE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES BOLSAS MANILA",
+      "codrub": "1034",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES BOLSAS MANILA"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "SOBRES P/PLASTIFICAR",
+      "codrub": "1045",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / SOBRES P/PLASTIFICAR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TAPAS OFICIO",
+      "codrub": "1080",
+      "codsub": "0",
+      "full_path": "GENERAL / TAPAS OFICIO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. TINTAS",
+      "codrub": "1004",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. TINTAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. TINTAS",
+      "codrub": "1004",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. TINTAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TINTAS",
+      "codrub": "1073",
+      "codsub": "0",
+      "full_path": "GENERAL / TINTAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOTOCOPIADORAS / DUPLIC. TONER",
+      "codrub": "1002",
+      "codsub": "0",
+      "full_path": "GENERAL / FOTOCOPIADORAS / DUPLIC. TONER"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS / DUPLIC. TONER",
+      "codrub": "1002",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS / DUPLIC. TONER"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "VEGETAL",
+      "codrub": "1032",
+      "codsub": "2",
+      "full_path": "PAPELERIA / VEGETAL"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ETIQUETAS COMERCIALES ADHESIVAS",
+      "codrub": "325",
+      "codsub": "0",
+      "full_path": "GENERAL / ETIQUETAS COMERCIALES ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLOS P/MAQUINAS",
+      "codrub": "787",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLOS P/MAQUINAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "CIZALLAS O GUILLOTINAS",
+      "codrub": "217",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / CIZALLAS O GUILLOTINAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORA/DUPLIC. UÑAS",
+      "codrub": "1068",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORA/DUPLIC. UÑAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS C/ELASTICO",
+      "codrub": "147",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS C/ELASTICO"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "PAPEL FOTOGRAFICO Y TRASNFER",
+      "codrub": "1107",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / PAPEL FOTOGRAFICO Y TRASNFER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "VARIOS",
+      "codrub": "1",
+      "codsub": "0",
+      "full_path": "GENERAL / VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ABROCHADORAS DE MANO",
+      "codrub": "6",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ABROCHADORAS DE MANO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACUARELAS ESCOLARES",
+      "codrub": "17",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACUARELAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ADHESIVOS EN BARRA",
+      "codrub": "23",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ADHESIVOS EN BARRA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ADHESIVOS SINTETICOS",
+      "codrub": "25",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ADHESIVOS SINTETICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ADHESIVOS VINILICOS",
+      "codrub": "27",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ADHESIVOS VINILICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ALFILERES VARIOS",
+      "codrub": "43",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ALFILERES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ALMOHADILLAS",
+      "codrub": "47",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ALMOHADILLAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "APRIETA PAPELES",
+      "codrub": "57",
+      "codsub": "1",
+      "full_path": "LIBRERIA / APRIETA PAPELES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "AROS P/CARPETA",
+      "codrub": "63",
+      "codsub": "1",
+      "full_path": "LIBRERIA / AROS P/CARPETA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BANDEJAS P/PAPELES",
+      "codrub": "67",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BANDEJAS P/PAPELES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BANDERAS",
+      "codrub": "70",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BANDERAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "RESMAS",
+      "codrub": "74",
+      "codsub": "1",
+      "full_path": "LIBRERIA / RESMAS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "BASTIDORES DE TELA",
+      "codrub": "75",
+      "codsub": "5",
+      "full_path": "ARTISTICA / BASTIDORES DE TELA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCK CON 2 PERFORACIONES",
+      "codrub": "80",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCK CON 2 PERFORACIONES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BLOCKS CUADRICULADOS",
+      "codrub": "87",
+      "codsub": "0",
+      "full_path": "GENERAL / BLOCKS CUADRICULADOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCK P/DIBUJO",
+      "codrub": "93",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCK P/DIBUJO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCKS RAYADOS",
+      "codrub": "99",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCKS RAYADOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BOLIGRAFOS DESCARTABLES",
+      "codrub": "100",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BOLIGRAFOS DESCARTABLES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BORRADORES DE PIZARRON",
+      "codrub": "110",
+      "codsub": "0",
+      "full_path": "GENERAL / BORRADORES DE PIZARRON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BORRATINTAS ESCOLARES",
+      "codrub": "113",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BORRATINTAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BROCHES BINDER",
+      "codrub": "117",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BROCHES BINDER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BROCHES NEPACO",
+      "codrub": "123",
+      "codsub": "0",
+      "full_path": "GENERAL / BROCHES NEPACO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BROCHES P/ABROCHADORAS",
+      "codrub": "125",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BROCHES P/ABROCHADORAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CAJAS CON ELASTICO",
+      "codrub": "133",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CAJAS CON ELASTICO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARBONICOS",
+      "codrub": "143",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARBONICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS COMERCIALES",
+      "codrub": "150",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS COMERCIALES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETA 3 X 40",
+      "codrub": "1127",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETA 3 X 40"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETAS DE FIBRA NEGRA",
+      "codrub": "154",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETAS DE FIBRA NEGRA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PIZARRONES Y PIZARRAS",
+      "codrub": "623",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PIZARRONES Y PIZARRAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTUCHOS P/LAPICERAS",
+      "codrub": "177",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTUCHOS P/LAPICERAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CD - DVD VIRGEN",
+      "codrub": "186",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CD - DVD VIRGEN"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CESTOS PAPELEROS",
+      "codrub": "187",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CESTOS PAPELEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CHINCHES VARIAS",
+      "codrub": "190",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CHINCHES VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTAS ADHESIVAS",
+      "codrub": "193",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTAS ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA ARGENTINA",
+      "codrub": "195",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA ARGENTINA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CLASIFICADORES",
+      "codrub": "220",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CLASIFICADORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CLIPS P/PAPELES",
+      "codrub": "223",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CLIPS P/PAPELES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "COMPACES VARIOS",
+      "codrub": "233",
+      "codsub": "0",
+      "full_path": "GENERAL / COMPACES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "COMPACES VARIOS",
+      "codrub": "233",
+      "codsub": "1",
+      "full_path": "LIBRERIA / COMPACES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CONJUNTOS GEOMETRICOS",
+      "codrub": "237",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CONJUNTOS GEOMETRICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CORRECTORES",
+      "codrub": "243",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CORRECTORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS TAPA FLEXIBLE",
+      "codrub": "250",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS TAPA FLEXIBLE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS 16/21 C/ESPIRAL",
+      "codrub": "257",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS 16/21 C/ESPIRAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS 21/27 C/ESPIRAL",
+      "codrub": "260",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS 21/27 C/ESPIRAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "DETECTORES DE BILLETES FALSOS",
+      "codrub": "289",
+      "codsub": "1",
+      "full_path": "LIBRERIA / DETECTORES DE BILLETES FALSOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESCARAPELAS",
+      "codrub": "307",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESCARAPELAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FOLIOS",
+      "codrub": "355",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FOLIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FORMULARIOS CONTINUOS",
+      "codrub": "360",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FORMULARIOS CONTINUOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMAS DE BORRAR",
+      "codrub": "375",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMAS DE BORRAR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "HILOS VARIOS",
+      "codrub": "380",
+      "codsub": "0",
+      "full_path": "GENERAL / HILOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "HILOS VARIOS",
+      "codrub": "380",
+      "codsub": "1",
+      "full_path": "LIBRERIA / HILOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICERAS VARIAS",
+      "codrub": "407",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICERAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES P/CARPINTEROS",
+      "codrub": "417",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES P/CARPINTEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES DE COLORES",
+      "codrub": "423",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES DE COLORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES DE GRAFITO",
+      "codrub": "425",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES DE GRAFITO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LETRAS Y NUMEROS",
+      "codrub": "435",
+      "codsub": "0",
+      "full_path": "GENERAL / LETRAS Y NUMEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LIBRETAS VARIAS",
+      "codrub": "445",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LIBRETAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MARCADORES VARIOS",
+      "codrub": "500",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MARCADORES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MINAS DE REPUESTO",
+      "codrub": "513",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MINAS DE REPUESTO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MINAS DE REPUESTO",
+      "codrub": "513",
+      "codsub": "0",
+      "full_path": "GENERAL / MINAS DE REPUESTO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MOJADEDOS",
+      "codrub": "516",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MOJADEDOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PAPEL BARRILETE",
+      "codrub": "547",
+      "codsub": "0",
+      "full_path": "GENERAL / PAPEL BARRILETE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL CELOFAN",
+      "codrub": "553",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL CELOFAN"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS P/CALCAR",
+      "codrub": "720",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS P/CALCAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL CREPE",
+      "codrub": "555",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL CREPE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL SECANTE",
+      "codrub": "583",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL SECANTE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PERFORADORAS",
+      "codrub": "603",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PERFORADORAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PINCHA PAPELES",
+      "codrub": "610",
+      "codsub": "0",
+      "full_path": "GENERAL / PINCHA PAPELES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINTURAS VARIAS",
+      "codrub": "613",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINTURAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTA-BLOCK",
+      "codrub": "625",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTA-BLOCK"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLUMINES",
+      "codrub": "643",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLUMINES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTACD",
+      "codrub": "651",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTACD"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTAMINAS",
+      "codrub": "665",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTAMINAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTAROLLOS",
+      "codrub": "670",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTAROLLOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REGLAS T",
+      "codrub": "710",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REGLAS T"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS ESCOLARES",
+      "codrub": "715",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS ESPECIALES",
+      "codrub": "718",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS ESPECIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS P/DIBUJO",
+      "codrub": "723",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS P/DIBUJO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "RESALTADORES VARIOS",
+      "codrub": "740",
+      "codsub": "1",
+      "full_path": "LIBRERIA / RESALTADORES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BOLIGRAFOS VARIOS",
+      "codrub": "103",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BOLIGRAFOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLER BALL",
+      "codrub": "765",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLER BALL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLOS P/FAX",
+      "codrub": "785",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLOS P/FAX"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SACAPUNTAS VARIOS",
+      "codrub": "793",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SACAPUNTAS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SEPARADORES COMERCIALES",
+      "codrub": "805",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SEPARADORES COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SEPARADORES ESCOLARES",
+      "codrub": "807",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SEPARADORES ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES PLASTICOS",
+      "codrub": "831",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES PLASTICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TALONARIOS COMERCIALES",
+      "codrub": "847",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TALONARIOS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TANQUES DE REPUESTO",
+      "codrub": "853",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TANQUES DE REPUESTO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TIJERAS COMERCIALES",
+      "codrub": "875",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TIJERAS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TIJERAS ESCOLARES",
+      "codrub": "877",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TIJERAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TINTAS CHINA",
+      "codrub": "880",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TINTAS CHINA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TINTAS P/MARCADORES",
+      "codrub": "887",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TINTAS P/MARCADORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TINTAS P/SELLOS DE GOMA",
+      "codrub": "893",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TINTAS P/SELLOS DE GOMA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TRANSPORTADORES",
+      "codrub": "917",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TRANSPORTADORES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PAPELES ESPECIALES A4",
+      "codrub": "1021",
+      "codsub": "0",
+      "full_path": "GENERAL / PAPELES ESPECIALES A4"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "RESALTADORES VARIOS",
+      "codrub": "740",
+      "codsub": "0",
+      "full_path": "GENERAL / RESALTADORES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TEMPERAS",
+      "codrub": "873",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TEMPERAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TALONARIOS COMERCIALES",
+      "codrub": "847",
+      "codsub": "0",
+      "full_path": "GENERAL / TALONARIOS COMERCIALES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BLOCK CON 2 PERFORACIONES",
+      "codrub": "80",
+      "codsub": "0",
+      "full_path": "GENERAL / BLOCK CON 2 PERFORACIONES"
+    },
+    {
+      "parent_name": "INSUMOS GRAFICOS",
+      "name": "TINTAS",
+      "codrub": "1073",
+      "codsub": "3",
+      "full_path": "INSUMOS GRAFICOS / TINTAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ADHESIVOS VINILICOS",
+      "codrub": "27",
+      "codsub": "0",
+      "full_path": "GENERAL / ADHESIVOS VINILICOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "APRIETA PAPELES",
+      "codrub": "57",
+      "codsub": "0",
+      "full_path": "GENERAL / APRIETA PAPELES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CINTA P/ENMASCARAR",
+      "codrub": "200",
+      "codsub": "0",
+      "full_path": "GENERAL / CINTA P/ENMASCARAR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CLASIFICADORES",
+      "codrub": "220",
+      "codsub": "0",
+      "full_path": "GENERAL / CLASIFICADORES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LAPICERAS VARIAS",
+      "codrub": "407",
+      "codsub": "0",
+      "full_path": "GENERAL / LAPICERAS VARIAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LAPICES DE CERA",
+      "codrub": "420",
+      "codsub": "0",
+      "full_path": "GENERAL / LAPICES DE CERA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MARCADORES VARIOS",
+      "codrub": "500",
+      "codsub": "0",
+      "full_path": "GENERAL / MARCADORES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GLITTER ADHESIVO",
+      "codrub": "370",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GLITTER ADHESIVO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLOS DE PVC",
+      "codrub": "780",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLOS DE PVC"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES VARIOS",
+      "codrub": "820",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES VARIOS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "CARPETAS",
+      "codrub": "1024",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / CARPETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SACABROCHES",
+      "codrub": "790",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SACABROCHES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCKS C/ESPIRAL",
+      "codrub": "85",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCKS C/ESPIRAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTALAMINAS",
+      "codrub": "660",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTALAMINAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "AUTOADHESIVO",
+      "codrub": "1071",
+      "codsub": "1",
+      "full_path": "LIBRERIA / AUTOADHESIVO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA P/EMBALAJE",
+      "codrub": "203",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA P/EMBALAJE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BANDAS ELASTICAS",
+      "codrub": "65",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BANDAS ELASTICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CAJAS DE ARCHIVO",
+      "codrub": "130",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CAJAS DE ARCHIVO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GIBRE",
+      "codrub": "367",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GIBRE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SILICONA",
+      "codrub": "1108",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SILICONA"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "IDENTIFICADORES",
+      "codrub": "387",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / IDENTIFICADORES"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "CARPETAS COMERCIALES",
+      "codrub": "150",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / CARPETAS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETA 3 X 40",
+      "codrub": "1127",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETA 3 X 40"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS ESCOLARES FANTASIA",
+      "codrub": "163",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS ESCOLARES FANTASIA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS ESCOLARES ESPECIALES",
+      "codrub": "265",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS ESCOLARES ESPECIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES DE CERA",
+      "codrub": "420",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES DE CERA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PUNTERAS P/DIBUJO TECNICO",
+      "codrub": "685",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PUNTERAS P/DIBUJO TECNICO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TACOS DE PAPEL",
+      "codrub": "845",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TACOS DE PAPEL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FICHAS RAYADAS",
+      "codrub": "343",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FICHAS RAYADAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "NOTAS ADHESIVAS",
+      "codrub": "527",
+      "codsub": "1",
+      "full_path": "LIBRERIA / NOTAS ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "VARIOS",
+      "codrub": "1102",
+      "codsub": "1",
+      "full_path": "LIBRERIA / VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS COMERCIALES",
+      "codrub": "280",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TARJETAS BLANCAS",
+      "codrub": "865",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TARJETAS BLANCAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTONES VARIOS",
+      "codrub": "175",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTONES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPELES ESPECIALES-OTROS",
+      "codrub": "1025",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPELES ESPECIALES-OTROS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TACOS DE PAPEL",
+      "codrub": "845",
+      "codsub": "0",
+      "full_path": "GENERAL / TACOS DE PAPEL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FORMULARIOS COMERCIALES",
+      "codrub": "357",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FORMULARIOS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BROCHES NEPACO",
+      "codrub": "123",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BROCHES NEPACO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CALCULADORAS",
+      "codrub": "135",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CALCULADORAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARBONICOS",
+      "codrub": "143",
+      "codsub": "0",
+      "full_path": "GENERAL / CARBONICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GLOBOS TERRAQUEOS",
+      "codrub": "373",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GLOBOS TERRAQUEOS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "PAPEL FOTOGRAFICO Y TRASNFER",
+      "codrub": "1107",
+      "codsub": "2",
+      "full_path": "PAPELERIA / PAPEL FOTOGRAFICO Y TRASNFER"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "CD - DVD VIRGEN",
+      "codrub": "186",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / CD - DVD VIRGEN"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FOTOCOPIADORAS / DUPLIC. TONER",
+      "codrub": "1002",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FOTOCOPIADORAS / DUPLIC. TONER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL FOTOGRAFICO Y TRASNFER",
+      "codrub": "1107",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL FOTOGRAFICO Y TRASNFER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TALONARIOS GUARDARROPA",
+      "codrub": "850",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TALONARIOS GUARDARROPA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTUCHERAS",
+      "codrub": "1115",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTUCHERAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LIBROS COMERCIALES",
+      "codrub": "463",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LIBROS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLOS DE PLOTTER",
+      "codrub": "1019",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLOS DE PLOTTER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "RESMITAS OTRAS",
+      "codrub": "1058",
+      "codsub": "1",
+      "full_path": "LIBRERIA / RESMITAS OTRAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ARANDELAS DE CARTON",
+      "codrub": "60",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ARANDELAS DE CARTON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BORRADORES DE PIZARRON",
+      "codrub": "110",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BORRADORES DE PIZARRON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BRILLANTINA ESCOLAR",
+      "codrub": "115",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BRILLANTINA ESCOLAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BROCHES DORADOS",
+      "codrub": "120",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BROCHES DORADOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LOMOS P/BIBLIORATOS",
+      "codrub": "475",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LOMOS P/BIBLIORATOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "OJALILLOS AUTOADHESIVOS",
+      "codrub": "530",
+      "codsub": "1",
+      "full_path": "LIBRERIA / OJALILLOS AUTOADHESIVOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PUNZONES ESCOLARES",
+      "codrub": "687",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PUNZONES ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLOS DE NUMEROS",
+      "codrub": "783",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLOS DE NUMEROS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "AROS P/CARPETA",
+      "codrub": "63",
+      "codsub": "0",
+      "full_path": "GENERAL / AROS P/CARPETA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA P/ENMASCARAR",
+      "codrub": "200",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA P/ENMASCARAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TIZAS ESCOLARES",
+      "codrub": "903",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TIZAS ESCOLARES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MAPAS EN BLOCK",
+      "codrub": "485",
+      "codsub": "0",
+      "full_path": "GENERAL / MAPAS EN BLOCK"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ETIQUETAS COMERCIALES ADHESIVAS",
+      "codrub": "325",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ETIQUETAS COMERCIALES ADHESIVAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BOLIGRAFOS DESCARTABLES",
+      "codrub": "100",
+      "codsub": "0",
+      "full_path": "GENERAL / BOLIGRAFOS DESCARTABLES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL ARAÑA",
+      "codrub": "545",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL ARAÑA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "OTROS",
+      "codrub": "1011",
+      "codsub": "0",
+      "full_path": "GENERAL / OTROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "INDICES VARIOS",
+      "codrub": "393",
+      "codsub": "1",
+      "full_path": "LIBRERIA / INDICES VARIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PERFORADORAS",
+      "codrub": "603",
+      "codsub": "0",
+      "full_path": "GENERAL / PERFORADORAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BROCHES P/ABROCHADORAS",
+      "codrub": "125",
+      "codsub": "0",
+      "full_path": "GENERAL / BROCHES P/ABROCHADORAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ABROCHADORAS DE MANO",
+      "codrub": "6",
+      "codsub": "0",
+      "full_path": "GENERAL / ABROCHADORAS DE MANO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS ESCOLARES DE CARTON",
+      "codrub": "157",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS ESCOLARES DE CARTON"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PAPEL SEDA",
+      "codrub": "585",
+      "codsub": "0",
+      "full_path": "GENERAL / PAPEL SEDA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MOCHILAS",
+      "codrub": "515",
+      "codsub": "0",
+      "full_path": "GENERAL / MOCHILAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL MARGINADO",
+      "codrub": "567",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL MARGINADO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL PLASTIFICADO",
+      "codrub": "580",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL PLASTIFICADO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL AFICHE",
+      "codrub": "543",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL AFICHE"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETAS COMERCIALES",
+      "codrub": "150",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETAS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINCHA PAPELES",
+      "codrub": "610",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINCHA PAPELES"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS 63 - 65 GR",
+      "codrub": "1104",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS 63 - 65 GR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA BIFAZ",
+      "codrub": "197",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA BIFAZ"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL P/REGALO",
+      "codrub": "577",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL P/REGALO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BASES P/CALENDARIO",
+      "codrub": "73",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BASES P/CALENDARIO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BORRADOR PARA PIZZARRA",
+      "codrub": "1036",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BORRADOR PARA PIZZARRA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MASA P/MODELAR",
+      "codrub": "505",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MASA P/MODELAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PALITOS P/HELADO Y BROCHETTE",
+      "codrub": "541",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PALITOS P/HELADO Y BROCHETTE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REGLETAS",
+      "codrub": "712",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REGLETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TELGOPOR",
+      "codrub": "872",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TELGOPOR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MAPAS EN BLOCK",
+      "codrub": "485",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MAPAS EN BLOCK"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BIBLIORATOS",
+      "codrub": "77",
+      "codsub": "0",
+      "full_path": "GENERAL / BIBLIORATOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BANDERITAS ADHESIVAS",
+      "codrub": "71",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BANDERITAS ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GLOBOS DE COTILLON",
+      "codrub": "372",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GLOBOS DE COTILLON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNILLOS VARIOS",
+      "codrub": "247",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNILLOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LIBROS INFANTILES Y DIDACTICOS",
+      "codrub": "470",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LIBROS INFANTILES Y DIDACTICOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "RESMITAS 75 GR",
+      "codrub": "1057",
+      "codsub": "0",
+      "full_path": "GENERAL / RESMITAS 75 GR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "RESMITAS 70 GR",
+      "codrub": "1055",
+      "codsub": "0",
+      "full_path": "GENERAL / RESMITAS 70 GR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS COMERCIALES",
+      "codrub": "728",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BOLSAS",
+      "codrub": "104",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BOLSAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "BOLSILLOS P/CREDENCIALES",
+      "codrub": "105",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / BOLSILLOS P/CREDENCIALES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "NOTAS ADHESIVAS",
+      "codrub": "527",
+      "codsub": "0",
+      "full_path": "GENERAL / NOTAS ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "EXPENDEDORA DE TURNO",
+      "codrub": "1112",
+      "codsub": "1",
+      "full_path": "LIBRERIA / EXPENDEDORA DE TURNO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "AGENDAS ANUALES",
+      "codrub": "35",
+      "codsub": "1",
+      "full_path": "LIBRERIA / AGENDAS ANUALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "AGENDAS PERPETUAS",
+      "codrub": "37",
+      "codsub": "1",
+      "full_path": "LIBRERIA / AGENDAS PERPETUAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS DE FIBRA NEGRA",
+      "codrub": "154",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS DE FIBRA NEGRA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MOÑOS P/REGALOS",
+      "codrub": "520",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MOÑOS P/REGALOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CINTA EXTRANJERA",
+      "codrub": "1114",
+      "codsub": "0",
+      "full_path": "GENERAL / CINTA EXTRANJERA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA EXTRANJERA",
+      "codrub": "1114",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA EXTRANJERA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES BOLSA",
+      "codrub": "823",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES BOLSA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTALAPICES",
+      "codrub": "663",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTALAPICES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS C/CIERRE",
+      "codrub": "1116",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS C/CIERRE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MOCHILAS",
+      "codrub": "515",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MOCHILAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MAQUINAS VARIAS",
+      "codrub": "490",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MAQUINAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REGLAS VARIAS",
+      "codrub": "695",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REGLAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ETIQUETAS P/ETIQUETADORAS",
+      "codrub": "1117",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ETIQUETAS P/ETIQUETADORAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "INSUMOS COMPUTACION",
+      "codrub": "1118",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / INSUMOS COMPUTACION"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "INSUMOS COMPUTACION",
+      "codrub": "1118",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / INSUMOS COMPUTACION"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TINTAS SIST CONTINUO",
+      "codrub": "1119",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TINTAS SIST CONTINUO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "S/RUBROS",
+      "codrub": "0",
+      "codsub": "1",
+      "full_path": "LIBRERIA / S/RUBROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BIBLIORATOS",
+      "codrub": "77",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BIBLIORATOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL SEDA",
+      "codrub": "585",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL SEDA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "GLITTER ADHESIVO",
+      "codrub": "370",
+      "codsub": "0",
+      "full_path": "GENERAL / GLITTER ADHESIVO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES ARTISTICOS",
+      "codrub": "414",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES ARTISTICOS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "PORTA CREDENCIAL",
+      "codrub": "1183",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / PORTA CREDENCIAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "OLEOS AL PASTEL",
+      "codrub": "535",
+      "codsub": "1",
+      "full_path": "LIBRERIA / OLEOS AL PASTEL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINCELES VARIOS",
+      "codrub": "607",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINCELES VARIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ADHESIVOS P/EMBLOCAR",
+      "codrub": "1121",
+      "codsub": "0",
+      "full_path": "GENERAL / ADHESIVOS P/EMBLOCAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA C/BRILLO",
+      "codrub": "1122",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA C/BRILLO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA",
+      "codrub": "374",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "CINTAS P/IMPRESORAS",
+      "codrub": "205",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / CINTAS P/IMPRESORAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PEGAMENTOS VARIOS",
+      "codrub": "600",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PEGAMENTOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GALERITAS",
+      "codrub": "1124",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GALERITAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MICROFIBRA",
+      "codrub": "1125",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MICROFIBRA"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "FOTOCOPIADORAS/DUPLIC. REPUEST",
+      "codrub": "1126",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / FOTOCOPIADORAS/DUPLIC. REPUEST"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "PEGAMENTOS VARIOS",
+      "codrub": "600",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / PEGAMENTOS VARIOS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PINTURA P/ TELA 37CC",
+      "codrub": "1128",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PINTURA P/ TELA 37CC"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PINTURA P/ TELA 200 CC",
+      "codrub": "1129",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PINTURA P/ TELA 200 CC"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "BASES ACRILICAS",
+      "codrub": "1130",
+      "codsub": "5",
+      "full_path": "ARTISTICA / BASES ACRILICAS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "ACRILICOS 50CC",
+      "codrub": "1131",
+      "codsub": "5",
+      "full_path": "ARTISTICA / ACRILICOS 50CC"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PINCELES VARIOS",
+      "codrub": "607",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PINCELES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CONTACT",
+      "codrub": "1132",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CONTACT"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACETATO",
+      "codrub": "1133",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACETATO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL METALIZADO",
+      "codrub": "1134",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL METALIZADO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL GLASE",
+      "codrub": "560",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL GLASE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "JUEGOS DIDACTICOS",
+      "codrub": "1144",
+      "codsub": "1",
+      "full_path": "LIBRERIA / JUEGOS DIDACTICOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "DICCIONARIOS",
+      "codrub": "291",
+      "codsub": "1",
+      "full_path": "LIBRERIA / DICCIONARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTAS DECORATIVAS",
+      "codrub": "1142",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTAS DECORATIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL FELPA",
+      "codrub": "1135",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL FELPA"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TAPAS A4",
+      "codrub": "1051",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TAPAS A4"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TAPAS OFICIO",
+      "codrub": "1080",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TAPAS OFICIO"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "CINTAS P/IMPRESORAS",
+      "codrub": "205",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / CINTAS P/IMPRESORAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROLLO DE ETIQUETAS",
+      "codrub": "1136",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROLLO DE ETIQUETAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TAPAS A3",
+      "codrub": "1109",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TAPAS A3"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CAJAS CON TAPA",
+      "codrub": "1113",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CAJAS CON TAPA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA FANTASIA",
+      "codrub": "1137",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA FANTASIA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA 3D",
+      "codrub": "1138",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA 3D"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL A LUNARES",
+      "codrub": "1139",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL A LUNARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LUPAS",
+      "codrub": "477",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LUPAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ORGANIZADORES P/ESCRITORIOS",
+      "codrub": "537",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ORGANIZADORES P/ESCRITORIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SACABOCADOS",
+      "codrub": "789",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SACABOCADOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA AUTOADHESIVA",
+      "codrub": "1140",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA AUTOADHESIVA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MAPAS P/COLGAR",
+      "codrub": "487",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MAPAS P/COLGAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAMINAS DIDACTICAS",
+      "codrub": "1141",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAMINAS DIDACTICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SELLOS COMERCIALES",
+      "codrub": "800",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SELLOS COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "IMANES",
+      "codrub": "390",
+      "codsub": "1",
+      "full_path": "LIBRERIA / IMANES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CORCHO",
+      "codrub": "240",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CORCHO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GOMA EVA FILM",
+      "codrub": "1143",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GOMA EVA FILM"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FICHEROS",
+      "codrub": "347",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FICHEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLASTILINAS",
+      "codrub": "635",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLASTILINAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LETROGRAFOS",
+      "codrub": "440",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LETROGRAFOS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "S/RUBROS",
+      "codrub": "0",
+      "codsub": "2",
+      "full_path": "PAPELERIA / S/RUBROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REVISTEROS",
+      "codrub": "1145",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REVISTEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "HISOPOS",
+      "codrub": "1146",
+      "codsub": "1",
+      "full_path": "LIBRERIA / HISOPOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CONSTITUCIONES",
+      "codrub": "239",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CONSTITUCIONES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTAS VARIAS",
+      "codrub": "216",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESFERAS DE TELGOPOR",
+      "codrub": "1147",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESFERAS DE TELGOPOR"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PINTURA DIMENSIONAL",
+      "codrub": "1149",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PINTURA DIMENSIONAL"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "STENCILES DECORATIVOS",
+      "codrub": "1150",
+      "codsub": "5",
+      "full_path": "ARTISTICA / STENCILES DECORATIVOS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PINTURA A LA TIZA",
+      "codrub": "1151",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PINTURA A LA TIZA"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "ACCESORIOS P/ARTISTA",
+      "codrub": "10",
+      "codsub": "5",
+      "full_path": "ARTISTICA / ACCESORIOS P/ARTISTA"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "REVISTAS",
+      "codrub": "1152",
+      "codsub": "5",
+      "full_path": "ARTISTICA / REVISTAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ESPIRALES PARA ENCUADERNACION",
+      "codrub": "1042",
+      "codsub": "0",
+      "full_path": "GENERAL / ESPIRALES PARA ENCUADERNACION"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ARTICULOS PATRIOS",
+      "codrub": "1153",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ARTICULOS PATRIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PISTOLAS ADHESIVAS",
+      "codrub": "619",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PISTOLAS ADHESIVAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PALETAS MEZLADORAS",
+      "codrub": "540",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PALETAS MEZLADORAS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "TABLEROS P/DIBUJO",
+      "codrub": "840",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / TABLEROS P/DIBUJO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ENCENDEDORES",
+      "codrub": "1155",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ENCENDEDORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAÑUELOS DESCARTABLES",
+      "codrub": "1156",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAÑUELOS DESCARTABLES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FIGURITAS",
+      "codrub": "350",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FIGURITAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GUIRNALDAS",
+      "codrub": "1157",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GUIRNALDAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTAS P/REGALO",
+      "codrub": "213",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTAS P/REGALO"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "LACA VITRAL AL AGUA",
+      "codrub": "1159",
+      "codsub": "5",
+      "full_path": "ARTISTICA / LACA VITRAL AL AGUA"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "ACRILICOS 150 CC",
+      "codrub": "1160",
+      "codsub": "5",
+      "full_path": "ARTISTICA / ACRILICOS 150 CC"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "LAMINAS DE SUBLIMACION",
+      "codrub": "1161",
+      "codsub": "5",
+      "full_path": "ARTISTICA / LAMINAS DE SUBLIMACION"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "LAMINA DECUPAGE",
+      "codrub": "1162",
+      "codsub": "5",
+      "full_path": "ARTISTICA / LAMINA DECUPAGE"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "WEB CLEANING ROLLER",
+      "codrub": "1163",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / WEB CLEANING ROLLER"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "BLOCK P/DIBUJO",
+      "codrub": "93",
+      "codsub": "5",
+      "full_path": "ARTISTICA / BLOCK P/DIBUJO"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "HOJAS DE ARTE",
+      "codrub": "1165",
+      "codsub": "5",
+      "full_path": "ARTISTICA / HOJAS DE ARTE"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "TECLADO UNIVERSAL",
+      "codrub": "871",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / TECLADO UNIVERSAL"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "MOUSE Y BASES PARA MOUSE",
+      "codrub": "518",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / MOUSE Y BASES PARA MOUSE"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "TONER LASER",
+      "codrub": "1123",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / TONER LASER"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "OLEOS",
+      "codrub": "533",
+      "codsub": "5",
+      "full_path": "ARTISTICA / OLEOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BASTIDORES DE TELA",
+      "codrub": "75",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BASTIDORES DE TELA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TANZAS",
+      "codrub": "1167",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TANZAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TABLEROS P/DIBUJO",
+      "codrub": "840",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TABLEROS P/DIBUJO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESCALIMETROS",
+      "codrub": "305",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESCALIMETROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PISTOLETES P/DIBUJO",
+      "codrub": "620",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PISTOLETES P/DIBUJO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLANTILLAS TECNICAS",
+      "codrub": "633",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLANTILLAS TECNICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESCUADRAS VARIAS",
+      "codrub": "310",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESCUADRAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PILAS",
+      "codrub": "606",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PILAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "COFRE PORTAVALORES",
+      "codrub": "227",
+      "codsub": "1",
+      "full_path": "LIBRERIA / COFRE PORTAVALORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LLAVEROS",
+      "codrub": "1168",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LLAVEROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CORTANTES O TRICHETAS",
+      "codrub": "245",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CORTANTES O TRICHETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ETIQUETAS ESCOLARES",
+      "codrub": "327",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ETIQUETAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FILM",
+      "codrub": "1169",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FILM"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ALUMINIO",
+      "codrub": "1170",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ALUMINIO"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "MAQUINAS VARIAS",
+      "codrub": "490",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / MAQUINAS VARIAS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "MAQUINAS VARIAS",
+      "codrub": "490",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / MAQUINAS VARIAS"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "TINTAS SIST CONTINUO",
+      "codrub": "1119",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / TINTAS SIST CONTINUO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FLAUTAS",
+      "codrub": "353",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FLAUTAS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "GLITTER",
+      "codrub": "1172",
+      "codsub": "5",
+      "full_path": "ARTISTICA / GLITTER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "VELAS",
+      "codrub": "1173",
+      "codsub": "1",
+      "full_path": "LIBRERIA / VELAS"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "PAD PARA MOUSE",
+      "codrub": "1174",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / PAD PARA MOUSE"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "CARGADORES",
+      "codrub": "1175",
+      "codsub": "7",
+      "full_path": "VARIOS / CARGADORES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "PARLANTES",
+      "codrub": "1177",
+      "codsub": "7",
+      "full_path": "VARIOS / PARLANTES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "ACCESORIOS VARIOS",
+      "codrub": "13",
+      "codsub": "7",
+      "full_path": "VARIOS / ACCESORIOS VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACCESORIOS P/ARTISTA",
+      "codrub": "10",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACCESORIOS P/ARTISTA"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "PAPELES ESPECIALES-OTROS",
+      "codrub": "1025",
+      "codsub": "2",
+      "full_path": "PAPELERIA / PAPELES ESPECIALES-OTROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "JUGUETES VARIOS",
+      "codrub": "1178",
+      "codsub": "1",
+      "full_path": "LIBRERIA / JUGUETES VARIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TARJETAS VARIAS",
+      "codrub": "1180",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TARJETAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BARRA DE SILICONA",
+      "codrub": "1182",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BARRA DE SILICONA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TONER LASER",
+      "codrub": "1123",
+      "codsub": "0",
+      "full_path": "GENERAL / TONER LASER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "TRANSPORTADORES",
+      "codrub": "917",
+      "codsub": "0",
+      "full_path": "GENERAL / TRANSPORTADORES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ESCUADRAS VARIAS",
+      "codrub": "310",
+      "codsub": "0",
+      "full_path": "GENERAL / ESCUADRAS VARIAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "HOJA P/DIBUJO TECNICO",
+      "codrub": "1184",
+      "codsub": "1",
+      "full_path": "LIBRERIA / HOJA P/DIBUJO TECNICO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "RESMAS 70 GR",
+      "codrub": "1059",
+      "codsub": "0",
+      "full_path": "GENERAL / RESMAS 70 GR"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "JUEGOS DIDACTICOS",
+      "codrub": "1144",
+      "codsub": "7",
+      "full_path": "VARIOS / JUEGOS DIDACTICOS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "S/RUBROS",
+      "codrub": "0",
+      "codsub": "7",
+      "full_path": "VARIOS / S/RUBROS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "TEMPERAS",
+      "codrub": "873",
+      "codsub": "5",
+      "full_path": "ARTISTICA / TEMPERAS"
+    },
+    {
+      "parent_name": "INSUMOS GRAFICOS",
+      "name": "OTROS",
+      "codrub": "1011",
+      "codsub": "3",
+      "full_path": "INSUMOS GRAFICOS / OTROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CANOPLAS ESCOLARES",
+      "codrub": "137",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CANOPLAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "OTROS",
+      "codrub": "1011",
+      "codsub": "1",
+      "full_path": "LIBRERIA / OTROS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS ESCOLARES PLASTICAS",
+      "codrub": "160",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS ESCOLARES PLASTICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MOCHILAS VARIAS",
+      "codrub": "849",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MOCHILAS VARIAS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "VARIOS",
+      "codrub": "1102",
+      "codsub": "7",
+      "full_path": "VARIOS / VARIOS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "ACUARELAS ESCOLARES",
+      "codrub": "17",
+      "codsub": "5",
+      "full_path": "ARTISTICA / ACUARELAS ESCOLARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TIJERA COSTURA",
+      "codrub": "1185",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TIJERA COSTURA"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "JUGUETES VARIOS",
+      "codrub": "1178",
+      "codsub": "7",
+      "full_path": "VARIOS / JUGUETES VARIOS"
+    },
+    {
+      "parent_name": "INSUMOS GRAFICOS",
+      "name": "CINTAS P/MAQUINAS DE SUMAR",
+      "codrub": "210",
+      "codsub": "3",
+      "full_path": "INSUMOS GRAFICOS / CINTAS P/MAQUINAS DE SUMAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TABLAS PERIODICAS",
+      "codrub": "837",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TABLAS PERIODICAS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "VARIOS",
+      "codrub": "1102",
+      "codsub": "5",
+      "full_path": "ARTISTICA / VARIOS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "PILAS",
+      "codrub": "606",
+      "codsub": "7",
+      "full_path": "VARIOS / PILAS"
+    },
+    {
+      "parent_name": "INSUMOS GRAFICOS",
+      "name": "TINTAS SIST CONTINUO",
+      "codrub": "1119",
+      "codsub": "3",
+      "full_path": "INSUMOS GRAFICOS / TINTAS SIST CONTINUO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "S/RUBROS",
+      "codrub": "0",
+      "codsub": "0",
+      "full_path": "GENERAL / S/RUBROS"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "PEN DRIVE",
+      "codrub": "1171",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / PEN DRIVE"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MOUSE Y BASES PARA MOUSE",
+      "codrub": "518",
+      "codsub": "0",
+      "full_path": "GENERAL / MOUSE Y BASES PARA MOUSE"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "AURICULARES",
+      "codrub": "1186",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / AURICULARES"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "PARLANTES",
+      "codrub": "1177",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / PARLANTES"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "CARGADORES",
+      "codrub": "1175",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / CARGADORES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "AURICULARES",
+      "codrub": "1186",
+      "codsub": "7",
+      "full_path": "VARIOS / AURICULARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FORROS DE CARPETA",
+      "codrub": "1187",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FORROS DE CARPETA"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "VELAS",
+      "codrub": "1173",
+      "codsub": "7",
+      "full_path": "VARIOS / VELAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "AURICULARES",
+      "codrub": "1186",
+      "codsub": "1",
+      "full_path": "LIBRERIA / AURICULARES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "PEN DRIVE",
+      "codrub": "1171",
+      "codsub": "7",
+      "full_path": "VARIOS / PEN DRIVE"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "CINTAS P/IMPRESORAS",
+      "codrub": "205",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / CINTAS P/IMPRESORAS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "BOLSAS",
+      "codrub": "104",
+      "codsub": "7",
+      "full_path": "VARIOS / BOLSAS"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "PORCELANA FRIA",
+      "codrub": "1166",
+      "codsub": "5",
+      "full_path": "ARTISTICA / PORCELANA FRIA"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "MEZCLADORES",
+      "codrub": "510",
+      "codsub": "5",
+      "full_path": "ARTISTICA / MEZCLADORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ILUSTRACION",
+      "codrub": "1074",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ILUSTRACION"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "MOCHILAS",
+      "codrub": "515",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / MOCHILAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCKS CUADRICULADOS",
+      "codrub": "87",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCKS CUADRICULADOS"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "CHAPAS",
+      "codrub": "1075",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / CHAPAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLANCHA DE CORTE",
+      "codrub": "1188",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLANCHA DE CORTE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACCESORIOS VARIOS",
+      "codrub": "13",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACCESORIOS VARIOS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "PORTA CREDENCIAL",
+      "codrub": "1183",
+      "codsub": "7",
+      "full_path": "VARIOS / PORTA CREDENCIAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESPIRALES PARA ENCUADERNACION",
+      "codrub": "1042",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESPIRALES PARA ENCUADERNACION"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "CINTAS VARIAS",
+      "codrub": "216",
+      "codsub": "7",
+      "full_path": "VARIOS / CINTAS VARIAS"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "IMANES",
+      "codrub": "390",
+      "codsub": "7",
+      "full_path": "VARIOS / IMANES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNOS 29/7 C/ESPIRAL",
+      "codrub": "263",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNOS 29/7 C/ESPIRAL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL MOLDE",
+      "codrub": "573",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL MOLDE"
+    },
+    {
+      "parent_name": "ARTISTICA",
+      "name": "SELLOS Y BAJO RELIEVE",
+      "codrub": "1189",
+      "codsub": "5",
+      "full_path": "ARTISTICA / SELLOS Y BAJO RELIEVE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINTURA A LA TIZA",
+      "codrub": "1151",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINTURA A LA TIZA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SELLOS INFANTILES",
+      "codrub": "803",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SELLOS INFANTILES"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "PAPEL P/REGALO",
+      "codrub": "577",
+      "codsub": "7",
+      "full_path": "VARIOS / PAPEL P/REGALO"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "RESMAS",
+      "codrub": "74",
+      "codsub": "2",
+      "full_path": "PAPELERIA / RESMAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TONER LASER",
+      "codrub": "1123",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TONER LASER"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "TINTAS SIST CONTINUO",
+      "codrub": "1119",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / TINTAS SIST CONTINUO"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "CUCHILLAS DE REPUESTO",
+      "codrub": "285",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / CUCHILLAS DE REPUESTO"
+    },
+    {
+      "parent_name": "INSUMOS FOTOCOPIADORAS",
+      "name": "ESPIRALES PARA ENCUADERNACION",
+      "codrub": "1042",
+      "codsub": "4",
+      "full_path": "INSUMOS FOTOCOPIADORAS / ESPIRALES PARA ENCUADERNACION"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "RESMITAS 70 GR",
+      "codrub": "1055",
+      "codsub": "1",
+      "full_path": "LIBRERIA / RESMITAS 70 GR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINTORCITOS",
+      "codrub": "612",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINTORCITOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL FELPINA",
+      "codrub": "557",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL FELPINA"
+    },
+    {
+      "parent_name": "INSUMOS GRAFICOS",
+      "name": "CHAPAS",
+      "codrub": "1075",
+      "codsub": "3",
+      "full_path": "INSUMOS GRAFICOS / CHAPAS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "BASES ACRILICAS",
+      "codrub": "1130",
+      "codsub": "2",
+      "full_path": "PAPELERIA / BASES ACRILICAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BASES ACRILICAS",
+      "codrub": "1130",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BASES ACRILICAS"
+    },
+    {
+      "parent_name": "INSUMOS COMPUTACION",
+      "name": "ROLLOS P/MAQUINAS",
+      "codrub": "787",
+      "codsub": "8",
+      "full_path": "INSUMOS COMPUTACION / ROLLOS P/MAQUINAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ROLLO DE ETIQUETAS",
+      "codrub": "1136",
+      "codsub": "0",
+      "full_path": "GENERAL / ROLLO DE ETIQUETAS"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "ROLLOS P/MAQUINAS",
+      "codrub": "787",
+      "codsub": "2",
+      "full_path": "PAPELERIA / ROLLOS P/MAQUINAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "JUEGOS DIDACTICOS",
+      "codrub": "1144",
+      "codsub": "0",
+      "full_path": "GENERAL / JUEGOS DIDACTICOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PEGAMENTOS VARIOS",
+      "codrub": "600",
+      "codsub": "0",
+      "full_path": "GENERAL / PEGAMENTOS VARIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ACETATO",
+      "codrub": "1133",
+      "codsub": "0",
+      "full_path": "GENERAL / ACETATO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BANDEJAS P/PAPELES",
+      "codrub": "67",
+      "codsub": "0",
+      "full_path": "GENERAL / BANDEJAS P/PAPELES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BOLIGRAFOS VARIOS",
+      "codrub": "103",
+      "codsub": "0",
+      "full_path": "GENERAL / BOLIGRAFOS VARIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "GOMAS DE BORRAR",
+      "codrub": "375",
+      "codsub": "0",
+      "full_path": "GENERAL / GOMAS DE BORRAR"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LETROGRAFOS",
+      "codrub": "440",
+      "codsub": "0",
+      "full_path": "GENERAL / LETROGRAFOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "HOJA P/DIBUJO TECNICO",
+      "codrub": "1184",
+      "codsub": "0",
+      "full_path": "GENERAL / HOJA P/DIBUJO TECNICO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PLANTILLAS TECNICAS",
+      "codrub": "633",
+      "codsub": "0",
+      "full_path": "GENERAL / PLANTILLAS TECNICAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ORGANIZADORES P/ESCRITORIOS",
+      "codrub": "537",
+      "codsub": "0",
+      "full_path": "GENERAL / ORGANIZADORES P/ESCRITORIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "MAQUINAS VARIAS",
+      "codrub": "490",
+      "codsub": "0",
+      "full_path": "GENERAL / MAQUINAS VARIAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PAPEL FOTOGRAFICO Y TRASNFER",
+      "codrub": "1107",
+      "codsub": "0",
+      "full_path": "GENERAL / PAPEL FOTOGRAFICO Y TRASNFER"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETAS C/ELASTICO",
+      "codrub": "147",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETAS C/ELASTICO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETAS CON FOLIOS",
+      "codrub": "1197",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETAS CON FOLIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "FOLIOS",
+      "codrub": "355",
+      "codsub": "0",
+      "full_path": "GENERAL / FOLIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "GLOBOS DE COTILLON",
+      "codrub": "372",
+      "codsub": "0",
+      "full_path": "GENERAL / GLOBOS DE COTILLON"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CAJAS DE ARCHIVO",
+      "codrub": "130",
+      "codsub": "0",
+      "full_path": "GENERAL / CAJAS DE ARCHIVO"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "PORTAROLLOS",
+      "codrub": "670",
+      "codsub": "0",
+      "full_path": "GENERAL / PORTAROLLOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CORTANTES O TRICHETAS",
+      "codrub": "245",
+      "codsub": "0",
+      "full_path": "GENERAL / CORTANTES O TRICHETAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "SACAPUNTAS VARIOS",
+      "codrub": "793",
+      "codsub": "0",
+      "full_path": "GENERAL / SACAPUNTAS VARIOS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "LAPICES DE COLORES",
+      "codrub": "423",
+      "codsub": "0",
+      "full_path": "GENERAL / LAPICES DE COLORES"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BOLSAS",
+      "codrub": "104",
+      "codsub": "0",
+      "full_path": "GENERAL / BOLSAS"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "INSUMOS COMPUTACION",
+      "codrub": "1118",
+      "codsub": "0",
+      "full_path": "GENERAL / INSUMOS COMPUTACION"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "AURICULARES",
+      "codrub": "1186",
+      "codsub": "0",
+      "full_path": "GENERAL / AURICULARES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA METRICA",
+      "codrub": "1190",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA METRICA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACUARELAS PREMIUM",
+      "codrub": "1191",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACUARELAS PREMIUM"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "ACUARELAS PREMIUM",
+      "codrub": "1191",
+      "codsub": "0",
+      "full_path": "GENERAL / ACUARELAS PREMIUM"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAPICES INTERCAMBIABLES",
+      "codrub": "1192",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAPICES INTERCAMBIABLES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PEN DRIVE",
+      "codrub": "1171",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PEN DRIVE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLANIFICADORES",
+      "codrub": "1176",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLANIFICADORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FAJA DE SEGURIDAD",
+      "codrub": "1193",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FAJA DE SEGURIDAD"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BOLSAS NAVIDAD",
+      "codrub": "1194",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BOLSAS NAVIDAD"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "CARPETAS",
+      "codrub": "1024",
+      "codsub": "0",
+      "full_path": "GENERAL / CARPETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MANDALAS",
+      "codrub": "1195",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MANDALAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ARCILLA P/MODELAR",
+      "codrub": "61",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ARCILLA P/MODELAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARBONILLA",
+      "codrub": "1196",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARBONILLA"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "SEPARADORES COMERCIALES",
+      "codrub": "805",
+      "codsub": "0",
+      "full_path": "GENERAL / SEPARADORES COMERCIALES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARPETAS CON FOLIOS",
+      "codrub": "1197",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARPETAS CON FOLIOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TACOS CALENDARIO",
+      "codrub": "843",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TACOS CALENDARIO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ALCOHOL EN GEL",
+      "codrub": "1198",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ALCOHOL EN GEL"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CUADERNO 19 X 24",
+      "codrub": "1199",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CUADERNO 19 X 24"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SOBRES P/PLASTIFICAR",
+      "codrub": "827",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SOBRES P/PLASTIFICAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "JABON LIQUIDO",
+      "codrub": "1200",
+      "codsub": "1",
+      "full_path": "LIBRERIA / JABON LIQUIDO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LIJA",
+      "codrub": "1148",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LIJA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "STICKERS",
+      "codrub": "835",
+      "codsub": "1",
+      "full_path": "LIBRERIA / STICKERS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ANOTADORES",
+      "codrub": "55",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ANOTADORES"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "MINI CUADERNOS",
+      "codrub": "1201",
+      "codsub": "1",
+      "full_path": "LIBRERIA / MINI CUADERNOS"
+    },
+    {
+      "parent_name": "ENCUADERNACION Y OTROS",
+      "name": "POUCHES AUTOADHESIVOS PARA PLASTIFICAR E",
+      "codrub": "1047",
+      "codsub": "6",
+      "full_path": "ENCUADERNACION Y OTROS / POUCHES AUTOADHESIVOS PARA PLASTIFICAR E"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PLUMAS P/LAPICERAS",
+      "codrub": "640",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PLUMAS P/LAPICERAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "SLIME",
+      "codrub": "1202",
+      "codsub": "1",
+      "full_path": "LIBRERIA / SLIME"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS P/LIBRETAS",
+      "codrub": "735",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS P/LIBRETAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TELA ECOLOGICA",
+      "codrub": "1154",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TELA ECOLOGICA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ABROCHADORAS DE MESA",
+      "codrub": "3",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ABROCHADORAS DE MESA"
+    },
+    {
+      "parent_name": "JUGUETERIA",
+      "name": "JUEGOS DIDACTICOS",
+      "codrub": "1144",
+      "codsub": "9",
+      "full_path": "JUGUETERIA / JUEGOS DIDACTICOS"
+    },
+    {
+      "parent_name": "JUGUETERIA",
+      "name": "MULTIBASE",
+      "codrub": "1203",
+      "codsub": "9",
+      "full_path": "JUGUETERIA / MULTIBASE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ESFUMINOS",
+      "codrub": "313",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ESFUMINOS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTULINA ENCAPADA",
+      "codrub": "1181",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTULINA ENCAPADA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA AISLADORA",
+      "codrub": "1204",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA AISLADORA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "TINTAS SIST CONTINUO",
+      "codrub": "1119",
+      "codsub": "1",
+      "full_path": "LIBRERIA / TINTAS SIST CONTINUO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LAMINAS PARA COLOREAR",
+      "codrub": "1205",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LAMINAS PARA COLOREAR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA MAGICA INVISIBLE",
+      "codrub": "1206",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA MAGICA INVISIBLE"
+    },
+    {
+      "parent_name": "GENERAL",
+      "name": "BANDERAS",
+      "codrub": "70",
+      "codsub": "0",
+      "full_path": "GENERAL / BANDERAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "COTILLON",
+      "codrub": "1207",
+      "codsub": "1",
+      "full_path": "LIBRERIA / COTILLON"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PAPEL MADERA",
+      "codrub": "563",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PAPEL MADERA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "LIMPIA PIPAS",
+      "codrub": "1210",
+      "codsub": "1",
+      "full_path": "LIBRERIA / LIMPIA PIPAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CINTA RIBONE",
+      "codrub": "1211",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CINTA RIBONE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCK PARA ACUARELA",
+      "codrub": "1212",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCK PARA ACUARELA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "BLOCK DE ARTE",
+      "codrub": "1164",
+      "codsub": "1",
+      "full_path": "LIBRERIA / BLOCK DE ARTE"
+    },
+    {
+      "parent_name": "VARIOS",
+      "name": "FILM",
+      "codrub": "1169",
+      "codsub": "7",
+      "full_path": "VARIOS / FILM"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "CARTUCHOS DE TINTA P/IMPRESORAS",
+      "codrub": "176",
+      "codsub": "1",
+      "full_path": "LIBRERIA / CARTUCHOS DE TINTA P/IMPRESORAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ACRILICOS 50CC",
+      "codrub": "1131",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ACRILICOS 50CC"
+    },
+    {
+      "parent_name": "PAPELERIA",
+      "name": "CARTULINA AVENA/AHUESADA",
+      "codrub": "1213",
+      "codsub": "2",
+      "full_path": "PAPELERIA / CARTULINA AVENA/AHUESADA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PORTA REVISTA",
+      "codrub": "1214",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PORTA REVISTA"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "REPUESTOS P/AGENDAS",
+      "codrub": "730",
+      "codsub": "1",
+      "full_path": "LIBRERIA / REPUESTOS P/AGENDAS"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "ROTAFOLIO",
+      "codrub": "1215",
+      "codsub": "1",
+      "full_path": "LIBRERIA / ROTAFOLIO"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "FOTOCOPIADORA/DUPLIC. REVELADOR",
+      "codrub": "1067",
+      "codsub": "1",
+      "full_path": "LIBRERIA / FOTOCOPIADORA/DUPLIC. REVELADOR"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "STIKER UV TRANSFER",
+      "codrub": "1216",
+      "codsub": "1",
+      "full_path": "LIBRERIA / STIKER UV TRANSFER"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "PINTURA INFLABLE",
+      "codrub": "1217",
+      "codsub": "1",
+      "full_path": "LIBRERIA / PINTURA INFLABLE"
+    },
+    {
+      "parent_name": "LIBRERIA",
+      "name": "GUILLOTINAS",
+      "codrub": "1041",
+      "codsub": "1",
+      "full_path": "LIBRERIA / GUILLOTINAS"
+    }
+  ]
+}
