@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "total_cheques": 20,
+    "total_amount": 67091438.75,
+    "unique_partners": 12,
+    "states": {
+      "EMITIDO-PENDIENTE": 2,
+      "ACTIVO": 9,
+      "CUSTODIA": 7,
+      "DEPOSITADO": 1,
+      "ACTIVO-PENDIENTE": 1
+    }
+  },
+  "cheques": [
+    {
+      "number": "70747825",
+      "issue_date": "2026-10-28",
+      "payment_date": "2026-11-28",
+      "cuit": "30710094337",
+      "partner_name": "INDUSTRIAS TECNOMATRIC SRL",
+      "amount": 1135295.0,
+      "state": "EMITIDO-PENDIENTE"
+    },
+    {
+      "number": "70747758",
+      "issue_date": "2026-10-28",
+      "payment_date": "2026-11-14",
+      "cuit": "30709221791",
+      "partner_name": "RESPONTECH SRL",
+      "amount": 2200977.0,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "70727307",
+      "issue_date": "2026-10-28",
+      "payment_date": "2026-11-12",
+      "cuit": "30707437541",
+      "partner_name": "DOLKIN S.A.",
+      "amount": 3991339.59,
+      "state": "EMITIDO-PENDIENTE"
+    },
+    {
+      "number": "70602201",
+      "issue_date": "2026-10-22",
+      "payment_date": "2026-11-30",
+      "cuit": "30701481670",
+      "partner_name": "CRYSTAL ROCK S.A.",
+      "amount": 6504006.84,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "70602136",
+      "issue_date": "2026-10-22",
+      "payment_date": "2026-11-07",
+      "cuit": "30701481670",
+      "partner_name": "CRYSTAL ROCK S.A.",
+      "amount": 6504006.84,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "70596946",
+      "issue_date": "2026-10-22",
+      "payment_date": "2026-10-29",
+      "cuit": "33708547749",
+      "partner_name": "MENAJE EL SIGLO SRL",
+      "amount": 3824041.65,
+      "state": "DEPOSITADO"
+    },
+    {
+      "number": "70584209",
+      "issue_date": "2026-10-21",
+      "payment_date": "2026-11-06",
+      "cuit": "30525274450",
+      "partner_name": "FED. ARG.DE EMP. DE COMERCIO Y SERVICIOS",
+      "amount": 514765.19,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "70584118",
+      "issue_date": "2026-10-21",
+      "payment_date": "2026-12-01",
+      "cuit": "30714148954",
+      "partner_name": "MILVER SRL",
+      "amount": 2468428.0,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "70167732",
+      "issue_date": "2026-10-02",
+      "payment_date": "2026-11-11",
+      "cuit": "30687799042",
+      "partner_name": "ELECTROCLICK SA",
+      "amount": 2730486.0,
+      "state": "ACTIVO-PENDIENTE"
+    },
+    {
+      "number": "70167434",
+      "issue_date": "2026-10-02",
+      "payment_date": "2026-10-31",
+      "cuit": "30707032924",
+      "partner_name": "STAR COMPANY S.A.",
+      "amount": 3120763.0,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "70159578",
+      "issue_date": "2026-10-01",
+      "payment_date": "2026-11-12",
+      "cuit": "30709009245",
+      "partner_name": "INDUSTRIAS PROFILA SA",
+      "amount": 2643503.3,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "69866205",
+      "issue_date": "2026-09-18",
+      "payment_date": "2026-12-08",
+      "cuit": "30709009245",
+      "partner_name": "INDUSTRIAS PROFILA SA",
+      "amount": 4060437.33,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "69866159",
+      "issue_date": "2026-09-18",
+      "payment_date": "2026-11-07",
+      "cuit": "30709009245",
+      "partner_name": "INDUSTRIAS PROFILA SA",
+      "amount": 4060437.33,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "69832120",
+      "issue_date": "2026-09-17",
+      "payment_date": "2026-10-31",
+      "cuit": "30709542695",
+      "partner_name": "DISTRIBUIDORA BRASIM S.A",
+      "amount": 5069874.29,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "69716928",
+      "issue_date": "2026-09-14",
+      "payment_date": "2026-11-08",
+      "cuit": "30714148954",
+      "partner_name": "MILVER SRL",
+      "amount": 2515928.5,
+      "state": "ACTIVO"
+    },
+    {
+      "number": "69063854",
+      "issue_date": "2026-08-14",
+      "payment_date": "2026-11-16",
+      "cuit": "30517060018",
+      "partner_name": "CINCAM S A C I F A E I",
+      "amount": 426521.32,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "69011343",
+      "issue_date": "2026-08-12",
+      "payment_date": "2026-12-31",
+      "cuit": "30701481670",
+      "partner_name": "CRYSTAL ROCK S.A.",
+      "amount": 4579060.0,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "69011266",
+      "issue_date": "2026-08-12",
+      "payment_date": "2026-11-30",
+      "cuit": "30701481670",
+      "partner_name": "CRYSTAL ROCK S.A.",
+      "amount": 4579060.0,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "69011209",
+      "issue_date": "2026-08-12",
+      "payment_date": "2026-10-31",
+      "cuit": "30701481670",
+      "partner_name": "CRYSTAL ROCK S.A.",
+      "amount": 4579060.0,
+      "state": "CUSTODIA"
+    },
+    {
+      "number": "68881036",
+      "issue_date": "2026-08-06",
+      "payment_date": "2026-11-16",
+      "cuit": "30517060018",
+      "partner_name": "CINCAM S A C I F A E I",
+      "amount": 1583447.57,
+      "state": "CUSTODIA"
+    }
+  ]
+}

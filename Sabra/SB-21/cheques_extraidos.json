@@ -1,0 +1,202 @@
+﻿[
+    {
+        "Fila":  6,
+        "FechaEmision":  "28/10/2026",
+        "FechaPago":  "28/11/2026",
+        "NroCheque":  "70747825",
+        "Importe":  "$ 1.135.295,00",
+        "CUIT":  "30710094337",
+        "RazonSocial":  "INDUSTRIAS TECNOMATRIC SRL",
+        "Estado":  "EMITIDO-PENDIENTE"
+    },
+    {
+        "Fila":  7,
+        "FechaEmision":  "28/10/2026",
+        "FechaPago":  "14/11/2026",
+        "NroCheque":  "70747758",
+        "Importe":  "$ 2.200.977,00",
+        "CUIT":  "30709221791",
+        "RazonSocial":  "RESPONTECH SRL",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  8,
+        "FechaEmision":  "28/10/2026",
+        "FechaPago":  "12/11/2026",
+        "NroCheque":  "70727307",
+        "Importe":  "$ 3.991.339,59",
+        "CUIT":  "30707437541",
+        "RazonSocial":  "DOLKIN S.A.",
+        "Estado":  "EMITIDO-PENDIENTE"
+    },
+    {
+        "Fila":  9,
+        "FechaEmision":  "22/10/2026",
+        "FechaPago":  "30/11/2026",
+        "NroCheque":  "70602201",
+        "Importe":  "$ 6.504.006,84",
+        "CUIT":  "30701481670",
+        "RazonSocial":  "CRYSTAL ROCK S.A.",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  10,
+        "FechaEmision":  "22/10/2026",
+        "FechaPago":  "07/11/2026",
+        "NroCheque":  "70602136",
+        "Importe":  "$ 6.504.006,84",
+        "CUIT":  "30701481670",
+        "RazonSocial":  "CRYSTAL ROCK S.A.",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  11,
+        "FechaEmision":  "22/10/2026",
+        "FechaPago":  "29/10/2026",
+        "NroCheque":  "70596946",
+        "Importe":  "$ 3.824.041,65",
+        "CUIT":  "33708547749",
+        "RazonSocial":  "MENAJE EL SIGLO SRL",
+        "Estado":  "DEPOSITADO"
+    },
+    {
+        "Fila":  12,
+        "FechaEmision":  "21/10/2026",
+        "FechaPago":  "06/11/2026",
+        "NroCheque":  "70584209",
+        "Importe":  "$ 514.765,19",
+        "CUIT":  "30525274450",
+        "RazonSocial":  "FED. ARG.DE EMP. DE COMERCIO Y SERVICIOS",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  13,
+        "FechaEmision":  "21/10/2026",
+        "FechaPago":  "01/12/2026",
+        "NroCheque":  "70584118",
+        "Importe":  "$ 2.468.428,00",
+        "CUIT":  "30714148954",
+        "RazonSocial":  "MILVER SRL",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  14,
+        "FechaEmision":  "02/10/2026",
+        "FechaPago":  "11/11/2026",
+        "NroCheque":  "70167732",
+        "Importe":  "$ 2.730.486,00",
+        "CUIT":  "30687799042",
+        "RazonSocial":  "ELECTROCLICK SA",
+        "Estado":  "ACTIVO-PENDIENTE"
+    },
+    {
+        "Fila":  15,
+        "FechaEmision":  "02/10/2026",
+        "FechaPago":  "31/10/2026",
+        "NroCheque":  "70167434",
+        "Importe":  "$ 3.120.763,00",
+        "CUIT":  "30707032924",
+        "RazonSocial":  "STAR COMPANY S.A.",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  16,
+        "FechaEmision":  "01/10/2026",
+        "FechaPago":  "12/11/2026",
+        "NroCheque":  "70159578",
+        "Importe":  "$ 2.643.503,30",
+        "CUIT":  "30709009245",
+        "RazonSocial":  "INDUSTRIAS PROFILA SA",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  17,
+        "FechaEmision":  "18/09/2026",
+        "FechaPago":  "08/12/2026",
+        "NroCheque":  "69866205",
+        "Importe":  "$ 4.060.437,33",
+        "CUIT":  "30709009245",
+        "RazonSocial":  "INDUSTRIAS PROFILA SA",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  18,
+        "FechaEmision":  "18/09/2026",
+        "FechaPago":  "07/11/2026",
+        "NroCheque":  "69866159",
+        "Importe":  "$ 4.060.437,33",
+        "CUIT":  "30709009245",
+        "RazonSocial":  "INDUSTRIAS PROFILA SA",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  19,
+        "FechaEmision":  "17/09/2026",
+        "FechaPago":  "31/10/2026",
+        "NroCheque":  "69832120",
+        "Importe":  "$ 5.069.874,29",
+        "CUIT":  "30709542695",
+        "RazonSocial":  "DISTRIBUIDORA BRASIM S.A",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  20,
+        "FechaEmision":  "14/09/2026",
+        "FechaPago":  "08/11/2026",
+        "NroCheque":  "69716928",
+        "Importe":  "$ 2.515.928,50",
+        "CUIT":  "30714148954",
+        "RazonSocial":  "MILVER SRL",
+        "Estado":  "ACTIVO"
+    },
+    {
+        "Fila":  21,
+        "FechaEmision":  "14/08/2026",
+        "FechaPago":  "16/11/2026",
+        "NroCheque":  "69063854",
+        "Importe":  "$ 426.521,32",
+        "CUIT":  "30517060018",
+        "RazonSocial":  "CINCAM S A C I F A E I",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  22,
+        "FechaEmision":  "12/08/2026",
+        "FechaPago":  "31/12/2026",
+        "NroCheque":  "69011343",
+        "Importe":  "$ 4.579.060,00",
+        "CUIT":  "30701481670",
+        "RazonSocial":  "CRYSTAL ROCK S.A.",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  23,
+        "FechaEmision":  "12/08/2026",
+        "FechaPago":  "30/11/2026",
+        "NroCheque":  "69011266",
+        "Importe":  "$ 4.579.060,00",
+        "CUIT":  "30701481670",
+        "RazonSocial":  "CRYSTAL ROCK S.A.",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  24,
+        "FechaEmision":  "12/08/2026",
+        "FechaPago":  "31/10/2026",
+        "NroCheque":  "69011209",
+        "Importe":  "$ 4.579.060,00",
+        "CUIT":  "30701481670",
+        "RazonSocial":  "CRYSTAL ROCK S.A.",
+        "Estado":  "CUSTODIA"
+    },
+    {
+        "Fila":  25,
+        "FechaEmision":  "06/08/2026",
+        "FechaPago":  "16/11/2026",
+        "NroCheque":  "68881036",
+        "Importe":  "$ 1.583.447,57",
+        "CUIT":  "30517060018",
+        "RazonSocial":  "CINCAM S A C I F A E I",
+        "Estado":  "CUSTODIA"
+    }
+]
