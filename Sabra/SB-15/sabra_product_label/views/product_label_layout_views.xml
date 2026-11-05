@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_label_layout_form_inherit_sabra" model="ir.ui.view">
+        <field name="name">product.label.layout.form.inherit.sabra</field>
+        <field name="model">product.label.layout</field>
+        <field name="inherit_id" ref="product.product_label_layout_form"/>
+        <field name="arch" type="xml">
+            <!-- Renombrar visualmente la lista estándar para aclarar que es la minorista -->
+            <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                <attribute name="string">Lista Minorista</attribute>
+            </xpath>
+            <!-- Insertar Lista Mayorista, Proveedor Principal y opción de impresión -->
+            <xpath expr="//field[@name='pricelist_id']" position="after">
+                <field name="wholesale_pricelist_id" 
+                       options="{'no_create': True, 'no_open': True}"
+                       placeholder="Seleccionar lista mayorista..."/>
+                <field name="main_seller_id" 
+                       readonly="1" 
+                       invisible="not main_seller_id"/>
+                <field name="print_vendor"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

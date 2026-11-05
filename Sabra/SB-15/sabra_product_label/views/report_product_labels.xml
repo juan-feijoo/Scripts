@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Herencia de la plantilla de etiqueta simple 2x7 para Sabra -->
+    <template id="report_simple_label2x7_inherit_sabra" inherit_id="product.report_simple_label2x7">
+        <xpath expr="//td" position="replace">
+            <t t-set="barcode_size" t-value="'width:33mm;height:12mm'"/>
+            <t t-set="table_style" t-value="'width:97mm;height:37.1mm;' + (table_style or '')"/>
+            
+            <td t-att-style="make_invisible and 'visibility:hidden;'">
+                <!-- Variables de Datos y Proveedor (compatible tanto con product.template como con product.product) -->
+                <t t-set="is_tmpl" t-value="product._name == 'product.template'"/>
+                <t t-set="prod_variant" t-value="product.product_variant_id if is_tmpl and product.product_variant_id else product"/>
+                <t t-set="seller" t-value="product.seller_ids and product.seller_ids[0]"/>
+                <t t-set="currency" t-value="(pricelist and pricelist.currency_id) or product.currency_id or env.company.currency_id"/>
+                <t t-set="show_vendor" t-value="env.context.get('print_vendor', True) if env.context.get('print_vendor') is not None else (data.get('print_vendor', True) if data else True)"/>
+
+                <!-- 1. CÁLCULO PRECIO MINORISTA CON IVA -->
+                <t t-set="pl_min" t-value="pricelist or (data and data.get('pricelist_id') and env['product.pricelist'].browse(data['pricelist_id'])) or env['product.pricelist'].browse(5)"/>
+                <t t-set="price_min_base" t-value="pl_min._get_product_price(prod_variant, 1.0, currency=pl_min.currency_id or product.currency_id) if pl_min else product.list_price"/>
+                <t t-set="taxes_min" t-value="product.taxes_id.compute_all(price_min_base, product=prod_variant, partner=False) if product.taxes_id else {'total_included': price_min_base}"/>
+                <t t-set="price_min_inc" t-value="taxes_min['total_included']"/>
+
+                <!-- 2. CÁLCULO PRECIO MAYORISTA CON IVA -->
+                <t t-set="pl_may_id" t-value="env.context.get('wholesale_pricelist_id') or (data and data.get('wholesale_pricelist_id'))"/>
+                <t t-set="pl_may" t-value="env['product.pricelist'].browse(pl_may_id) if pl_may_id else False"/>
+                <t t-if="not pl_may or not pl_may.exists()">
+                    <!-- Fallback: toma la lista 7 (MAYORISTA) o busca por nombre -->
+                    <t t-set="pl_may" t-value="env['product.pricelist'].browse(7) if env['product.pricelist'].browse(7).exists() else env['product.pricelist'].search([('name', 'ilike', 'mayorista')], limit=1)"/>
+                </t>
+                <t t-set="price_may_base" t-value="pl_may._get_product_price(prod_variant, 1.0, currency=pl_may.currency_id or product.currency_id) if pl_may else price_min_base"/>
+                <t t-set="taxes_may" t-value="product.taxes_id.compute_all(price_may_base, product=prod_variant, partner=False) if product.taxes_id else {'total_included': price_may_base}"/>
+                <t t-set="price_may_inc" t-value="taxes_may['total_included']"/>
+
+                <!-- Contenedor de la celda de la etiqueta 2x7 -->
+                <div class="o_label_full" t-att-style="table_style" style="box-sizing: border-box; padding: 2mm 2.5mm; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                    
+                    <!-- 1. Encabezado: Nombre del Producto (hasta 2 líneas, sin romper altura) -->
+                    <div style="font-weight: 700; font-size: 8pt; line-height: 1.15; height: 2.3em; overflow: hidden; text-overflow: ellipsis; margin-bottom: 1.5mm; color: #000;">
+                        <strong t-field="product.display_name"/>
+                    </div>
+
+                    <!-- 2. Cuerpo: Distribución en 2 Columnas -->
+                    <table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+                        <tr>
+                            <!-- Columna Izquierda (56%): Proveedor, Ref Interna y Código de Barras -->
+                            <td style="width: 56%; vertical-align: top; padding-right: 2mm;">
+                                <!-- Proveedor Principal -->
+                                <t t-if="seller and show_vendor">
+                                    <div style="font-size: 6.5pt; color: #333; line-height: 1.1; margin-bottom: 0.8mm; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <span style="font-weight: 700;">Prov:</span> 
+                                        <span t-esc="seller.partner_id.name[:18]"/>
+                                        <t t-if="seller.product_code">
+                                            (<span t-esc="seller.product_code"/>)
+                                        </t>
+                                    </div>
+                                </t>
+                                <!-- Código de Artículo / Referencia Interna -->
+                                <div t-if="product.default_code" style="font-size: 6.8pt; font-weight: 700; color: #222; margin-bottom: 0.8mm;">
+                                    Art: <span t-field="product.default_code"/>
+                                </div>
+                                <!-- Código de Barras -->
+                                <t t-if="barcode">
+                                    <div style="margin-top: 0.5mm;">
+                                        <div t-out="barcode" t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': barcode_size}"/>
+                                        <div style="font-size: 6.2pt; text-align: center; color: #444;" t-out="barcode"/>
+                                    </div>
+                                </t>
+                            </td>
+
+                            <!-- Columna Derecha (44%): Precios Minorista y Mayorista con IVA -->
+                            <td style="width: 44%; vertical-align: top; text-align: right; border-left: 1px dashed #bbb; padding-left: 2mm;">
+                                <!-- Precio Minorista -->
+                                <div style="margin-bottom: 2mm;">
+                                    <div style="font-size: 5.8pt; font-weight: 700; text-transform: uppercase; color: #555; line-height: 1;">
+                                        P. Minorista <span style="font-size: 4.8pt; font-weight: normal;">(IVA inc.)</span>
+                                    </div>
+                                    <div style="font-size: 10.5pt; font-weight: 800; color: #000; line-height: 1.1;">
+                                        <span t-out="price_min_inc" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </div>
+                                </div>
+
+                                <!-- Precio Mayorista -->
+                                <div>
+                                    <div style="font-size: 5.8pt; font-weight: 700; text-transform: uppercase; color: #003366; line-height: 1;">
+                                        P. Mayorista <span style="font-size: 4.8pt; font-weight: normal;">(IVA inc.)</span>
+                                    </div>
+                                    <div style="font-size: 9.5pt; font-weight: 700; color: #003366; line-height: 1.1;">
+                                        <span t-out="price_may_inc" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </div>
+                                </div>
+
+                                <!-- Contenido adicional si fue ingresado en el wizard -->
+                                <div t-if="extra_html" style="font-size: 5.5pt; color: #666; margin-top: 1mm; line-height: 1;">
+                                    <t t-out="extra_html"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+        </xpath>
+    </template>
+</odoo>
