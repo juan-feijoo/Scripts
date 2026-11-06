@@ -1,0 +1,94 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 16:09:16,237 321 WARNING eyelitcentro-staging-41394946 odoo.modules.module: Missing `license` key in manifest for 'odoo-mod-pricelist-validation', defaulting to LGPL-3 
+2026-11-06 16:09:18,858 321 WARNING eyelitcentro-staging-41394946 py.warnings: /home/odoo/src/odoo/odoo/api.py:484: DeprecationWarning: The model odoo.addons.odoo-mod-pricelist-validation.models.product_pricelist_item is not overriding the create method in batch
+  File "/home/odoo/src/odoo/odoo-bin", line 8, in <module>
+    odoo.cli.main()
+  File "/home/odoo/src/odoo/odoo/cli/command.py", line 76, in main
+    o.run(args)
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 130, in run
+    self.shell(config['db_name'])
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 112, in shell
+    registry = Registry(dbname)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 95, in __new__
+    return cls.new(db_name)
+  File "/usr/lib/python3/dist-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/odoo/src/odoo/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 118, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 485, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/odoo/src/odoo/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/__init__.py", line 1, in <module>
+    from . import models
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/__init__.py", line 1, in <module>
+    from . import product_pricelist_item
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 4, in <module>
+    class ProductPricelistItem(models.Model):
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 7, in ProductPricelistItem
+    @api.model
+  File "/home/odoo/src/odoo/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/odoo/src/odoo/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+
+====================================================================================================
+01 - DIAGNÓSTICO PREVIO DE PRODUCTOS, STOCK, TPV Y PRECIOS
+====================================================================================================
+
+--- 1. Catálogo Actual ----------------------------------------------------------------------------
+Total productos activos: 11687
+Total productos archivados: 20
+Total plantillas activas: 11687
+Productos con estructura Eyelit (con punto): 11659
+Productos especiales (sin punto / servicios): 28
+
+--- 2. Stock Físico Actual (stock.quant) ----------------------------------------------------------
+Total quants activos con stock != 0: 2953
+Total productos distintos con stock: 1195
+Total unidades físicas globales: 0.00
+
+Distribución por ubicación:
+  - Partners/Customers: 2,068.00 unidades
+  - Partners/Vendors: -5,079.00 unidades
+  - Virtual Locations/Inventory adjustment: 84.00 unidades
+  - WH/Existencias: 2,927.00 unidades
+
+--- 3. Categorías de Punto de Venta (pos.category) ------------------------------------------------
+Categorías de TPV existentes: 9
+  - [ID 1] Upper body: 6547 productos asociados
+  - [ID 8] Boxers: 4631 productos asociados
+  - [ID 9] Slips: 1698 productos asociados
+  - [ID 10] Femenina: 249 productos asociados
+  - [ID 3] Others: 5071 productos asociados
+  - [ID 4] Camisetas y Remeras: 1561 productos asociados
+  - [ID 5] Medias: 356 productos asociados
+  - [ID 6] Pantalones: 478 productos asociados
+  - [ID 7] Pijamas: 2111 productos asociados
+
+--- 4. Cajas Registradoras (pos.config) -----------------------------------------------------------
+  - Caja 'Caja Registradora': limit_categories=True | Categorías permitidas (0): []...
+
+--- 5. Listas de Precios Existentes ---------------------------------------------------------------
+  - [ID 4440] 'Lista Precios AR 2' (ARS): 11637 reglas activas
+  - [ID 4448] 'Tarjetas de crédito' (ARS): 1 reglas activas
+  - [ID 4449] 'Lista Cyber Monday' (ARS): 11592 reglas activas
+
+--- 6. Estado de Sesiones de TPV (pos.session) ----------------------------------------------------
+Sesiones de TPV abiertas detectadas: 1
+  [!] Sesión [ID 503] 'POS/00357' abierta por 'Administrator' (Estado: opened)
+      NOTA: Las sesiones abiertas cargan el catálogo en el navegador; requerirán Ctrl+F5 o reapertura tras migrar.
+
+--- 7. Esquema SQL de stock_quant -----------------------------------------------------------------
+Columna 'product_tmpl_id' presente en tabla stock_quant: False
+
+====================================================================================================
+[✓] Diagnóstico finalizado exitosamente.
+====================================================================================================

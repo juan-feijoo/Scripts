@@ -17,6 +17,7 @@
                 <field name="main_seller_id" 
                        readonly="1" 
                        invisible="not main_seller_id"/>
+                <field name="round_wholesale"/>
                 <field name="print_vendor"/>
             </xpath>
         </field>

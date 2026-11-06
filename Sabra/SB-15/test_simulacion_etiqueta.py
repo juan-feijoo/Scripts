@@ -32,9 +32,9 @@ if not products:
 
 currency = env.company.currency_id
 
-print("\n" + "-" * 80)
-print(f"{'ARTÍCULO':<15} | {'PROVEEDOR':<22} | {'MIN. BASE':<10} | {'MIN. C/IVA':<10} | {'MAY. C/IVA':<10}")
-print("-" * 80)
+print("\n" + "-" * 105)
+print(f"{'ARTÍCULO':<15} | {'PROVEEDOR':<22} | {'MIN. BASE':<10} | {'MIN. C/IVA':<10} | {'MAY. RAW':<11} | {'MAY. REDONDEO ($10)':<20}")
+print("-" * 105)
 
 for p in products:
     seller = (p.seller_ids and p.seller_ids[0]) or (p.product_tmpl_id.seller_ids and p.product_tmpl_id.seller_ids[0])
@@ -50,13 +50,15 @@ for p in products:
     # Mayorista
     p_may_base = pl_mayorista._get_product_price(p, 1.0, currency=currency) if pl_mayorista else p_min_base
     t_may = p.taxes_id.compute_all(p_may_base, product=p, partner=False) if p.taxes_id else {'total_included': p_may_base}
-    p_may_inc = t_may['total_included']
+    p_may_inc_raw = t_may['total_included']
+    # Redondeo Opción 1: A la decena ($10) con IVA incluido
+    p_may_inc_rounded = round(p_may_inc_raw / 10.0) * 10
 
     code = (p.default_code or p.barcode or 'S/C')[:14]
-    print(f"{code:<15} | {vendor_name:<22} | ${p_min_base:>9.2f} | ${p_min_inc:>9.2f} | ${p_may_inc:>9.2f}")
+    print(f"{code:<15} | {vendor_name:<22} | ${p_min_base:>9.2f} | ${p_min_inc:>9.2f} | ${p_may_inc_raw:>10.2f} | ${p_may_inc_rounded:>18.2f}")
 
-print("-" * 80)
+print("-" * 105)
 print("\nVerificación de resultado:")
-print("  - Los precios calculados con IVA incluido reflejan el monto final de góndola / punto de venta.")
+print("  - 'MAY. REDONDEO ($10)' elimina los centavos fraccionarios (ej. .50, .60, .80, .70) y deja importes de góndola redondos.")
 print("  - El código o nombre del proveedor principal está resuelto correctamente para cada artículo.")
-print("=" * 80 + "\n")
+print("=" * 105 + "\n")

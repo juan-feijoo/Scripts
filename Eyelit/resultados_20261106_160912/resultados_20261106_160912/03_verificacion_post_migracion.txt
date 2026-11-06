@@ -1,0 +1,84 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 16:18:32,788 361 WARNING eyelitcentro-staging-41394946 odoo.modules.module: Missing `license` key in manifest for 'odoo-mod-pricelist-validation', defaulting to LGPL-3 
+2026-11-06 16:18:34,631 361 WARNING eyelitcentro-staging-41394946 py.warnings: /home/odoo/src/odoo/odoo/api.py:484: DeprecationWarning: The model odoo.addons.odoo-mod-pricelist-validation.models.product_pricelist_item is not overriding the create method in batch
+  File "/home/odoo/src/odoo/odoo-bin", line 8, in <module>
+    odoo.cli.main()
+  File "/home/odoo/src/odoo/odoo/cli/command.py", line 76, in main
+    o.run(args)
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 130, in run
+    self.shell(config['db_name'])
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 112, in shell
+    registry = Registry(dbname)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 95, in __new__
+    return cls.new(db_name)
+  File "/usr/lib/python3/dist-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/odoo/src/odoo/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 118, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 485, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/odoo/src/odoo/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/__init__.py", line 1, in <module>
+    from . import models
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/__init__.py", line 1, in <module>
+    from . import product_pricelist_item
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 4, in <module>
+    class ProductPricelistItem(models.Model):
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 7, in ProductPricelistItem
+    @api.model
+  File "/home/odoo/src/odoo/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/odoo/src/odoo/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+
+====================================================================================================
+03 - AUDITORÍA Y VERIFICACIÓN POST-MIGRACIÓN
+====================================================================================================
+
+--- 1. Estado de Plantillas y Variantes -----------------------------------------------------------
+Plantillas activas: 11687
+Variantes activas: 11687
+Productos viejos archivados con sufijo _OLD: 0
+
+  [i] INFORMACIÓN: No se detectaron productos archivados con sufijo '_OLD'.
+      La base de datos se encuentra en estado PRE-MIGRACIÓN (o la última ejecución fue en modo DRY_RUN con rollback).
+      Para aplicar la migración y persistir los cambios, ejecute el runner con DRY_RUN=0.
+
+--- 2. Disponibilidad en TPV / POS ----------------------------------------------------------------
+Plantillas disponibles en TPV: 11652 / 11687
+Plantillas en TPV sin categorías asignadas: 7
+  [!] Alerta: Hay 7 plantillas sin categoría de TPV!
+  * TPV 'Caja Registradora': Lista por defecto='Lista Precios AR 2' | Categorías habilitadas=0
+
+--- 3. Stock Físico en Variantes Activas y Plantillas ---------------------------------------------
+Stock físico en ubicaciones internas (En Mano / WH): 2,927.00 unidades (909 quants)
+Balance neto en todas las ubicaciones (incluye partners): 0.00 unidades (2953 quants)
+Total unidades residuales en productos archivados: 0.00 (0 quants)
+  [✓] Cero stock residual en productos archivados.
+  [✓] En Odoo 18 'product_tmpl_id' es un campo relacionado en stock.quant (resuelto dinámicamente vía product_id.product_tmpl_id).
+
+Comparación con snapshot previo (1195 productos con stock inicial):
+  - Stock interno inicial en snapshot: 2,927.00
+  - Stock interno actual en variantes: 2,927.00
+  [✓] ¡STOCK INTERNO (WH/EXISTENCIAS) EXACTO AL 100%!
+  - Balance neto global inicial en snapshot: 0.00
+  - Balance neto global actual en variantes: 0.00
+  [✓] ¡BALANCE GLOBAL DE QUANTS EXACTO AL 100%!
+
+--- 4. Lista de Precios con Variantes -------------------------------------------------------------
+  [!] No se encontró la 'Lista de Precios con Variantes'.
+
+--- 5. Sesiones de TPV ----------------------------------------------------------------------------
+  [!] Hay 1 sesiones abiertas que requieren recarga (Ctrl+F5).
+
+====================================================================================================
+[✓] Verificación post-migración finalizada.
+====================================================================================================

@@ -1,0 +1,15 @@
+Fecha: Fri Nov  6 06:26:06 PM UTC 2026
+Host: capp13
+DB: sabrabazar-staging-41256167
+
+### odoo-bin --version
+Odoo Server 19.0
+
+### src/user
+total 12
+drwxr-xr-x 1 odoo odoo   33 Oct  7 20:31 .
+drwxr-xr-x 6 odoo odoo   62 Oct  7 20:31 ..
+-rw-r--r-- 1 odoo odoo  133 Nov  4 19:29 .git
+-rw-r--r-- 1 odoo odoo 1217 Oct 26 13:53 .gitmodules
+drwxr-xr-x 1 odoo odoo   50 Nov  5 13:20 Outsource-Argentina
+-rw-r--r-- 1 odoo odoo   12 Oct 26 13:53 README.md

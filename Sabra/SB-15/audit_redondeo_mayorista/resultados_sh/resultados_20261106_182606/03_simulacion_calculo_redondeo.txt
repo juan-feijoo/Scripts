@@ -1,0 +1,31 @@
+
+====================================================================================================
+03 - SIMULACIÓN DE CÁLCULO MAYORISTA Y ESTRATEGIAS DE REDONDEO (JORGE FADY SABRA Y HEKMAT SABRA S.H.)
+====================================================================================================
+Lista Minorista en uso : [ID: 5] Lista ARS
+Lista Mayorista en uso : [ID: 7] MAYORISTA
+
+--- TABLA COMPARATIVA DE CÁLCULO Y ALTERNATIVAS DE REDONDEO ---------------------------------------
+Explicación de columnas:
+  - LIST PRICE    : Precio de lista en la ficha del producto.
+  - MIN. C/IVA    : Precio minorista final (con impuestos).
+  - MAY. BASE     : Precio devuelto por la regla mayorista (neto sin IVA).
+  - MAY. ACTUAL   : Precio mayorista con IVA actual (con sus decimales).
+  - REDOND. $1    : Redondeo al entero más cercano (sin centavos).
+  - REDOND. $10   : Redondeo a la decena más cercana.
+  - CEIL $10      : Redondeo a la decena siempre hacia arriba.
+  - REDOND. $50   : Redondeo al múltiplo de $50.
+-----------------------------------------------------------------------------------------------------------------------------
+CÓDIGO         | PRODUCTO             | LIST PRICE |  MIN C/IVA |   MAY BASE |   MAY ACTUAL |     RED $1 |    RED $10 |   CEIL $10 |    RED $50
+-----------------------------------------------------------------------------------------------------------------------------
+101500700374   | HIELERA 12 CM ACERO  |       1.00 |    2950.00 |    2121.08 |    2566.5000 |    2566.00 |    2570.00 |    2570.00 |    2550.00
+1809           | 6 VASOS IRUPEY 6 PLA |       1.00 |   10480.00 |    7535.21 |    9117.6000 |    9118.00 |    9120.00 |    9120.00 |    9100.00
+21819          | 4 SET ENSALADERA Y C |       1.00 |   23100.00 |   16609.09 |   20097.0000 |   20097.00 |   20100.00 |   20100.00 |   20100.00
+6988776231993  | ABRELATA MARIPOSA CR |       1.00 |    3240.00 |    2329.59 |    2818.8000 |    2819.00 |    2820.00 |    2820.00 |    2800.00
+7795587005106  | ABRELATA UÑA CROMADO |       1.00 |    1309.99 |     941.90 |    1139.7000 |    1140.00 |    1140.00 |    1140.00 |    1150.00
+-----------------------------------------------------------------------------------------------------------------------------
+
+Observaciones sobre el cálculo:
+1. Si 'MAY BASE' no tiene centavos pero 'MAY ACTUAL' sí, los centavos provienen de la alícuota de IVA (ej. 21%% sobre una base impar).
+2. Si 'MAY BASE' ya tiene centavos, la regla de la lista de precios no tiene configurado 'price_round' (método de redondeo) o tiene un porcentaje fraccionario.
+3. Si la empresa busca precios comerciales limpios en la etiqueta, la solución más robusta depende de si se quiere redondear antes o después de impuestos.

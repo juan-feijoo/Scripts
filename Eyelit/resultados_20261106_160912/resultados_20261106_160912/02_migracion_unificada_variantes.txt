@@ -1,0 +1,104 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 16:09:25,088 330 WARNING eyelitcentro-staging-41394946 odoo.modules.module: Missing `license` key in manifest for 'odoo-mod-pricelist-validation', defaulting to LGPL-3 
+2026-11-06 16:09:27,152 330 WARNING eyelitcentro-staging-41394946 py.warnings: /home/odoo/src/odoo/odoo/api.py:484: DeprecationWarning: The model odoo.addons.odoo-mod-pricelist-validation.models.product_pricelist_item is not overriding the create method in batch
+  File "/home/odoo/src/odoo/odoo-bin", line 8, in <module>
+    odoo.cli.main()
+  File "/home/odoo/src/odoo/odoo/cli/command.py", line 76, in main
+    o.run(args)
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 130, in run
+    self.shell(config['db_name'])
+  File "/home/odoo/src/odoo/odoo/cli/shell.py", line 112, in shell
+    registry = Registry(dbname)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 95, in __new__
+    return cls.new(db_name)
+  File "/usr/lib/python3/dist-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/odoo/src/odoo/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/odoo/src/odoo/odoo/modules/registry.py", line 118, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 485, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/odoo/src/odoo/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/odoo/src/odoo/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/__init__.py", line 1, in <module>
+    from . import models
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/__init__.py", line 1, in <module>
+    from . import product_pricelist_item
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 4, in <module>
+    class ProductPricelistItem(models.Model):
+  File "/home/odoo/src/user/Outsource-Argentina/odoo-mod-pricelist-validation/models/product_pricelist_item.py", line 7, in ProductPricelistItem
+    @api.model
+  File "/home/odoo/src/odoo/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/odoo/src/odoo/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+
+====================================================================================================
+02 - EJECUCIÓN DEL PIPELINE UNIFICADO DE MIGRACIÓN
+====================================================================================================
+[*] MODO EJECUCIÓN: *** SIMULACIÓN DRY-RUN (ROLLBACK) ***
+[*] BASE DE DATOS: eyelitcentro-staging-41394946
+[*] COMPAÑÍA: Eyelit (ID: 1)
+[*] LÍMITE: TODAS LAS FAMILIAS
+
+--- 1. Configuración de Atributos Globales --------------------------------------------------------
+
+--- 2. Categorías de TPV y Producto ---------------------------------------------------------------
+
+--- 3. Escaneo y Agrupación del Catálogo ----------------------------------------------------------
+Total familias detectadas: 807 (11659 productos)
+Productos especiales omitidos: 28
+
+--- 4. Extracción de Stock a la Fecha antes de Archivar -------------------------------------------
+Quants con stock a trasladar: 2953
+Total unidades físicas en existencias internas (WH): 2,927.00
+Total balance neto en todas las ubicaciones (incluye partners): 0.00
+Respaldo de stock guardado en /tmp/stock_snapshot_eyelit_pre_migration.json
+
+--- 5. Liberación de Códigos de Barra y Archivado -------------------------------------------------
+Liberados barcodes y archivados 11659 productos viejos.
+
+--- 6. Creación Nativa de Plantillas y Variantes (ORM) --------------------------------------------
+  Progreso: 100/807 plantillas...
+  Progreso: 200/807 plantillas...
+  Progreso: 300/807 plantillas...
+  Progreso: 400/807 plantillas...
+  Progreso: 500/807 plantillas...
+  Progreso: 600/807 plantillas...
+  Progreso: 700/807 plantillas...
+  Progreso: 800/807 plantillas...
+  Progreso: 807/807 plantillas...
+
+--- 7. Traslado de Stock Físico a Nuevas Variantes ------------------------------------------------
+Quants trasladados/consolidados: 2953 (Grupos consolidados: 0)
+Coincidencias exactas de stock interno (En Mano): 1195/1195 (Diferencias: 0)
+Total unidades físicas en nuevas variantes (WH): 2,927.00
+
+--- 8. Creación de Lista de Precios con Variantes -------------------------------------------------
+  + Creada lista de precios: 'Lista de Precios con Variantes' (ID 4457)
+  * Remapeadas 47290 reglas por plantilla hacia nuevas plantillas.
+Reglas por variante creadas: 11659
+
+--- 9. Sincronización de Cajas de TPV -------------------------------------------------------------
+  [!] Aviso: No se pudo actualizar TPV 'Caja Registradora' vía ORM (Unable to modify this PoS Configuration because you can't modify Restrict Categories while a session is open.).
+  [✓] TPV 'Caja Registradora' sincronizado exitosamente vía SQL directo (sesión abierta respetada).
+
+[!] AVISO: 1 sesiones de TPV abiertas:
+    - Sesión [ID 503] 'POS/00357' (Usuario: Administrator)
+    * Los cajeros deberán recargar la página (Ctrl+F5) o cerrar/reabrir sesión para actualizar catálogo.
+
+--- RESUMEN DE OPERACIÓN --------------------------------------------------------------------------
+Plantillas maestras creadas: 807
+Variantes activas creadas: 11659
+Productos viejos archivados: 11659
+Stock interno migrado (WH): 2,927.00 unidades
+Reglas de precios creadas: 11659
+
+[✓] MODO DRY-RUN: ROLLBACK TO SAVEPOINT EJECUTADO CON ÉXITO.
+    No se alteró la base de datos.

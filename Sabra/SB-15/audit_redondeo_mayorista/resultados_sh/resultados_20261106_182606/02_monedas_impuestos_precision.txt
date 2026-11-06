@@ -1,0 +1,42 @@
+
+====================================================================================================
+02 - CONFIGURACIÓN DE MONEDA, PRECISIÓN DECIMAL E IMPUESTOS (JORGE FADY SABRA Y HEKMAT SABRA S.H.)
+====================================================================================================
+
+--- 1. Monedas (res.currency) ---------------------------------------------------------------------
+  Moneda: ARS ($) [ID: 19]
+    - Redondeo (rounding): 0.01
+    - Lugares decimales (decimal_places): 2
+    - Posición del símbolo: before
+    - Activa: True
+    - Tasa actual: 1.0
+
+  Moneda: USD (USD) [ID: 1]
+    - Redondeo (rounding): 0.01
+    - Lugares decimales (decimal_places): 2
+    - Posición del símbolo: before
+    - Activa: True
+    - Tasa actual: 1.0
+
+
+--- 2. Precisión Decimal (decimal.precision) ------------------------------------------------------
+  - Product Unit                   : 2 dígitos
+  - Percentage Analytic            : 2 dígitos
+  - Product Price                  : 2 dígitos
+  - Discount                       : 2 dígitos
+  - Stock Weight                   : 2 dígitos
+  - Volume                         : 2 dígitos
+  - Payment Terms                  : 6 dígitos
+
+--- 3. Configuración de Redondeo en res.company ---------------------------------------------------
+  - Compañía: JORGE FADY SABRA Y HEKMAT SABRA S.H. [ID: 1]
+  - Moneda principal: ARS
+  - Método de redondeo de impuestos (tax_calculation_rounding_method): round_globally
+
+--- 4. Impuestos de Venta (account.tax) -----------------------------------------------------------
+  [ID: 249] VAT 21%                             | Alícuota:  21.00% | Tipo: percent | ¿Incluido en precio? (price_include): False
+  [ID: 241] 0% NT                               | Alícuota:   0.00% | Tipo: percent | ¿Incluido en precio? (price_include): False
+  [ID: 243] 0% EXEMPT                           | Alícuota:   0.00% | Tipo: percent | ¿Incluido en precio? (price_include): False
+  [ID: 245] VAT 0%                              | Alícuota:   0.00% | Tipo: percent | ¿Incluido en precio? (price_include): False
+  [ID: 247] VAT 10.5%                           | Alícuota:  10.50% | Tipo: percent | ¿Incluido en precio? (price_include): False
+  [ID: 251] VAT 27%                             | Alícuota:  27.00% | Tipo: percent | ¿Incluido en precio? (price_include): False

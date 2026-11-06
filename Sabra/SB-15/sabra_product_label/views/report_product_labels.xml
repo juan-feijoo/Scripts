@@ -29,7 +29,11 @@
                 </t>
                 <t t-set="price_may_base" t-value="pl_may._get_product_price(prod_variant, 1.0, currency=pl_may.currency_id or product.currency_id) if pl_may else price_min_base"/>
                 <t t-set="taxes_may" t-value="product.taxes_id.compute_all(price_may_base, product=prod_variant, partner=False) if product.taxes_id else {'total_included': price_may_base}"/>
-                <t t-set="price_may_inc" t-value="taxes_may['total_included']"/>
+                
+                <!-- Redondeo Comercial Opción 1: Redondeo a la decena ($10) con IVA incluido (ej: $2.566,50 -> $2.570,00) -->
+                <t t-set="should_round" t-value="env.context.get('round_wholesale', True) if env.context.get('round_wholesale') is not None else (data.get('round_wholesale', True) if data else True)"/>
+                <t t-set="price_may_raw" t-value="taxes_may['total_included']"/>
+                <t t-set="price_may_inc" t-value="round(price_may_raw / 10.0) * 10 if should_round else price_may_raw"/>
 
                 <!-- Contenedor de la celda de la etiqueta 2x7 -->
                 <div class="o_label_full" t-att-style="table_style" style="box-sizing: border-box; padding: 2mm 2.5mm; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">

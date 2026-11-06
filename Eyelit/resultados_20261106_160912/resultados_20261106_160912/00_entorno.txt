@@ -1,0 +1,15 @@
+Fecha: Fri Nov  6 04:09:12 PM UTC 2026
+Host: ampp283
+DB: eyelitcentro-staging-41394946
+
+### odoo-bin --version
+Odoo Server 18.0
+
+### src/user
+total 16
+drwxr-xr-x  1 odoo odoo    6 Sep 29  2025 .
+drwxr-xr-x  6 odoo odoo   62 Sep 29  2025 ..
+-rw-r--r--  1 odoo odoo  138 Nov  6 13:59 .git
+-rw-r--r--  1 odoo odoo 2111 Nov  6 13:59 .gitmodules
+drwxr-xr-x 12 odoo odoo 4096 Nov  6 13:59 Outsource-Argentina
+-rw-r--r--  1 odoo odoo   14 Nov  6 13:59 README.md

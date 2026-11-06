@@ -14,6 +14,11 @@ class ProductLabelLayout(models.TransientModel):
         default=True,
         help="Si está activo, incluye el nombre/código del proveedor principal en la etiqueta impresa.",
     )
+    round_wholesale = fields.Boolean(
+        string="Redondear Mayorista a Decenas ($10)",
+        default=True,
+        help="Si está activo, redondea el precio mayorista con IVA a la decena más cercana (ej: $ 2.566,50 -> $ 2.570).",
+    )
     main_seller_id = fields.Many2one(
         comodel_name='res.partner',
         string="Proveedor Principal",
@@ -74,6 +79,7 @@ class ProductLabelLayout(models.TransientModel):
         data.update({
             'wholesale_pricelist_id': self.wholesale_pricelist_id.id if self.wholesale_pricelist_id else False,
             'print_vendor': self.print_vendor,
+            'round_wholesale': self.round_wholesale,
         })
         return xml_id, data
 
@@ -82,6 +88,7 @@ class ProductLabelLayout(models.TransientModel):
         if self.wholesale_pricelist_id:
             extra_ctx['wholesale_pricelist_id'] = self.wholesale_pricelist_id.id
         extra_ctx['print_vendor'] = self.print_vendor
+        extra_ctx['round_wholesale'] = self.round_wholesale
         
         action = super(ProductLabelLayout, self.with_context(**extra_ctx)).process()
         if isinstance(action, dict):
