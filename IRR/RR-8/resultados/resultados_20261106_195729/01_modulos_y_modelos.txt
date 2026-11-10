@@ -1,0 +1,82 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 19:57:30,937 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'reporte_diario', defaulting to LGPL-3 
+2026-11-06 19:57:30,940 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'purchase_setting_rr', defaulting to LGPL-3 
+2026-11-06 19:57:30,941 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'last_payment_date', defaulting to LGPL-3 
+2026-11-06 19:57:30,947 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'sale_validity_payment_term', defaulting to LGPL-3 
+2026-11-06 19:57:30,948 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'custom-tags-abm', defaulting to LGPL-3 
+2026-11-06 19:57:30,949 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'perc_on_tax_report', defaulting to LGPL-3 
+2026-11-06 19:57:31,025 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'proveedores_mora', defaulting to LGPL-3 
+2026-11-06 19:57:31,031 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'morosidad_recordatorio', defaulting to LGPL-3 
+2026-11-06 19:57:31,032 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'clientes_mora', defaulting to LGPL-3 
+2026-11-06 19:57:32,972 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Field morosidad.proveedor.currency_id: unknown parameter 'invisible', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-06 19:57:32,987 143 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Translated stored related field (x_repuestos_de_servici.x_name) will not be computed correctly in all languages 
+
+====================================================================================================
+01 - MÓDULOS INSTALADOS Y MODELOS DE CHEQUES (RUSSO MOSCHINO RAMON SALVADOR)
+====================================================================================================
+
+--- Módulos relacionados a cheques y localización argentina ---------------------------------------
+  account_accountant_check_printing   18.0.1.0     [OFICIAL]            Odoo S.A.
+  account_accountant_ux               18.0.1.8.0   [CUSTOM/TERCERO]     ADHOC SA
+  account_batch_payment_ux            18.0.1.1.0   [CUSTOM/TERCERO]     ADHOC SA
+  account_check_printing              18.0.1.0     [OFICIAL]            Odoo S.A.
+  account_cleanup_ux                  18.0.1.0.0   [CUSTOM/TERCERO]     Tu Nombre / OutsourceArg
+  account_internal_transfer           18.0.1.6.0   [CUSTOM/TERCERO]     ADHOC SA
+  account_invoice_grouped_services    18.0.1.0.0   [CUSTOM/TERCERO]     Outsource Juan
+  account_payment_multi               18.0.1.1.0   [CUSTOM/TERCERO]     Odoo, ADHOC SA
+  account_payment_pro                 18.0.1.15.0  [CUSTOM/TERCERO]     ADHOC SA
+  account_payment_pro_receiptbook     18.0.1.5.0   [CUSTOM/TERCERO]     ADHOC SA
+  account_ux                          18.0.1.24.0  [CUSTOM/TERCERO]     ADHOC SA
+  accountant_internal_transfer        18.0.1.0.0   [CUSTOM/TERCERO]     ADHOC SA
+  clientes_mora                       18.0.1.0     [CUSTOM/TERCERO]     Tu Nombre
+  descuento_orden_compra              18.0.1.0.0   [CUSTOM/TERCERO]     Tu Empresa
+  fix_odoo18_pay                      18.0.1.0.0   [CUSTOM/TERCERO]     Outsourcec
+  hr_employee_ppe                     18.0.1.0.0   [CUSTOM/TERCERO]     Escodoo, Odoo Community Associ
+  hr_hikvision_attendance             18.0.1.0.1   [CUSTOM/TERCERO]     Emmanuel Perez (EGPerezR)
+  hr_personal_equipment_request       18.0.1.0.0   [CUSTOM/TERCERO]     Creu Blanca, Odoo Community As
+  hr_personal_equipment_stock         18.0.1.0.0   [CUSTOM/TERCERO]     Creu Blanca,Odoo Community Ass
+  invoice_so_link                     18.0.1.0.0   [CUSTOM/TERCERO]     OutSourceArg/Cesar
+  l10n_ar                             18.0.3.7     [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_edi                         18.0.1.1     [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_edi_payment_pro             18.0.1.0.0   [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_edi_ux                      18.0.1.0.0   [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_payment_bundle              18.0.1.8.0   [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_payment_fix                 18.0.1.0.0   [CUSTOM/TERCERO]     
+  l10n_ar_reports                     18.0.1.0     [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_tax                         18.0.1.24.0  [CUSTOM/TERCERO]     ADHOC SA,Odoo Community Associ
+  l10n_ar_ux                          18.0.1.10.0  [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_withholding                 18.0.1.0     [CUSTOM/TERCERO]     ADHOC SA
+  l10n_ar_withholding_accumulated_base 18.0.1.0.0   [CUSTOM/TERCERO]     Juan Feijoo Outsource Arg
+  l10n_latam_base                     18.0.1.0     [OFICIAL]            Odoo S.A., ADHOC SA
+  l10n_latam_check                    18.0.1.0.0   [CUSTOM/TERCERO]     ADHOC SA
+  l10n_latam_check_ux                 18.0.2.11.0  [CUSTOM/TERCERO]     ADHOC SA
+  l10n_latam_invoice_document         18.0.1.1     [CUSTOM/TERCERO]     ADHOC SA
+  l10n_us_check_printing              18.0.1.0     [OFICIAL]            Odoo S.A.
+  l10n_us_hr_payroll_account          18.0.1.0     [CUSTOM/TERCERO]     Odoo
+  last_payment_date                   18.0.1.0     [CUSTOM/TERCERO]     Francisco Cruz
+  morosidad_recordatorio              18.0.1.0     [CUSTOM/TERCERO]     OutsourceArg
+  only_this_journals                  18.0.1.0.0   [CUSTOM/TERCERO]     Joaquin
+  perc_on_tax_report                  18.0.1.0     [CUSTOM/TERCERO]     OutsourceArg
+  picking_multi_secuence_black        18.0.1.0.0   [CUSTOM/TERCERO]     Outsource
+  proveedores_mora                    18.0.1.0     [CUSTOM/TERCERO]     Tu Nombre
+  reporte_diario                      18.0.1.0     [CUSTOM/TERCERO]     Tu Nombre
+  studio_customization                18.0.1.0     [CUSTOM/TERCERO]     RUSSO MOSCHINO RAMON SALVADOR
+  txt_reports                         18.0.1.0.0   [CUSTOM/TERCERO]     OutsourceArg
+  ventas_versiones                    18.0.1.0.0   [CUSTOM/TERCERO]     Tu Nombre
+
+--- Modelos de cheques detectados en el sistema ---------------------------------------------------
+  account.payment               : PRESENTE
+    Campos relevantes: check_amount_in_words, check_manual_sequencing, check_number, l10n_latam_check_warning_msg, l10n_latam_move_check_ids, l10n_latam_move_check_ids_operation_date, l10n_latam_new_check_ids, show_check_number
+    Selección de state: [('draft', 'Draft'), ('in_process', 'In Process'), ('paid', 'Paid'), ('canceled', 'Canceled'), ('rejected', 'Rejected')]
+  account.check                 : NO EXISTE
+  account.third.party.checks    : NO EXISTE
+  l10n_latam.check              : PRESENTE
+    Campos relevantes: check_add_debit_button
+  account.check.operation       : NO EXISTE
+  account.payment.register      : PRESENTE
+    Campos relevantes: l10n_latam_move_check_ids, l10n_latam_new_check_ids
+  account.move                  : PRESENTE
+    Campos relevantes: checked
+    Selección de state: [('draft', 'Draft'), ('posted', 'Posted'), ('cancel', 'Cancelled')]
+  account.move.line             : PRESENTE
+    Campos relevantes: check_number, l10n_latam_check_ids

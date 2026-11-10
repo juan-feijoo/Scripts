@@ -1,0 +1,136 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 19:57:42,487 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'reporte_diario', defaulting to LGPL-3 
+2026-11-06 19:57:42,489 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'purchase_setting_rr', defaulting to LGPL-3 
+2026-11-06 19:57:42,490 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'last_payment_date', defaulting to LGPL-3 
+2026-11-06 19:57:42,494 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'sale_validity_payment_term', defaulting to LGPL-3 
+2026-11-06 19:57:42,495 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'custom-tags-abm', defaulting to LGPL-3 
+2026-11-06 19:57:42,496 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'perc_on_tax_report', defaulting to LGPL-3 
+2026-11-06 19:57:42,562 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'proveedores_mora', defaulting to LGPL-3 
+2026-11-06 19:57:42,568 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'morosidad_recordatorio', defaulting to LGPL-3 
+2026-11-06 19:57:42,569 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'clientes_mora', defaulting to LGPL-3 
+2026-11-06 19:57:44,682 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Field morosidad.proveedor.currency_id: unknown parameter 'invisible', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-06 19:57:44,703 170 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Translated stored related field (x_repuestos_de_servici.x_name) will not be computed correctly in all languages 
+
+====================================================================================================
+04 - CHEQUES RECHAZADOS VS APUNTES CONTABLES Y MAYOR (RUSSO MOSCHINO RAMON SALVADOR)
+====================================================================================================
+
+--- Inspección en account.payment (Cheques de terceros) -------------------------------------------
+Últimos 20 pagos de cheques encontrados:
+  ID=14442  Pago=OP-X 0001-00003737 Cheque=False        Estado=paid         Matched=True  Imp=80551.54   Fecha=2026-11-04 Partner=CENCOSUD S.A.
+  ID=14440  Pago=CSH25/2026/00087 Cheque=False        Estado=paid         Matched=True  Imp=100000.00  Fecha=2026-11-04 Partner=
+  ID=14439  Pago=CART/2026/00954  Cheque=False        Estado=paid         Matched=True  Imp=100000.00  Fecha=2026-11-04 Partner=
+  ID=14438  Pago=OP-XX 0002-00001007 Cheque=False        Estado=paid         Matched=True  Imp=8500.00    Fecha=2026-11-04 Partner=CONSUMIDOR FINAL
+  ID=14437  Pago=CSH3/2026/00083  Cheque=False        Estado=paid         Matched=True  Imp=35000.00   Fecha=2026-11-04 Partner=
+  ID=14436  Pago=CART/2026/00953  Cheque=False        Estado=paid         Matched=True  Imp=35000.00   Fecha=2026-11-04 Partner=
+  ID=14435  Pago=OP-XX 0002-00001006 Cheque=False        Estado=paid         Matched=True  Imp=140000.00  Fecha=2026-11-04 Partner=CLUB DE AUTOS DE COLECCION SALTA
+  ID=14434  Pago=RE-X 0001-00001395 (1) Cheque=False        Estado=paid         Matched=True  Imp=23688371.13 Fecha=2026-11-04 Partner=HIDROTEC S.A.
+  ID=14433  Pago=BNK11/2026/00259 Cheque=False        Estado=paid         Matched=True  Imp=50000.00   Fecha=2026-11-04 Partner=
+  ID=14432  Pago=CART/2026/00952  Cheque=False        Estado=paid         Matched=True  Imp=50000.00   Fecha=2026-11-04 Partner=
+  ID=14431  Pago=RE-X 0001-00001395 Cheque=False        Estado=paid         Matched=True  Imp=0.00       Fecha=2026-11-04 Partner=HIDROTEC S.A.
+  ID=14430  Pago=RE-XX 0002-00000138 Cheque=False        Estado=paid         Matched=True  Imp=520000.00  Fecha=2026-11-04 Partner=CONSUMIDOR FINAL
+  ID=14429  Pago=CJJR/2026/00019  Cheque=False        Estado=paid         Matched=True  Imp=1200000.00 Fecha=2026-11-04 Partner=
+  ID=14428  Pago=CART/2026/00951  Cheque=False        Estado=paid         Matched=True  Imp=1200000.00 Fecha=2026-11-04 Partner=
+  ID=14427  Pago=CSCA/2026/00518  Cheque=False        Estado=paid         Matched=True  Imp=300000.00  Fecha=2026-11-04 Partner=
+  ID=14426  Pago=CJJR1/2026/00134 Cheque=False        Estado=paid         Matched=True  Imp=300000.00  Fecha=2026-11-04 Partner=
+  ID=14425  Pago=CART/2026/00950  Cheque=False        Estado=paid         Matched=True  Imp=120000.00  Fecha=2026-11-04 Partner=
+  ID=14424  Pago=CSCA/2026/00517  Cheque=False        Estado=paid         Matched=True  Imp=120000.00  Fecha=2026-11-04 Partner=
+  ID=14423  Pago=BGAL2/2026/05089 Cheque=False        Estado=in_process   Matched=False Imp=37267905.40 Fecha=2026-11-04 Partner=
+  ID=14422  Pago=CHEQT/2026/00046 Cheque=False        Estado=paid         Matched=True  Imp=37267905.40 Fecha=2026-11-04 Partner=
+
+--- Detalle de los primeros 5 pagos/cheques y sus apuntes contables (Mayor) -----------------------
+
+  -- Pago ID=14442 | Ref=OP-X 0001-00003737 | Cheque=False | Estado=paid | Fecha=2026-11-04
+  check_amount_in_words                         Ochenta Mil Quinientos Cincuenta Y Uno Peso y Cincuenta Y Cuatro Centavos
+  check_manual_sequencing                       False
+  check_number                                  False
+  destination_account_id                        2.1.1.01.010 Suppliers (id=1422)
+  is_internal_transfer                          False
+  is_main_payment                               False
+  is_matched                                    True
+  is_reconciled                                 True
+  is_sent                                       False
+  is_withholding_payment                        False
+  journal_id                                    Caja Sucursal Catamarca (id=3925)
+  l10n_latam_check_warning_msg                  False
+  state                                         paid
+    Asiento contable: OP-X 0001-00003737 (id=35095, state=posted, date=2026-11-04)
+      Línea ID=111052 Cuenta=[1.1.1.01.020] Caja Sucursal Catamarca   Debe=0.00      Haber=80551.54  Match=No
+      Línea ID=111053 Cuenta=[2.1.1.01.010] Suppliers                 Debe=80551.54  Haber=0.00      Match=13448
+        -> Conciliada con crédito: Asiento=FA-A 11301-00001562 Cuenta=2.1.1.01.010 Imp=80551.54 Fecha=2026-11-04
+
+  -- Pago ID=14440 | Ref=CSH25/2026/00087 | Cheque=False | Estado=paid | Fecha=2026-11-04
+  check_amount_in_words                         Cien Mil Peso
+  check_manual_sequencing                       False
+  check_number                                  False
+  destination_account_id                        6.0.00.00.01 Liquidity Transfer (id=357)
+  is_internal_transfer                          True
+  is_main_payment                               False
+  is_matched                                    True
+  is_reconciled                                 True
+  is_sent                                       False
+  is_withholding_payment                        False
+  journal_id                                    Caja RRHH (id=3768)
+  l10n_latam_check_warning_msg                  False
+  state                                         paid
+    Asiento contable: CSH25/2026/00087 (id=35092, state=posted, date=2026-11-04)
+      Línea ID=111040 Cuenta=[1.1.1.01.120] Caja RRHH                 Debe=100000.00 Haber=0.00      Match=No
+      Línea ID=111041 Cuenta=[6.0.00.00.01] Liquidity Transfer        Debe=0.00      Haber=100000.00 Match=13447
+        -> Conciliada con débito: Asiento=CART/2026/00954 Cuenta=6.0.00.00.01 Imp=100000.00 Fecha=2026-11-04
+
+  -- Pago ID=14439 | Ref=CART/2026/00954 | Cheque=False | Estado=paid | Fecha=2026-11-04
+  check_amount_in_words                         Cien Mil Peso
+  check_manual_sequencing                       False
+  check_number                                  False
+  destination_account_id                        6.0.00.00.01 Liquidity Transfer (id=357)
+  is_internal_transfer                          True
+  is_main_payment                               False
+  is_matched                                    True
+  is_reconciled                                 True
+  is_sent                                       False
+  is_withholding_payment                        False
+  journal_id                                    Caja Sucursal Artigas (id=3924)
+  l10n_latam_check_warning_msg                  False
+  state                                         paid
+    Asiento contable: CART/2026/00954 (id=35091, state=posted, date=2026-11-04)
+      Línea ID=111038 Cuenta=[1.1.1.01.010] Caja Sucursal Artigas     Debe=0.00      Haber=100000.00 Match=No
+      Línea ID=111039 Cuenta=[6.0.00.00.01] Liquidity Transfer        Debe=100000.00 Haber=0.00      Match=13447
+        -> Conciliada con crédito: Asiento=CSH25/2026/00087 Cuenta=6.0.00.00.01 Imp=100000.00 Fecha=2026-11-04
+
+  -- Pago ID=14438 | Ref=OP-XX 0002-00001007 | Cheque=False | Estado=paid | Fecha=2026-11-04
+  check_amount_in_words                         Ocho Mil Quinientos Peso
+  check_manual_sequencing                       False
+  check_number                                  False
+  destination_account_id                        2.1.1.01.010 Suppliers (id=1422)
+  is_internal_transfer                          False
+  is_main_payment                               False
+  is_matched                                    True
+  is_reconciled                                 True
+  is_sent                                       False
+  is_withholding_payment                        False
+  journal_id                                    Caja Sucursal Catamarca (id=3925)
+  l10n_latam_check_warning_msg                  False
+  state                                         paid
+    Asiento contable: OP-XX 0002-00001007 (id=35090, state=posted, date=2026-11-04)
+      Línea ID=111036 Cuenta=[1.1.1.01.020] Caja Sucursal Catamarca   Debe=0.00      Haber=8500.00   Match=No
+      Línea ID=111037 Cuenta=[2.1.1.01.010] Suppliers                 Debe=8500.00   Haber=0.00      Match=13446
+        -> Conciliada con crédito: Asiento=CMPC1/2026/11/0009 Cuenta=2.1.1.01.010 Imp=8500.00 Fecha=2026-11-04
+
+  -- Pago ID=14437 | Ref=CSH3/2026/00083 | Cheque=False | Estado=paid | Fecha=2026-11-04
+  check_amount_in_words                         Treinta Y Cinco Mil Peso
+  check_manual_sequencing                       False
+  check_number                                  False
+  destination_account_id                        6.0.00.00.01 Liquidity Transfer (id=357)
+  is_internal_transfer                          True
+  is_main_payment                               False
+  is_matched                                    True
+  is_reconciled                                 True
+  is_sent                                       False
+  is_withholding_payment                        False
+  journal_id                                    Caja Posventa (id=3770)
+  l10n_latam_check_warning_msg                  False
+  state                                         paid
+    Asiento contable: CSH3/2026/00083 (id=35088, state=posted, date=2026-11-04)
+      Línea ID=111032 Cuenta=[1.1.1.01.110] Caja Posventa             Debe=35000.00  Haber=0.00      Match=No
+      Línea ID=111033 Cuenta=[6.0.00.00.01] Liquidity Transfer        Debe=0.00      Haber=35000.00  Match=13445
+        -> Conciliada con débito: Asiento=CART/2026/00953 Cuenta=6.0.00.00.01 Imp=35000.00 Fecha=2026-11-04

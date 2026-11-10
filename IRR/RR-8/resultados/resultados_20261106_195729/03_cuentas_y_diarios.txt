@@ -1,0 +1,427 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-06 19:57:38,571 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'reporte_diario', defaulting to LGPL-3 
+2026-11-06 19:57:38,573 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'purchase_setting_rr', defaulting to LGPL-3 
+2026-11-06 19:57:38,574 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'last_payment_date', defaulting to LGPL-3 
+2026-11-06 19:57:38,578 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'sale_validity_payment_term', defaulting to LGPL-3 
+2026-11-06 19:57:38,579 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'custom-tags-abm', defaulting to LGPL-3 
+2026-11-06 19:57:38,580 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'perc_on_tax_report', defaulting to LGPL-3 
+2026-11-06 19:57:38,645 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'proveedores_mora', defaulting to LGPL-3 
+2026-11-06 19:57:38,651 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'morosidad_recordatorio', defaulting to LGPL-3 
+2026-11-06 19:57:38,651 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.modules.module: Missing `license` key in manifest for 'clientes_mora', defaulting to LGPL-3 
+2026-11-06 19:57:40,598 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Field morosidad.proveedor.currency_id: unknown parameter 'invisible', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-06 19:57:40,612 161 WARNING outsource-argentina-irr-v18-staging-41258611 odoo.fields: Translated stored related field (x_repuestos_de_servici.x_name) will not be computed correctly in all languages 
+
+====================================================================================================
+03 - DIARIOS, CUENTAS CONTABLES Y SALDOS DE CHEQUES (RUSSO MOSCHINO RAMON SALVADOR)
+====================================================================================================
+
+--- Diarios contables de cheques ------------------------------------------------------------------
+  Diario: Bank                           (code=BNK1  , tipo=bank  ) Cuenta def: Bank
+    Métodos entrantes: Manual Payment, Batch Deposit
+  Diario: Bank                           (code=BNK1  , tipo=bank  ) Cuenta def: Banco Galicia Cta Cte $
+    Métodos entrantes: Transferencia, Batch Deposit
+  Diario: Bank                           (code=BNK1  , tipo=bank  ) Cuenta def: Bank
+    Métodos entrantes: Manual Payment, Batch Deposit
+  Diario: Cash                           (code=CSH1  , tipo=cash  ) Cuenta def: Caja Central
+    Métodos entrantes: Efectivo
+  Diario: Caja Moneda Extranjera USD     (code=CSH5  , tipo=cash  ) Cuenta def: Caja Moneda Extranjera USD 
+    Métodos entrantes: Efectivo
+  Diario: Tarjeta de Crédito a Pagar     (code=CSH13 , tipo=bank  ) Cuenta def: 2.1.1.01.024 Tarjetas de Crédito a pagar
+    Métodos entrantes: Pago manual, Depósito por lotes
+  Diario: PRESTAMO SCANIA                (code=BNK16 , tipo=cash  ) Cuenta def: 1.1.5.01.025 Other accounts payable (copia)
+    Métodos entrantes: Pago manual
+  Diario: PRESTAMO SCANIA                (code=BNK6  , tipo=cash  ) Cuenta def: 2.2.3.01.015 Préstamo Banco Galicia (copia)
+    Métodos entrantes: Pago manual, Nuevo cheque de Terceros Existente, Cheque de Terceros Existente
+  Diario: Cash                           (code=CSH1  , tipo=cash  ) Cuenta def: Cash
+    Métodos entrantes: Manual Payment
+  Diario: Cash                           (code=CSH1  , tipo=cash  ) Cuenta def: Cash
+    Métodos entrantes: Manual Payment
+  Diario: Exchange Difference            (code=EXCH  , tipo=general) Cuenta def: N/A
+  Diario: Caja Janet Acosta              (code=JANET , tipo=cash  ) Cuenta def: 1.1.1.01.015 Caja Janet Acosta
+    Métodos entrantes: Pago manual
+  Diario: OSECAC Adiciones Extraordinario a Pagar (code=OSECA , tipo=cash  ) Cuenta def: 2.1.3.05.080 OSECAC Adiciones Extraordinario a Pagar
+    Métodos entrantes: Pago manual
+  Diario: Third Party Checks             (code=CSH2  , tipo=cash  ) Cuenta def: Cheques en Cartera
+    Métodos entrantes: New Third Party Checks, Existing Third Party Checks
+  Diario: SICORE Ganancias retenciones aplicadas a pagar (code=RGASI , tipo=cash  ) Cuenta def: 2.1.3.04.020 Withholding applied to earnings
+    Métodos entrantes: Pago manual
+  Diario: Rejected Third Party Checks    (code=CSH3  , tipo=cash  ) Cuenta def: Cheques Rechazados de Terceros
+    Métodos entrantes: New Third Party Checks, Existing Third Party Checks
+  Diario: Retenciones IIBB Salta         (code=RIIBS , tipo=cash  ) Cuenta def: 1.1.4.02.290 IIBB withholding IIBB Salta incurred
+    Métodos entrantes: Pago manual
+  Diario: Multiple payments              (code=CSH4  , tipo=cash  ) Cuenta def: Multiple payments
+    Métodos entrantes: Payment multiple
+  Diario: Retención Ganancias            (code=RTG   , tipo=cash  ) Cuenta def: 2.1.3.04.070 Retención Ganancias
+    Métodos entrantes: Pago manual
+  Diario: Previsión SAC a Pagar          (code=SACAP , tipo=cash  ) Cuenta def: 2.2.2.01.010 Projected SAC Payable
+    Métodos entrantes: Pago manual
+  Diario: Sueldos a Pagar                (code=SAP   , tipo=cash  ) Cuenta def: 2.1.3.05.011 Sueldos a pagar
+    Métodos entrantes: Pago manual
+  Diario: Seguro La Estrella a Pagar     (code=SEAP  , tipo=cash  ) Cuenta def: 2.1.3.05.060 Seguro La Estrella a Pagar
+    Métodos entrantes: Pago manual
+  Diario: SEC Cuota Sindical a Pagar     (code=SECCS , tipo=cash  ) Cuenta def: 2.1.3.05.040 SEC Cuota Sindical a Pagar
+    Métodos entrantes: Pago manual
+  Diario: TISH Salta Municipalidad Saldo a Pagar (code=TMUN1 , tipo=cash  ) Cuenta def: 2.3.3.05.015. TISH Salta Municipalidad Saldo a Pagar
+    Métodos entrantes: Pago manual
+  Diario: Tasa Municipal a pagar         (code=TMUNP , tipo=cash  ) Cuenta def: 2.1.3.01.020 Plan Municipal Tax to be paid
+    Métodos entrantes: Pago manual
+  Diario: Caja Cotización                (code=CCT   , tipo=cash  ) Cuenta def: 1.1.1.01.002 Caja Cotización
+    Métodos entrantes: Pago manual
+  Diario: Caja Cotización USD            (code=CSH11 , tipo=cash  ) Cuenta def: 1.1.1.01.005 Caja Cotización USD
+    Métodos entrantes: Pago manual
+  Diario: Caja Cotización USD            (code=CSH12 , tipo=cash  ) Cuenta def: 1.1.1.01.005 Caja Cotización USD
+    Métodos entrantes: Pago manual
+  Diario: Exchange Difference            (code=EXCH  , tipo=general) Cuenta def: N/A
+  Diario: Banco Galicia Cta Cte $ N° 0000032-1 756-6 (code=BGAL4 , tipo=bank  ) Cuenta def: 1.1.1.02.055 Bank
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Cash                           (code=CSH1  , tipo=cash  ) Cuenta def: 1.1.1.01.001 Cash
+    Métodos entrantes: Manual Payment
+  Diario: Banco Galicia Caja Ahorro U$S 4000328-1 758-4 (code=BGAL5 , tipo=bank  ) Cuenta def: 1.1.1.02.030 Banco Galicia Caja Ahorro U$S 4000328-1 758-4
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Banco Ocean Bank Empresa U$S 2658858705 (code=BGAL8 , tipo=bank  ) Cuenta def: 1.1.1.02.095 Banco Ocean Bank Empresa U$S 2658858705
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Banco Galicia Caja Ahorro $ 4000020-5 756-7 (code=BGAL6 , tipo=bank  ) Cuenta def: 1.1.1.02.040 Banco Galicia Caja Ahorro $ 4000020-5 756-7
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Multiple payments              (code=CSH2  , tipo=cash  ) Cuenta def: 6.0.0.00.002 Multiple payments
+    Métodos entrantes: Payment multiple
+  Diario: Banco Galicia Cta Cte $ 0000546-3 756-2 (code=BGAL7 , tipo=bank  ) Cuenta def: 1.1.1.02.050 Banco Galicia Cta Cte $ 0000546-3 756-2
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: IRR S.A.S.                     (code=IRR   , tipo=cash  ) Cuenta def: 1.1.3.01.025 Sales receivables (PoS)
+    Métodos entrantes: Pago manual
+  Diario: Banco Galicia Cheque Fisico $ 0000119-5 131-1 (code=BNK10 , tipo=bank  ) Cuenta def: 2.1.1.01.020 Deferred checks payable
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Banco Galicia Caja Ahorro $ 4001731-0 131-1 (code=BGAL1 , tipo=bank  ) Cuenta def: 1.1.1.02.060 Banco Galicia Caja Ahorro $ 4001731-0 131-1
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Banco Galicia Caja Ahorro $ 4001731-0 131-1 (code=BGAL9 , tipo=bank  ) Cuenta def: 1.1.1.02.130 Banco Macro Caja Ahorro $ 410000000417840 (copia)
+    Métodos entrantes: Pago manual, Depósito por lotes
+  Diario: Banco Macro Cta Cte $ 310009401231701 (code=BNK12 , tipo=bank  ) Cuenta def: 1.1.1.02.121 Banco Macro Cta Cte $ 310009401231701
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Banco Macro Cta Cte $ 310009401231701 (code=BNK17 , tipo=bank  ) Cuenta def: 1.1.1.02.140 Banco Macro Cta Cte $ 310009401231701 (copia)
+    Métodos entrantes: Pago manual, Depósito por lotes
+  Diario: Tarjetas Galicia Naranja       (code=BNK9  , tipo=cash  ) Cuenta def: 1.1.1.02.217 Tarjetas Galicia Naranja
+    Métodos entrantes: Pago manual
+  Diario: Banco Galicia Cta Cte $ 0000119-5 131-1 (code=BGAL2 , tipo=bank  ) Cuenta def: 1.1.1.02.070 Banco Galicia Cta Cte $ 0000119-5 131-1
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: CERA                           (code=CERA  , tipo=bank  ) Cuenta def: 1.1.2.01.150 CERA
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Cont Ext OSECAC a Pagar        (code=CEOSE , tipo=cash  ) Cuenta def: 2.1.3.05.090 Cont Ext OSECAC a Pagar
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA AHORRO PLUS B         (code=CFIAB , tipo=cash  ) Cuenta def: 1.1.2.01.040 FCI FIMA AHORRO PLUS B
+    Métodos entrantes: Pago manual
+  Diario: Banco Galicia Caja Ahorro U$S 4001311-0 131-8 (code=BGAL3 , tipo=bank  ) Cuenta def: 1.1.1.02.090 Banco Galicia Caja Ahorro U$S 4001311-0 131-8
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: COMITENTE CERA 2101185         (code=COMI  , tipo=bank  ) Cuenta def: 1.1.2.01.160 COMITENTE CERA 2101185
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Cheque de terceros rechazado   (code=CHTER , tipo=cash  ) Cuenta def: 1.1.1.02.006 Cheque de terceros rechazado
+    Métodos entrantes: Nuevo Cheque de Tercero, Cheque de Terceros Existente
+  Diario: Caja Juan Jose Russo           (code=CJJR  , tipo=cash  ) Cuenta def: 1.1.1.01.015. Caja Juan Jose Russo
+    Métodos entrantes: Pago manual
+  Diario: Caja Juan Jose Russo           (code=CJJR1 , tipo=cash  ) Cuenta def: 1.1.1.01.016. Caja Juan Jose Russo (copia)
+    Métodos entrantes: Pago manual
+  Diario: Caja Juan Jose Russo           (code=CRR   , tipo=cash  ) Cuenta def: 1.1.1.01.017. Caja Juan Jose Russo (copia) (copia)
+    Métodos entrantes: Pago manual
+  Diario: Banco Nación Cta Cte $ Banco Nación Cta Cte $ 307045302174507 (code=BNA1  , tipo=bank  ) Cuenta def: 1.1.1.02.080 Banco Nación Cta Cte $ 307045302174507
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FCI FIMA AHORRO PLUS A         (code=FCIAA , tipo=bank  ) Cuenta def: 1.1.2.01.030 FCI FIMA AHORRO PLUS A
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Cuenta Particular Ing Ramon Russo (code=CPIR1 , tipo=cash  ) Cuenta def: 1.1.4.05.071 Cuenta Particular Ing. Ramon Russo (copia)
+    Métodos entrantes: Pago manual
+  Diario: Cuenta Particular Ing Ramon Russo (code=CPIRR , tipo=cash  ) Cuenta def: 1.1.4.05.070 Cuenta Particular Ing. Ramon Russo
+    Métodos entrantes: Pago manual
+  Diario: F931 SUSS Cargas Sociales a Pagar (code=CSAP  , tipo=cash  ) Cuenta def: 2.1.3.05.020 F931 SUSS Cargas Sociales a Pagar
+    Métodos entrantes: Pago manual
+  Diario: Banco Macro Caja Ahorro $ Banco Macro Caja Ahorro $ 410000000417840 (code=BM1   , tipo=bank  ) Cuenta def: 1.1.1.02.100 Banco Macro Caja Ahorro $ 410000000417840
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FCI FIMA AHORRO PLUS C         (code=FCIAC , tipo=bank  ) Cuenta def: 1.1.2.01.050 FCI FIMA AHORRO PLUS C
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Anticipo Impuesto a las Ganancias (code=CSH10 , tipo=cash  ) Cuenta def: 1.1.4.05.010 Earnings advance
+    Métodos entrantes: Pago manual
+  Diario: Caja RRHH                      (code=CSH25 , tipo=cash  ) Cuenta def: 1.1.1.01.120 Caja RRHH
+    Métodos entrantes: Pago manual
+  Diario: Banco Macro Caja Ahorro U$S 210009406569854 (code=BM2   , tipo=bank  ) Cuenta def: 1.1.1.02.120 Banco Macro Caja Ahorro U$S 210009406569854
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FCI ALPHA PESOS PLUS           (code=FCIAP , tipo=bank  ) Cuenta def: 1.1.2.01.130 FCI ALPHA PESOS PLUS
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Caja Sucursal Catamarca        (code=CSCA  , tipo=cash  ) Cuenta def: 1.1.1.01.020 Caja Sucursal Catamarca
+    Métodos entrantes: Pago manual
+  Diario: Retencion Tissh San Antonio De Los Cobres (code=CSH28 , tipo=cash  ) Cuenta def: 1.1.4.01.070 TISH San Antonio Retenciones Municipalidad Sufridas
+    Métodos entrantes: Pago manual
+  Diario: FCI HF H $                     (code=FCIHH , tipo=bank  ) Cuenta def: 1.1.2.01.110 FCI HF H $
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FCI FIMA RENTAS PESOS CLASE C  (code=FCIRC , tipo=bank  ) Cuenta def: 1.1.2.01.100 FCI FIMA RENTAS PESOS CLASE C
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FAECYS a Pagar                 (code=FAESY , tipo=cash  ) Cuenta def: 2.1.3.05.030 FAECYS a Pagar
+    Métodos entrantes: Pago manual
+  Diario: INVERSIONES CERA               (code=ICERA , tipo=bank  ) Cuenta def: 1.1.2.01.170 INVERSIONES CERA
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Caja Posventa                  (code=CSH3  , tipo=cash  ) Cuenta def: 1.1.1.01.110 Caja Posventa
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA AHORRO PLUS CLASE B   (code=FCIAB , tipo=cash  ) Cuenta def: 1.1.2.01.020 Fixed term
+    Métodos entrantes: Pago manual
+  Diario: FCI HF I $                     (code=FCIHI , tipo=bank  ) Cuenta def: 1.1.2.01.120 FCI HF I $
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: IIBB Catamarca saldo a pagar   (code=IIBB4 , tipo=bank  ) Cuenta def: 5.4.3.01.010 Taxes on bank debits and credits
+    Métodos entrantes: Pago manual, Depósito por lotes
+  Diario: IIBB Catamarca saldo a pagar   (code=IIBBC , tipo=bank  ) Cuenta def: 2.1.3.02.021 IIBB Catamarca saldo a pagar
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: FCI FIMA PREMIUM CLASE A       (code=FCIPA , tipo=cash  ) Cuenta def: 1.1.2.01.010 Mutual fund
+    Métodos entrantes: Pago manual
+  Diario: Préstamo Banco Galicia         (code=PRBG  , tipo=bank  ) Cuenta def: 2.2.3.01.010 Préstamo Banco Galicia
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Retenciones de IVA Sufrida     (code=CSH38 , tipo=cash  ) Cuenta def: 1.1.4.04.030 VAT withholding incurred
+    Métodos entrantes: Pago manual
+  Diario: FCI SECURITIES                 (code=FCISE , tipo=cash  ) Cuenta def: 1.1.2.01.180 FCI SECURITIES
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA PREMIUM CLASE B       (code=FCIPB , tipo=bank  ) Cuenta def: 1.1.2.01.070 FCI FIMA PREMIUM CLASE B
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Caja Cristian Wanger           (code=CCW   , tipo=cash  ) Cuenta def: 1.1.1.01.040 Fondo Fijo Cristian Wanger
+    Métodos entrantes: Pago manual
+  Diario: Caja Marcos González           (code=CCW1  , tipo=cash  ) Cuenta def: 1.1.1.01.041 Fondo Fijo Marcos González
+    Métodos entrantes: Pago manual
+  Diario: GALICIA SECURITIES             (code=GASEC , tipo=cash  ) Cuenta def: 1.1.2.01.190 GALICIA SECURITIES
+    Métodos entrantes: Pago manual
+  Diario: TITULOS                        (code=TITU  , tipo=bank  ) Cuenta def: 1.1.2.01.140 TITULOS
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Caja Compras                   (code=CSH4  , tipo=cash  ) Cuenta def: 1.1.1.01.090 Caja Compras
+    Métodos entrantes: Pago manual
+  Diario: IIBB Jujuy Percepciones Efectuadas a pagar (code=IBBJP , tipo=cash  ) Cuenta def: 2.1.3.02.160 Perception IIBB Jujuy applied
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA PREMIUM DÓLARES CLASE A (code=FCIPD , tipo=bank  ) Cuenta def: 1.1.2.01.015 FCI FIMA PREMIUM DÓLARES CLASE A
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Caja Martin Mojica             (code=CMM   , tipo=cash  ) Cuenta def: 1.1.1.01.050 Fondo Fijo Martin Mojica
+    Métodos entrantes: Pago manual
+  Diario: IIBB Tucumán Retenciones Efectuadas a pagar (code=IBBRT , tipo=cash  ) Cuenta def: 2.1.3.02.310 IIBB withholding Tucumán applied
+    Métodos entrantes: Pago manual
+  Diario: Ajuste por Redondeo            (code=Ajust , tipo=cash  ) Cuenta def: 4.2.1.01.030 Rounding adjustment
+    Métodos entrantes: Pago manual
+  Diario: Caja Logística                 (code=CSH5  , tipo=cash  ) Cuenta def: 1.1.1.01.080 Caja Logística
+    Métodos entrantes: Pago manual
+  Diario: IIBB Salta Percepciones Efectuadas a pagar (code=IBBSP , tipo=cash  ) Cuenta def: 2.1.3.02.220 Perception IIBB Salta applied
+    Métodos entrantes: Pago manual
+  Diario: Cheques de Terceros            (code=CHEQT , tipo=cash  ) Cuenta def: 1.1.1.02.010 Third Party Checks
+    Métodos entrantes: Nuevo cheques de terceros, Cheque de Terceros Existente
+  Diario: Caja Producción                (code=CSH6  , tipo=cash  ) Cuenta def: 1.1.1.01.085. Caja Producción
+    Métodos entrantes: Pago manual
+  Diario: IIBB Tucumán Percepciones Efectuadas a pagar (code=IBBTP , tipo=cash  ) Cuenta def: 2.1.3.02.320 Perception IIBB Tucumán applied
+    Métodos entrantes: Pago manual
+  Diario: Caja Servicios                 (code=BNK11 , tipo=cash  ) Cuenta def: 1.1.1.01.100 Caja Servicios
+    Métodos entrantes: Pago manual
+  Diario: Caja Central                   (code=CC    , tipo=cash  ) Cuenta def: 1.1.1.01.001 Cash
+    Métodos entrantes: Pago manual
+  Diario: Impuesto a las ganancias a pagar (code=IGAP  , tipo=cash  ) Cuenta def: 2.1.3.04.010 Income tax payable
+    Métodos entrantes: Pago manual
+  Diario: Anticipo de Personal           (code=BNK13 , tipo=cash  ) Cuenta def: 1.1.1.02.0010 Anticipo al Personal
+    Métodos entrantes: Pago manual
+  Diario: Retenciones Ganancias Sufridas (code=CSH7  , tipo=cash  ) Cuenta def: 1.1.4.05.030 Withholdings of Profits incurred
+    Métodos entrantes: Pago manual
+  Diario: Intereses y Recargos           (code=IIBB1 , tipo=cash  ) Cuenta def: 5.6.1.01.030 Intereses Perdidos
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Galicia Visa          (code=BNK14 , tipo=cash  ) Cuenta def: 1.1.1.02.212. Tarjetas Galicia Visa
+    Métodos entrantes: Pago manual
+  Diario: Caja Saldo Inicial Finnegans   (code=CC1   , tipo=cash  ) Cuenta def: 1.1.1.01.003 Caja Saldo Inicial Finnegans
+    Métodos entrantes: Pago manual
+  Diario: Intereses Ganados              (code=IIBB2 , tipo=cash  ) Cuenta def: 5.6.1.01.020 Intereses Ganados
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA RENTAS PESOS CLASE A  (code=FCIRA , tipo=bank  ) Cuenta def: 1.1.2.01.080 FCI FIMA RENTAS PESOS CLASE A
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Tarjetas Galicia Mas Naranja   (code=BNK15 , tipo=cash  ) Cuenta def: 1.1.1.02.218 Tarjetas Galicia Mas Naranja
+    Métodos entrantes: Pago manual
+  Diario: IIBB Neuquén saldo a pagar     (code=IIBB3 , tipo=cash  ) Cuenta def: 2.1.3.02.028 IIBB Neuquen saldo a pagar
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Viumi                 (code=BNK2  , tipo=cash  ) Cuenta def: 1.1.1.02.219 Tarjetas Viumi
+    Métodos entrantes: Pago manual
+  Diario: Plan de Pago Imp a las Ganancias (code=CSH8  , tipo=cash  ) Cuenta def: 2.1.1.01.004 Plan de Pago Imp a las Ganancias
+    Métodos entrantes: Pago manual
+  Diario: IIBB Santiago del Estero saldo a pagar (code=IIBBE , tipo=cash  ) Cuenta def: 2.1.3.02.023 IIBB Santiago del Estero saldo a pagar
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Agro Nacion           (code=BNK18 , tipo=cash  ) Cuenta def: 1.1.1.02.220 Tarjetas Agro Nacion
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Pyme Nacion           (code=BNK3  , tipo=cash  ) Cuenta def: 1.1.1.02.211 Tarjetas Pyme Nacion
+    Métodos entrantes: Pago manual
+  Diario: Gastos de Importaciones        (code=CSH9  , tipo=cash  ) Cuenta def: 5.3.1.01.138 Gastos de Importaciones
+    Métodos entrantes: Pago manual
+  Diario: IIBB Jujuy saldo a pagar       (code=IIBBJ , tipo=cash  ) Cuenta def: 2.1.3.02.022 IIBB Jujuy saldo a pagar
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Galicia American      (code=BNK4  , tipo=cash  ) Cuenta def: 1.1.1.02.212 Tarjetas Galicia American
+    Métodos entrantes: Pago manual
+  Diario: Caja Sucursal Artigas          (code=CART  , tipo=cash  ) Cuenta def: 1.1.1.01.010 Caja Sucursal Artigas
+    Métodos entrantes: Pago manual
+  Diario: IIBB Salta saldo a pagar       (code=IIBBS , tipo=cash  ) Cuenta def: 2.1.3.02.010 IIBB a pagar
+    Métodos entrantes: Pago manual
+  Diario: FCI FIMA RENTAS PESOS CLASE B  (code=FCIRB , tipo=bank  ) Cuenta def: 1.1.2.01.090 FCI FIMA RENTAS PESOS CLASE B
+    Métodos entrantes: Pago manual, Batch Deposit
+  Diario: Tarjetas Galicia Mastercard    (code=BNK5  , tipo=cash  ) Cuenta def: 1.1.1.02.215 Tarjetas Galicia Mastercard
+    Métodos entrantes: Pago manual
+  Diario: IIBB Tucumán saldo a pagar     (code=IIBBT , tipo=cash  ) Cuenta def: 2.1.3.02.020 SICORE to be paid
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Galicia Mas Visa      (code=BNK7  , tipo=cash  ) Cuenta def: 1.1.1.02.214 Tarjetas Galicia Mas Visa
+    Métodos entrantes: Pago manual
+  Diario: Cargas Sociales                (code=CarSo , tipo=cash  ) Cuenta def: 5.3.1.00.010 Cargas Sociales
+    Métodos entrantes: Pago manual
+  Diario: INACAP a Pagar                 (code=INACA , tipo=cash  ) Cuenta def: 2.1.3.05.050 INACAP a Pagar
+    Métodos entrantes: Pago manual
+  Diario: Tarjetas Galicia Mas Mastercard (code=BNK8  , tipo=cash  ) Cuenta def: 1.1.1.02.213 Tarjetas Galicia Mas Mastercard
+    Métodos entrantes: Pago manual
+  Diario: Embargos de Sueldos a Pagar    (code=ESAP  , tipo=cash  ) Cuenta def: 2.1.3.05.070 Embargos de Sueldos a Pagar
+    Métodos entrantes: Pago manual
+  Diario: IVA a Pagar                    (code=IVAPG , tipo=cash  ) Cuenta def: 2.1.3.03.020 VAT balance payable
+    Métodos entrantes: Pago manual
+
+--- Cuentas contables relacionadas a cheques (Valores a depositar / Rechazados) -------------------
+  Cuenta: [1.1.1.02.006] Cheque de terceros rechazado        Tipo=asset_cash           Conciliable=False
+    Movimientos posted: 17 | Debe: 32997219.44 | Haber: 32997219.44 | Saldo (Mayor): 0.00
+  Cuenta: [2.1.1.01.021] Banco Nación - Cheques diferidos a pagar Tipo=liability_current    Conciliable=False
+    Movimientos posted: 0 | Debe: 0.00 | Haber: 0.00 | Saldo (Mayor): 0.00
+  Cuenta: [2.1.1.01.023] Banco Macro - Cheques diferidos a pagar Tipo=liability_current    Conciliable=False
+    Movimientos posted: 0 | Debe: 0.00 | Haber: 0.00 | Saldo (Mayor): 0.00
+  Cuenta: [False] Cheques en Cartera                  Tipo=asset_cash           Conciliable=False
+    Movimientos posted: 0 | Debe: 0.00 | Haber: 0.00 | Saldo (Mayor): 0.00
+  Cuenta: [False] Cheques Rechazados de Terceros      Tipo=asset_cash           Conciliable=False
+    Movimientos posted: 0 | Debe: 0.00 | Haber: 0.00 | Saldo (Mayor): 0.00
+  Cuenta: [False] Bienes de Uso Valor Origen          Tipo=asset_fixed          Conciliable=False
+    Movimientos posted: 0 | Debe: 0.00 | Haber: 0.00 | Saldo (Mayor): 0.00
+
+--- Overrides en métodos de pago / cheques (MRO) --------------------------------------------------
+
+--- account.payment.action_post -------------------------------------------------------------------
+  definido en: odoo.addons.l10n_ar_payment_bundle.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_ar_payment_bundle/models/account_payment.py)
+        def action_post(self):
+            for rec in self:
+                if rec.link_payment_ids and rec.payment_method_code != "payment_bundle":
+                    rec.link_payment_ids.unlink()
+    
+                if rec.main_payment_id and not rec.main_payment_id.name:
+                    raise ValidationError(_("The main payment must have a name before a linked payment can be posted."))
+    
+            res = super(AccountPayment, self).action_post()
+    
+            for rec in self:
+                start_number = len(rec.link_payment_ids.filtered(lambda x: x.name is not False))
+                for i, payment in enumerate(rec.link_payment_ids, start=start_number):
+                    if not payment.name:
+                        payment.name = f"{rec.name} ({i + 1})"
+    
+            draft_linked = self.filtered(lambda x: x.state != "draft").link_payment_ids.filtered(
+                lambda x: x.state == "draft"
+            )
+            if draft_linked:
+                draft_linked.action_post()
+    
+            # Envío diferido del recibo del main: acá los vinculados ya imputaron, así el
+            # PDF sale con los comprobantes y no "A cuenta" (receiptbook lo saltea en el post).
+            self.filtered("is_main_payment")._send_receiptbook_mail()
+    
+            return res
+    
+  definido en: odoo.addons.l10n_ar_tax.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_payment.py)
+        def action_post(self):
+            for rec in self:
+                commands = []
+                for line in rec.l10n_ar_withholding_line_ids:
+                    if not line.name or line.name == "/":
+                        if line.tax_id.l10n_ar_withholding_sequence_id:
+                            commands.append(
+                                Command.update(
+                                    line.id,
+                                    {
+                                        "name": line.tax_id.l10n_ar_withholding_sequence_id.next_by_id()
+                                        if line.amount
+                                        else "/"
+                                    },
+                                )
+                            )
+                        else:
+                            raise UserError(
+                                _("Please enter withholding number for tax %s or configure a sequence on that tax")
+                                % line.tax_id.name
+                            )
+                    if commands:
+                        rec.l10n_ar_withholding_line_ids = commands
+    
+            return super().action_post()
+    
+  definido en: odoo.addons.l10n_latam_check_ux.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_latam_check_ux/models/account_payment.py)
+        def action_post(self):
+            # nosotros queremos bloquear tmb nros de cheques de terceros que sea unicos
+            # para esto chequeamos el campo computado de warnings que ya lo tiene incorporado
+            # NOTA: no mandamos todos los warnings de "self" juntos porque podría ser muy verbose (por ej. la
+            # leyenda de cheques duplicados en un mismo payment group apareceria varias veces si el cheque está repetido
+            # en el mismo payment group)
+            for rec in self:
+                if rec.l10n_latam_check_warning_msg:
+                    raise ValidationError("%s" % rec.l10n_latam_check_warning_msg)
+                rec.l10n_latam_move_check_ids_operation_date = rec._get_check_operation_date()
+            super().action_post()
+    
+  definido en: odoo.addons.account_payment_pro_receiptbook.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/account_payment_pro_receiptbook/models/account_payment.py)
+        def action_post(self):
+            # si no tengo nombre y tengo talonario de recibo, numeramos con el talonario
+            for rec in self.filtered(
+                lambda x: (
+                    x.receiptbook_id and (not x.name or x.name == "/" or (x.move_id and not x.move_id._get_last_sequence()))
+                )
+            ):
+                if not rec.receiptbook_id.active:
+                    raise ValidationError(
+                        _('Error! The receiptbook "%s" is archived. Please use a differente receipbook.')
+                        % rec.receiptbook_id.name
+                    )
+                if not rec.receiptbook_id.sequence_id:
+                    raise ValidationError(
+                        _("Error!. Please define sequence on the receiptbook related documents to this payment.")
+                    )
+    
+                if not rec.name or rec.name == "/":
+                    name = rec.receiptbook_id.with_context(ir_sequence_date=rec.date).sequence_id.next_by_id()
+                    prefix = rec.receiptbook_id.document_type_id.doc_code_prefix
+                    rec.name = ("%s %s" % (prefix, name)) if prefix else (name or "/")
+    
+            res = super().action_post()
+            # Reincorporamos el seteo del l10n_latam_document_type_id para el caso de usar talonario de recibo
+            # Ya que debido al fix en
+            # https://github.com/ingadhoc/account-payment/commit/8a6ff0564d3526ec8ead24c90a8e53267d038f6a
+            # se esta evitando el recomputo para impedir que este vuelva a False.
+            for rec in self.filtered(lambda x: x.receiptbook_id):
+                rec.move_id.l10n_latam_document_type_id = rec.receiptbook_id.document_type_id.id
+    
+            payments_to_send = self
+            # El bundle imputa sus pagos vinculados al final de su action_post, así que acá
+            # el recibo saldría "A cuenta". Diferimos el envío del main: lo dispara el bundle.
+            if "is_main_payment" in self._fields:
+                payments_to_send = payments_to_send.filtered(lambda x: not x.is_main_payment)
+            payments_to_send._send_receiptbook_mail()
+            return res
+    
+  definido en: odoo.addons.account_payment_pro.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/account_payment_pro/models/account_payment.py)
+        def action_post(self):
+            res = super().action_post()
+            self._check_to_pay_lines_account()
+            self._reconcile_after_post()
+            return res
+    
+  definido en: odoo.addons.l10n_latam_check.models.account_payment  (/home/odoo/src/odoo/addons/l10n_latam_check/models/account_payment.py)
+  definido en: odoo.addons.account_payment.models.account_payment  (/home/odoo/src/odoo/addons/account_payment/models/account_payment.py)
+  definido en: odoo.addons.account_internal_transfer.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-financial-tools/account_internal_transfer/models/account_payment.py)
+        def action_post(self):
+            super().action_post()
+            self.filtered(
+                lambda pay: pay.is_internal_transfer and not pay.paired_internal_transfer_payment_id
+            )._create_paired_internal_transfer_payment()
+    
+  definido en: odoo.addons.account_check_printing.models.account_payment  (/home/odoo/src/odoo/addons/account_check_printing/models/account_payment.py)
+  definido en: odoo.addons.account.models.account_payment  (/home/odoo/src/odoo/addons/account/models/account_payment.py)
+
+--- account.payment.action_cancel -----------------------------------------------------------------
+  definido en: odoo.addons.l10n_ar_payment_bundle.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_ar_payment_bundle/models/account_payment.py)
+        def action_cancel(self):
+            res = super(AccountPayment, self + self.link_payment_ids).action_cancel()
+            return res
+    
+  definido en: odoo.addons.l10n_latam_check.models.account_payment  (/home/odoo/src/odoo/addons/l10n_latam_check/models/account_payment.py)
+  definido en: odoo.addons.account.models.account_payment  (/home/odoo/src/odoo/addons/account/models/account_payment.py)
+
+--- account.payment._seek_for_lines ---------------------------------------------------------------
+  definido en: odoo.addons.account.models.account_payment  (/home/odoo/src/odoo/addons/account/models/account_payment.py)
+
+--- account.payment._get_valid_liquidity_accounts -------------------------------------------------
+  definido en: odoo.addons.account.models.account_payment  (/home/odoo/src/odoo/addons/account/models/account_payment.py)
