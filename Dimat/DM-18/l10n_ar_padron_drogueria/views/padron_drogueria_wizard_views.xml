@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_padron_drogueria_wizard_form" model="ir.ui.view">
+        <field name="name">padron.drogueria.wizard.form</field>
+        <field name="model">padron.drogueria.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Importar Padrón ARBA (Droguerías RN 42/12)">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <strong>Instrucciones:</strong> Suba el archivo ZIP mensual descargado directamente de ARBA 
+                        (ej: <code>PadronRGS112026.zip</code>). El sistema detectará las fechas de vigencia, aplicará 
+                        el <strong>piso mínimo de retención del 2.50%</strong> para droguerías (Resolución 42/12) 
+                        y actualizará automáticamente los regímenes de los contactos comerciales activos.
+                    </div>
+
+                    <group>
+                        <group string="Archivo del Padrón">
+                            <field name="company_id" invisible="1"/>
+                            <field name="filename" invisible="1"/>
+                            <field name="file_padron" filename="filename" widget="binary"/>
+                            <field name="min_retention_aliquot"/>
+                            <field name="auto_assign_country"/>
+                        </group>
+                        <group string="Período de Vigencia">
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_process_padron" string="Procesar y Actualizar Contactos" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_padron_drogueria_wizard" model="ir.actions.act_window">
+        <field name="name">Importar Padrón ARBA (Droguerías)</field>
+        <field name="res_model">padron.drogueria.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_padron_drogueria_wizard"
+              name="Importar Padrón ARBA (Droguerías)"
+              parent="account.account_account_menu"
+              action="action_padron_drogueria_wizard"
+              sequence="55"/>
+
+</odoo>
