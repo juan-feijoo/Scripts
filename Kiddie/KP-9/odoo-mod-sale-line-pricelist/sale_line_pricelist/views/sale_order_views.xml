@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Outsource Argentina
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+    <record id="view_order_form_inherit_sale_line_pricelist" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.sale.line.pricelist</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">30</field>
+        <field name="arch" type="xml">
+            <!-- Tabla de líneas en Orden de Venta (Odoo 19: etiqueta <list>, sin attrs/states) -->
+            <xpath expr="//field[@name='order_line']/list//field[@name='price_unit']" position="before">
+                <field name="pricelist_follows_order" column_invisible="1"/>
+                <field name="pricelist_id"
+                       string="Lista de precios"
+                       optional="show"
+                       options="{'no_create': True, 'no_open': True}"
+                       readonly="qty_invoiced &gt; 0 or parent.state in ['sale', 'cancel']"
+                       invisible="display_type"/>
+            </xpath>
+            <!-- Subvista formulario al expandir línea -->
+            <xpath expr="(//field[@name='order_line']/form//field[@name='price_unit'])[1]" position="before">
+                <field name="pricelist_follows_order" invisible="1"/>
+                <field name="pricelist_id"
+                       string="Lista de precios"
+                       options="{'no_create': True, 'no_open': True}"
+                       readonly="qty_invoiced &gt; 0 or parent.state in ['sale', 'cancel']"
+                       invisible="display_type"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
