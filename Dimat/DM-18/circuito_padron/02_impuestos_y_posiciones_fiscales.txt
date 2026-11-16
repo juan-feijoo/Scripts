@@ -1,0 +1,1280 @@
+Warn: Can't find .pfb for face 'Courier'
+
+====================================================================================================
+02 - IMPUESTOS, POSICIONES FISCALES Y DIARIOS (DROGUERIA DIMAT SA)
+====================================================================================================
+
+--- Resumen de account.tax (active_test=False) ----------------------------------------------------
+  Total impuestos en compañía: 154
+    uso=none     | active=True  | grupo=VAT Withholding                : 81
+    uso=purchase | active=False | grupo=VAT 2.5%                       : 1
+    uso=purchase | active=False | grupo=VAT 5%                         : 1
+    uso=purchase | active=True  | grupo=Internal Taxes                 : 1
+    uso=purchase | active=True  | grupo=Other Taxes                    : 1
+    uso=purchase | active=True  | grupo=Perc IIBB ARBA                 : 1
+    uso=purchase | active=True  | grupo=Perc IIBB CABA                 : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Catamarca            : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Chaco                : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Chubut               : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Corrientes           : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Córdoba              : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Entre Ríos           : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Formosa              : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Jujuy                : 1
+    uso=purchase | active=True  | grupo=Perc IIBB La Pampa             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB La Rioja             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Mendoza              : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Misiones             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Neuquén              : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Río Negro            : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Salta                : 1
+    uso=purchase | active=True  | grupo=Perc IIBB San Juan             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB San Luis             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Santa Cruz           : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Santa Fe             : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Santiago del Estero  : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Tierra del Fuego     : 1
+    uso=purchase | active=True  | grupo=Perc IIBB Tucumán              : 1
+    uso=purchase | active=True  | grupo=Profit Perceptions             : 1
+    uso=purchase | active=True  | grupo=VAT 0%                         : 1
+    uso=purchase | active=True  | grupo=VAT 10.5%                      : 1
+    uso=purchase | active=True  | grupo=VAT 21%                        : 1
+    uso=purchase | active=True  | grupo=VAT 27%                        : 1
+    uso=purchase | active=True  | grupo=VAT Exempt                     : 1
+    uso=purchase | active=True  | grupo=VAT Not Applicable             : 1
+    uso=purchase | active=True  | grupo=VAT Perception                 : 2
+    uso=purchase | active=True  | grupo=VAT Untaxed                    : 1
+    uso=sale     | active=False | grupo=Perc IIBB ARBA                 : 1
+    uso=sale     | active=False | grupo=Perc IIBB CABA                 : 1
+    uso=sale     | active=False | grupo=Perc IIBB Catamarca            : 1
+    uso=sale     | active=False | grupo=Perc IIBB Chaco                : 1
+    uso=sale     | active=False | grupo=Perc IIBB Chubut               : 1
+    uso=sale     | active=False | grupo=Perc IIBB Corrientes           : 1
+    uso=sale     | active=False | grupo=Perc IIBB Córdoba              : 1
+    uso=sale     | active=False | grupo=Perc IIBB Entre Ríos           : 1
+    uso=sale     | active=False | grupo=Perc IIBB Formosa              : 1
+    uso=sale     | active=False | grupo=Perc IIBB Jujuy                : 1
+    uso=sale     | active=False | grupo=Perc IIBB La Pampa             : 1
+    uso=sale     | active=False | grupo=Perc IIBB La Rioja             : 1
+    uso=sale     | active=False | grupo=Perc IIBB Mendoza              : 1
+    uso=sale     | active=False | grupo=Perc IIBB Misiones             : 1
+    uso=sale     | active=False | grupo=Perc IIBB Neuquén              : 1
+    uso=sale     | active=False | grupo=Perc IIBB Río Negro            : 1
+    uso=sale     | active=False | grupo=Perc IIBB Salta                : 1
+    uso=sale     | active=False | grupo=Perc IIBB San Juan             : 1
+    uso=sale     | active=False | grupo=Perc IIBB San Luis             : 1
+    uso=sale     | active=False | grupo=Perc IIBB Santa Cruz           : 1
+    uso=sale     | active=False | grupo=Perc IIBB Santa Fe             : 1
+    uso=sale     | active=False | grupo=Perc IIBB Santiago del Estero  : 1
+    uso=sale     | active=False | grupo=Perc IIBB Tierra del Fuego     : 1
+    uso=sale     | active=False | grupo=Perc IIBB Tucumán              : 1
+    uso=sale     | active=False | grupo=Profit Perceptions             : 1
+    uso=sale     | active=False | grupo=VAT 2.5%                       : 1
+    uso=sale     | active=False | grupo=VAT 5%                         : 1
+    uso=sale     | active=False | grupo=VAT Not Applicable             : 1
+    uso=sale     | active=False | grupo=VAT Perception                 : 1
+    uso=sale     | active=True  | grupo=VAT 0%                         : 1
+    uso=sale     | active=True  | grupo=VAT 10.5%                      : 1
+    uso=sale     | active=True  | grupo=VAT 21%                        : 1
+    uso=sale     | active=True  | grupo=VAT 27%                        : 1
+    uso=sale     | active=True  | grupo=VAT Exempt                     : 1
+    uso=sale     | active=True  | grupo=VAT Untaxed                    : 1
+
+--- Detalle de impuestos de Retención / Percepción / IIBB / Jurisdicción AR -----------------------
+  Impuestos relevantes encontrados: 136
+
+  [434] IIBB WTH CABA | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Ciudad Autónoma de Buenos Aires (cod=901) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.020 IIBB CABA withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.020 IIBB CABA withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [435] IIBB WTH BA | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Buenos Aires (cod=902) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.050 IIBB Buenos Aires withholding tax incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.050 IIBB Buenos Aires withholding tax incurred | tags=[Pagos a Cuenta IIBB]
+
+  [436] IIBB WTH C | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Catamarca (cod=903) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.080 IIBB withholding Catamarca incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.080 IIBB withholding Catamarca incurred | tags=[Pagos a Cuenta IIBB]
+
+  [437] IIBB WTH CBA | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Córdoba (cod=904) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.110 IIBB Córdoba withholding tax incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.110 IIBB Córdoba withholding tax incurred | tags=[Pagos a Cuenta IIBB]
+
+  [438] IIBB WTH CTS | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Corrientes (cod=905) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.140 IIBB Corrientes withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.140 IIBB Corrientes withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [439] IIBB WTH ER | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Entre Ríos (cod=908) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.170 IIBB withholding Entre Ríos incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.170 IIBB withholding Entre Ríos incurred | tags=[Pagos a Cuenta IIBB]
+
+  [440] IIBB WTH J | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Jujuy (cod=910) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.200 IIBB Jujuy withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.200 IIBB Jujuy withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [441] IIBB WTH MZA | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Mendoza (cod=913) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.230 IIBB Mendoza withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.230 IIBB Mendoza withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [442] IIBB WTH LR | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=La Rioja (cod=912) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.260 IIBB withholding La Rioja incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.260 IIBB withholding La Rioja incurred | tags=[Pagos a Cuenta IIBB]
+
+  [443] IIBB WTH S | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Salta (cod=917) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.290 IIBB withholding IIBB Salta incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.290 IIBB withholding IIBB Salta incurred | tags=[Pagos a Cuenta IIBB]
+
+  [444] IIBB WTH SJ | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=San Juan (cod=918) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.320 IIBB withholding San Juan incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.320 IIBB withholding San Juan incurred | tags=[Pagos a Cuenta IIBB]
+
+  [445] IIBB WTH SL | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=San Luis (cod=919) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.350 IIBB withholding San Luis incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.350 IIBB withholding San Luis incurred | tags=[Pagos a Cuenta IIBB]
+
+  [446] IIBB WTH SF | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santa Fe (cod=921) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.380 Withholding IIBB Santa Fe incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.380 Withholding IIBB Santa Fe incurred | tags=[Pagos a Cuenta IIBB]
+
+  [447] IIBB WTH SE | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santiago Del Estero (cod=922) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.380 Withholding IIBB Santa Fe incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.410 IIBB Santiago del Estero withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [448] IIBB WTH T | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Tucumán (cod=924) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.440 IIBB withholding Tucumán incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.440 IIBB withholding Tucumán incurred | tags=[Pagos a Cuenta IIBB]
+
+  [449] IIBB WTH CHO | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Chaco (cod=906) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.470 IIBB Chaco withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.470 IIBB Chaco withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [450] IIBB WTH CHT | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Chubut (cod=907) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.500 IIBB Chubut withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.500 IIBB Chubut withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [451] IIBB WTH F | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Formosa (cod=909) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.530 IIBB Formosa withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.530 IIBB Formosa withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [452] IIBB WTH MS | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Misiones (cod=914) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.560 IIBB Misiones withholding incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.560 IIBB Misiones withholding incurred | tags=[Pagos a Cuenta IIBB]
+
+  [453] IIBB WTH N | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Neuquén (cod=915) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.590 IIBB withholding Neuquén incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.590 IIBB withholding Neuquén incurred | tags=[Pagos a Cuenta IIBB]
+
+  [454] IIBB WTH LP | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=La Pampa (cod=911) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.620 IIBB withholding La Pampa incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.620 IIBB withholding La Pampa incurred | tags=[Pagos a Cuenta IIBB]
+
+  [455] IIBB WTH RN | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Río Negro (cod=916) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.650 IIBB withholding Rio Negro incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.650 IIBB withholding Rio Negro incurred | tags=[Pagos a Cuenta IIBB]
+
+  [456] IIBB WTH SC | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santa Cruz (cod=920) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.680 IIBB withholding Santa Cruz incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.680 IIBB withholding Santa Cruz incurred | tags=[Pagos a Cuenta IIBB]
+
+  [457] IIBB WTH TAIS | active=True | use=none | amount_type=percent | amount=1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Tierra del Fuego (cod=923) | wth_pay_type=customer | l10n_ar_tax_type=iibb_untaxed | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.710 IIBB withholding Tierra del Fuego incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.710 IIBB withholding Tierra del Fuego incurred | tags=[Pagos a Cuenta IIBB]
+
+  [458] WTH SUSS | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=customer | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.03.020 SUSS Withholding incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.03.020 SUSS Withholding incurred | tags=[]
+
+  [459] Profits WTH | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=customer | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.05.030 Withholdings of Profits incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.05.030 Withholdings of Profits incurred | tags=[]
+
+  [460] IIBB WTH CABA 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Ciudad Autónoma de Buenos Aires (cod=901) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB CABA (id=73)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.030 IIBB CABA withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.030 IIBB CABA withholding applied | tags=[]
+
+  [461] IIBB WTH BA 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Buenos Aires (cod=902) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB BA (id=74)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.050 IIBB ARBA withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.050 IIBB ARBA withholding applied | tags=[]
+
+  [462] IIBB WTH C 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Catamarca (cod=903) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB C (id=75)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.070 IIBB withholding Catamarca applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.070 IIBB withholding Catamarca applied | tags=[]
+
+  [463] IIBB WTH CBA 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Córdoba (cod=904) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_total | seq=Ret IIBB CBA (id=76)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.090 IIBB Córdoba withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.090 IIBB Córdoba withholding applied | tags=[]
+
+  [464] IIBB WTH CTS 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Corrientes (cod=905) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB CTS (id=77)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.110 IIBB Corrientes withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.110 IIBB Corrientes withholding applied | tags=[]
+
+  [465] IIBB WTH ER 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Entre Ríos (cod=908) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB ER (id=78)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.130 IIBB withholding Entre Río applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.130 IIBB withholding Entre Río applied | tags=[]
+
+  [466] IIBB WTH J 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Jujuy (cod=910) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB J (id=79)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.150 IIBB Jujuy withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.150 IIBB Jujuy withholding applied | tags=[]
+
+  [467] IIBB WTH MZA 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Mendoza (cod=913) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB MZA (id=80)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.170 IIBB Mendoza withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.170 IIBB Mendoza withholding applied | tags=[]
+
+  [468] IIBB WTH LR 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=La Rioja (cod=912) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB LR (id=81)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.190 IIBB withholding La Rioja applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.190 IIBB withholding La Rioja applied | tags=[]
+
+  [469] IIBB WTH S 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Salta (cod=917) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB S (id=82)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.210 IIBB withholding IIBB Salta applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.210 IIBB withholding IIBB Salta applied | tags=[]
+
+  [470] IIBB WTH SJ 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=San Juan (cod=918) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB SJ (id=83)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.230 IIBB withholding San Juan applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.230 IIBB withholding San Juan applied | tags=[]
+
+  [471] IIBB WTH SL 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=San Luis (cod=919) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB SL (id=84)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.250 IIBB withholding San Luis applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.250 IIBB withholding San Luis applied | tags=[]
+
+  [472] IIBB WTH SF 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santa Fe (cod=921) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB SF (id=85)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.270 Withholding IIBB Santa Fe applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.270 Withholding IIBB Santa Fe applied | tags=[]
+
+  [473] IIBB WTH SE 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santiago Del Estero (cod=922) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB SE (id=86)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.290 IIBB Santiago del Estero withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.290 IIBB Santiago del Estero withholding applied | tags=[]
+
+  [474] IIBB WTH T 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Tucumán (cod=924) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB T (id=87)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.310 IIBB withholding Tucumán applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.310 IIBB withholding Tucumán applied | tags=[]
+
+  [475] IIBB WTH CHO 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Chaco (cod=906) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB CHO (id=88)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.330 IIBB Chaco withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.330 IIBB Chaco withholding applied | tags=[]
+
+  [476] IIBB WTH CHT 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Chubut (cod=907) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB CHT (id=89)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.350 IIBB Chubut withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.350 IIBB Chubut withholding applied | tags=[]
+
+  [477] IIBB WTH F 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Formosa (cod=909) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB F (id=90)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.370 IIBB Formosa withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.370 IIBB Formosa withholding applied | tags=[]
+
+  [478] IIBB WTH MS 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Misiones (cod=914) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB MS (id=91)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.390 IIBB Misiones withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.390 IIBB Misiones withholding applied | tags=[]
+
+  [479] IIBB WTH N 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Neuquén (cod=915) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB N (id=92)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.410 IIBB withholding Neuquén applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.410 IIBB withholding Neuquén applied | tags=[]
+
+  [480] IIBB WTH LP 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=La Pampa (cod=911) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB LP (id=93)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.430 IIBB withholding La Pampa applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.430 IIBB withholding La Pampa applied | tags=[]
+
+  [481] IIBB WTH RN 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Río Negro (cod=916) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB RN (id=94)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.450 IIBB withholding Rio Negro applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.450 IIBB withholding Rio Negro applied | tags=[]
+
+  [482] IIBB WTH SC 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Santa Cruz (cod=920) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB SC (id=95)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.470 IIBB withholding Santa Cruz applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.470 IIBB withholding Santa Cruz applied | tags=[]
+
+  [483] IIBB WTH TAIS 0% | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Tierra del Fuego (cod=923) | wth_pay_type=supplier | l10n_ar_tax_type=iibb_untaxed | seq=Ret IIBB TAIS (id=96)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.490 IIBB withholding Tierra del Fuego applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.490 IIBB withholding Tierra del Fuego applied | tags=[]
+
+  [484] VAT WTH | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=False | seq=Ret IVA (id=97)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.03.030 VAT withholding applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.03.030 VAT withholding applied | tags=[]
+
+  [485] Profits WTH regimen 19 inscripto | active=True | use=none | amount_type=percent | amount=3.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [486] Profits WTH regimen 21 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=7870.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [487] Profits WTH regimen 30 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=11200.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [488] Profits WTH regimen 31 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=11200.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [489] Profits WTH regimen 32 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=11200.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [490] Profits WTH regimen 35 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=7870.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [491] Profits WTH regimen 43 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=7870.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [492] Profits WTH regimen 51 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=7870.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [493] Profits WTH regimen 78 inscripto | active=True | use=none | amount_type=percent | amount=2.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=224000.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [494] Profits WTH regimen 86 inscripto | active=True | use=none | amount_type=percent | amount=2.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=224000.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [495] Profits WTH regimen 110 inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=10000.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [496] Profits WTH regimen 94 inscripto | active=True | use=none | amount_type=percent | amount=2.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=67170.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [497] Profits WTH regimen 25 inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=16830.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [498] Profits WTH regimen 116I inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=67170.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [499] Profits WTH regimen 116II inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=16830.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [500] Profits WTH regimen 119 inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=160000.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [501] Profits WTH regimen 124 inscripto | active=True | use=none | amount_type=percent | amount=-1.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings_scale | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=16830.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [502] Profits WTH regimen 95 inscripto | active=True | use=none | amount_type=percent | amount=0.2500
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=67170.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [503] Profits WTH regimen 53 inscripto | active=True | use=none | amount_type=percent | amount=0.5000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [504] Profits WTH regimen 55 inscripto | active=True | use=none | amount_type=percent | amount=0.5000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [505] Profits WTH regimen 60 inscripto | active=True | use=none | amount_type=percent | amount=7.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [506] Profits WTH regimen 61 inscripto | active=True | use=none | amount_type=percent | amount=13.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [507] Profits WTH regimen 111 inscripto | active=True | use=none | amount_type=percent | amount=0.5000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [508] Profits WTH regimen 112 inscripto | active=True | use=none | amount_type=percent | amount=3.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=16830.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [509] Profits WTH regimen 113 inscripto | active=True | use=none | amount_type=percent | amount=3.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=16830.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [510] Profits WTH regimen 779 inscripto | active=True | use=none | amount_type=percent | amount=2.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=76140.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [511] Profits WTH regimen 780 inscripto | active=True | use=none | amount_type=percent | amount=2.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=31460.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [512] Profits WTH regimen 99 inscripto | active=True | use=none | amount_type=percent | amount=6.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [513] Profits WTH regimen 965 inscripto | active=True | use=none | amount_type=percent | amount=3.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=supplier | l10n_ar_tax_type=earnings | seq=Retención de Ganancias (id=98)
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.020 Withholding applied to earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [514] VAT WTH | active=True | use=none | amount_type=percent | amount=0.0000
+      grupo=VAT Withholding (id=208, afip=01) | prov=Sin Prov. | wth_pay_type=customer | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.04.030 VAT withholding incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.04.030 VAT withholding incurred | tags=[]
+
+  [361] P. IIBB CABA | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB CABA (id=180, afip=07) | prov=Ciudad Autónoma de Buenos Aires (cod=901) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.030 Perception of IIBB CABA incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.030 Perception of IIBB CABA incurred | tags=[Pagos a Cuenta IIBB]
+
+  [362] P. IIBB BA | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB ARBA (id=181, afip=07) | prov=Buenos Aires (cod=902) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.060 Perception IIBB Buenos Aires incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.060 Perception IIBB Buenos Aires incurred | tags=[Pagos a Cuenta IIBB]
+
+  [363] P. IIBB C | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Catamarca (id=182, afip=07) | prov=Catamarca (cod=903) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.090 Perception IIBB Catamarca incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.090 Perception IIBB Catamarca incurred | tags=[Pagos a Cuenta IIBB]
+
+  [364] P. IIBB CBA | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Córdoba (id=183, afip=07) | prov=Córdoba (cod=904) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.120 Perception IIBB Córdoba incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.120 Perception IIBB Córdoba incurred | tags=[Pagos a Cuenta IIBB]
+
+  [365] P. IIBB CTS | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Corrientes (id=184, afip=07) | prov=Corrientes (cod=905) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.150 Perception IIBB Corrientes incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.150 Perception IIBB Corrientes incurred | tags=[Pagos a Cuenta IIBB]
+
+  [366] P. IIBB ER | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Entre Ríos (id=185, afip=07) | prov=Entre Ríos (cod=908) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.180 Perception IIBB Entre Ríos incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.180 Perception IIBB Entre Ríos incurred | tags=[Pagos a Cuenta IIBB]
+
+  [367] P. IIBB J | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Jujuy (id=186, afip=07) | prov=Jujuy (cod=910) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.210 Perception IIBB Jujuy incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.210 Perception IIBB Jujuy incurred | tags=[Pagos a Cuenta IIBB]
+
+  [368] P. IIBB MZA | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Mendoza (id=187, afip=07) | prov=Mendoza (cod=913) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.240 Perception IIBB Mendoza incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.240 Perception IIBB Mendoza incurred | tags=[Pagos a Cuenta IIBB]
+
+  [369] P. IIBB LR | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB La Rioja (id=188, afip=07) | prov=La Rioja (cod=912) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.270 Perception IIBB La Rioja incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.270 Perception IIBB La Rioja incurred | tags=[Pagos a Cuenta IIBB]
+
+  [370] P. IIBB S | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Salta (id=189, afip=07) | prov=Salta (cod=917) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.300 Perception IIBB Salta incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.300 Perception IIBB Salta incurred | tags=[Pagos a Cuenta IIBB]
+
+  [371] P. IIBB SJ | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB San Juan (id=190, afip=07) | prov=San Juan (cod=918) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.330 Perception IIBB San Juan incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.330 Perception IIBB San Juan incurred | tags=[Pagos a Cuenta IIBB]
+
+  [372] P. IIBB SL | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB San Luis (id=191, afip=07) | prov=San Luis (cod=919) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.360 Perception IIBB San Luis incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.360 Perception IIBB San Luis incurred | tags=[Pagos a Cuenta IIBB]
+
+  [373] P. IIBB SF | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Santa Fe (id=192, afip=07) | prov=Santa Fe (cod=921) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.390 Perception IIBB Santa Fe incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.390 Perception IIBB Santa Fe incurred | tags=[Pagos a Cuenta IIBB]
+
+  [374] P. IIBB SE | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Santiago del Estero (id=193, afip=07) | prov=Santiago Del Estero (cod=922) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.420 Perception IIBB Santiago del Estero incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.420 Perception IIBB Santiago del Estero incurred | tags=[Pagos a Cuenta IIBB]
+
+  [375] P. IIBB T | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Tucumán (id=194, afip=07) | prov=Tucumán (cod=924) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.450 Perception IIBB Tucumán incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.450 Perception IIBB Tucumán incurred | tags=[Pagos a Cuenta IIBB]
+
+  [376] P. IIBB CHO | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Chaco (id=195, afip=07) | prov=Chaco (cod=906) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.480 Perception IIBB Chaco incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.480 Perception IIBB Chaco incurred | tags=[Pagos a Cuenta IIBB]
+
+  [377] P. IIBB CHT | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Chubut (id=196, afip=07) | prov=Chubut (cod=907) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.510 Perception IIBB Chubut incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.510 Perception IIBB Chubut incurred | tags=[Pagos a Cuenta IIBB]
+
+  [378] P. IIBB F | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Formosa (id=197, afip=07) | prov=Formosa (cod=909) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.540 Perception IIBB Formosa incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.540 Perception IIBB Formosa incurred | tags=[Pagos a Cuenta IIBB]
+
+  [379] P. IIBB MS | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Misiones (id=198, afip=07) | prov=Misiones (cod=914) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.570 Perception of IIBB Misiones incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.570 Perception of IIBB Misiones incurred | tags=[Pagos a Cuenta IIBB]
+
+  [380] P. IIBB N | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Neuquén (id=199, afip=07) | prov=Neuquén (cod=915) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.600 Perception IIBB Neuquén incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.600 Perception IIBB Neuquén incurred | tags=[Pagos a Cuenta IIBB]
+
+  [381] P. IIBB LP | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB La Pampa (id=200, afip=07) | prov=La Pampa (cod=911) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.630 Perception of IIBB La Pampa incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.630 Perception of IIBB La Pampa incurred | tags=[Pagos a Cuenta IIBB]
+
+  [382] P. IIBB RN | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Río Negro (id=201, afip=07) | prov=Río Negro (cod=916) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.660 Perception of IIBB Río Negro incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.660 Perception of IIBB Río Negro incurred | tags=[Pagos a Cuenta IIBB]
+
+  [383] P. IIBB SC | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Santa Cruz (id=202, afip=07) | prov=Santa Cruz (cod=920) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.690 Perception IIBB Santa Cruz incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.690 Perception IIBB Santa Cruz incurred | tags=[Pagos a Cuenta IIBB]
+
+  [384] P. IIBB TAIS | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Perc IIBB Tierra del Fuego (id=203, afip=07) | prov=Tierra del Fuego (cod=923) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.02.720 Perception IIBB Tierra del Fuego incurred | tags=[Pagos a Cuenta IIBB]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.02.720 Perception IIBB Tierra del Fuego incurred | tags=[Pagos a Cuenta IIBB]
+
+  [385] Other taxes | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Other Taxes (id=176, afip=99) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=5.4.1.01.020 Other taxes | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=5.4.1.01.020 Other taxes | tags=[]
+
+  [386] Internal taxes | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Internal Taxes (id=177, afip=04) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=5.4.1.01.030 Internal taxes | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=5.4.1.01.030 Internal taxes | tags=[]
+
+  [389] Perc Profits | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=Profit Perceptions (id=206, afip=09) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.05.020 Perceptions of Earnings incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.05.020 Perceptions of Earnings incurred | tags=[]
+
+  [432] Perc VAT | active=True | use=purchase | amount_type=fixed | amount=1.0000
+      grupo=VAT Perception (id=179, afip=06) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.04.020 Perception VAT incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.04.020 Perception VAT incurred | tags=[]
+
+  [433] VAT 20% | active=True | use=purchase | amount_type=percent | amount=20.0000
+      grupo=VAT Perception (id=179, afip=06) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=1.1.4.04.020 Perception VAT incurred | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=1.1.4.04.020 Perception VAT incurred | tags=[]
+
+  [387] Perc VAT 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=VAT Perception (id=179, afip=06) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.03.040 Perception VAT applied | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.03.040 Perception VAT applied | tags=[Ret/Perc SICORE Aplicada]
+
+  [388] Perc Profits 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Profit Perceptions (id=206, afip=09) | prov=Sin Prov. | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.04.030 Perception applied earnings | tags=[Ret/Perc SICORE Aplicada]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.04.030 Perception applied earnings | tags=[Ret/Perc SICORE Aplicada]
+
+  [390] P. IIBB CABA 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB CABA (id=180, afip=07) | prov=Ciudad Autónoma de Buenos Aires (cod=901) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.040 Perception of IIBB CABA applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.040 Perception of IIBB CABA applied | tags=[]
+
+  [391] P. IIBB BA 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB ARBA (id=181, afip=07) | prov=Buenos Aires (cod=902) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.060 Perception IIBB ARBA applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.060 Perception IIBB ARBA applied | tags=[]
+
+  [392] P. IIBB C 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Catamarca (id=182, afip=07) | prov=Catamarca (cod=903) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.080 Perception IIBB Catamarca applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.080 Perception IIBB Catamarca applied | tags=[]
+
+  [393] P. IIBB CBA 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Córdoba (id=183, afip=07) | prov=Córdoba (cod=904) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.100 Perception IIBB Córdoba applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.100 Perception IIBB Córdoba applied | tags=[]
+
+  [394] P. IIBB CTS 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Corrientes (id=184, afip=07) | prov=Corrientes (cod=905) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.120 Perception of IIBB Corrientes applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.120 Perception of IIBB Corrientes applied | tags=[]
+
+  [395] P. IIBB ER 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Entre Ríos (id=185, afip=07) | prov=Entre Ríos (cod=908) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.140 Perception of IIBB Entre Río applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.140 Perception of IIBB Entre Río applied | tags=[]
+
+  [396] P. IIBB J 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Jujuy (id=186, afip=07) | prov=Jujuy (cod=910) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.160 Perception IIBB Jujuy applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.160 Perception IIBB Jujuy applied | tags=[]
+
+  [397] P. IIBB MZA 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Mendoza (id=187, afip=07) | prov=Mendoza (cod=913) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.180 Perception IIBB Mendoza applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.180 Perception IIBB Mendoza applied | tags=[]
+
+  [398] P. IIBB LR 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB La Rioja (id=188, afip=07) | prov=La Rioja (cod=912) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.200 Perception IIBB La Rioja applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.200 Perception IIBB La Rioja applied | tags=[]
+
+  [399] P. IIBB S 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Salta (id=189, afip=07) | prov=Salta (cod=917) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.220 Perception IIBB Salta applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.220 Perception IIBB Salta applied | tags=[]
+
+  [400] P. IIBB SJ 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB San Juan (id=190, afip=07) | prov=San Juan (cod=918) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.240 Perception IIBB San Juan applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.240 Perception IIBB San Juan applied | tags=[]
+
+  [401] P. IIBB SL 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB San Luis (id=191, afip=07) | prov=San Luis (cod=919) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.260 Perception IIBB San Luis applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.260 Perception IIBB San Luis applied | tags=[]
+
+  [402] P. IIBB SF 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Santa Fe (id=192, afip=07) | prov=Santa Fe (cod=921) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.280 Perception IIBB Santa Fe applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.280 Perception IIBB Santa Fe applied | tags=[]
+
+  [403] P. IIBB SE 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Santiago del Estero (id=193, afip=07) | prov=Santiago Del Estero (cod=922) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.300 Perception IIBB Santiago del Estero applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.300 Perception IIBB Santiago del Estero applied | tags=[]
+
+  [404] P. IIBB T 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Tucumán (id=194, afip=07) | prov=Tucumán (cod=924) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.320 Perception IIBB Tucumán applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.320 Perception IIBB Tucumán applied | tags=[]
+
+  [405] P. IIBB CHO 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Chaco (id=195, afip=07) | prov=Chaco (cod=906) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.340 Perception IIBB Chaco applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.340 Perception IIBB Chaco applied | tags=[]
+
+  [406] P. IIBB CHT 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Chubut (id=196, afip=07) | prov=Chubut (cod=907) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.360 Perception IIBB Chubut applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.360 Perception IIBB Chubut applied | tags=[]
+
+  [407] P. IIBB F 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Formosa (id=197, afip=07) | prov=Formosa (cod=909) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.380 Perception IIBB Formosa applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.380 Perception IIBB Formosa applied | tags=[]
+
+  [408] P. IIBB MS 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Misiones (id=198, afip=07) | prov=Misiones (cod=914) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.400 Perception IIBB Misiones applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.400 Perception IIBB Misiones applied | tags=[]
+
+  [409] P. IIBB N 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Neuquén (id=199, afip=07) | prov=Neuquén (cod=915) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.420 Perception IIBB Neuquén applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.420 Perception IIBB Neuquén applied | tags=[]
+
+  [410] P. IIBB LP 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB La Pampa (id=200, afip=07) | prov=La Pampa (cod=911) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.440 Perception of IIBB La Pampa applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.440 Perception of IIBB La Pampa applied | tags=[]
+
+  [411] P. IIBB RN 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Río Negro (id=201, afip=07) | prov=Río Negro (cod=916) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.460 Perception IIBB Río Negro applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.460 Perception IIBB Río Negro applied | tags=[]
+
+  [412] P. IIBB SC 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Santa Cruz (id=202, afip=07) | prov=Santa Cruz (cod=920) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.480 Perception IIBB Santa Cruz applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.480 Perception IIBB Santa Cruz applied | tags=[]
+
+  [413] P. IIBB TAIS 0% | active=False | use=sale | amount_type=percent | amount=0.0000
+      grupo=Perc IIBB Tierra del Fuego (id=203, afip=07) | prov=Tierra del Fuego (cod=923) | wth_pay_type=False | l10n_ar_tax_type=False | seq=SIN SECUENCIA
+      umbrales: min_tax=0.0 | min_base=0.0 | min_pay=0.0 | non_taxable=0.0
+      rep(inv)  base   | cuenta=False | tags=[]
+      rep(inv)  tax    | cuenta=2.1.3.02.500 Perception IIBB Tierra del Fuego applied | tags=[]
+      rep(ref)  base   | cuenta=False | tags=[]
+      rep(ref)  tax    | cuenta=2.1.3.02.500 Perception IIBB Tierra del Fuego applied | tags=[]
+
+--- Grupos de Impuestos (account.tax.group) de la compañía o globales -----------------------------
+  [167] VAT 21%                             | cia=1 | afip_tribute=False | vat_code=5
+  [168] VAT 27%                             | cia=1 | afip_tribute=False | vat_code=6
+  [169] VAT 10.5%                           | cia=1 | afip_tribute=False | vat_code=4
+  [170] VAT 2.5%                            | cia=1 | afip_tribute=False | vat_code=9
+  [171] VAT Not Applicable                  | cia=1 | afip_tribute=False | vat_code=0
+  [172] VAT Untaxed                         | cia=1 | afip_tribute=False | vat_code=1
+  [173] VAT Exempt                          | cia=1 | afip_tribute=False | vat_code=2
+  [174] VAT 0%                              | cia=1 | afip_tribute=False | vat_code=3
+  [175] VAT 5%                              | cia=1 | afip_tribute=False | vat_code=8
+  [179] VAT Perception                      | cia=1 | afip_tribute=06 | vat_code=False
+  [180] Perc IIBB CABA                      | cia=1 | afip_tribute=07 | vat_code=False
+  [181] Perc IIBB ARBA                      | cia=1 | afip_tribute=07 | vat_code=False
+  [182] Perc IIBB Catamarca                 | cia=1 | afip_tribute=07 | vat_code=False
+  [183] Perc IIBB Córdoba                   | cia=1 | afip_tribute=07 | vat_code=False
+  [184] Perc IIBB Corrientes                | cia=1 | afip_tribute=07 | vat_code=False
+  [185] Perc IIBB Entre Ríos                | cia=1 | afip_tribute=07 | vat_code=False
+  [186] Perc IIBB Jujuy                     | cia=1 | afip_tribute=07 | vat_code=False
+  [187] Perc IIBB Mendoza                   | cia=1 | afip_tribute=07 | vat_code=False
+  [188] Perc IIBB La Rioja                  | cia=1 | afip_tribute=07 | vat_code=False
+  [189] Perc IIBB Salta                     | cia=1 | afip_tribute=07 | vat_code=False
+  [190] Perc IIBB San Juan                  | cia=1 | afip_tribute=07 | vat_code=False
+  [191] Perc IIBB San Luis                  | cia=1 | afip_tribute=07 | vat_code=False
+  [192] Perc IIBB Santa Fe                  | cia=1 | afip_tribute=07 | vat_code=False
+  [193] Perc IIBB Santiago del Estero       | cia=1 | afip_tribute=07 | vat_code=False
+  [194] Perc IIBB Tucumán                   | cia=1 | afip_tribute=07 | vat_code=False
+  [195] Perc IIBB Chaco                     | cia=1 | afip_tribute=07 | vat_code=False
+  [196] Perc IIBB Chubut                    | cia=1 | afip_tribute=07 | vat_code=False
+  [197] Perc IIBB Formosa                   | cia=1 | afip_tribute=07 | vat_code=False
+  [198] Perc IIBB Misiones                  | cia=1 | afip_tribute=07 | vat_code=False
+  [199] Perc IIBB Neuquén                   | cia=1 | afip_tribute=07 | vat_code=False
+  [200] Perc IIBB La Pampa                  | cia=1 | afip_tribute=07 | vat_code=False
+  [201] Perc IIBB Río Negro                 | cia=1 | afip_tribute=07 | vat_code=False
+  [202] Perc IIBB Santa Cruz                | cia=1 | afip_tribute=07 | vat_code=False
+  [203] Perc IIBB Tierra del Fuego          | cia=1 | afip_tribute=07 | vat_code=False
+  [205] Municipal Taxes Perceptions         | cia=1 | afip_tribute=08 | vat_code=False
+  [206] Profit Perceptions                  | cia=1 | afip_tribute=09 | vat_code=False
+  [207] Other Perceptions                   | cia=1 | afip_tribute=09 | vat_code=False
+  [208] VAT Withholding                     | cia=1 | afip_tribute=01 | vat_code=False
+  [177] Internal Taxes                      | cia=1 | afip_tribute=04 | vat_code=False
+  [176] Other Taxes                         | cia=1 | afip_tribute=99 | vat_code=False
+  [204] IIBB Perceptions                    | cia=1 | afip_tribute=07 | vat_code=False
+  [178] National Taxes                      | cia=1 | afip_tribute=01 | vat_code=False
+
+--- Posiciones Fiscales (account.fiscal.position, active_test=False) ------------------------------
+  Total posiciones fiscales: 3
+
+  [7] Purchases / Sales abroad | active=True | seq=0 | auto_apply=True | vat_req=False | country=Cualquiera
+      estados=[Todas] | resp_afip=[Cliente del Exterior]
+      mapeo tax_ids (10):
+        VAT 0% -> 0% EXEMPT
+        VAT 10.5% -> 0% EXEMPT
+        VAT 21% -> 0% EXEMPT
+        VAT 27% -> 0% EXEMPT
+        VAT 0% -> 0% NA
+        VAT 10.5% -> 0% NA
+        VAT 21% -> 0% NA
+        VAT 27% -> 0% NA
+        0% EXEMPT -> 0% NA
+        0% NT -> 0% NA
+      líneas l10n_ar_tax_ids: (vacío)
+
+  [8] Purchases / Sales Free Trade Zone | active=True | seq=0 | auto_apply=True | vat_req=False | country=Cualquiera
+      estados=[Todas] | resp_afip=[IVA Liberado – Ley Nº 19.640]
+      mapeo tax_ids (8):
+        VAT 0% -> 0% EXEMPT
+        VAT 10.5% -> 0% EXEMPT
+        VAT 21% -> 0% EXEMPT
+        VAT 27% -> 0% EXEMPT
+        VAT 0% -> 0% EXEMPT
+        VAT 10.5% -> 0% EXEMPT
+        VAT 21% -> 0% EXEMPT
+        VAT 27% -> 0% EXEMPT
+      líneas l10n_ar_tax_ids: (vacío)
+
+  [9] Purchases VAT in the correspondent | active=True | seq=0 | auto_apply=True | vat_req=False | country=Cualquiera
+      estados=[Todas] | resp_afip=[IVA Sujeto Exento, Responsable Monotributo]
+      mapeo tax_ids (6):
+        VAT 0% -> 0% NA
+        VAT 10.5% -> 0% NA
+        VAT 21% -> 0% NA
+        VAT 27% -> 0% NA
+        0% EXEMPT -> 0% NA
+        0% NT -> 0% NA
+      líneas l10n_ar_tax_ids: (vacío)
+
+--- Diarios de la compañía (bank/cash/sale/purchase) ----------------------------------------------
+  [ 48] bank     | active=True  | Bank
+  [ 60] bank     | active=True  | Bank
+  [ 61] bank     | active=True  | Banco Galicia C.C N°975016330409
+  [ 62] bank     | active=True  | Bank
+  [ 63] bank     | active=True  | Bank
+  [ 64] bank     | active=True  | Bank
+  [ 65] bank     | active=True  | Banco Macro C.C N°294909588770491
+  [ 66] bank     | active=True  | Banco Macro C.C U$S N°1910540066568
+  [ 67] bank     | active=True  | Banco Macro C.C U$S N°1910540066568
+  [ 68] bank     | active=True  | Banco Macro C.C U$S N°1910540066568
+  [ 49] cash     | active=True  | Cash
+  [ 50] cash     | active=True  | Third Party Checks
+  [ 51] cash     | active=True  | Rejected Third Party Checks
+  [ 52] cash     | active=True  | Multiple payments
+  [ 44] purchase | active=True  | Vendor Bills | use_docs=True | pos_sys=False | default_taxes=[]
+  [ 43] sale     | active=True  | Ventas Preimpreso | use_docs=True | pos_sys=II_IM | default_taxes=[]
+  [ 59] sale     | active=True  | 00005 - Facturación Electrónica Odoo | use_docs=True | pos_sys=RAW_MAW | default_taxes=[]
+  [ 69] sale     | active=True  | 01 -Ventas preimpreso | use_docs=True | pos_sys=II_IM | default_taxes=[]
+  [ 70] sale     | active=True  | 01 -Ventas preimpreso | use_docs=True | pos_sys=II_IM | default_taxes=[]
+  [ 72] sale     | active=True  | 00022 - Facturación Electronica Odoo | use_docs=True | pos_sys=FEEWS | default_taxes=[]

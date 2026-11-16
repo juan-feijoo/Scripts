@@ -1,0 +1,151 @@
+2026-11-13 15:45:40,901 292 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:40,901 292 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:40,901 292 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:40,901 292 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:40,901 292 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+02 - CENTROS DE TRABAJO, CAPACIDADES Y RECURSOS
+====================================================================================================
+Total centros de trabajo encontrados (filtro='TODOS'): 1
+
+--- Workcenter: Planta de hormigón (id=2 | active=True) -------------------------------------------
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  alternative_workcenter_ids                    []
+  analytic_distribution                         False
+  analytic_precision                            2
+  blocked_time                                  0.0
+  capacity_ids                                  []
+  code                                          PLANTA-01
+  color                                         0
+  company_id                                    BETON SRL (id=1)
+  costs_hour                                    0.0
+  costs_hour_account_ids                        []
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  currency_id                                   ARS (id=19)
+  display_name                                  Planta de hormigón
+  distribution_analytic_account_ids             []
+  effective_date                                2026-11-05
+  employee_costs_hour                           0.0
+  employee_ids                                  []
+  equipment_ids                                 []
+  estimated_next_failure                        False
+  expected_mtbf                                 0
+  expense_account_id                            False
+  has_message                                   True
+  has_routing_lines                             True
+  id                                            2
+  kanban_dashboard_graph                        [{"is_sample_data": false, "labels": ["1 - 7 Nov", "This Week", "15 - 21 Nov", "22 - 28 Nov", "29 - 5 Dec"], "values": [[0.8, 1.8, 0, 0, 0], 40.0, [0, 0, 0, 0, 0]]}]
+  latest_failure_date                           False
+  maintenance_count                             0
+  maintenance_ids                               []
+  maintenance_open_count                        0
+  maintenance_team_id                           False
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=883)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  mtbf                                          0
+  mttr                                          0
+  my_activity_date_deadline                     False
+  name                                          Planta de hormigón
+  note                                          False
+  oee                                           100.0
+  oee_target                                    90.0
+  order_ids                                     10 registros: BT/MO/00004 - Fabricación(id=4), BT/MO/00002 - Fabricación(id=2), BT/MO/00003 - Fabricación(id=3), BT/MO/00005 - Fabricación(id=5), BT/MO/00006 - Fabricación(id=6), BT/MO/00007 - Fabricación(id=7), BT/MO/00008 - Fabricación(id=8), BT/MO/00009 - Fabricación(id=9), BT/MO/00012 - Fabricación(id=12), BT/MO/00013 - Fabricación(id=13)
+  performance                                   199
+  productive_time                               0.54
+  rating_ids                                    []
+  resource_calendar_id                          Standard 40 hours/week (id=1)
+  resource_id                                   Planta de hormigón (id=4)
+  routing_line_ids                              11 registros: Fabricación(id=12), Fabricación(id=13), Fabricación(id=14), Fabricación(id=15), Fabricación(id=16), Fabricación(id=17), Fabricación(id=18), Fabricación(id=19), Fabricación(id=20), Fabricación(id=21), Fabricación(id=22)
+  sequence                                      1
+  tag_ids                                       []
+  technician_user_id                            False
+  time_efficiency                               100.0
+  time_ids                                      2 registros: Fully Productive Time(id=2), Fully Productive Time(id=1)
+  time_start                                    0.0
+  time_stop                                     0.0
+  tz                                            UTC
+  website_message_ids                           []
+  workcenter_load                               158.36
+  working_state                                 normal
+  workorder_blocked_count                       0
+  workorder_count                               8
+  workorder_late_count                          0
+  workorder_progress_count                      0
+  workorder_ready_count                         8
+  write_date                                    2026-11-05 15:52:30.124527
+  write_uid                                     OdooBot (id=1)
+
+  >> Resource asociado (resource.resource id=4):
+  active                                        True
+  avatar_128                                    <binario vacío>
+  calendar_id                                   Standard 40 hours/week (id=1)
+  color                                         1
+  company_id                                    BETON SRL (id=1)
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  department_id                                 False
+  display_name                                  Planta de hormigón
+  email                                         False
+  employee_id                                   []
+  employee_skill_ids                            []
+  hr_icon_display                               False
+  id                                            4
+  im_status                                     False
+  job_title                                     False
+  name                                          Planta de hormigón
+  phone                                         False
+  resource_type                                 material
+  share                                         False
+  show_hr_icon_display                          False
+  time_efficiency                               100.0
+  tz                                            UTC
+  user_id                                       False
+  work_email                                    False
+  work_location_id                              False
+  work_phone                                    False
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+  >> Calendario laboral: Standard 40 hours/week (id=1 | hours_per_day=8.0 | tz=UTC)
+    - Monday Morning | día=0 | 8.0 a 12.0 | período=morning
+    - Monday Lunch | día=0 | 12.0 a 13.0 | período=lunch
+    - Monday Afternoon | día=0 | 13.0 a 17.0 | período=afternoon
+    - Tuesday Morning | día=1 | 8.0 a 12.0 | período=morning
+    - Tuesday Lunch | día=1 | 12.0 a 13.0 | período=lunch
+    - Tuesday Afternoon | día=1 | 13.0 a 17.0 | período=afternoon
+    - Wednesday Morning | día=2 | 8.0 a 12.0 | período=morning
+    - Wednesday Lunch | día=2 | 12.0 a 13.0 | período=lunch
+    - Wednesday Afternoon | día=2 | 13.0 a 17.0 | período=afternoon
+    - Thursday Morning | día=3 | 8.0 a 12.0 | período=morning
+    - Thursday Lunch | día=3 | 12.0 a 13.0 | período=lunch
+    - Thursday Afternoon | día=3 | 13.0 a 17.0 | período=afternoon
+    - Friday Morning | día=4 | 8.0 a 12.0 | período=morning
+    - Friday Lunch | día=4 | 12.0 a 13.0 | período=lunch
+    - Friday Afternoon | día=4 | 13.0 a 17.0 | período=afternoon
+
+--- Resumen completo de mrp.workcenter.capacity ---------------------------------------------------
+Total registros capacity_ids: 0
+
+--- Productividad / Tiempos reales registrados (mrp.workcenter.productivity) ----------------------
+Total registros productividad: 2 (mostrando últimos 2)
+  [id=2] wc=Planta de hormigón     wo=BT/MO/00003 - Fabricación loss=Fully Productive Time dur=0.10 min (2026-11-02 18:42:44 -> 2026-11-02 18:42:50)
+  [id=1] wc=Planta de hormigón     wo=BT/MO/00002 - Fabricación loss=Fully Productive Time dur=32.10 min (2026-11-02 17:49:44 -> 2026-11-02 18:21:50)

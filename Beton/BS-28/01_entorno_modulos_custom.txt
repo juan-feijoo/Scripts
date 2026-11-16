@@ -1,0 +1,224 @@
+2026-11-13 15:45:37,756 286 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:37,756 286 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:37,756 286 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:37,756 286 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:37,756 286 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+01 - ENTORNO, MÓDULOS Y PERSONALIZACIONES (SOLO LECTURA)
+====================================================================================================
+DB: outsource-argentina-beton-staging-41077287
+Odoo release: 19.0+e | version_info: (19, 0, 0, 'final', 0, 'e')
+Usuario shell: OdooBot (id=1)
+
+--- Compañías -------------------------------------------------------------------------------------
+  [1] BETON SRL | país=AR | moneda=ARS
+
+--- Estado de módulos clave (Manufactura, Planeación, Recursos, Flota) ----------------------------
+  mrp                        installed       19.0.2.0
+  mrp_workorder              installed       19.0.1.0
+  mrp_workorder_hr           no encontrado   -
+  mrp_mps                    uninstalled     19.0.1.0
+  mrp_account                installed       19.0.1.0
+  mrp_account_enterprise     installed       19.0.1.0
+  sale_mrp                   installed       19.0.1.0
+  mrp_maintenance            installed       19.0.1.0
+  quality_mrp                uninstalled     19.0.1.1
+  quality_mrp_workorder      uninstalled     19.0.1.0
+  planning                   uninstalled     19.0.1.0
+  sale_planning              uninstalled     19.0.1.0
+  project_planning           no encontrado   -
+  hr_planning                no encontrado   -
+  planning_holidays          uninstalled     19.0.1.0
+  resource                   installed       19.0.1.1
+  fleet                      installed       19.0.0.1
+  maintenance                installed       19.0.1.0
+  stock                      installed       19.0.1.1
+  sale_management            installed       19.0.1.0
+  web_studio                 installed       19.0.1.0
+
+--- Módulos custom / terceros instalados (author != Odoo S.A.) ------------------------------------
+  account_accountant_ux               v=19.0.1.16.0      author='ADHOC SA' | summary=Accounting Accountant UX
+  account_analytic_ux                 v=19.0.1.0.0       author='ADHOC SA' | summary=Account Analytic UX
+  account_background_post             v=19.0.1.9.0       author='ADHOC SA' | summary=Account Background Post
+  account_batch_payment_ux            v=19.0.1.0.0       author='ADHOC SA' | summary=Account Batch Payment UX
+  account_internal_transfer           v=19.0.1.5.0       author='ADHOC SA' | summary=Account Internal Transfer
+  account_payment_pro                 v=19.0.3.1.0       author='ADHOC SA' | summary=Account Payment Super Power
+  account_payment_pro_receiptbook     v=19.0.2.6.0       author='ADHOC SA' | summary=Account Payment receiptbook
+  account_payment_ux                  v=19.0.1.1.0       author='ADHOC SA' | summary=Account Payment UX
+  account_ux                          v=19.0.1.29.0      author='ADHOC SA' | summary=Account UX
+  accountant_internal_transfer        v=19.0.1.0.0       author='ADHOC SA' | summary=Accountant UX
+  custom_remito                       v=19.0.1.0.0       author='OutsourceArg' | summary=Custom Remito - Preimpreso y Remito Interno
+  fleet_maintenance_custom            v=19.0.1.0.0       author='OutsourceArg/Cesar' | summary=Fleet Maintenance & Purchases Custom
+  html_editor                         v=19.0.1.0         author='odoo' | summary=HTML Editor
+  l10n_ar                             v=19.0.3.7         author='ADHOC SA' | summary=Argentina - Accounting
+  l10n_ar_account_reports             v=19.0.1.21.0      author='ADHOC SA' | summary=Accounting Reports Customized for Argentina
+  l10n_ar_account_reports_backward_comp v=19.0.1.0.0       author='ADHOC SA' | summary=Backward compatibility for tax Settlements on Argentina
+  l10n_ar_bank                        v=19.0.1.1.0       author='ADHOC SA' | summary=Listado de Bancos Argentinos
+  l10n_ar_edi                         v=19.0.1.1         author='ADHOC SA' | summary=Argentinean Electronic Invoicing
+  l10n_ar_edi_payment_pro             v=19.0.1.0.0       author='ADHOC SA' | summary=Account Payment pro for l10n_ar_edi
+  l10n_ar_edi_ux                      v=19.0.1.9.0       author='ADHOC SA' | summary=Argentinian Electronic Invoicing UX
+  l10n_ar_payment_bundle              v=19.0.1.13.0      author='ADHOC SA' | summary=Argentinean Payment bundle
+  l10n_ar_purchase                    v=19.0.1.2.0       author='ADHOC SA' | summary=Argentinean Purchase
+  l10n_ar_purchase_stock              v=19.0.1.1.0       author='ADHOC SA' | summary=Argentinian Purchase Stock
+  l10n_ar_reports                     v=19.0.1.0         author='ADHOC SA' | summary=Argentinean Accounting Reports
+  l10n_ar_tax                         v=19.0.1.35.0      author='ADHOC SA,Odoo Community Association (OCA)' | summary=Automatic Argentinian Withholdings on Payments
+  l10n_ar_tax_backward_compatibility  v=19.0.1.0.0       author='ADHOC SA' | summary=Automatic Argentinian Withholdings backward compatibility
+  l10n_ar_ux                          v=19.0.1.13.0      author='ADHOC SA' | summary=Argentinian Accounting UX
+  l10n_ar_withholding                 v=19.0.1.0         author='ADHOC SA' | summary=Argentina - Payment Withholdings
+  l10n_latam_check                    v=19.0.1.0.0       author='ADHOC SA' | summary=Third Party and Deferred/Electronic Checks Management
+  l10n_latam_check_ux                 v=19.0.2.2.0       author='ADHOC SA' | summary=Latam Check UX
+  l10n_latam_checkbook                v=19.0.1.0.0       author='Calyx Servicios S.A.' | summary=Latam Checkbooks
+  l10n_latam_invoice_document         v=19.0.1.1         author='ADHOC SA' | summary=LATAM Document
+  purchase_order_analytic_default     v=19.0.1.0.0       author='Outsource' | summary=Purchase Order Default Analytic Distribution
+  purchase_requisition_stock_availability v=19.0.1.0.0       author='OutsourceArg' | summary=Purchase Requisition - Stock Availability
+  stock_account_ux                    v=19.0.1.4.0       author='ADHOC SA' | summary=Stock Move UX
+  studio_customization                v=19.0.1.0         author='BETON SRL' | summary=Studio customizations
+
+--- Campos custom / Studio (x_*) en modelos de Manufactura / Planeación / Venta -------------------
+  product.product              x_studio_datetime_field_47m_1k762r43c datetime       (Nuevo Fecha y hora)
+  product.template             x_studio_datetime_field_47m_1k762r43c datetime       (Nuevo Fecha y hora)
+
+--- Automatizaciones (base.automation) - todas (activas e inactivas) ------------------------------
+  [id=1 active=True] Reset approval entries for (Orden de compra) model=purchase.order           trigger=on_state_set
+
+--- Acciones de servidor (ir.actions.server) en modelos MRP / Planning / Resource -----------------
+  [id=835] Split                                    model=mrp.production
+    action = records.action_split()
+  [id=836] Print Labels                             model=mrp.production
+    
+                if records:
+                    action = records.action_open_label_type()
+  [id=837] Lock/Unlock                              model=mrp.production
+    
+                if records:
+                    records.action_toggle_is_locked()
+  [id=838] Scrap                                    model=mrp.production
+    
+                if records:
+                    action = records.button_scrap()
+  [id=839] Plan based on Components Availability    model=mrp.production
+    action = records.action_plan_with_components_availability()
+  [id=840] Merge                                    model=mrp.production
+    action = records.action_merge()
+  [id=841] Mark as Done                             model=mrp.production
+    
+                if records:
+                    res = records.filtered(lambda mo: mo.state in {'confirmed', 'to_close', 'progress'}).button_mark_done()
+                    if res is not True:
+                        action = res
+                
+  [id=844] Unreserve                                model=mrp.production
+    
+                if records:
+                    records.do_unreserve()
+                
+  [id=872] Unplan orders                            model=mrp.production
+    records.button_unplan()
+  [id=930] Maintenance Request                      model=mrp.production
+    
+                if records:
+                    action = records.button_maintenance_req()
+            
+  [id=188] Print Labels                             model=product.template
+    
+                if records:
+                    action = records.action_open_label_layout()
+            
+  [id=189] Pricelist Report                         model=product.template
+    
+    action = {
+        'name': 'Pricelist Report',
+        'type': 'ir.actions.client',
+        'tag': 'generate_pricelist_report',
+        'context': env.context,
+    }
+            
+  [id=519] Routes                                   model=product.template
+    
+                    action = model.action_open_routes_diagram()
+                
+  [id=521] Replenish                                model=product.template
+    
+                    for record in records:
+                        if record.type != 'consu':
+                            raise UserError(env._("Replenishment is only available for inventory-managed products."))
+                        elif not record.product_variant_id:
+                            raise UserError(env._("Replenishment is only available for product templates with at least one variant."))
+                        else:
+                            action = {
+                                "name": "Low on stock? Let's replenish.",
+                                "type": "ir.actions.act_window",
+                                "res_model": "product.replenish",
+                                "context": {'default_product_tmpl_id': records.id},
+                                "views": [[False, "form"]],
+                                "target": "new",
+                            }
+                
+  [id=861] Compute Price from BoM                   model=product.template
+    
+                if records:
+                    records.action_bom_cost()
+                
+  [id=179] Print Labels                             model=product.product
+    
+                if records:
+                    action = records.action_open_label_layout()
+            
+  [id=180] Pricelist Report                         model=product.product
+    
+    action = {
+        'name': 'Pricelist Report',
+        'type': 'ir.actions.client',
+        'tag': 'generate_pricelist_report',
+        'context': env.context,
+    }
+            
+  [id=520] Replenish                                model=product.product
+    
+                    for record in records:
+                        if record.type == 'consu':
+                            action = {
+                                "name": "Low on stock? Let's replenish.",
+                                "type": "ir.actions.act_window",
+                                "res_model": "product.replenish",
+                                "context": {'default_product_id': records.id},
+                                "views": [[False, "form"]],
+                                "target": "new",
+                            }
+                        else:
+                            raise UserError(env._("Replenishment is only available for inventory-managed products."))
+                
+  [id=862] Compute Price from BoM                   model=product.product
+    
+                if records:
+                    records.action_bom_cost()
+                
+  [id=387] Sales: Send pending emails               model=sale.order
+    model._cron_send_pending_emails()
+  [id=399] Mark Quotation as Sent                   model=sale.order
+    action = records.action_quotation_sent()
+  [id=400] Share                                    model=sale.order
+    action = records.action_share()
+  [id=401] Send an email                            model=sale.order
+    
+                if records:
+                    action = records.with_context(hide_default_template=True).action_quotation_send()
+            
+  [id=769] Create Project                           model=sale.order
+    action = records.action_create_project()
+  [id=818] Start                                    model=mrp.workorder
+    action = records.button_start(raise_on_invalid_state=True)
+  [id=819] Pause                                    model=mrp.workorder
+    action = records.button_pending()
+  [id=866] Work Orders Planning                     model=mrp.workorder
+    
+                action = model.action_mrp_workorder_dependencies('workcenter')
+            
+  [id=867] Work Orders Planning                     model=mrp.workorder
+    
+                action = model.action_mrp_workorder_dependencies('production')
+            
+
+--- Crons relacionados (ir.cron) ------------------------------------------------------------------
+  [id=28 active=False] Sales: Send pending emails                    model=sale.order

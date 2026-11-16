@@ -1,0 +1,15 @@
+Fecha: Fri Nov 13 08:55:53 PM UTC 2026
+Host: capp12
+DB: outsource-argentina-dimat-staging-41899251
+
+### odoo-bin --version
+Odoo Server 18.0
+
+### src/user
+total 12
+drwxr-xr-x 1 odoo odoo  33 Nov 13 20:15 .
+drwxr-xr-x 6 odoo odoo  62 Nov 13 20:15 ..
+-rw-r--r-- 1 odoo odoo 134 Nov 13 20:15 .git
+-rw-r--r-- 1 odoo odoo 936 Nov 13 20:15 .gitmodules
+drwxr-xr-x 1 odoo odoo  29 Nov 13 20:15 Outsource-Argentina
+-rw-r--r-- 1 odoo odoo   7 Nov 13 20:15 README.md

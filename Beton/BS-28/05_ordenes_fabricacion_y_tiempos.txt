@@ -1,0 +1,101 @@
+2026-11-13 15:45:50,533 310 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:50,533 310 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:50,533 310 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:50,533 310 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:50,533 310 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+05 - ÓRDENES DE FABRICACIÓN, ÓRDENES DE TRABAJO Y SIMULACIÓN DE TIEMPOS
+====================================================================================================
+
+--- Distribución de cantidades en Órdenes de Fabricación ------------------------------------------
+Total MOs: 10
+  estado draft       : 1
+  estado confirmed   : 6
+  estado progress    : 1
+  estado done        : 2
+
+Distribución por volumen/cantidad:
+  <= 1 m3 (pedidos pequeños)  : 1
+  1 < Q <= 3                  : 0
+  3 < Q <= 6                  : 0
+  6 < Q <= 8                  : 1
+  > 8                         : 8
+
+--- Muestra de Órdenes de Fabricación recientes y pedidos pequeños (<= 2) -------------------------
+
+[MO BT/MO/00013 | id=13 | state=progress] prod=[H13] SERVICIO DE COLADO DE HORMIGÓN | qty=10.000 m³ | bom=[H13] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00013
+  planificadas: 2026-11-12 17:00:57 -> 2026-11-13 08:21:24 | reales: - -> -
+  >> WO [id=13 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=10.000 | exp=21.40 min | real=0.00 min | prop(5+2.8Q)=33.00 | prop(max)=28.00
+
+[MO BT/MO/00012 | id=12 | state=confirmed] prod=[H21] SERVICIO DE COLADO DE HORMIGÓN | qty=10.000 m³ | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00013
+  planificadas: 2026-11-12 17:00:57 -> 2026-11-13 08:21:24 | reales: - -> -
+  >> WO [id=12 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=10.000 | exp=21.40 min | real=0.00 min | prop(5+2.8Q)=33.00 | prop(max)=28.00
+
+[MO BT/MO/00009 | id=9 | state=confirmed] prod=[H25] SERVICIO DE COLADO DE HORMIGÓN | qty=10.000 m³ | bom=[H25] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00010
+  planificadas: 2026-11-12 16:52:08 -> 2026-11-13 08:13:32 | reales: - -> -
+  >> WO [id=9 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=10.000 | exp=21.40 min | real=0.00 min | prop(5+2.8Q)=33.00 | prop(max)=28.00
+
+[MO BT/MO/00008 | id=8 | state=confirmed] prod=[H21] SERVICIO DE COLADO DE HORMIGÓN | qty=10.000 m³ | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00010
+  planificadas: 2026-11-12 16:52:08 -> 2026-11-13 08:13:32 | reales: - -> -
+  >> WO [id=8 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=10.000 | exp=21.40 min | real=0.00 min | prop(5+2.8Q)=33.00 | prop(max)=28.00
+
+[MO BT/MO/00007 | id=7 | state=confirmed] prod=[H10] SERVICIO DE COLADO DE HORMIGÓN | qty=10.000 m³ | bom=[H10] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00011
+  planificadas: 2026-11-12 16:50:46 -> 2026-11-13 08:12:10 | reales: - -> -
+  >> WO [id=7 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=10.000 | exp=21.40 min | real=0.00 min | prop(5+2.8Q)=33.00 | prop(max)=28.00
+
+[MO BT/MO/00006 | id=6 | state=confirmed] prod=[H21] SERVICIO DE COLADO DE HORMIGÓN | qty=1.000 m³ | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00009
+  planificadas: 2026-11-12 16:38:46 -> 2026-11-12 16:40:54.400000 | reales: - -> -
+  >> WO [id=6 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=1.000 | exp=2.14 min | real=0.00 min | prop(5+2.8Q)=7.80 | prop(max)=5.00
+
+[MO BT/MO/00005 | id=5 | state=confirmed] prod=[H21] SERVICIO DE COLADO DE HORMIGÓN | qty=15.000 m³ | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00006
+  planificadas: 2026-11-06 17:59:37 -> 2026-11-09 08:32:06 | reales: - -> -
+  >> WO [id=5 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=15.000 | exp=32.10 min | real=0.00 min | prop(5+2.8Q)=47.00 | prop(max)=42.00
+
+[MO BT/MO/00004 | id=4 | state=draft] prod=[H21] SERVICIO DE COLADO DE HORMIGÓN | qty=8.000 m³ | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=False
+  planificadas: 2026-11-03 18:40:12 -> 2026-11-04 08:17:07.200000 | reales: - -> -
+  >> WO [id=4 state=ready] wc=Planta de hormigón     op=Fabricación            | qty=8.000 | exp=17.12 min | real=0.00 min | prop(5+2.8Q)=27.40 | prop(max)=22.40
+
+[MO BT/MO/00003 | id=3 | state=done] prod=[H20] SERVICIO DE COLADO DE HORMIGÓN | qty=15.000 m³ | bom=[H20] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00003
+  planificadas: 2026-11-02 18:42:44 -> 2026-11-02 18:43:03 | reales: - -> -
+  >> WO [id=3 state=done] wc=Planta de hormigón     op=Fabricación            | qty=15.000 | exp=32.10 min | real=0.10 min | prop(5+2.8Q)=47.00 | prop(max)=42.00
+
+[MO BT/MO/00002 | id=2 | state=done] prod=[H20] SERVICIO DE COLADO DE HORMIGÓN | qty=15.000 m³ | bom=[H20] SERVICIO DE COLADO DE HORMIGÓN (bom_qty=1.0) | origin=S00002
+  planificadas: 2026-11-02 18:21:50 -> 2026-11-02 18:21:50 | reales: - -> -
+  >> WO [id=2 state=done] wc=Planta de hormigón     op=Fabricación            | qty=15.000 | exp=32.10 min | real=32.10 min | prop(5+2.8Q)=47.00 | prop(max)=42.00
+
+--- Resumen comparativo en órdenes de trabajo (últimas 30 no canceladas) --------------------------
+MO               Workcenter                  Qty    OdooExp    RealMin     5+2.8*Q max(5,2.8Q)
+------------------------------------------------------------------------------------------------
+BT/MO/00013      Planta de hormigón        10.00      21.40       0.00       33.00       28.00
+BT/MO/00012      Planta de hormigón        10.00      21.40       0.00       33.00       28.00
+BT/MO/00009      Planta de hormigón        10.00      21.40       0.00       33.00       28.00
+BT/MO/00008      Planta de hormigón        10.00      21.40       0.00       33.00       28.00
+BT/MO/00007      Planta de hormigón        10.00      21.40       0.00       33.00       28.00
+BT/MO/00006      Planta de hormigón         1.00       2.14       0.00        7.80        5.00
+BT/MO/00005      Planta de hormigón        15.00      32.10       0.00       47.00       42.00
+BT/MO/00004      Planta de hormigón         8.00      17.12       0.00       27.40       22.40
+BT/MO/00003      Planta de hormigón        15.00      32.10       0.10       47.00       42.00
+BT/MO/00002      Planta de hormigón        15.00      32.10      32.10       47.00       42.00
+
+--- Inspección de cálculo _get_duration_expected() en workorders recientes (solo lectura) ---------
+
+WO id=13 (BT/MO/00013 | wc=Planta de hormigón | op=Fabricación):
+  _get_capacity(product, uom, bom_qty=1.0) -> (1.0, 0.0, 0.0)
+  _get_duration_expected() -> 21.4
+
+WO id=12 (BT/MO/00012 | wc=Planta de hormigón | op=Fabricación):
+  _get_capacity(product, uom, bom_qty=1.0) -> (1.0, 0.0, 0.0)
+  _get_duration_expected() -> 21.4
+
+WO id=9 (BT/MO/00009 | wc=Planta de hormigón | op=Fabricación):
+  _get_capacity(product, uom, bom_qty=1.0) -> (1.0, 0.0, 0.0)
+  _get_duration_expected() -> 21.4
+
+WO id=8 (BT/MO/00008 | wc=Planta de hormigón | op=Fabricación):
+  _get_capacity(product, uom, bom_qty=1.0) -> (1.0, 0.0, 0.0)
+  _get_duration_expected() -> 21.4
+
+WO id=7 (BT/MO/00007 | wc=Planta de hormigón | op=Fabricación):
+  _get_capacity(product, uom, bom_qty=1.0) -> (1.0, 0.0, 0.0)
+  _get_duration_expected() -> 21.4

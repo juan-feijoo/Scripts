@@ -1,0 +1,787 @@
+2026-11-13 15:45:44,107 298 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:44,107 298 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:44,107 298 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:44,107 298 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:44,107 298 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+03 - UOM, PRODUCTOS, BOMS Y OPERACIONES (mrp.routing.workcenter)
+====================================================================================================
+
+--- Unidades de Medida (uom.uom) relacionadas con volumen / tiempo / unidades ---------------------
+  active                                        True
+  factor                                        1.0
+  id                                            1
+  name                                          Units
+  relative_factor                               1.0
+  relative_uom_id                               False
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        6.0
+  id                                            2
+  name                                          Pack of 6
+  relative_factor                               6.0
+  relative_uom_id                               Units (id=1)
+  rounding                                      0.01
+  ---
+  active                                        False
+  factor                                        12.0
+  id                                            3
+  name                                          Dozens
+  relative_factor                               12.0
+  relative_uom_id                               Units (id=1)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        1.0
+  id                                            4
+  name                                          Hours
+  relative_factor                               1.0
+  relative_uom_id                               False
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        8.0
+  id                                            5
+  name                                          Days
+  relative_factor                               8.0
+  relative_uom_id                               Hours (id=4)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        0.0166667
+  id                                            6
+  name                                          Minutes
+  relative_factor                               0.0166667
+  relative_uom_id                               Hours (id=4)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        1000000.0
+  id                                            14
+  name                                          m³
+  relative_factor                               1000.0
+  relative_uom_id                               L (id=13)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        100.0
+  id                                            48
+  name                                          Bolsa x 100
+  relative_factor                               100.0
+  relative_uom_id                               Units (id=1)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        1600000.0
+  id                                            61
+  name                                          m³ Arena (1.600 kg)
+  relative_factor                               1600.0
+  relative_uom_id                               kg (id=16)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        1500000.0
+  id                                            62
+  name                                          m³ Ripio (1.500 kg)
+  relative_factor                               1500.0
+  relative_uom_id                               kg (id=16)
+  rounding                                      0.01
+  ---
+  active                                        True
+  factor                                        333.33
+  id                                            68
+  name                                          m³ Termoplástica (333,33 m² a 3 mm)
+  relative_factor                               333.33
+  relative_uom_id                               m² (id=11)
+  rounding                                      0.01
+  ---
+
+--- Listas de Materiales (mrp.bom): total=15 ------------------------------------------------------
+
+[BoM id=23 active=True] prod_tmpl=[H8] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=12 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H8] SERVICIO DE COLADO DE HORMIGÓN (id=23)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            12
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=884)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=24 active=True] prod_tmpl=[H10] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=13 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H10] SERVICIO DE COLADO DE HORMIGÓN (id=24)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            13
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=885)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 1 registros: BT/MO/00007 - Fabricación(id=7)
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=25 active=True] prod_tmpl=[H13] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=14 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H13] SERVICIO DE COLADO DE HORMIGÓN (id=25)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            14
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=886)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 1 registros: BT/MO/00013 - Fabricación(id=13)
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=26 active=True] prod_tmpl=[H15] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=15 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H15] SERVICIO DE COLADO DE HORMIGÓN (id=26)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            15
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=887)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=27 active=True] prod_tmpl=[H17] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=16 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H17] SERVICIO DE COLADO DE HORMIGÓN (id=27)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            16
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=888)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=28 active=True] prod_tmpl=[H20] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=17 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H20] SERVICIO DE COLADO DE HORMIGÓN (id=28)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            17
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=889)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               2
+  workorder_ids                                 2 registros: BT/MO/00002 - Fabricación(id=2), BT/MO/00003 - Fabricación(id=3)
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=29 active=True] prod_tmpl=[H21] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=18 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H21] SERVICIO DE COLADO DE HORMIGÓN (id=29)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            18
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=890)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 5 registros: BT/MO/00004 - Fabricación(id=4), BT/MO/00005 - Fabricación(id=5), BT/MO/00006 - Fabricación(id=6), BT/MO/00008 - Fabricación(id=8), BT/MO/00012 - Fabricación(id=12)
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=30 active=True] prod_tmpl=[H25] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=19 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H25] SERVICIO DE COLADO DE HORMIGÓN (id=30)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            19
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=891)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 1 registros: BT/MO/00009 - Fabricación(id=9)
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=31 active=True] prod_tmpl=[H30] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=20 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H30] SERVICIO DE COLADO DE HORMIGÓN (id=31)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            20
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=892)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=32 active=True] prod_tmpl=[H35] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=21 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H35] SERVICIO DE COLADO DE HORMIGÓN (id=32)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      []
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            21
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=893)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=33 active=True] prod_tmpl=[H45] SERVICIO DE COLADO DE HORMIGÓN | variant=(todas) | qty=1.0 m³ | type=normal | company=BETON SRL | ops=1
+  Producto tmpl: type=consu | uom_id=m³ (id=14) | service_tracking=no | sale_ok=True | purchase_ok=False | routes=Replenish on Order (MTO), Manufacture
+  >> Operación [op id=22 seq=10] Fabricación
+  active                                        True
+  activity_date_deadline                        False
+  activity_exception_decoration                 False
+  activity_exception_icon                       False
+  activity_ids                                  []
+  activity_state                                False
+  activity_summary                              False
+  activity_type_icon                            False
+  activity_type_id                              False
+  activity_user_id                              False
+  allow_operation_dependencies                  False
+  blocked_by_operation_ids                      []
+  bom_id                                        [H45] SERVICIO DE COLADO DE HORMIGÓN (id=33)
+  bom_product_template_attribute_value_ids      []
+  company_id                                    BETON SRL (id=1)
+  cost                                          0.0
+  cost_mode                                     actual
+  create_date                                   2026-10-26 13:44:56.167163
+  create_uid                                    OdooBot (id=1)
+  cycle_number                                  1
+  default_picking_type_ids                      6 registros: BETON: Manufacturing(id=91), PAÑOL CENTRAL: Manufacturing(id=94), OBRA ALBERDI: Manufacturing(id=97), OBRA EX COMBATIENTES: Manufacturing(id=100), OBRA PEREYRA ROZAS: Manufacturing(id=103), OBRA SOFIA: Manufacturing(id=106)
+  display_name                                  Fabricación
+  employee_ratio                                1.0
+  has_message                                   True
+  id                                            22
+  message_attachment_count                      0
+  message_follower_ids                          []
+  message_has_error                             False
+  message_has_error_counter                     0
+  message_has_sms_error                         False
+  message_ids                                   1 registros: False(id=894)
+  message_is_follower                           False
+  message_needaction                            False
+  message_needaction_counter                    0
+  message_partner_ids                           []
+  my_activity_date_deadline                     False
+  name                                          Fabricación
+  needed_by_operation_ids                       []
+  possible_bom_product_template_attribute_value_ids []
+  quality_point_count                           0
+  quality_point_ids                             []
+  rating_ids                                    []
+  sequence                                      10
+  show_time_total                               False
+  time_computed_on                              False
+  time_cycle                                    2.14
+  time_cycle_manual                             2.14
+  time_mode                                     manual
+  time_mode_batch                               10
+  time_total                                    2.14
+  website_message_ids                           []
+  workcenter_id                                 Planta de hormigón (id=2)
+  workorder_count                               0
+  workorder_ids                                 []
+  write_date                                    2026-10-26 13:44:56.167163
+  write_uid                                     OdooBot (id=1)
+
+[BoM id=34 active=True] prod_tmpl=MORTERO 1:3 | variant=(todas) | qty=1.0 Units | type=normal | company=BETON SRL | ops=0
+  Producto tmpl: type=consu | uom_id=Units (id=1) | service_tracking=no | sale_ok=True | purchase_ok=True | routes=
+
+[BoM id=35 active=True] prod_tmpl=HORMIGON ALIVIANADO ISOCRET | variant=(todas) | qty=1.0 kg | type=normal | company=BETON SRL | ops=0
+  Producto tmpl: type=consu | uom_id=kg (id=16) | service_tracking=no | sale_ok=True | purchase_ok=True | routes=
+
+[BoM id=36 active=True] prod_tmpl=RDC SIKAPORO PLUS (bomb.) | variant=(todas) | qty=1.0 kg | type=normal | company=BETON SRL | ops=0
+  Producto tmpl: type=consu | uom_id=kg (id=16) | service_tracking=no | sale_ok=True | purchase_ok=True | routes=
+
+[BoM id=37 active=True] prod_tmpl=RDC SIKAPORO PLUS (vuelco dir) | variant=(todas) | qty=1.0 kg | type=normal | company=BETON SRL | ops=0
+  Producto tmpl: type=consu | uom_id=kg (id=16) | service_tracking=no | sale_ok=True | purchase_ok=True | routes=
+
+--- Todas las operaciones mrp.routing.workcenter huérfanas o fuera de BoMs activas ----------------
+Total operaciones en mrp.routing.workcenter: 11
+  [op id=12 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H8] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=13 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H10] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=14 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H13] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=15 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H15] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=16 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H17] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=17 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H20] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=18 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H21] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=19 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H25] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=20 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H30] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=21 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H35] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14
+  [op id=22 active=True] Fabricación                  | wc=Planta de hormigón     | bom=[H45] SERVICIO DE COLADO DE HORMIGÓN (qty=1.0 m³) | mode=manual | batch=10 | manual=2.14 | cycle=2.14

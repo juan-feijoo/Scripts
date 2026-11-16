@@ -1,0 +1,154 @@
+Warn: Can't find .pfb for face 'Courier'
+2026-11-13 20:56:07,849 759 ERROR outsource-argentina-dimat-staging-41899251 odoo.osv.expression: Non-stored field res.country.state.jurisdiction_code cannot be searched. 
+NoneType: None
+2026-11-13 20:56:07,849 759 ERROR outsource-argentina-dimat-staging-41899251 odoo.osv.expression: Non-stored field res.country.state.jurisdiction_code cannot be searched. 
+NoneType: None
+
+====================================================================================================
+04 - SIMULACIÓN DEL CIRCUITO COMPLETO (100% ROLLBACK / SIN COMMIT) (DROGUERIA DIMAT SA)
+====================================================================================================
+[*] Padrón encontrado: ID=1 | state=Buenos Aires | 2026-11-01..2026-11-30 | file='PadronRGS112026.zip'
+[*] En el ZIP del padrón matchearon con contactos de BD: Ret=923, Per=980
+[*] Empresas totales=1205 | supplier_rank>0=584 | supplier_rank==0=621
+[*] Desglose resp_afip en supplier_rank==0: {'IVA Sujeto Exento': 246, 'IVA Responsable Inscripto': 374, 'IVA No Alcanzado': 1}
+[*] account.move (out_invoice) en DROGUERIA DIMAT SA: 0
+[*] account.move (out_refund) en DROGUERIA DIMAT SA: 0
+[*] account.move (in_invoice) en DROGUERIA DIMAT SA: 0
+[*] account.move (in_refund) en DROGUERIA DIMAT SA: 0
+[*] sale.order en DROGUERIA DIMAT SA: 1
+
+[*] Casos testigo seleccionados (6):
+    - PROV_RET_MENOR_2_5        | [3404] ADRIAN OSCAR MARQUES DOS SANTOS- DA | CUIT=33715317619 | sup=1 | cus=0 | country=AR | state=False | resp=False | ZIP(ret=0.01, per=5.0)
+    - PROV_RET_MAYOR_IGUAL_2_5  | [2985] AB 25 DE MAYO 1130 S. A.            | CUIT=30717368742 | sup=1 | cus=0 | country=AR | state=False | resp=False | ZIP(ret=2.5, per=5.0)
+    - PROV_RESP_INSC_RET        | [2217] BIETTI NICOLAS JESUS                | CUIT=20248239329 | sup=1 | cus=0 | country=AR | state=Ciudad Autónoma de Buenos Aires | resp=IVA Responsable Inscripto | ZIP(ret=0.7, per=2.5)
+    - PROV_SOLO_EN_PER_NO_RET   | [2857] BIOPUR S.R.L                        | CUIT=30558323880 | sup=1 | cus=0 | country=AR | state=False | resp=False | ZIP(ret=None, per=0.0)
+    - NO_PROV_PER_GT_0          | [1857] AADEE SA                            | CUIT=30568191400 | sup=0 | cus=0 | country=AR | state=Ciudad Autónoma de Buenos Aires | resp=IVA Responsable Inscripto | ZIP(ret=0.9, per=2.5)
+    - NO_EN_PADRON              | [3052] ACERBO CARLOS ALBERTO               | CUIT=20149513087 | sup=1 | cus=0 | country=AR | state=False | resp=False | ZIP(ret=None, per=None)
+
+--- A. Prueba directa de padron._get_aliquot() y estructura /tmp ----------------------------------
+  tmp_dir esperado: /tmp/l10n_ar_padron_1_2026-11-01_2026-11-30 (existía antes: False)
+  [PROV_RET_MENOR_2_5] partner=[3404] vat=33715317619 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=0.01, per=5.0)
+  [PROV_RET_MAYOR_IGUAL_2_5] partner=[2985] vat=30717368742 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=2.5, per=5.0)
+  [PROV_RESP_INSC_RET] partner=[2217] vat=20248239329 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=0.7, per=2.5)
+  [PROV_SOLO_EN_PER_NO_RET] partner=[2857] vat=30558323880 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=None, per=0.0)
+  [NO_PROV_PER_GT_0] partner=[1857] vat=30568191400 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=0.9, per=2.5)
+  [NO_EN_PADRON] partner=[3052] vat=20149513087 -> _get_aliquot()=(False, False, False) (esperado ZIP: ret=None, per=None)
+
+  Árbol extraído en /tmp/l10n_ar_padron_1_2026-11-01_2026-11-30:
+    /tmp/l10n_ar_padron_1_2026-11-01_2026-11-30/PadronRGS112026/PadronRGSPer112026.txt
+    /tmp/l10n_ar_padron_1_2026-11-01_2026-11-30/PadronRGS112026/PadronRGSRet112026.TXT
+  find_file(tmp_dir, "Per") = 'PadronRGSPer112026.txt'
+  find_file(tmp_dir, "Ret") = 'PadronRGSRet112026.TXT'
+
+--- B. Auto-detección de Posición Fiscal en Pagos vs Ventas ---------------------------------------
+  [PROV_RET_MENOR_2_5] [3404] ADRIAN OSCAR MARQUES DOS SANTOS- DA:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+  [PROV_RET_MAYOR_IGUAL_2_5] [2985] AB 25 DE MAYO 1130 S. A.:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+  [PROV_RESP_INSC_RET] [2217] BIETTI NICOLAS JESUS:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+  [PROV_SOLO_EN_PER_NO_RET] [2857] BIOPUR S.R.L:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+  [NO_PROV_PER_GT_0] [1857] AADEE SA:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+  [NO_EN_PADRON] [3052] ACERBO CARLOS ALBERTO:
+      Pago (l10n_ar_withholding=True) -> NINGUNA (False)
+      Venta/Factura (sin flag wth)    -> NINGUNA (False)
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - PROV_RET_MENOR_2_5 -------------
+  Partner: [3404] ADRIAN OSCAR MARQUES DOS SANTOS- DAVID JESUS MARQUES DOS SAN (CUIT=33715317619)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - PROV_RET_MAYOR_IGUAL_2_5 -------
+  Partner: [2985] AB 25 DE MAYO 1130 S. A. (CUIT=30717368742)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - PROV_RESP_INSC_RET -------------
+  Partner: [2217] BIETTI NICOLAS JESUS (CUIT=20248239329)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - PROV_SOLO_EN_PER_NO_RET --------
+  Partner: [2857] BIOPUR S.R.L (CUIT=30558323880)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - NO_PROV_PER_GT_0 ---------------
+  Partner: [1857] AADEE SA (CUIT=30568191400)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- C. Simulación Pago Proveedor / Cobro Cliente / Factura Venta - NO_EN_PADRON -------------------
+  Partner: [3052] ACERBO CARLOS ALBERTO (CUIT=20149513087)
+  -> Pago PROVEEDOR (outbound/supplier): FP=False | Líneas retención=0
+  -> Cobro CLIENTE (inbound/customer):   FP=False | Líneas retención=0
+  -> Factura VENTA (out_invoice): FP=False | _get_computed_taxes=[(424, 'VAT 21%', 21.0)]
+
+--- D. Simulación en SAVEPOINT CON Fiscal Position RI + webservice="padron" -----------------------
+  Base wth_0=460 | per_0=390 (active=False) | ri_resp=IVA Responsable Inscripto
+  !! ERROR:
+  Traceback (most recent call last):
+    File "<string>", line 75, in safe
+    File "<string>", line 290, in test_with_temp_fp
+    File "<decorator-gen-99>", line 2, in create
+    File "/home/odoo/src/odoo/odoo/api.py", line 497, in _model_create_multi
+      return create(self, [arg])
+             ^^^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/addons/base_vat/models/account_fiscal_position.py", line 15, in create
+      return super().create(new_vals)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+    File "<decorator-gen-101>", line 2, in create
+    File "/home/odoo/src/odoo/odoo/api.py", line 498, in _model_create_multi
+      return create(self, arg)
+             ^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/addons/account/models/partner.py", line 191, in create
+      return super().create(vals_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "<decorator-gen-0>", line 2, in create
+    File "/home/odoo/src/odoo/odoo/api.py", line 498, in _model_create_multi
+      return create(self, arg)
+             ^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/odoo/models.py", line 5052, in create
+      records = self._create(data_list)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/odoo/models.py", line 5295, in _create
+      field.create([
+    File "/home/odoo/src/odoo/odoo/fields.py", line 4573, in create
+      self.write_batch(record_values, True)
+    File "/home/odoo/src/odoo/odoo/fields.py", line 4599, in write_batch
+      self.write_real(records_commands_list, create)
+    File "/home/odoo/src/odoo/odoo/fields.py", line 4795, in write_real
+      flush()
+    File "/home/odoo/src/odoo/odoo/fields.py", line 4750, in flush
+      comodel.create(to_create)
+    File "<decorator-gen-0>", line 2, in create
+    File "/home/odoo/src/odoo/odoo/api.py", line 498, in _model_create_multi
+      return create(self, arg)
+             ^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/odoo/models.py", line 5052, in create
+      records = self._create(data_list)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/odoo/src/odoo/odoo/models.py", line 5310, in _create
+      records._validate_fields(name for data in data_list for name in data['stored'])
+    File "/home/odoo/src/odoo/odoo/models.py", line 1636, in _validate_fields
+      check(self)
+    File "/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py", line 61, in _check_webservice_available
+      raise ValidationError(
+  odoo.exceptions.ValidationError: Padrón no implementado para la provincia de Ciudad Autónoma de Buenos Aires.
+  
+
+[*] Limpieza de /tmp/l10n_ar_padron_1_2026-11-01_2026-11-30 completada.
+
+[OK] Simulación finalizada con env.cr.rollback() completo. Base de datos intacta.

@@ -1,0 +1,16 @@
+2026-11-13 15:45:47,363 304 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:47,364 304 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:47,364 304 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:47,364 304 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:47,364 304 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+04 - PLANEACIÓN (planning), ROLES, RECURSOS Y SLOTS
+====================================================================================================
+  (planning.role no instalado)
+
+--- Recursos Materiales y Asociados a Centros de Trabajo (resource.resource) ----------------------
+Total recursos en resource.resource: 2
+  [res id=4 active=True wc=True] name=Planta de hormigón             | type=material   | eff=100.0 | cal=Standard 40 hours/week | roles=- | default_role=-
+
+  (planning.slot no instalado - la palabra "Planeación" puede referirse a Manufactura -> Planeación / mrp_workorder)

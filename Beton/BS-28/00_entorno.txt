@@ -1,0 +1,15 @@
+Fecha: Fri Nov 13 03:45:33 PM UTC 2026
+Host: ampp332
+DB: outsource-argentina-beton-staging-41077287
+
+### odoo-bin --version
+Odoo Server 19.0
+
+### src/user
+total 12
+drwxr-xr-x 1 odoo odoo   33 Sep 30 20:03 .
+drwxr-xr-x 6 odoo odoo   62 Sep 30 20:03 ..
+-rw-r--r-- 1 odoo odoo  135 Nov  2 18:00 .git
+-rw-r--r-- 1 odoo odoo 1166 Nov  2 17:59 .gitmodules
+drwxr-xr-x 1 odoo odoo   98 Nov 11 13:31 Outsource-Argentina
+-rw-r--r-- 1 odoo odoo    7 Nov  2 17:59 README.md

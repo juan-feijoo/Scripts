@@ -1,0 +1,1145 @@
+Warn: Can't find .pfb for face 'Courier'
+
+====================================================================================================
+01 - ENTORNO, MÓDULOS Y CÓDIGO INSTALADO
+====================================================================================================
+
+--- Compañías en la base --------------------------------------------------------------------------
+  [1] DROGUERIA DIMAT SA | active=True | CUIT=30711432031 | country=AR | chart=ar_ri
+      use_payment_pro=True | l10n_ar_afip_ws_environment=testing | l10n_ar_tax_base_account_id=6.0.0.00.020 Tax Base Account (id=1411) | l10n_ar_company_requires_vat=True | reconcile_on_company_currency=False | arba_cit=EMPTY
+
+[*] Compañía seleccionada: [1] DROGUERIA DIMAT SA
+
+--- ir.config_parameter (arba / padron / l10n_ar / withholding) -----------------------------------
+  l10n_ar_edi.1_foreign_currency_payment                  = account
+
+--- Módulos instalados (no Odoo S.A. o l10n_ar / payment / tax) -----------------------------------
+  account_accountant_ux                  | 18.0.1.10.0     | ADHOC SA
+  account_batch_payment_ux               | 18.0.1.1.0      | ADHOC SA
+  account_internal_transfer              | 18.0.1.7.0      | ADHOC SA
+  account_payment_pro                    | 18.0.1.15.0     | ADHOC SA
+  account_payment_pro_receiptbook        | 18.0.1.5.0      | ADHOC SA
+  account_payment_ux                     | 18.0.1.0.0      | ADHOC SA
+  account_tax_settlement                 | 18.0.1.4.0      | ADHOC SA
+  account_ux                             | 18.0.1.29.0     | ADHOC SA
+  accountant_internal_transfer           | 18.0.1.0.0      | ADHOC SA
+  dimat_fantasy_section                  | 18.0.1.2.0      | Dimat
+  l10n_ar                                | 18.0.3.7        | ADHOC SA
+  l10n_ar_account_reports                | 18.0.1.6.0      | ADHOC SA
+  l10n_ar_account_tax_settlement         | 18.0.1.16.0     | ADHOC SA
+  l10n_ar_bank                           | 18.0.1.0.0      | ADHOC SA
+  l10n_ar_currency_update                | 18.0.1.0.0      | ADHOC SA,Odoo Community Association (OCA)
+  l10n_ar_edi                            | 18.0.1.1        | ADHOC SA
+  l10n_ar_edi_payment_pro                | 18.0.1.0.0      | ADHOC SA
+  l10n_ar_edi_ux                         | 18.0.1.2.0      | ADHOC SA
+  l10n_ar_payment_bundle                 | 18.0.1.8.0      | ADHOC SA
+  l10n_ar_purchase                       | 18.0.1.3.0      | ADHOC SA
+  l10n_ar_purchase_stock                 | 18.0.1.0.0      | ADHOC SA
+  l10n_ar_reports                        | 18.0.1.0        | ADHOC SA
+  l10n_ar_tax                            | 18.0.1.41.0     | ADHOC SA,Odoo Community Association (OCA)
+  l10n_ar_txt_sire                       | 18.0.1.1.0      | ADHOC SA
+  l10n_ar_ux                             | 18.0.1.14.0     | ADHOC SA
+  l10n_ar_withholding                    | 18.0.1.0        | ADHOC SA
+  l10n_latam_check                       | 18.0.1.0.0      | ADHOC SA
+  l10n_latam_check_ux                    | 18.0.2.13.0     | ADHOC SA
+  l10n_latam_invoice_document            | 18.0.1.1        | ADHOC SA
+  studio_customization                   | 18.0.1.0        | DROGUERIA DIMAT SA
+
+--- ir.cron relacionados (activos e inactivos) ----------------------------------------------------
+  [38] l10n_ar_tax: Clean old padron files | active=False | interval=1 months | nextcall=2026-11-18 13:34:14 | model=res.company.jurisdiction.padron
+
+--- base.automation y ir.actions.server (code) relacionados ---------------------------------------
+  AUTO [4] Reset approval entries for (Sales Order) | active=True | model=sale.order | trigger=on_state_set
+  AUTO [5] Reset approval entries for (Journal Entry) | active=True | model=account.move | trigger=on_state_set
+  AUTO [6] Reset approval entries for (Purchase Order) | active=True | model=purchase.order | trigger=on_state_set
+  ACTION [608] NC con percepción negativa | model=account.move
+    
+    if record:
+        action = record.action_l10n_ar_create_refund_with_perceptions()
+            
+  ACTION [607] l10n_ar_tax: Clean old padron files | model=res.company.jurisdiction.padron
+    model._cron_clean_old_padron_files()
+
+====================================================================================================
+CÓDIGO FUENTE EN EJECUCIÓN (MRO)
+====================================================================================================
+
+--- res.company.jurisdiction.padron.check_state_id ------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        @api.constrains("state_id")
+        def check_state_id(self):
+            for rec in self:
+                if rec.state_id.jurisdiction_code not in ["902", "921"]:
+                    raise ValidationError("El padron para (%s) no está implementado." % rec.state_id.name)
+    
+
+--- res.company.jurisdiction.padron.descompress_file ----------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        def descompress_file(self, file_padron, dest_dir="/tmp"):
+            _logger.log(25, "Descompress zip file")
+            try:
+                file = base64.b64decode(file_padron)
+            except:
+                file = base64.decodestring(file_padron)
+            fobj = tempfile.NamedTemporaryFile(delete=False)
+            fname = fobj.name
+            fobj.write(file)
+            fobj.close()
+            f = open(fname, "r+b")
+            f.write(base64.b64decode(file_padron))
+            with zipfile.ZipFile(f, "r") as zip_file:
+                zip_file.extractall(path=dest_dir)
+                zip_file.close()
+    
+
+--- res.company.jurisdiction.padron.find_file -----------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        def find_file(self, rootdir, type_code):
+            res = False
+            date = str(self.l10n_ar_padron_from_date.month) + str(self.l10n_ar_padron_from_date.year)
+            pattern = r"%s.{1}|.TXT\Z" % type_code + date
+            for subdir, dirs, files in os.walk(rootdir):
+                for f in files:
+                    if re.search(pattern, f):
+                        res = f
+                        break
+            return res
+    
+
+--- res.company.jurisdiction.padron.find_aliquot --------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        def find_aliquot(self, path, cuit):
+            """We try to find aliqut and number for a partner given"""
+            # grep -F filtra candidatos en C; el split+comparación exacta abajo
+            # descarta falsos positivos (CUIT como substring de otro campo).
+            result = subprocess.run(
+                ["grep", "-F", cuit, path],
+                capture_output=True,
+                text=True,
+                timeout=GREP_TIMEOUT,
+            )
+            for line in result.stdout.splitlines():
+                values = line.split(";")
+                if len(values) > 8 and values[4] == cuit:
+                    return values[3], values[8]
+            return False, False
+    
+
+--- res.company.jurisdiction.padron._get_aliquot --------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        def _get_aliquot(self, partner):
+            nro = False
+            aliquot_ret = 0.0
+            aliquot_per = 0.0
+    
+            # Check if this is Santa Fe PARP format
+            if self._is_santa_fe_jurisdiction():
+                # Read PARP directly from binary field
+                is_in_padron, aliquot_ret, aliquot_per = self._read_parp_from_binary(partner.vat)
+                return is_in_padron, aliquot_ret, aliquot_per
+            else:
+                # Original logic for other padron types (ARBA, etc)
+                tmp_dir = self._get_parp_tmp_dir()
+                padron_types = ["Per", "Ret"]
+                for padron_type in padron_types:
+                    path_file = self.find_file(tmp_dir, padron_type)
+                    if not path_file:
+                        self.descompress_file(self.file_padron, dest_dir=tmp_dir)
+                        path_file = self.find_file(tmp_dir, padron_type)
+                    if path_file:
+                        nro, aliquot = self.find_aliquot(os.path.join(tmp_dir, path_file), partner.vat)
+                        if padron_type == "Per":
+                            aliquot_per = aliquot and aliquot.replace(",", ".")
+                        else:
+                            aliquot_ret = aliquot and aliquot.replace(",", ".")
+            return nro, aliquot_ret, aliquot_per
+    
+
+--- res.company.jurisdiction.padron._get_parp_tmp_dir ---------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.res_company_jurisdiction_padron  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/res_company_jurisdiction_padron.py)
+        def _get_parp_tmp_dir(self):
+            # Dir por padron+periodo: no mezcla archivos de otro mes.
+            self.ensure_one()
+            return "/tmp/l10n_ar_padron_%s_%s_%s" % (
+                self.id,
+                self.l10n_ar_padron_from_date,
+                self.l10n_ar_padron_to_date,
+            )
+    
+
+--- account.fiscal.position._l10n_ar_add_taxes ----------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position.py)
+        def _l10n_ar_add_taxes(self, partner, company, date, tax_type, payment=None):
+            # TODO deberiamos unificar mucho de este codigo con _get_tax_domain, _compute_withholdings y _check_tax_group_overlap
+            self.ensure_one()
+            taxes = self.env["account.tax"]
+            # garantizamos de siempre evaluar segun commercial partner que es donde se guardan y ven los impuestos
+            partner = partner.commercial_partner_id
+            for fp_tax in self.l10n_ar_tax_ids.filtered(lambda x: x.tax_type == tax_type):
+                domain = self.env["l10n_ar.partner.tax"]._check_company_domain(company)
+                domain += [("tax_id.tax_group_id", "=", fp_tax.default_tax_id.tax_group_id.id)]
+                if tax_type == "withholding":
+                    # TODO esto lo deberiamos borrar al ir a odoo 19 y solo usar los tax groups
+                    # por ahora, para no renegar con scripts de migra que requieran crear tax groups para cada jurisdiccion y
+                    # ademas luego tener que ajustar a lo que hagamos en 19, usamos la jursdiccion como elemento de agrupacion
+                    # solo para retenciones
+                    domain += [("tax_id.l10n_ar_state_id", "=", fp_tax.default_tax_id.l10n_ar_state_id.id)]
+                domain += [
+                    "|",
+                    ("from_date", "<=", date),
+                    ("from_date", "=", False),
+                    "|",
+                    ("to_date", ">=", date),
+                    ("to_date", "=", False),
+                ]
+                if tax_type == "perception":
+                    partner_tax = partner.l10n_ar_partner_perception_ids.filtered_domain(domain).mapped("tax_id")
+                elif tax_type == "withholding":
+                    partner_tax = partner.l10n_ar_partner_tax_ids.filtered_domain(domain).mapped("tax_id")
+                # agregamos taxes para grupos de impuestos que no estaban seteados en el partner
+                if not partner_tax:
+                    partner_tax = fp_tax._get_missing_taxes(partner, date, payment)
+                if len(partner_tax) > 1:
+                    raise RedirectWarning(
+                        message=_(
+                            "El contacto '%(name)s' (id: %(id)s) tiene múltiples impuestos vigentes para el grupo "
+                            "de impuestos '%(tax_group)s' en la fecha '%(date)s' y compañía '%(company)s'. Ver "
+                            "solapa 'Contabilidad' de la vista formulario del contacto.",
+                            name=partner.name,
+                            id=partner.id,
+                            tax_group=fp_tax.default_tax_id.tax_group_id.name,
+                            date=date,
+                            company=company.name,
+                        ),
+                        action=partner.get_formview_action(),
+                        button_text=_("Editar contacto"),
+                    )
+                if partner_tax and partner_tax.l10n_ar_tax_type != "earnings_scale" and partner_tax.amount == 0:
+                    # se eliminan todos los impuestos cuyo monto sea 0, excepto los de tipo "earnings_scale"
+                    continue
+                taxes |= partner_tax
+            return taxes
+    
+
+--- account.fiscal.position._get_fpos_ranking_functions -------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position.py)
+        def _get_fpos_ranking_functions(self, partner):
+            """
+            Overrides the `_get_fpos_ranking_functions` method to include a custom ranking
+            function for fiscal positions based on Argentine withholding taxes.
+            If the context does not include 'l10n_ar_withholding' or the company's country
+            is not Argentina (country code "AR"), the method falls back to the parent class
+            implementation.
+            When the context includes 'l10n_ar_withholding' and the company's country is
+            Argentina, the method adds a ranking function that prioritizes fiscal positions
+            containing taxes of type 'withholding' (`l10n_ar_tax_ids`).
+            For normal fiscal positions in Argentina (not in withholding context), it excludes
+            fiscal positions that are only for withholdings (no tax_ids, no account_ids, have
+            withholding taxes but no perception taxes).
+            Args:
+                partner (res.partner): The partner for whom the fiscal position ranking
+                    functions are being determined.
+            """
+            if self._context.get("l10n_ar_withholding") and self.env.company.country_id.code == "AR":
+                return [
+                    ("l10n_ar_tax_ids", lambda fpos: (any(tax.tax_type == "withholding" for tax in fpos.l10n_ar_tax_ids)))
+                ] + super()._get_fpos_ranking_functions(partner)
+            elif not self._context.get("l10n_ar_withholding") and self.env.company.country_id.code == "AR":
+    
+                def exclude_withholding_only_fpos(fpos):
+                    has_withholding = any(tax.tax_type == "withholding" for tax in fpos.l10n_ar_tax_ids)
+                    has_perception = any(tax.tax_type == "perception" for tax in fpos.l10n_ar_tax_ids)
+                    is_only_withholding = (
+                        not fpos.tax_ids and not fpos.account_ids and has_withholding and not has_perception
+                    )
+                    return 0 if is_only_withholding else 1
+    
+                return [("exclude_withholding_only", exclude_withholding_only_fpos)] + super()._get_fpos_ranking_functions(
+                    partner
+                )
+            else:
+                return super()._get_fpos_ranking_functions(partner)
+    
+  definido en: odoo.addons.l10n_ar.models.account_fiscal_position  (/home/odoo/src/odoo/addons/l10n_ar/models/account_fiscal_position.py)
+        def _get_fpos_ranking_functions(self, partner):
+            if self.env.company.country_id.code != "AR":
+                return super()._get_fpos_ranking_functions(partner)
+            return [
+                ('l10n_ar_afip_responsibility_type_id', lambda fpos: (
+                    partner.l10n_ar_afip_responsibility_type_id in fpos.l10n_ar_afip_responsibility_type_ids
+                ))
+            ] + super()._get_fpos_ranking_functions(partner)
+    
+  definido en: odoo.addons.account.models.partner  (/home/odoo/src/odoo/addons/account/models/partner.py)
+        def _get_fpos_ranking_functions(self, partner):
+            """Get comparison functions to rank fiscal positions.
+    
+            All functions are applied to the fiscal position and return a value.
+            These values are taken in order to build a tuple that will be the comparator
+            value between fiscal positions.
+    
+            If the value returned by one of the function is falsy, the fiscal position is
+            filtered out and not even considered for the ranking.
+    
+            :param partner: the partner to consider for the ranking of the fiscal positions
+            :type partner: :class:`res.partner`
+            :return: a list of tuples with a name and the function to apply. The name is only
+                used to facilitate extending the comparators.
+            :rtype: list[tuple[str, function]
+            """
+            return [
+                ('vat_required', lambda fpos: (
+                    not fpos.vat_required
+                    or (self._get_vat_valid(partner, self.env.company) and 2)
+                )),
+                ('company_id', lambda fpos: len(fpos.company_id.parent_ids)),
+                ('zipcode', lambda fpos:(
+                    not (fpos.zip_from and fpos.zip_to)
+                    or (partner.zip and (fpos.zip_from <= partner.zip <= fpos.zip_to) and 2)
+                )),
+                ('state_id', lambda fpos: (
+                    not fpos.state_ids
+                    or (partner.state_id in fpos.state_ids and 2)
+                )),
+                ('country_id', lambda fpos: (
+                    not fpos.country_id
+                    or (partner.country_id == fpos.country_id and 2)
+                )),
+                ('country_group', lambda fpos: (
+                    not fpos.country_group_id
+                    or (partner.country_id in fpos.country_group_id.country_ids and 2)
+                )),
+                ('sequence', lambda fpos: -(fpos.sequence or 0.1)),  # do not filter out sequence=0, priority to lowest sequence in `max` method
+            ]
+    
+
+--- account.fiscal.position._get_fiscal_position --------------------------------------------------
+  definido en: odoo.addons.account.models.partner  (/home/odoo/src/odoo/addons/account/models/partner.py)
+        @api.model
+        def _get_fiscal_position(self, partner, delivery=None):
+            """
+            :return: fiscal position found (recordset)
+            :rtype: :class:`account.fiscal.position`
+            """
+            if not partner:
+                return self.env['account.fiscal.position']
+    
+            company = self.env.company
+            intra_eu = vat_exclusion = False
+            if company.vat and partner.vat:
+                eu_country_codes = set(self.env.ref('base.europe').country_ids.mapped('code'))
+                intra_eu = company.vat[:2] in eu_country_codes and partner.vat[:2] in eu_country_codes
+                vat_exclusion = company.vat[:2] == partner.vat[:2]
+    
+            # If company and partner have the same vat prefix (and are both within the EU), use invoicing
+            if not delivery or (intra_eu and vat_exclusion and partner.country_id == company.country_id):
+                delivery = partner
+    
+            # partner manually set fiscal position always win
+            manual_fiscal_position = (
+                delivery.with_company(company).property_account_position_id
+                or partner.with_company(company).property_account_position_id
+            )
+            if manual_fiscal_position:
+                return manual_fiscal_position
+    
+            if not partner.country_id:
+                return self.env['account.fiscal.position']
+    
+            # Search for a auto applied fiscal position matching the partner
+            ranking_subfunctions = self._get_fpos_ranking_functions(delivery)
+            def ranking_function(fpos):
+                return tuple(rank[1](fpos) for rank in ranking_subfunctions)
+    
+            all_auto_apply_fpos = self.search(self._check_company_domain(self.env.company) + [('auto_apply', '=', True)])
+            fpo_with_ranking = ((fpos, ranking_function(fpos)) for fpos in all_auto_apply_fpos)
+            valid_auto_apply_fpos = filter(lambda x: all(x[1]), fpo_with_ranking)
+            return max(
+                valid_auto_apply_fpos,
+                key=lambda x: x[1],
+                default=(self.env['account.fiscal.position'], False)
+            )[0]
+    
+
+--- account.fiscal.position.l10n_ar_tax._get_missing_taxes ----------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _get_missing_taxes(self, partner, date, payment=None):
+            taxes = self.env["account.tax"]
+            for rec in self:
+                if rec.webservice:
+                    taxes += rec.sudo()._get_tax_from_ws(partner, date)
+                else:
+                    taxes += rec.default_tax_id
+            return taxes
+    
+
+--- account.fiscal.position.l10n_ar_tax._get_tax_from_ws ------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _get_tax_from_ws(self, partner, date):
+            self.ensure_one()
+            from_date = date + relativedelta(day=1)
+            to_date = from_date + relativedelta(days=-1, months=+1)
+            aliquot, ref = getattr(self, "_get_%s_data" % self.webservice)(partner, from_date, to_date)
+            # devolvemos None si es no inscripto
+            if aliquot is None:
+                tax = self.default_tax_id
+            else:
+                tax = self._ensure_tax(aliquot)
+            # por mas que sea no inscripto creamos partner aliquot porque si no en cada
+            # nueva linea o cambio se conecta a ws
+            # TODO revisar porque necesitamos esto
+            if self.env.ref("base.user_demo", raise_if_not_found=False):
+                # Fix para que al cargar data demo al instalar demo_base_minimal no se termine creando 2 veces
+                # los mismos registros de 'l10n_ar.partner.tax'
+                if self.env["l10n_ar.partner.tax"].search(
+                    [
+                        ("partner_id", "=", partner.id),
+                        ("tax_id", "=", tax.id),
+                        ("from_date", "=", from_date),
+                        ("to_date", "=", to_date),
+                        ("ref", "=", ref),
+                    ]
+                ):
+                    return self.env["account.tax"]
+                # Fix para que al impuesto de demo 'P. IIBB CABA 3.0%' se le agregue la jurisdicción
+                if (
+                    tax.tax_group_id
+                    == self.env.ref("account.%s_ri_tax_percepcion_iibb_caba_aplicada" % tax.company_id.id).tax_group_id
+                ):
+                    tax.l10n_ar_state_id = self.env.ref("base.state_ar_c")
+            self.env["l10n_ar.partner.tax"].create(
+                {
+                    "partner_id": partner.id,
+                    "tax_id": tax.id,
+                    "from_date": from_date,
+                    "to_date": to_date,
+                    "ref": ref,
+                }
+            )
+            return tax
+    
+
+--- account.fiscal.position.l10n_ar_tax._ensure_tax -----------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _ensure_tax(self, rate):
+            self.ensure_one()
+            domain = self._get_tax_domain()
+            tax = self.env["account.tax"].with_context(active_test=False).search(domain + [("amount", "=", rate)], limit=1)
+            if not tax.active:
+                tax.active = True
+            if not tax:
+                if "%" not in self.default_tax_id.name:
+                    name = f"{self.default_tax_id.name} {rate}%"
+                else:
+                    # Usamos re.sub para reemplazar el patrón con el nuevo número seguido de '%'
+                    # Si ya tiene un porcentaje, lo reemplazamos
+                    name = re.sub(r"\b\d+(\.\d+)?\s*%", f"{rate}%", self.default_tax_id.name)
+    
+                tax = self.default_tax_id.copy(
+                    default={
+                        # dejamos sequencia mas baja para que siempre el que se duplica sea el que esta arriba
+                        "sequence": 10,
+                        "amount": rate,
+                        "active": True,
+                        "name": name,
+                    }
+                )
+            return tax
+    
+
+--- account.fiscal.position.l10n_ar_tax._get_arba_data --------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _get_arba_data(self, partner, date, to_date):
+            """Metodo que obtiene la alicuota de ARBA de un partner y fecha dado
+    
+            :return: (float, string) alícuota y referencia
+    
+            donde:
+                float valor alicuota (retencion o percepcion depende del caso)
+                string "numero comprobante codigohast GrupoRetencion/Percepcion"
+    
+            Si hay un padron de alicuotas ya cargado en el sistema, lo usamos
+            para obtener la alícuota, sino consultamos el webservice de ARBA
+            """
+            self.ensure_one()
+    
+            cuit = partner.ensure_vat()
+            _logger.info("Getting ARBA data for cuit %s from date %s to date %s" % (date, to_date, cuit))
+    
+            # Si no existe padron NO devolvemos ref y pasamos a consultar alícuota al webservice
+            alicuot, ref = self._get_padron_data(partner, date, to_date)
+            if ref:
+                return alicuot, ref
+    
+            ws = self.fiscal_position_id.company_id.arba_connect()
+            ws.ConsultarContribuyentes(date.strftime("%Y%m%d"), to_date.strftime("%Y%m%d"), cuit)
+    
+            error = False
+            msg = False
+            if ws.Excepcion:
+                error = True
+                msg = str((ws.Traceback, ws.Excepcion))
+                _logger.error("Padron ARBA: Excepcion %s" % msg)
+    
+            # ' Hubo error general de ARBA?
+            if ws.CodigoError:
+                if ws.CodigoError == "11":
+                    # we still create the record so we don need to check it again
+                    # on same period
+                    _logger.info("CUIT %s not present on padron ARBA" % cuit)
+                elif ws.CodigoError == "6":
+                    error = True
+                    msg = "%s\n Error %s: %s" % (ws.MensajeError, ws.TipoError, ws.CodigoError)
+                    _logger.error("Padron ARBA: %s" % msg)
+                else:
+                    error = True
+                    msg = _("Padron ARBA: %s - %s (%s)") % (ws.MensajeError, ws.TipoError, ws.CodigoError)
+                    _logger.error("Padron ARBA: %s" % msg)
+    
+            if error:
+                action = self.env.ref("l10n_ar_tax.act_company_jurisdiction_padron")
+                raise RedirectWarning(
+                    _(
+                        "Hubo un error al consultar el Padron ARBA. "
+                        "Para solucionarlo puede seguir los siguientes pasos, los cuales explicamos con más detalle en este video:\n %s\n\n"
+                        "Tiene las siguientes opciones:\n  1) Intentar nuevamente más tarde\n"
+                        "  2) Cargar la alícuota manualmente en el partner en cuestión\n"
+                        "  3) Subir el archivo del padrón utilizando el Asistente de carga de padrones.\n\n"
+                        "Error obtenido:\n%s\n\n"
+                    )
+                    % ("https://docs.google.com/document/d/1Tb_0SGKexakuXMn_0in3Z5zLwoaVOgZhYwhQ7DiFjFw/edit", msg),
+                    action.id,
+                    _("Ir a Carga de Padrones"),
+                )
+    
+            # no ponemos esto, si no viene alicuota es porque es cero entonces
+            # if not ws.AlicuotaRetencion or not ws.AlicuotaPercepcion:
+            #     raise UserError('No pudimos obtener la AlicuotaRetencion')
+    
+            # si no hay numero de comprobante entonces es porque no
+            # figura en el padron, aplicamos alicuota no inscripto
+            if ws.NumeroComprobante:
+                tax_data = "%s | %s | %s" % (
+                    ws.NumeroComprobante,
+                    ws.CodigoHash,
+                    ws.GrupoRetencion if self.tax_type == "withholding" else ws.GrupoPercepcion,
+                )
+                if self.tax_type == "withholding":
+                    return (float(ws.AlicuotaRetencion.replace(",", ".")) if ws.AlicuotaRetencion else None, tax_data)
+                else:
+                    return (float(ws.AlicuotaPercepcion.replace(",", ".")) if ws.AlicuotaPercepcion else None, tax_data)
+            else:
+                ref = (
+                    self.env._("%s | CUIT %s not present on padron ARBA") % (ws.CodigoHash, cuit)
+                    if ws.CodigoError == "11"
+                    else ws.CodigoHash
+                )
+                return None, ref
+    
+
+--- account.fiscal.position.l10n_ar_tax._get_padron_data ------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _get_padron_data(self, partner, date, to_date):
+            """Método implementado para obtener alícuota de padrón ARBA y Santa Fe:
+            jurisdiction_code de Santa Fe = 921, de ARBA = 902
+            1) Santa Fe:
+             * si no existe padrón para el período correspondiente entonces devuelve UserError para que lo cargue.
+             * si existe padrón para el período correspondiente, busca el CUIT en el padrón y:
+                a) si lo encuentra devuelve la tasa y "Alícuota padrón Santa Fe",
+                b) si no lo encuentra devuelve None, "Alícuota no inscripto Santa Fe (archivo importado)"
+            2) ARBA:
+             * si no existe padrón devuelve None, None
+             * si existe padrón para el período correspondiente, busca el CUIT en el padrón y:
+                a) si lo encuentra devuelve la tasa y "Alícuota padrón ARBA (archivo importado)",
+                b) si no lo encuentra devuelve None, "Alícuota no inscripto ARBA (archivo importado)"
+    
+            return: alicuot, ref
+            """
+            self.ensure_one()
+            state = self.default_tax_id.l10n_ar_state_id
+            padron_file = self._search_padron_file(state, date)
+            if not padron_file:
+                # si la consulta de padron viene por "contingencia" (por ej. se usa ws de arba o agip) y no hay padron, no queremos raise
+                if self.webservice != "padron":
+                    return None, None
+                # Si se está consultando alícuota con tipo "padron" y no hay, entonces damos error.
+                raise UserError(
+                    _(
+                        "No hay padrón subido para la fecha indicada %s a %s. Debe subirlo en 'Contabilidad / Configuración / AFIP / Padrón de Alícuotas por compañía' o cargar la alícuota manualmente en el contacto para el período en curso."
+                    )
+                    % (date, to_date)
+                )
+            nro, alicuot_ret, alicuot_per = padron_file._get_aliquot(partner)
+            if state.jurisdiction_code == "921":
+                if nro:
+                    # en santa fe en realidad no hay nro, viene True/False (Segun si lo encontramos), por eso no devolvemos string genérica
+                    return (
+                        alicuot_ret if self.tax_type == "withholding" else alicuot_per,
+                        "Alícuota padrón Santa Fe",
+                    )
+                else:
+                    return None, "Alícuota castigo. No figura en padrón Santa Fe"
+            if state.jurisdiction_code == "902":
+                if nro:
+                    return (
+                        float(alicuot_ret.replace(",", "."))
+                        if self.tax_type == "withholding"
+                        else float(alicuot_per.replace(",", ".")),
+                        "Alícuota padrón ARBA (archivo importado)",
+                    )
+                else:
+                    return None, "Alícuota no inscripto ARBA (archivo importado)"
+    
+
+--- account.fiscal.position.l10n_ar_tax._search_padron_file ---------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_fiscal_position_l10n_ar_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_fiscal_position_l10n_ar_tax.py)
+        def _search_padron_file(self, state_id, date):
+            """Busca un archivo de padrón para una jurisdicción y fecha dadas
+            :param state_id: ID del estado/jurisdicción
+            :param date: Fecha para validar vigencia del padrón
+            :return: Registro de res.company.jurisdiction.padron o recordset vacío
+            """
+            self.ensure_one()
+            res = self.env["res.company.jurisdiction.padron"].search(
+                [
+                    ("state_id", "in", state_id.ids),
+                    ("company_id", "=", self.fiscal_position_id.company_id.id),
+                    "|",
+                    ("l10n_ar_padron_from_date", "=", False),
+                    ("l10n_ar_padron_from_date", "<=", date),
+                    "|",
+                    ("l10n_ar_padron_to_date", "=", False),
+                    ("l10n_ar_padron_to_date", ">=", date),
+                ],
+                limit=1,
+            )
+            return res
+    
+
+--- account.payment._compute_fiscal_position_id ---------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_payment.py)
+        @api.depends("to_pay_move_line_ids", "partner_id", "payment_method_line_id")
+        def _compute_fiscal_position_id(self):
+            for rec in self:
+                if (
+                    rec.state != "draft"
+                    or rec.partner_type != "supplier"
+                    or rec.country_code != "AR"
+                    or not rec.use_payment_pro
+                    or self.env.context.get("create_and_new")
+                ):
+                    rec.l10n_ar_fiscal_position_id = False
+                    continue
+                # si estamos pagando todas las facturas de misma delivery address usamos este dato para computar la
+                # fiscal position
+                addresses = rec.to_pay_move_line_ids.mapped("move_id.partner_shipping_id")
+                if len(addresses) == 1:
+                    address = addresses
+                else:
+                    address = rec.partner_id
+                rec.l10n_ar_fiscal_position_id = (
+                    self.env["account.fiscal.position"]
+                    .with_company(rec.company_id)
+                    # TODO revisar porque llega active_test=False acá
+                    .with_context(l10n_ar_withholding=True, active_test=True)
+                    ._get_fiscal_position(address)
+                )
+    
+
+--- account.payment._compute_l10n_ar_withholding_line_ids -----------------------------------------
+  definido en: odoo.addons.l10n_ar_payment_bundle.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_ar_payment_bundle/models/account_payment.py)
+        @api.depends("main_payment_id")
+        def _compute_l10n_ar_withholding_line_ids(self):
+            with_main_payments = self.filtered("main_payment_id")
+            for rec in with_main_payments:
+                rec.l10n_ar_withholding_line_ids = False
+            super(AccountPayment, self - with_main_payments)._compute_l10n_ar_withholding_line_ids()
+    
+  definido en: odoo.addons.l10n_ar_tax.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_payment.py)
+        @api.depends("l10n_ar_fiscal_position_id", "partner_id", "company_id", "date")
+        def _compute_l10n_ar_withholding_line_ids(self):
+            # metodo completamente analogo a payment.register._compute_l10n_ar_withholding_ids
+            for rec in self.filtered(lambda x: x.partner_type == "supplier"):
+                date = rec.date or fields.Date.today()
+                withholdings = [Command.clear()]
+                if rec.l10n_ar_fiscal_position_id.l10n_ar_tax_ids:
+                    taxes = rec.l10n_ar_fiscal_position_id._l10n_ar_add_taxes(
+                        rec.partner_id, rec.company_id, date, "withholding", rec
+                    )
+                    withholdings += [Command.create({"tax_id": x.id}) for x in taxes]
+                rec.l10n_ar_withholding_line_ids = withholdings
+    
+
+--- account.payment.action_confirm ----------------------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_payment.py)
+        def action_confirm(self):
+            checks_payments = self.filtered(
+                lambda x: x.payment_method_code in ["in_third_party_checks", "out_third_party_checks"]
+            )
+            for rec in checks_payments:
+                previous_to_pay = rec.to_pay_amount
+                rec.compute_withholdings()
+                if not rec.currency_id.is_zero(previous_to_pay - rec.to_pay_amount):
+                    raise UserError(
+                        "Está pagando con un cheque y las retenciones que se aplicarán cambiarán el importe a pagar de %s a %s.\n"
+                        "Por favor, compute las retenciones para que el importe a pagar se actualice y luego confirme el pago."
+                        % (previous_to_pay, rec.to_pay_amount)
+                    )
+            self.compute_withholdings()
+            self._l10n_ar_remove_zero_withholding_lines()
+            res = super().action_confirm()
+            # por ahora primero computamos retenciones y luego conifmamos porque si no en caso de cheques siempre da error
+            # TODO tal vez mejorar y advertir de que se va a computar el importe?
+            return res
+    
+
+--- account.payment.action_post -------------------------------------------------------------------
+  definido en: odoo.api  (/home/odoo/src/enterprise/web_studio/models/studio_approval.py)
+                def method(self, *args, **kwargs):
+                    if self.env.su:
+                        # in a sudoed environment, approvals are skipped
+                        # otherwise we risk breaking some important flows
+                        # (e.g. ecommerce order confirmations, invoice posting because
+                        # online payment succeeeded, etc.)
+                        _logger.info("Skipping approval checks in a sudoed environment: method call %s ALLOWED on records %s", method_name, self)
+                        return method.studio_approval_rule_origin(self, *args, **kwargs)
+                    approved, rules, entries = [], [], []
+                    approved_records = self.env[self._name]
+                    for record in self:
+                        result = self.env['studio.approval.rule'].check_approval(model_name, record.id, method_name, None)
+                        approved.append(result['approved'])
+                        rules.append(result['rules'])
+                        entries.append(result['entries'])
+                        if result['approved']:
+                            approved_records |= record
+    
+                    if all(approved):
+                        return method.studio_approval_rule_origin(self, *args, **kwargs)
+                    else:
+                        unapproved_records = self - approved_records
+                        msg, log_args = "Approval checks failed: method call %s REJECTED on records %s", (method_name, unapproved_records)
+                        if approved_records:
+                            msg += " (some records were ALLOWED for the same call: %s)"
+                            log_args = (*log_args, approved_records)
+                        _logger.info(msg, *log_args)
+                        if len(approved_records) > 0:
+                            method.studio_approval_rule_origin(approved_records, *args, **kwargs)
+                        message = ''
+                        title = ''
+                        if len(self) > 1:
+                            title = _('Approvals missing')
+                            message = _('Some records were skipped because approvals were missing to\
+                                        proceed with your request: ')
+                            message += ', '.join(unapproved_records.mapped('display_name'))
+                        else:
+                            missing_approvals = self.env['studio.approval.rule'].get_missing_approvals(rules[0], entries[0])
+                            message += _('Some approvals are missing') if len(missing_approvals) > 1 else _('An approval is missing')
+    
+                        return  {
+                            'type': 'ir.actions.client',
+                            'tag': "display_notification",
+                            'params' : {
+                                'title': title,
+                                'message': message,
+                                'sticky': False,
+                                'type': 'warning',
+                                'next': {
+                                    'type': 'ir.actions.act_window_close',
+                                }
+                            }
+                        }
+    
+  definido en: odoo.addons.l10n_ar_payment_bundle.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_ar_payment_bundle/models/account_payment.py)
+        def action_post(self):
+            for rec in self:
+                if rec.link_payment_ids and rec.payment_method_code != "payment_bundle":
+                    rec.link_payment_ids.unlink()
+    
+                if rec.main_payment_id and not rec.main_payment_id.name:
+                    raise ValidationError(_("The main payment must have a name before a linked payment can be posted."))
+    
+            res = super(AccountPayment, self).action_post()
+    
+            for rec in self:
+                start_number = len(rec.link_payment_ids.filtered(lambda x: x.name is not False))
+                for i, payment in enumerate(rec.link_payment_ids, start=start_number):
+                    if not payment.name:
+                        payment.name = f"{rec.name} ({i + 1})"
+    
+            draft_linked = self.filtered(lambda x: x.state != "draft").link_payment_ids.filtered(
+                lambda x: x.state == "draft"
+            )
+            if draft_linked:
+                draft_linked.action_post()
+    
+            # Envío diferido del recibo del main: acá los vinculados ya imputaron, así el
+            # PDF sale con los comprobantes y no "A cuenta" (receiptbook lo saltea en el post).
+            self.filtered("is_main_payment")._send_receiptbook_mail()
+    
+            return res
+    
+  definido en: odoo.addons.l10n_ar_tax.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_payment.py)
+        def action_post(self):
+            for rec in self:
+                commands = []
+                for line in rec.l10n_ar_withholding_line_ids:
+                    if not line.name or line.name == "/":
+                        if line.tax_id.l10n_ar_withholding_sequence_id:
+                            commands.append(
+                                Command.update(
+                                    line.id,
+                                    {
+                                        "name": line.tax_id.l10n_ar_withholding_sequence_id.next_by_id()
+                                        if line.amount
+                                        else "/"
+                                    },
+                                )
+                            )
+                        else:
+                            raise UserError(
+                                _("Please enter withholding number for tax %s or configure a sequence on that tax")
+                                % line.tax_id.name
+                            )
+                    if commands:
+                        rec.l10n_ar_withholding_line_ids = commands
+    
+            return super().action_post()
+    
+  definido en: odoo.addons.l10n_latam_check_ux.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/l10n_latam_check_ux/models/account_payment.py)
+        def action_post(self):
+            # nosotros queremos bloquear tmb nros de cheques de terceros que sea unicos
+            # para esto chequeamos el campo computado de warnings que ya lo tiene incorporado
+            # NOTA: no mandamos todos los warnings de "self" juntos porque podría ser muy verbose (por ej. la
+            # leyenda de cheques duplicados en un mismo payment group apareceria varias veces si el cheque está repetido
+            # en el mismo payment group)
+            for rec in self:
+                if rec.l10n_latam_check_warning_msg:
+                    raise ValidationError("%s" % rec.l10n_latam_check_warning_msg)
+                rec.l10n_latam_move_check_ids_operation_date = rec._get_check_operation_date()
+            super().action_post()
+    
+  definido en: odoo.addons.account_payment_pro_receiptbook.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/account_payment_pro_receiptbook/models/account_payment.py)
+        def action_post(self):
+            # si no tengo nombre y tengo talonario de recibo, numeramos con el talonario
+            for rec in self.filtered(
+                lambda x: (
+                    x.receiptbook_id and (not x.name or x.name == "/" or (x.move_id and not x.move_id._get_last_sequence()))
+                )
+            ):
+                if not rec.receiptbook_id.active:
+                    raise ValidationError(
+                        _('Error! The receiptbook "%s" is archived. Please use a differente receipbook.')
+                        % rec.receiptbook_id.name
+                    )
+                if not rec.receiptbook_id.sequence_id:
+                    raise ValidationError(
+                        _("Error!. Please define sequence on the receiptbook related documents to this payment.")
+                    )
+    
+                if not rec.name or rec.name == "/":
+                    name = rec.receiptbook_id.with_context(ir_sequence_date=rec.date).sequence_id.next_by_id()
+                    prefix = rec.receiptbook_id.document_type_id.doc_code_prefix
+                    rec.name = ("%s %s" % (prefix, name)) if prefix else (name or "/")
+    
+            res = super().action_post()
+            # Reincorporamos el seteo del l10n_latam_document_type_id para el caso de usar talonario de recibo
+            # Ya que debido al fix en
+            # https://github.com/ingadhoc/account-payment/commit/8a6ff0564d3526ec8ead24c90a8e53267d038f6a
+            # se esta evitando el recomputo para impedir que este vuelva a False.
+            for rec in self.filtered(lambda x: x.receiptbook_id):
+                rec.move_id.l10n_latam_document_type_id = rec.receiptbook_id.document_type_id.id
+    
+            payments_to_send = self
+            # El bundle imputa sus pagos vinculados al final de su action_post, así que acá
+            # el recibo saldría "A cuenta". Diferimos el envío del main: lo dispara el bundle.
+            if "is_main_payment" in self._fields:
+                payments_to_send = payments_to_send.filtered(lambda x: not x.is_main_payment)
+            payments_to_send._send_receiptbook_mail()
+            return res
+    
+  definido en: odoo.addons.account_ux.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-financial-tools/account_ux/models/account_payment.py)
+        def action_post(self):
+            # Odoo genera el asiento del pago sólo como efecto colateral del write del state
+            # (account/models/account_payment.py::write). Si al pago le borraron el asiento a mano y su
+            # state ya no es draft/in_process, action_post no escribe nada y el asiento no se regenera
+            # nunca. Pasa con diarios que usan cuentas outstanding: al borrar el asiento el pago queda
+            # sin residual y _compute_state lo marca paid, entonces ninguno de los dos filtered() de
+            # action_post lo alcanza. Lo forzamos acá.
+            # Va ANTES del super() a propósito: lo que corre después trabaja sobre el asiento del pago
+            # —account_payment_pro._reconcile_after_post lo reconcilia contra la deuda—, así que
+            # regenerarlo al final deja el pago con asiento nuevo pero desconciliado de la factura que
+            # saldaba. Con cuenta de efectivo no se notaba porque ahí el asiento se regenera dentro del
+            # super(): el core fuerza state='paid' para asset_cash y ese write ya lo genera.
+            missing_move = self.filtered(
+                lambda pay: (
+                    not pay.move_id and pay.outstanding_account_id and pay.state not in ("draft", "canceled", "rejected")
+                )
+            )
+            if missing_move:
+                missing_move._generate_journal_entry()
+                for payment in missing_move:
+                    payment.move_id.date = payment.date
+                missing_move.move_id.filtered(lambda move: move.state == "draft").action_post()
+            super().action_post()
+            self.filtered(lambda pay: pay.outstanding_account_id.account_type == "liability_credit_card").state = "paid"
+    
+  definido en: odoo.addons.account_payment_pro.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/account_payment_pro/models/account_payment.py)
+        def action_post(self):
+            res = super().action_post()
+            self._check_to_pay_lines_account()
+            self._reconcile_after_post()
+            return res
+    
+  definido en: odoo.addons.l10n_latam_check.models.account_payment  (/home/odoo/src/odoo/addons/l10n_latam_check/models/account_payment.py)
+        def action_post(self):
+            # unlink checks if payment method code is not for checks. We do it on post and not when changing payment
+            # method so that the user don't loose checks data in case of changing payment method and coming back again
+            # also, changing partner recompute payment method so all checks would be cleaned
+            for payment in self.filtered(lambda x: x.l10n_latam_new_check_ids and not x._is_latam_check_payment(check_subtype='new_check')):
+                payment.l10n_latam_new_check_ids.unlink()
+            if not self.env.context.get('l10n_ar_skip_remove_check'):
+                for payment in self.filtered(lambda x: x.l10n_latam_move_check_ids and not x._is_latam_check_payment(check_subtype='move_check')):
+                    payment.l10n_latam_move_check_ids = False
+            msgs = self._get_blocking_l10n_latam_warning_msg()
+            if msgs:
+                raise ValidationError('* %s' % '\n* '.join(msgs))
+            super().action_post()
+            self._l10n_latam_check_split_move()
+    
+  definido en: odoo.addons.account_payment_ux.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-payment/account_payment_ux/models/account_payment.py)
+        def action_post(self):
+            """Odoo a partir de 16, cuando se valida un pago con token, si la transaccion no queda en done cancela el pago
+            por ahora nosotros revertimos este cambio para el caso de tu cuota"""
+            return super(AccountPayment, self.with_context(from_action_post=True)).action_post()
+    
+  definido en: odoo.addons.account_payment.models.account_payment  (/home/odoo/src/odoo/addons/account_payment/models/account_payment.py)
+        def action_post(self):
+            # Post the payments "normally" if no transactions are needed.
+            # If not, let the provider update the state.
+    
+            payments_need_tx = self.filtered(
+                lambda p: p.payment_token_id and not p.payment_transaction_id
+            )
+            # creating the transaction require to access data on payment providers, not always accessible to users
+            # able to create payments
+            transactions = payments_need_tx.sudo()._create_payment_transaction()
+    
+            res = super(AccountPayment, self - payments_need_tx).action_post()
+    
+            for tx in transactions:  # Process the transactions with a payment by token
+                tx._send_payment_request()
+    
+            # Post payments for issued transactions
+            transactions._post_process()
+            payments_tx_done = payments_need_tx.filtered(
+                lambda p: p.payment_transaction_id.state == 'done'
+            )
+            super(AccountPayment, payments_tx_done).action_post()
+            payments_tx_not_done = payments_need_tx.filtered(
+                lambda p: p.payment_transaction_id.state not in ('done', 'pending', 'authorized')
+            )
+            payments_tx_not_done.action_cancel()
+    
+            return res
+    
+  definido en: odoo.addons.account_internal_transfer.models.account_payment  (/home/odoo/src/user/Outsource-Argentina/account-financial-tools/account_internal_transfer/models/account_payment.py)
+        def action_post(self):
+            super().action_post()
+            self.filtered(
+                lambda pay: (pay.is_internal_transfer and not pay.paired_internal_transfer_payment_id)
+            )._create_paired_internal_transfer_payment()
+    
+  definido en: odoo.addons.account.models.account_payment  (/home/odoo/src/odoo/addons/account/models/account_payment.py)
+        def action_post(self):
+            ''' draft -> posted '''
+            # Do not allow posting if the account is required but not trusted
+            for payment in self:
+                if (
+                    payment.require_partner_bank_account
+                    and not payment.partner_bank_id.allow_out_payment
+                    and payment.payment_type == 'outbound'
+                ):
+                    raise UserError(_(
+                        "To record payments with %(method_name)s, the recipient bank account must be manually validated. "
+                        "You should go on the partner bank account of %(partner)s in order to validate it.",
+                        method_name=self.payment_method_line_id.name,
+                        partner=payment.partner_id.display_name,
+                    ))
+            self.filtered(lambda pay: pay.outstanding_account_id.account_type == 'asset_cash').state = 'paid'
+            # Avoid going back one state when clicking on the confirm action in the payment list view and having paid expenses selected
+            # We need to set values to each payment to avoid recomputation later
+            self.filtered(lambda pay: pay.state in {False, 'draft', 'in_process'}).state = 'in_process'
+    
+
+--- account.move._compute_fiscal_position_id ------------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_move  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_move.py)
+        @api.depends("partner_id", "partner_shipping_id", "company_id")
+        def _compute_fiscal_position_id(self):
+            """Skip the fiscal position on journal entries (move_type='entry', e.g. payments): it is not
+            used there and, when it carries perceptions, it only adds a misleading warning banner."""
+            entries = self.filtered(lambda move: move.move_type == "entry")
+            entries.fiscal_position_id = False
+            super(AccountMove, self - entries)._compute_fiscal_position_id()
+    
+  definido en: odoo.addons.account.models.account_move  (/home/odoo/src/odoo/addons/account/models/account_move.py)
+        @api.depends('partner_id', 'partner_shipping_id', 'company_id')
+        def _compute_fiscal_position_id(self):
+            for move in self:
+                delivery_partner = self.env['res.partner'].browse(
+                    move.partner_shipping_id.id
+                    or move.partner_id.address_get(['delivery'])['delivery']
+                )
+                move.fiscal_position_id = self.env['account.fiscal.position'].with_company(move.company_id)._get_fiscal_position(
+                    move.partner_id, delivery=delivery_partner)
+    
+
+--- account.move._l10n_ar_recompute_fiscal_position_taxes -----------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_move  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_move.py)
+        @api.onchange("invoice_date", "commercial_partner_id")
+        def _l10n_ar_recompute_fiscal_position_taxes(self):
+            """Recalculamos las percepciones si cambiamos la fecha de la orden de venta o el commercial partner.
+            IMPORTANTE: este metodo solo esta pensado para cambiar alicuota de MISMA fiscal position (por cambio en fecha o partner) pero no para cambiar los impuestos.
+            Para ello nos basamos en los impuestos de la posicion fiscal, buscamos si hay impuestos existentes para los tax groups involucrados y los
+            reemplazamos por los nuevos impuestos.
+            NO lo hacemos para el cambio de fiscal_position_id porque el onchange de fiscal_position_id implementado en sale_ux ya recomputa todos los taxes
+            """
+            for move in self.filtered(
+                lambda x: x.is_sale_document(include_receipts=True)
+                and x.fiscal_position_id
+                and x.perceptions_fiscal_positon
+                and x.state == "draft"
+            ):
+                fp_tax_groups = move.fiscal_position_id.l10n_ar_tax_ids.filtered(
+                    lambda x: x.tax_type == "perception"
+                ).mapped("default_tax_id.tax_group_id")
+                new_taxes = move.fiscal_position_id._l10n_ar_add_taxes(
+                    move.partner_id, move.company_id, move.date, "perception"
+                )
+                # Solo queremos que se recomputen los impuestos en facturas de cliente/proveedor
+                for line in move.filtered(lambda x: not x.reversed_entry_id).invoice_line_ids:
+                    to_unlink = line.tax_ids.filtered(lambda x: x.tax_group_id in fp_tax_groups)
+                    if to_unlink._origin != new_taxes:
+                        line.tax_ids = (line.tax_ids - to_unlink) | new_taxes
+    
+
+--- account.move.line._get_computed_taxes ---------------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.account_move_line  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/account_move_line.py)
+        def _get_computed_taxes(self):
+            taxes = super()._get_computed_taxes()
+            # heredamos este metodo y no map_tax de fiscal positions porque el metod map_tax recibe solo taxes y no sabe
+            # partner ni fecha y estos datos son necesarios para computar correctamente la alicuota
+            if self.move_id.is_sale_document(include_receipts=True) and self.move_id.fiscal_position_id.l10n_ar_tax_ids:
+                date = self.move_id.date if not self.move_id.reversed_entry_id else self.move_id.reversed_entry_id.date
+                taxes += self.move_id.fiscal_position_id._l10n_ar_add_taxes(
+                    self.partner_id, self.company_id, date, "perception"
+                )
+            return taxes
+    
+  definido en: odoo.addons.account_asset.models.account_move  (/home/odoo/src/enterprise/account_asset/models/account_move.py)
+        def _get_computed_taxes(self):
+            if self.move_id.asset_id:
+                return self.tax_ids
+            return super()._get_computed_taxes()
+    
+  definido en: odoo.addons.account_accountant.models.account_move  (/home/odoo/src/enterprise/account_accountant/models/account_move.py)
+        def _get_computed_taxes(self):
+            if self.move_id.deferred_original_move_ids:
+                # If this line is part of a deferral move, do not (re)calculate its taxes automatically.
+                # Doing so might unvoluntarily impact the tax report in deferral moves (if a default tax is set on the account).
+                return self.tax_ids
+            return super()._get_computed_taxes()
+    
+  definido en: odoo.addons.account.models.account_move_line  (/home/odoo/src/odoo/addons/account/models/account_move_line.py)
+        def _get_computed_taxes(self):
+            self.ensure_one()
+    
+            company_domain = self.env['account.tax']._check_company_domain(self.move_id.company_id)
+            if self.move_id.is_sale_document(include_receipts=True):
+                # Out invoice.
+                filtered_taxes_id = self.product_id.taxes_id.filtered_domain(company_domain)
+                tax_ids = filtered_taxes_id or self.account_id.tax_ids.filtered(lambda tax: tax.type_tax_use == 'sale')
+    
+            elif self.move_id.is_purchase_document(include_receipts=True):
+                # In invoice.
+                filtered_supplier_taxes_id = self.product_id.supplier_taxes_id.filtered_domain(company_domain)
+                tax_ids = filtered_supplier_taxes_id or self.account_id.tax_ids.filtered(lambda tax: tax.type_tax_use == 'purchase')
+    
+            else:
+                tax_ids = False if self.env.context.get('skip_computed_taxes') else self.account_id.tax_ids
+    
+            if self.company_id and tax_ids:
+                tax_ids = tax_ids._filter_taxes_by_company(self.company_id)
+    
+            if tax_ids and self.move_id.fiscal_position_id:
+                tax_ids = self.move_id.fiscal_position_id.map_tax(tax_ids)
+    
+            return tax_ids
+    
+
+--- sale.order.line._compute_tax_id ---------------------------------------------------------------
+  definido en: odoo.addons.sale.models.sale_order_line  (/home/odoo/src/odoo/addons/sale/models/sale_order_line.py)
+        @api.depends('product_id', 'company_id')
+        def _compute_tax_id(self):
+            lines_by_company = defaultdict(lambda: self.env['sale.order.line'])
+            cached_taxes = {}
+            for line in self:
+                if line.product_type == 'combo':
+                    line.tax_id = False
+                    continue
+                lines_by_company[line.company_id] += line
+            for company, lines in lines_by_company.items():
+                for line in lines.with_company(company):
+                    taxes = None
+                    if line.product_id:
+                        taxes = line.product_id.taxes_id._filter_taxes_by_company(company)
+                    if not line.product_id or not taxes:
+                        # Nothing to map
+                        line.tax_id = False
+                        continue
+                    fiscal_position = line.order_id.fiscal_position_id
+                    cache_key = (fiscal_position.id, company.id, tuple(taxes.ids))
+                    cache_key += line._get_custom_compute_tax_cache_key()
+                    if cache_key in cached_taxes:
+                        result = cached_taxes[cache_key]
+                    else:
+                        result = fiscal_position.map_tax(taxes)
+                        cached_taxes[cache_key] = result
+                    # If company_id is set, always filter taxes by the company
+                    line.tax_id = result
+    
+
+--- l10n_ar.partner.tax._check_tax_group_overlap --------------------------------------------------
+  definido en: odoo.addons.l10n_ar_tax.models.l10n_ar_partner_tax  (/home/odoo/src/user/Outsource-Argentina/odoo-argentina/l10n_ar_tax/models/l10n_ar_partner_tax.py)
+        @api.constrains("partner_id", "tax_id", "from_date", "to_date")
+        def _check_tax_group_overlap(self):
+            for record in self:
+                domain = [
+                    ("id", "!=", record.id),
+                    ("partner_id", "=", record.partner_id.id),
+                    ("tax_id.tax_group_id", "=", record.tax_id.tax_group_id.id),
+                    "&",
+                    "|",
+                    ("from_date", "=", False),
+                    ("from_date", "<=", record.to_date or datetime.date.max),
+                    "|",
+                    ("to_date", "=", False),
+                    ("to_date", ">=", record.from_date or datetime.date.min),
+                ]
+                if record.tax_id.l10n_ar_withholding_payment_type == "supplier":
+                    # TODO esto lo deberiamos borrar al ir a odoo 19 y solo usar los tax groups
+                    # por ahora, para no renegar con scripts de migra que requieran crear tax groups para cada jurisdiccion y
+                    # ademas luego tener que ajustar a lo que hagamos en 19, usamos la jursdiccion como elemento de agrupacion
+                    # solo para retenciones
+                    domain += [("tax_id.l10n_ar_state_id", "=", record.tax_id.l10n_ar_state_id.id)]
+                conflicting_records = self.search(domain)
+                if conflicting_records:
+                    raise ValidationError(
+                        "No puede haber dos impuestos del mismo grupo vigentes en el mismo momento para la misma empresa. "
+                        "Tal vez tenga algun impuesto al que le tenga que definir una fecha hasta. Más información:\n"
+                        "* Impuesto: %s\n"
+                        "* Fecha Hasta: %s\n"
+                        "* Fecha Desde: %s\n"
+                        "* Otros impuestos: %s\n"
+                        % (record.tax_id.name, record.to_date, record.from_date, conflicting_records.mapped("tax_id.name"))
+                    )
+    

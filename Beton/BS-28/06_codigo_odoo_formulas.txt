@@ -1,0 +1,573 @@
+2026-11-13 15:45:53,708 316 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_exit: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:53,708 316 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_site_arrival: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:53,708 316 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_start: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:53,708 316 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_discharge_end: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-11-13 15:45:53,708 316 WARNING outsource-argentina-beton-staging-41077287 odoo.fields: Field stock.picking.remito_time_plant_return: unknown parameter 'placeholder', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+
+====================================================================================================
+06 - CÓDIGO FUENTE INSTALADO (FÓRMULAS REALES DE DURACIÓN Y PLANEACIÓN)
+====================================================================================================
+
+--- mrp.workcenter._get_capacity ------------------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_workcenter  (/home/odoo/src/odoo/addons/mrp/models/mrp_workcenter.py)
+        def _get_capacity(self, product, unit, default_capacity=1):
+            capacity = self.capacity_ids.sorted(lambda c: (
+                not (c.product_id == product and c.product_uom_id == product.uom_id),
+                not (not c.product_id and c.product_uom_id == unit),
+                not (not c.product_id and c.product_uom_id == product.uom_id),
+            ))[:1]
+            if capacity and capacity.product_id in [product, self.env['product.product']] and capacity.product_uom_id in [product.uom_id, unit]:
+                if float_is_zero(capacity.capacity, 0):
+                    return (default_capacity, capacity.time_start, capacity.time_stop)
+                return (capacity.product_uom_id._compute_quantity(capacity.capacity, unit), capacity.time_start, capacity.time_stop)
+            return (default_capacity, self.time_start, self.time_stop)
+    
+
+--- mrp.workcenter._get_first_available_slot ------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_workcenter  (/home/odoo/src/odoo/addons/mrp/models/mrp_workcenter.py)
+        def _get_first_available_slot(self, start_datetime, duration, forward=True, leaves_to_ignore=False, extra_leaves_slots=[]):
+            """Get the first available interval for the workcenter in `self`.
+    
+            The available interval is disjoinct with all other workorders planned on this workcenter, but
+            can overlap the time-off of the related calendar (inverse of the working hours).
+            Return the first available interval (start datetime, end datetime) or,
+            if there is none before 700 days, a tuple error (False, 'error message').
+    
+            :param duration: minutes needed to make the workorder (float)
+            :param start_datetime: begin the search at this datetime
+            :param forward: forward scheduling (search from start_datetime to 700 days after), or backward (from start_datetime to now)
+            :param leaves_to_ignore: typically, ignore allocated leave when re-planning a workorder
+            :param extra_leaves_slots: extra time slots (start, stop) to consider
+            :rtype: tuple
+            """
+            self.ensure_one()
+            ICP = self.env['ir.config_parameter'].sudo()
+            max_planning_iterations = max(int(ICP.get_param('mrp.workcenter_max_planning_iterations', '50')), 1)
+            resource = self.resource_id
+            revert = to_timezone(start_datetime.tzinfo)
+            start_datetime = localized(start_datetime)
+            get_available_intervals = partial(self.resource_calendar_id._work_intervals_batch, resources=resource, tz=timezone(self.resource_calendar_id.tz))
+            workorder_intervals_leaves_domain = [('time_type', '=', 'other')]
+            if leaves_to_ignore:
+                workorder_intervals_leaves_domain.append(('id', 'not in', leaves_to_ignore.ids))
+            get_workorder_intervals = partial(self.resource_calendar_id._leave_intervals_batch, domain=workorder_intervals_leaves_domain, resources=resource, tz=timezone(self.resource_calendar_id.tz))
+            extra_leaves_slots_intervals = Intervals([(localized(start), localized(stop), self.env['resource.calendar.attendance']) for start, stop in extra_leaves_slots])
+    
+            remaining = duration = max(duration, 1 / 60)
+            now = localized(datetime.now())
+            delta = timedelta(days=14)
+            start_interval, stop_interval = None, None
+            for n in range(max_planning_iterations):  # 50 * 14 = 700 days in advance
+                if forward:
+                    date_start = start_datetime + delta * n
+                    date_stop = date_start + delta
+                    available_intervals = get_available_intervals(date_start, date_stop)[resource.id]
+                    workorder_intervals = get_workorder_intervals(date_start, date_stop)[resource.id]
+                    for start, stop, _records in available_intervals:
+                        start_interval = start_interval or start
+                        interval_minutes = (stop - start).total_seconds() / 60
+                        while (interval := Intervals([(start_interval or start, start + timedelta(minutes=min(remaining, interval_minutes)), _records)])) \
+                          and (conflict := workorder_intervals.conflicting(interval) or extra_leaves_slots_intervals.conflicting(interval)):
+                            start = min(max(conflict_stop for _start, conflict_stop, _records in conflict), stop)  # restart available interval at conflicting interval stop
+                            interval_minutes = (stop - start).total_seconds() / 60
+                            start_interval, remaining = start if interval_minutes else None, duration
+                        if float_compare(interval_minutes, remaining, precision_digits=3) >= 0:
+                            return revert(start_interval), revert(start + timedelta(minutes=remaining))
+                        remaining -= interval_minutes
+                else:
+                    # same process but starting from end on reversed intervals
+                    date_stop = start_datetime - delta * n
+                    date_start = date_stop - delta
+                    available_intervals = get_available_intervals(date_start, date_stop)[resource.id]
+                    available_intervals = reversed(available_intervals)
+                    workorder_intervals = get_workorder_intervals(date_start, date_stop)[resource.id]
+                    for start, stop, _records in available_intervals:
+                        stop_interval = stop_interval or stop
+                        interval_minutes = (stop - start).total_seconds() / 60
+                        while (interval := Intervals([(stop - timedelta(minutes=min(remaining, interval_minutes)), stop_interval or stop, _records)])) \
+                          and (conflict := workorder_intervals.conflicting(interval) or extra_leaves_slots_intervals.conflicting(interval)):
+                            stop = max(min(conflict_start for conflict_start, _stop, _records in conflict), start)  # restart available interval at conflicting interval start
+                            interval_minutes = (stop - start).total_seconds() / 60
+                            stop_interval, remaining = stop if interval_minutes else None, duration
+                        if float_compare(interval_minutes, remaining, precision_digits=3) >= 0:
+                            return revert(stop - timedelta(minutes=remaining)), revert(stop_interval)
+                        remaining -= interval_minutes
+                    if date_start <= now:
+                        break
+            return False, 'No available slot 700 days after the planned start'
+    
+
+--- mrp.routing.workcenter._compute_time_cycle ----------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_routing  (/home/odoo/src/odoo/addons/mrp/models/mrp_routing.py)
+        @api.depends('time_cycle_manual', 'time_mode', 'workorder_ids',
+            'bom_id.product_id', 'bom_id.product_qty',
+            'workcenter_id.time_start', 'workcenter_id.time_stop', 'workcenter_id.capacity_ids'
+        )
+        @api.depends_context('product', 'quantity', 'unit', 'workcenter')
+        def _compute_time_cycle(self):
+            manual_ops = self.filtered(lambda operation: operation.time_mode == 'manual')
+            for operation in manual_ops:
+                operation.time_cycle = operation.time_cycle_manual
+            for operation in self - manual_ops:
+                data = self.env['mrp.workorder'].search([
+                    ('operation_id', 'in', operation.ids),
+                    ('qty_produced', '>', 0),
+                    ('state', '=', 'done')],
+                    limit=operation.time_mode_batch,
+                    order="date_finished desc, id desc")
+                # To compute the time_cycle, we can take the total duration of previous operations
+                # but for the quantity, we will take in consideration the qty_produced like if the capacity was 1.
+                # So producing 50 in 00:10 with capacity 2, for the time_cycle, we assume it is 25 in 00:10
+                # When recomputing the expected duration, the capacity is used again to divide the qty to produce
+                # so that if we need 50 with capacity 2, it will compute the expected of 25 which is 00:10
+                total_duration = 0  # Can be 0 since it's not an invalid duration for BoM
+                cycle_number = 0  # Never 0 unless infinite item['workcenter_id'].capacity
+                for item in data:
+                    total_duration += item['duration']
+                    (capacity, _setup, _cleanup) = item['workcenter_id']._get_capacity(item.product_id, item.product_uom_id, operation.bom_id.product_qty or 1)
+                    cycle_number += float_round((item['qty_produced'] / capacity), precision_digits=0, rounding_method='UP')
+                if cycle_number:
+                    operation.time_cycle = total_duration / cycle_number
+                else:
+                    operation.time_cycle = operation.time_cycle_manual
+    
+            for operation in self:
+                workcenter = self.env.context.get('workcenter', operation.workcenter_id)
+                product = (
+                    self.env.context.get('product', operation.bom_id.product_id)
+                    or self.env.context.get(
+                        'action_button_product',
+                        operation.bom_id.product_tmpl_id.product_variant_ids.filtered(
+                            lambda p: p.product_template_attribute_value_ids <= operation.bom_product_template_attribute_value_ids,
+                        ),
+                    )
+                )
+                if len(product) > 1:
+                    product = product[0]
+                quantity = self.env.context.get('quantity', operation.bom_id.product_qty or 1)
+                unit = self.env.context.get('unit', operation.bom_id.product_uom_id)
+                (capacity, setup, cleanup) = workcenter._get_capacity(product, unit, operation.bom_id.product_qty or 1)
+                operation.cycle_number = float_round(quantity / capacity, precision_digits=0, rounding_method="UP")
+                operation.time_total = setup + cleanup + operation.cycle_number * operation.time_cycle * 100.0 / (workcenter.time_efficiency or 100.0)
+                operation.show_time_total = operation.cycle_number > 1 or not float_is_zero(setup + cleanup, precision_digits=0)
+    
+
+--- mrp.workorder._get_duration_expected ----------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_workorder  (/home/odoo/src/odoo/addons/mrp/models/mrp_workorder.py)
+        def _get_duration_expected(self, alternative_workcenter=False, ratio=1):
+            self.ensure_one()
+            if not self.workcenter_id:
+                return self.duration_expected
+            capacity, setup, cleanup = self.workcenter_id._get_capacity(self.product_id, self.product_uom_id, self.production_bom_id.product_qty or 1)
+            if not self.operation_id:
+                duration_expected_working = (self.duration_expected - setup - cleanup) * self.workcenter_id.time_efficiency / 100.0
+                if duration_expected_working < 0:
+                    duration_expected_working = 0
+                if self.qty_producing not in (0, self.qty_production, self._origin.qty_producing):
+                    qty_ratio = self.qty_producing / (self._origin.qty_producing or self.qty_production)
+                else:
+                    qty_ratio = 1
+                return setup + cleanup + duration_expected_working * qty_ratio * ratio * 100.0 / self.workcenter_id.time_efficiency
+            qty_production = self.qty_producing or self.qty_production
+            cycle_number = float_round(qty_production / capacity, precision_digits=0, rounding_method='UP')
+            if alternative_workcenter:
+                # TODO : find a better alternative : the settings of workcenter can change
+                duration_expected_working = (self.duration_expected - setup - cleanup) * self.workcenter_id.time_efficiency / (100.0 * cycle_number)
+                if duration_expected_working < 0:
+                    duration_expected_working = 0
+                capacity, setup, cleanup = alternative_workcenter._get_capacity(self.product_id, self.product_uom_id, self.production_bom_id.product_qty or 1)
+                cycle_number = float_round(qty_production / capacity, precision_digits=0, rounding_method='UP')
+                return setup + cleanup + cycle_number * duration_expected_working * 100.0 / alternative_workcenter.time_efficiency
+            time_cycle = self.operation_id.time_cycle
+            return setup + cleanup + cycle_number * time_cycle * 100.0 / self.workcenter_id.time_efficiency
+    
+
+--- mrp.workorder._compute_duration_expected ------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_workorder  (/home/odoo/src/odoo/addons/mrp/models/mrp_workorder.py)
+        @api.depends('operation_id', 'workcenter_id', 'qty_producing', 'qty_production')
+        def _compute_duration_expected(self):
+            for workorder in self:
+                # Recompute the duration expected if the qty_producing has been changed:
+                # compare with the origin record if it happens during an onchange
+                if workorder.state not in ['done', 'cancel'] and (workorder.qty_producing != workorder.qty_production
+                    or (workorder._origin != workorder and workorder._origin.qty_producing and workorder.qty_producing != workorder._origin.qty_producing)):
+                    workorder.duration_expected = workorder._get_duration_expected()
+    
+
+--- mrp.workorder._plan_workorder -----------------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_workorder  (/home/odoo/src/odoo/addons/mrp/models/mrp_workorder.py)
+        def _plan_workorder(self, replan=False):
+            self.ensure_one()
+            # Plan workorder after its predecessors
+            date_start = max(self.production_id.date_start, datetime.now())
+            for workorder in self.blocked_by_workorder_ids:
+                workorder._plan_workorder(replan)
+                if workorder.date_finished and workorder.date_finished > date_start:
+                    date_start = workorder.date_finished
+            # Plan only suitable workorders
+            if self.state not in ['blocked', 'ready']:
+                return
+            if self.leave_id:
+                if replan:
+                    self.leave_id.unlink()
+                else:
+                    return
+            # Consider workcenter and alternatives
+            workcenters = self.workcenter_id | self.workcenter_id.alternative_workcenter_ids
+            best_date_finished = datetime.max
+            vals = {}
+            for workcenter in workcenters:
+                if not workcenter.resource_calendar_id:
+                    raise UserError(_('There is no defined calendar on workcenter %s.', workcenter.name))
+                # Compute theoretical duration
+                if self.workcenter_id == workcenter:
+                    duration_expected = self.duration_expected
+                else:
+                    duration_expected = self._get_duration_expected(alternative_workcenter=workcenter)
+                from_date, to_date = workcenter._get_first_available_slot(date_start, duration_expected)
+                # If the workcenter is unavailable, try planning on the next one
+                if not from_date:
+                    continue
+                # Check if this workcenter is better than the previous ones
+                if to_date and to_date < best_date_finished:
+                    best_date_start = from_date
+                    best_date_finished = to_date
+                    best_workcenter = workcenter
+                    vals = {
+                        'workcenter_id': workcenter.id,
+                        'duration_expected': duration_expected,
+                    }
+            # If none of the workcenter are available, raise
+            if best_date_finished == datetime.max:
+                raise UserError(_('Impossible to plan the workorder. Please check the workcenter availabilities.'))
+            # Create leave on chosen workcenter calendar
+            leave = self.env['resource.calendar.leaves'].create({
+                'name': self.display_name,
+                'calendar_id': best_workcenter.resource_calendar_id.id,
+                'date_from': best_date_start,
+                'date_to': best_date_finished,
+                'resource_id': best_workcenter.resource_id.id,
+                'time_type': 'other'
+            })
+            vals['leave_id'] = leave.id
+            self.write(vals)
+    
+
+--- mrp.production._plan_workorders ---------------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_production  (/home/odoo/src/odoo/addons/mrp/models/mrp_production.py)
+        def _plan_workorders(self, replan=False):
+            """ Plan all the production's workorders depending on the workcenters
+            work schedule.
+    
+            :param replan: If it is a replan, only ready and blocked workorder will be taken into account
+            :type replan: bool.
+            """
+            self.ensure_one()
+    
+            if not self.workorder_ids:
+                self.is_planned = True
+                return
+    
+            self._link_workorders_and_moves()
+    
+            # Plan workorders starting from final ones (those with no dependent workorders)
+            final_workorders = self.workorder_ids.filtered(lambda wo: not wo.needed_by_workorder_ids)
+            for workorder in final_workorders:
+                workorder._plan_workorder(replan)
+    
+            workorders = self.workorder_ids.filtered(lambda w: w.state not in ['done', 'cancel'])
+            if not workorders:
+                return
+    
+            self.with_context(force_date=True).write({
+                'date_start': min((workorder.leave_id.date_from for workorder in workorders if workorder.leave_id), default=None),
+                'date_finished': max((workorder.leave_id.date_to for workorder in workorders if workorder.leave_id), default=None),
+            })
+    
+
+--- mrp.production.button_plan --------------------------------------------------------------------
+  definido en: odoo.addons.mrp.models.mrp_production  (/home/odoo/src/odoo/addons/mrp/models/mrp_production.py)
+        def button_plan(self):
+            """ Create work orders. And probably do stuff, like things. """
+            orders_to_plan = self.filtered(lambda order: not order.is_planned)
+            orders_to_confirm = orders_to_plan.filtered(lambda mo: mo.state == 'draft')
+            orders_to_confirm.action_confirm()
+            for order in orders_to_plan:
+                order._plan_workorders()
+            return True
+    
+
+[Modelo planning.slot no existe en esta base]
+
+--- sale.order.line._timesheet_service_generation -------------------------------------------------
+  definido en: odoo.addons.sale_project.models.sale_order_line  (/home/odoo/src/odoo/addons/sale_project/models/sale_order_line.py)
+        def _timesheet_service_generation(self):
+            """ For service lines, create the task or the project. If already exists, it simply links
+                the existing one to the line.
+                Note: If the SO was confirmed, cancelled, set to draft then confirmed, avoid creating a
+                new project/task. This explains the searches on 'sale_line_id' on project/task. This also
+                implied if so line of generated task has been modified, we may regenerate it.
+            """
+            sale_order_lines = self.filtered(
+                lambda sol:
+                    sol.is_service
+                    and sol.product_id.service_tracking in ['project_only', 'task_in_project', 'task_global_project']
+                    and not (sol._is_line_optional() and sol.product_uom_qty == 0)
+            )
+            so_line_task_global_project = sale_order_lines._get_so_lines_task_global_project()
+            so_line_new_project = sale_order_lines._get_so_lines_new_project()
+            task_templates = self.env['project.task']
+    
+            # search so lines from SO of current so lines having their project generated, in order to check if the current one can
+            # create its own project, or reuse the one of its order.
+            map_so_project = {}
+            if so_line_new_project:
+                order_ids = self.mapped('order_id').ids
+                so_lines_with_project = self.search([('order_id', 'in', order_ids), ('project_id', '!=', False), ('product_id.service_tracking', 'in', ['project_only', 'task_in_project']), ('product_id.project_template_id', '=', False)])
+                map_so_project = {sol.order_id.id: sol.project_id for sol in so_lines_with_project}
+                so_lines_with_project_templates = self.search([('order_id', 'in', order_ids), ('project_id', '!=', False), ('product_id.service_tracking', 'in', ['project_only', 'task_in_project']), ('product_id.project_template_id', '!=', False)])
+                map_so_project_templates = {(sol.order_id.id, sol.product_id.project_template_id.id): sol.project_id for sol in so_lines_with_project_templates}
+    
+            # search the global project of current SO lines, in which create their task
+            map_sol_project = {}
+            if so_line_task_global_project:
+                map_sol_project = {sol.id: sol.product_id.with_company(sol.company_id).project_id for sol in so_line_task_global_project}
+    
+            def _can_create_project(sol):
+                if not sol.project_id:
+                    if sol.product_id.project_template_id:
+                        return (sol.order_id.id, sol.product_id.project_template_id.id) not in map_so_project_templates
+                    elif sol.order_id.id not in map_so_project:
+                        return True
+                return False
+    
+            # we store the reference analytic account per SO
+            map_account_per_so = {}
+    
+            # project_only, task_in_project: create a new project, based or not on a template (1 per SO). May be create a task too.
+            # if 'task_in_project' and project_id configured on SO, use that one instead
+            for so_line in so_line_new_project.sorted(lambda sol: (sol.sequence, sol.id)):
+                project = False
+                if so_line.product_id.service_tracking in ['project_only', 'task_in_project']:
+                    project = so_line.project_id
+                if not project and _can_create_project(so_line):
+                    # If no reference analytic account exists, set the account of the generated project to the account of the project's SO or create a new one
+                    account = map_account_per_so.get(so_line.order_id.id)
+                    if not account:
+                        account = so_line.order_id.project_account_id or self.env['account.analytic.account'].create(so_line.order_id._prepare_analytic_account_data())
+                        map_account_per_so[so_line.order_id.id] = account
+                    project = so_line.with_context(project_account_id=account.id)._timesheet_create_project()
+                    # If the SO generates projects on confirmation and the project's SO is not set, set it to the project's SOL with the lowest (sequence, id)
+                    if not so_line.order_id.project_id:
+                        so_line.order_id.project_id = project
+                    if so_line.product_id.project_template_id:
+                        map_so_project_templates[(so_line.order_id.id, so_line.product_id.project_template_id.id)] = project
+                    else:
+                        map_so_project[so_line.order_id.id] = project
+                elif not project:
+                    # Attach subsequent SO lines to the created project
+                    so_line.project_id = (
+                        map_so_project_templates.get((so_line.order_id.id, so_line.product_id.project_template_id.id))
+                        or map_so_project.get(so_line.order_id.id)
+                    )
+                if so_line.product_id.service_tracking == 'task_in_project':
+                    if not project:
+                        if so_line.product_id.project_template_id:
+                            project = map_so_project_templates[(so_line.order_id.id, so_line.product_id.project_template_id.id)]
+                        else:
+                            project = map_so_project[so_line.order_id.id]
+                    if not so_line.task_id and so_line.product_id.task_template_id not in task_templates:
+                        task_templates |= so_line.product_id.task_template_id
+                        so_line._timesheet_create_task(project=project)
+                so_line._handle_milestones(project)
+    
+            # task_global_project: if not set, set the project's SO by looking at global projects
+            for so_line in so_line_task_global_project.sorted(lambda sol: (sol.sequence, sol.id)):
+                if not so_line.order_id.project_id:
+                    so_line.order_id.project_id = map_sol_project.get(so_line.id)
+    
+            # task_global_project: create task in global projects
+            for so_line in so_line_task_global_project:
+                if not so_line.task_id:
+                    project = map_sol_project.get(so_line.id) or so_line.order_id.project_id
+                    if project and so_line.product_uom_qty > 0:
+                        if so_line.product_id.task_template_id not in task_templates:
+                            task_templates |= so_line.product_id.task_template_id
+                            so_line._timesheet_create_task(project)
+    
+                    elif not project:
+                        raise UserError(_(
+                            "A project must be defined on the quotation %(order)s or on the form of products creating a task on order.\n"
+                            "The following product need a project in which to put its task: %(product_name)s",
+                            order=so_line.order_id.name,
+                            product_name=so_line.product_id.name,
+                        ))
+    
+
+--- sale.order.line._action_launch_stock_rule -----------------------------------------------------
+  definido en: odoo.addons.sale_stock.models.sale_order_line  (/home/odoo/src/odoo/addons/sale_stock/models/sale_order_line.py)
+        def _action_launch_stock_rule(self, *, previous_product_uom_qty=False):
+            """
+            Launch procurement run method with required/custom fields generated by a
+            sale order line. procurement will launch '_run_pull', '_run_buy' or '_run_manufacture'
+            depending on the sale order line product rule.
+            """
+            if self.env.context.get("skip_procurement"):
+                return True
+            precision = self.env['decimal.precision'].precision_get('Product Unit')
+            procurements = []
+            for line in self:
+                line = line.with_company(line.company_id)
+                if line.state != 'sale' or line.order_id.locked or line.product_id.type != 'consu':
+                    continue
+                qty = line._get_qty_procurement(previous_product_uom_qty)
+                if float_compare(qty, line.product_uom_qty, precision_digits=precision) == 0:
+                    continue
+    
+                references = line.order_id.stock_reference_ids
+                if not references:
+                    self.env['stock.reference'].create(line._prepare_reference_vals())
+    
+                values = line._prepare_procurement_values()
+                product_qty = line.product_uom_qty - qty
+    
+                line_uom = line.product_uom_id
+                quant_uom = line.product_id.uom_id
+                product_qty, procurement_uom = line_uom._adjust_uom_quantities(product_qty, quant_uom)
+                procurements += line._create_procurements(product_qty, procurement_uom, values)
+            if procurements:
+                self.env['stock.rule'].run(procurements)
+    
+            # This next block is currently needed only because the scheduler trigger is done by picking confirmation rather than stock.move confirmation
+            orders = self.mapped('order_id')
+            for order in orders:
+                pickings_to_confirm = order.picking_ids.filtered(lambda p: p.state not in ['cancel', 'done'])
+                if pickings_to_confirm:
+                    # Trigger the Scheduler for Pickings
+                    pickings_to_confirm.action_confirm()
+            return True
+    
+
+--- Archivos Python en ~/src/user (custom / terceros) ---------------------------------------------
+Total archivos .py / __manifest__.py en ~/src/user: 766
+  Outsource-Argentina/Untitled Folder/odoo-mod-custom-remito/custom_remito/__init__.py
+  Outsource-Argentina/Untitled Folder/odoo-mod-custom-remito/custom_remito/__manifest__.py
+  Outsource-Argentina/Untitled Folder/odoo-mod-custom-remito/custom_remito/models/__init__.py
+  Outsource-Argentina/Untitled Folder/odoo-mod-custom-remito/custom_remito/models/stock_picking.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/models/account_analytic_line.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/models/project_project.py
+  Outsource-Argentina/account-financial-tools-19/account_analytic_ux/models/stock_move.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/models/res_partner.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/report/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/tests/test_account_debt_report.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/wizard/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_debt_report/wizard/account_debt_report_wizard.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/demo/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/demo/account_exchange_demo.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/account_move.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/account_move_line.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/account_partial_reconcile.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/res_company.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/models/res_config_settings.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/wizards/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_exchange_difference_invoice/wizards/exchange_difference_wizard.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/models/account_move_line.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/wizard/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_financial_amount/wizard/res_config_settings.py
+  Outsource-Argentina/account-financial-tools-19/account_interests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_interests/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_interests/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_interests/models/res_company_interest.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/migrations/19.0.1.1.0/pre-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/models/account_payment.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_internal_transfer/tests/test_destination_payment_method.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/models/account_move.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/models/account_move_line.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/models/stock_move.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/reports/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/reports/invoice_report.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/tests/test_historical_cost_branches.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/tests/test_historical_cost_delivery.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/tests/test_historical_cost_post.py
+  Outsource-Argentina/account-financial-tools-19/account_invoice_historical_cost/tests/test_historical_cost_report.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/migrations/12.0.1.1.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/models/account_journal.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/models/account_move.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/models/account_payment.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/models/res_users.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/tests/test_account_journal_security.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/wizards/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_journal_security/wizards/account_payment_register.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/models/account_move.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/models/account_payment_term.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/models/account_payment_term_surcharge.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/models/res_company.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/tests/test_account_payment_term_surcharge.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/wizard/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_payment_term_surcharge/wizard/res_config_settings.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/__manifest__.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/hooks.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/12.0.1.3.0/pre-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/18.0.1.0.0/pre-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/18.0.1.14.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/19.0.1.24.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/19.0.1.25.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/19.0.1.27.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/19.0.1.27.0/pre-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/migrations/19.0.1.5.0/post-migration.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_account.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_chart_template.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_fiscal_position.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_group.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_journal.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_move.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_move_line.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_payment.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_payment_method_line.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_reconcile_model.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/account_tax.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/res_company.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/res_currency.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/res_currency_rate.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/res_partner.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/models/shared_to_branches_mixin.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/reports/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/reports/invoice_report.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/__init__.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/invariants.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/test_account_ux.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/test_actualizacion_impuesto.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/test_batch_payment_sequence.py
+  Outsource-Argentina/account-financial-tools-19/account_ux/tests/test_change_partner_wizard.py
+  ... (646 más)

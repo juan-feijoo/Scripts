@@ -1,0 +1,42 @@
+Warn: Can't find .pfb for face 'Courier'
+
+====================================================================================================
+03 - PADRONES CARGADOS, PARTNER TAXES Y PREPARACIÓN DE CONTACTOS (DROGUERIA DIMAT SA)
+====================================================================================================
+
+--- Registros en res.company.jurisdiction.padron --------------------------------------------------
+  Total padrones en BD: 1
+
+  Padron ID=1 | cia=[1] DROGUERIA DIMAT SA | state=[554] Buenos Aires (jcode=902)
+    filename='PadronRGS112026.zip' | desde=2026-11-01 | hasta=2026-11-30 | bytes=35,845,808
+    Contenido ZIP (3 entradas):
+      - PadronRGS112026/                              | dir=True  | size=0 bytes
+      - PadronRGS112026/PadronRGSPer112026.txt        | dir=False | size=310,749,096 bytes
+          muestra[1]: P;29102026;01112026;30112026;20000033481;D;N;N;0,00;01;
+          muestra[2]: P;29102026;01112026;30112026;20000035891;D;N;N;0,00;01;
+          muestra[3]: P;29102026;01112026;30112026;20000036022;D;N;N;0,00;01;
+      - PadronRGS112026/PadronRGSRet112026.TXT        | dir=False | size=144,796,904 bytes
+          muestra[1]: R;29102026;01112026;30112026;20000282465;D;N;N;0,00;01;
+          muestra[2]: R;29102026;01112026;30112026;20002362075;D;N;N;5,00;24;
+          muestra[3]: R;29102026;01112026;30112026;20002592720;D;N;S;0,40;07;
+
+--- Registros existentes en l10n_ar.partner.tax ---------------------------------------------------
+  Total en compañía [1]: 0
+  Desglose por impuesto:
+  Desglose por vigencia (from_date, to_date):
+  Muestra de hasta 10 registros:
+
+--- Preparación de contactos comerciales (res.partner) --------------------------------------------
+  Total empresas (is_company=True): 1205
+  Contactos individuales top-level con rank > 0: 0
+    con_cuit_11_dig           : 1205
+    supplier_rank>0           : 584
+    con_pos_fiscal_manual     : 0
+
+  Top 15 perfiles fiscales de PROVEEDORES (supplier_rank > 0):
+     566 | AR | SIN_PROV | SIN_RESP_AFIP | CUIT_OK
+      13 | AR | Ciudad Autónoma de Buenos Aires | IVA Responsable Inscripto | CUIT_OK
+       3 | AR | Buenos Aires | IVA Responsable Inscripto | CUIT_OK
+       2 | AR | Ciudad Autónoma de Buenos Aires | IVA Sujeto Exento | CUIT_OK
+
+  Top 15 perfiles fiscales de CLIENTES (customer_rank > 0):
