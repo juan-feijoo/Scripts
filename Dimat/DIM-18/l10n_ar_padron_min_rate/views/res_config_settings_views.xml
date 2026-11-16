@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_arba_padron_min_rate" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.arba.padron.min.rate</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="l10n_ar_tax.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='arba_cit']" position="after">
+                <setting
+                    id="arba_padron_min_rate"
+                    string="ARBA - Padrón y Regla Mínimo Retenciones"
+                    company_dependent="1"
+                    invisible="country_code != 'AR'"
+                    help="Parametriza la alícuota mínima de retención IIBB Buenos Aires (ej. RN 42/12 droguerías: 2,50%), la fuente (ZIP/Webservice) y la auto-configuración."
+                >
+                    <field name="l10n_ar_arba_wth_min_enabled"/>
+                    <div class="content-group">
+                        <div class="row mt8" invisible="not l10n_ar_arba_wth_min_enabled">
+                            <label for="l10n_ar_arba_wth_min_rate" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_arba_wth_min_rate" class="col-lg-3"/>
+                        </div>
+                        <div class="row mt4" invisible="not l10n_ar_arba_wth_min_enabled">
+                            <label for="l10n_ar_arba_wth_exclude_zero" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_arba_wth_exclude_zero" class="col-lg-3"/>
+                        </div>
+                        <div class="row mt4" invisible="not l10n_ar_arba_wth_min_enabled">
+                            <label for="l10n_ar_arba_wth_apply_if_absent" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_arba_wth_apply_if_absent" class="col-lg-3"/>
+                        </div>
+                        <div class="row mt16">
+                            <label for="l10n_ar_arba_wth_source" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_arba_wth_source" class="col-lg-6"/>
+                        </div>
+                        <div class="row mt4">
+                            <label for="l10n_ar_arba_wth_default_tax_id" class="col-lg-5 o_light_label"/>
+                            <field
+                                name="l10n_ar_arba_wth_default_tax_id"
+                                domain="[('company_id', '=', company_id), ('l10n_ar_withholding_payment_type', '=', 'supplier'), ('amount_type', 'in', ('percent', 'division'))]"
+                                options="{'no_create': True}"
+                                class="col-lg-6"
+                            />
+                        </div>
+                        <div class="row mt8">
+                            <label for="l10n_ar_padron_auto_prepare_taxes" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_padron_auto_prepare_taxes" class="col-lg-3"/>
+                        </div>
+                        <div class="row mt4">
+                            <label for="l10n_ar_padron_notify_new_taxes" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_padron_notify_new_taxes" class="col-lg-3"/>
+                        </div>
+                        <div class="row mt4" invisible="not l10n_ar_padron_notify_new_taxes">
+                            <label for="l10n_ar_padron_notify_user_id" class="col-lg-5 o_light_label"/>
+                            <field name="l10n_ar_padron_notify_user_id" options="{'no_create': True}" class="col-lg-6"/>
+                        </div>
+                        <div class="row mt16">
+                            <button
+                                name="action_auto_configure_arba_wth_from_settings"
+                                type="object"
+                                class="btn-secondary"
+                                icon="fa-cogs"
+                                string="Auto-configurar Posición Fiscal e Impuestos ARBA"
+                            />
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

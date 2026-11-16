@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_company_jurisdiction_padron_form_min_rate" model="ir.ui.view">
+        <field name="name">res.company.jurisdiction.padron.form.min.rate</field>
+        <field name="model">res.company.jurisdiction.padron</field>
+        <field name="inherit_id" ref="l10n_ar_tax.view_res_company_jurisdiction_padron_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button
+                        name="action_sync_taxes_from_padron_ui"
+                        type="object"
+                        string="Sincronizar impuestos del ZIP"
+                        class="btn-primary"
+                        invisible="not l10n_ar_is_arba_padron or not file_padron"
+                    />
+                    <button
+                        name="action_auto_configure_company_arba_wth_ui"
+                        type="object"
+                        string="Configurar Posición Fiscal ARBA"
+                        class="btn-secondary"
+                        invisible="not l10n_ar_is_arba_padron"
+                    />
+                </header>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <field name="l10n_ar_is_arba_padron" invisible="1"/>
+                <group string="Análisis y Preparación Automática (ARBA)" invisible="not l10n_ar_is_arba_padron">
+                    <field name="l10n_ar_last_sync_date"/>
+                    <field name="l10n_ar_detected_rates_summary"/>
+                    <field name="l10n_ar_created_taxes_summary"/>
+                    <field name="l10n_ar_sync_warnings" invisible="not l10n_ar_sync_warnings"/>
+                </group>
+            </xpath>
+            <xpath expr="//sheet" position="after">
+                <chatter/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
