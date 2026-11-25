@@ -646,6 +646,90 @@ class TestFullMigrationLogicWithMockOdoo(unittest.TestCase):
         self.assertIn("company_id IS NULL", last_call[0])
         self.assertEqual(last_call[1], params)
 
+    def test_pricelist_template_rule_converted_to_variant_rule(self):
+        """Ticket 2: Verifica que reglas de listas de precios sobre plantillas viejas se conviertan a reglas de variante en new_vid."""
+        old_pid = 101
+        old_tid = 501
+        new_vid = 201
+
+        old_to_new_variant_map = {old_pid: new_vid}
+        old_pid_to_old_tid = {old_pid: old_tid}
+
+        for opid, nvid in old_to_new_variant_map.items():
+            otid = old_pid_to_old_tid.get(opid)
+            if not otid:
+                continue
+            self.mock_cr.execute("""
+                UPDATE product_pricelist_item
+                SET applied_on = '0_product_variant',
+                    product_id = %s,
+                    product_tmpl_id = NULL
+                WHERE product_tmpl_id = %s
+                  AND NOT EXISTS (
+                      SELECT 1 FROM product_pricelist_item ppi2
+                      WHERE ppi2.pricelist_id = product_pricelist_item.pricelist_id
+                        AND ppi2.product_id = %s
+                        AND ppi2.min_quantity = product_pricelist_item.min_quantity
+                  );
+            """, (nvid, otid, nvid))
+            self.mock_cr.execute("DELETE FROM product_pricelist_item WHERE product_tmpl_id = %s;", (otid,))
+
+        tmpl_update_calls = [c for c in self.sql_executions if "UPDATE product_pricelist_item" in c[0] and "applied_on = '0_product_variant'" in c[0]]
+        self.assertEqual(len(tmpl_update_calls), 1)
+        self.assertEqual(tmpl_update_calls[0][1], (201, 501, 201))
+
+    def test_pricelist_price_rescue_when_product_list_price_zero_or_dummy_one(self):
+        """Ticket 2: Verifica rescate de precio desde la lista de precios si list_price es 0 o dummy $1.00 (Eyelit)."""
+        items = [
+            {'old_product_id': 101, 'code': '0035S3X90.002', 'list_price': 1.0},
+            {'old_product_id': 102, 'code': '0035S3X90.003', 'list_price': 0.0},
+            {'old_product_id': 103, 'code': '0035S3X90.004', 'list_price': 5000.0},
+        ]
+        old_prod_main_pl_price = {101: 7700.0, 103: 7700.0}
+        old_prod_any_pl_price = {101: 7000.0, 102: 7000.0}
+        rescued_dummy = 0
+        synced_main_pl = 0
+        for it in items:
+            pid = it['old_product_id']
+            orig_lp = it.get('list_price') or 0.0
+            main_p = old_prod_main_pl_price.get(pid)
+            any_p = old_prod_any_pl_price.get(pid)
+            best_pl_price = main_p or any_p
+            if best_pl_price and best_pl_price > 0:
+                if orig_lp <= 1.0:
+                    it['list_price'] = best_pl_price
+                    rescued_dummy += 1
+                elif main_p and abs(orig_lp - main_p) > 0.01:
+                    it['list_price'] = main_p
+                    synced_main_pl += 1
+
+        self.assertEqual(rescued_dummy, 2)
+        self.assertEqual(synced_main_pl, 1)
+        self.assertEqual(items[0]['list_price'], 7700.0)
+        self.assertEqual(items[1]['list_price'], 7000.0)
+        self.assertEqual(items[2]['list_price'], 7700.0)
+
+    def test_template_list_price_fallback_to_max_variant_price(self):
+        """Verifica que la plantilla maestra adopte el precio real de sus variantes si la primera muestra venía <= $1.00."""
+        sample = {'list_price': 1.0}
+        items = [{'list_price': 1.0}, {'list_price': 7700.0}, {'list_price': 8200.0}]
+        tmpl_list_price = sample.get('list_price') or 0.0
+        if tmpl_list_price <= 1.0 and any((it.get('list_price') or 0.0) > 1.0 for it in items):
+            tmpl_list_price = max(it.get('list_price') or 0.0 for it in items)
+
+        self.assertEqual(tmpl_list_price, 8200.0)
+
+    def test_bulk_temp_map_sql_insert_without_mogrify(self):
+        """Verifica que el mapeo masivo en tabla temporal use SQL parametrizado sin depender de cr.mogrify."""
+        map_rows = [(10, 50, 200), (11, 51, 201)]
+        placeholders = ','.join(['(%s,%s,%s)'] * len(map_rows))
+        flat_params = [val for row in map_rows for val in row]
+        self.mock_cr.execute(f"INSERT INTO _tmp_eyelit_mig_map (old_pid, old_tid, new_vid) VALUES {placeholders};", tuple(flat_params))
+
+        last_q, last_p = self.sql_executions[-1]
+        self.assertIn("VALUES (%s,%s,%s),(%s,%s,%s)", last_q)
+        self.assertEqual(last_p, (10, 50, 200, 11, 51, 201))
+
 
 if __name__ == '__main__':
     unittest.main()

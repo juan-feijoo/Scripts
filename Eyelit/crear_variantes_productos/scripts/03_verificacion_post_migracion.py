@@ -117,14 +117,60 @@ if os.path.exists(STOCK_BACKUP_PATH):
     except Exception as e:
         print(f"  [AVISO] No se pudo leer el archivo snapshot: {e}")
 
-# 4. Verificación de Lista de Precios
-sub('4. Lista de Precios con Variantes')
-pl = Pricelist.search([('name', '=', 'Lista de Precios con Variantes')], limit=1)
-if pl:
-    items_count = PricelistItem.search_count([('pricelist_id', '=', pl.id), ('applied_on', '=', '0_product_variant')])
-    print(f"  [✓] Lista '{pl.name}' encontrada con {items_count} reglas específicas de variante.")
+# 4. Verificación Exhaustiva de Precios y Listas de Precios
+sub('4. Verificación de Precios y Listas de Precios')
+
+# Detectar listas principales
+pl_var = Pricelist.search([('name', '=', 'Lista de Precios con Variantes')], limit=1)
+if pl_var:
+    items_var_count = PricelistItem.search_count([('pricelist_id', '=', pl_var.id), ('applied_on', '=', '0_product_variant')])
+    print(f"  [✓] 'Lista de Precios con Variantes' encontrada (ID {pl_var.id}) con {items_var_count} reglas de variantes.")
 else:
-    print("  [!] No se encontró la 'Lista de Precios con Variantes'.")
+    print("  [!] 'Lista de Precios con Variantes' no encontrada (modo DRY_RUN previo o pendiente de creación).")
+
+# Lista de precios configurada en TPV
+configs = PosConfig.search([])
+main_pos_pl = None
+for cfg in configs:
+    if hasattr(cfg, 'pricelist_id') and cfg.pricelist_id:
+        main_pos_pl = cfg.pricelist_id
+        break
+
+if not main_pos_pl:
+    main_pos_pl = Pricelist.search([('name', '=ilike', '%AR 2%')], limit=1)
+
+if main_pos_pl:
+    items_pos_count = PricelistItem.search_count([('pricelist_id', '=', main_pos_pl.id), ('applied_on', '=', '0_product_variant')])
+    print(f"  [✓] Lista principal de TPV '{main_pos_pl.name}' (ID {main_pos_pl.id}) con {items_pos_count} reglas de variantes.")
+
+# Comprobar cobertura de precios en variantes Eyelit activas (con punto en código)
+eyelit_vars = Product.search([('active', '=', True), ('default_code', '=like', '%.%')])
+vars_real_price = eyelit_vars.filtered(lambda v: v.list_price > 1.0)
+vars_dummy_or_zero = eyelit_vars.filtered(lambda v: v.list_price <= 1.0)
+
+print(f"\nCobertura de precios en variantes Eyelit ({len(eyelit_vars)} variantes):")
+print(f"  - Variantes con precio real (list_price > $1.00): {len(vars_real_price)}")
+if vars_dummy_or_zero:
+    print(f"  [!] Alerta: Hay {len(vars_dummy_or_zero)} variantes Eyelit con precio <= $1.00:")
+    for zv in vars_dummy_or_zero[:5]:
+        print(f"      - [{zv.default_code}] {zv.name} (${zv.list_price:,.2f})")
+else:
+    print("  [✓] 100% de las variantes Eyelit tienen precio real (> $1.00).")
+
+# Muestra de precios en 5 variantes Eyelit
+sample_vars = eyelit_vars[:5]
+print("\nMuestra de precios verificados en 5 variantes Eyelit:")
+for sv in sample_vars:
+    p_info = [f"Base: ${sv.list_price:,.2f}"]
+    if pl_var:
+        r_v = PricelistItem.search([('pricelist_id', '=', pl_var.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+        if r_v:
+            p_info.append(f"Lista Variantes: ${r_v.fixed_price:,.2f}")
+    if main_pos_pl:
+        r_p = PricelistItem.search([('pricelist_id', '=', main_pos_pl.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+        if r_p:
+            p_info.append(f"{main_pos_pl.name}: ${r_p.fixed_price:,.2f}")
+    print(f"  [{sv.default_code}] {sv.name[:25]}: {' | '.join(p_info)}")
 
 # 5. Sesiones de TPV abiertas
 sub('5. Sesiones de TPV')

@@ -253,11 +253,85 @@ else:
 
 prods_in_batch = []
 tmpls_in_batch = set()
+old_pid_to_old_tid = {}
 for _, items in families_to_process:
     for it in items:
         prods_in_batch.append(it['old_product_id'])
         if it['old_tmpl_id']:
             tmpls_in_batch.add(it['old_tmpl_id'])
+            old_pid_to_old_tid[it['old_product_id']] = it['old_tmpl_id']
+old_tid_to_old_pid = {tid: pid for pid, tid in old_pid_to_old_tid.items()}
+
+# 3.1. Extracción y Verificación de Precios Pre-Migración
+sub('3.1. Extracción y Verificación de Precios Pre-Migración')
+pos_configs = PosConfig.search([])
+main_pos_pricelist = None
+for cfg in pos_configs:
+    if hasattr(cfg, 'pricelist_id') and cfg.pricelist_id:
+        main_pos_pricelist = cfg.pricelist_id
+        break
+
+if not main_pos_pricelist:
+    main_pos_pricelist = Pricelist.search([('name', '=ilike', '%AR 2%')], limit=1)
+
+main_pos_pl_id = main_pos_pricelist.id if main_pos_pricelist else False
+if main_pos_pricelist:
+    print(f"Lista de precios principal detectada (TPV): '{main_pos_pricelist.name}' (ID {main_pos_pl_id})")
+
+# Consultar reglas existentes de precios para los productos/plantillas del lote
+cr.execute("""
+    SELECT 
+        ppi.id,
+        ppi.pricelist_id,
+        ppi.product_id,
+        ppi.product_tmpl_id,
+        ppi.compute_price,
+        ppi.fixed_price,
+        ppi.applied_on,
+        pl.active
+    FROM product_pricelist_item ppi
+    JOIN product_pricelist pl ON pl.id = ppi.pricelist_id
+    WHERE (ppi.product_id = ANY(%s) OR (ppi.product_tmpl_id = ANY(%s) AND ppi.product_tmpl_id IS NOT NULL))
+      AND (ppi.company_id = %s OR ppi.company_id IS NULL)
+    ORDER BY ppi.id DESC
+""", (prods_in_batch, list(tmpls_in_batch) if tmpls_in_batch else [0], env.company.id))
+
+existing_rules = cr.fetchall()
+print(f"Reglas de listas de precios existentes encontradas para estos productos: {len(existing_rules)}")
+
+old_prod_main_pl_price = {}
+old_prod_any_pl_price = {}
+for r_id, pl_id, p_id, pt_id, comp_price, fix_price, app_on, pl_active in existing_rules:
+    if not pl_active:
+        continue
+    if comp_price == 'fixed' and fix_price and fix_price > 0:
+        target_pid = p_id or (old_tid_to_old_pid.get(pt_id) if pt_id else None)
+        if target_pid:
+            if pl_id == main_pos_pl_id and target_pid not in old_prod_main_pl_price:
+                old_prod_main_pl_price[target_pid] = fix_price
+            elif target_pid not in old_prod_any_pl_price:
+                old_prod_any_pl_price[target_pid] = fix_price
+
+rescued_dummy = 0
+synced_main_pl = 0
+for _, items in families_to_process:
+    for it in items:
+        pid = it['old_product_id']
+        orig_lp = it.get('list_price') or 0.0
+        main_p = old_prod_main_pl_price.get(pid)
+        any_p = old_prod_any_pl_price.get(pid)
+        best_pl_price = main_p or any_p
+        if best_pl_price and best_pl_price > 0:
+            if orig_lp <= 1.0:
+                it['list_price'] = best_pl_price
+                rescued_dummy += 1
+            elif main_p and abs(orig_lp - main_p) > 0.01:
+                it['list_price'] = main_p
+                synced_main_pl += 1
+
+print(f"  * Precios base rescatados desde listas (list_price <= $1.00): {rescued_dummy} productos.")
+if synced_main_pl > 0:
+    print(f"  * Precios sincronizados desde lista principal de TPV: {synced_main_pl} productos.")
 
 # 4. Extracción de Stock antes de archivar (Tickets 1 & 3)
 sub('4. Extracción de Stock a la Fecha antes de Archivar')
@@ -360,11 +434,15 @@ for (art, linea, base_name), items in families_to_process:
     if not target_categ_id:
         target_categ_id = sample.get('categ_id') or default_prod_cat_id
 
+    tmpl_list_price = sample.get('list_price') or 0.0
+    if tmpl_list_price <= 1.0 and any((it.get('list_price') or 0.0) > 1.0 for it in items):
+        tmpl_list_price = max(it.get('list_price') or 0.0 for it in items)
+
     vals = {
         'name': tmpl_name,
         'categ_id': target_categ_id,
         'uom_id': sample['uom_id'],
-        'list_price': sample['list_price'],
+        'list_price': tmpl_list_price,
         'standard_price': sample['standard_price'],
         'attribute_line_ids': [
             (0, 0, {'attribute_id': attr_talle.id, 'value_ids': [(6, 0, talle_val_ids)]}),
@@ -404,11 +482,13 @@ for (art, linea, base_name), items in families_to_process:
         matching_items = catalog_items_map.get((v_talle, v_color))
         if matching_items:
             orig_item = matching_items[0]
+            v_price = orig_item.get('list_price') or 0.0
+            if v_price <= 1.0 and tmpl_list_price > 1.0:
+                v_price = tmpl_list_price
             variant.write({
                 'default_code': orig_item['code'],
                 'barcode': orig_item['code'],
                 'standard_price': orig_item['standard_price'],
-                'list_price': orig_item['list_price'],
             })
             count_variants += 1
             for it in matching_items:
@@ -416,7 +496,7 @@ for (art, linea, base_name), items in families_to_process:
                 old_to_new_tmpl_map[it['old_product_id']] = new_tmpl.id
                 if it.get('old_tmpl_id'):
                     old_tmpl_to_new_tmpl_map[it['old_tmpl_id']] = new_tmpl.id
-            new_variant_to_price_map[variant.id] = orig_item['list_price']
+            new_variant_to_price_map[variant.id] = v_price
         else:
             variant.write({'active': False})
 
@@ -554,8 +634,8 @@ print(f"Quants trasladados/consolidados: {transferred_quants_count} (Grupos cons
 print(f"Coincidencias exactas de stock interno (En Mano): {stock_ok}/{len(new_variant_expected_internal)} (Diferencias: {stock_err})")
 print(f"Total unidades físicas en nuevas variantes (WH): {total_migrated_internal:,.2f}")
 
-# 8. Lista de Precios con Variantes (Ticket 2)
-sub('8. Creación de Lista de Precios con Variantes')
+# 8. Lista de Precios con Variantes y Remapeo de Reglas Existentes
+sub('8. Creación de Lista de Precios con Variantes y Remapeo de Reglas')
 pl_name = "Lista de Precios con Variantes"
 pricelist = Pricelist.search([('name', '=', pl_name), ('company_id', 'in', [env.company.id, False])], limit=1)
 if not pricelist:
@@ -569,22 +649,100 @@ if not pricelist:
 else:
     print(f"  * Usando lista de precios existente: '{pl_name}' (ID {pricelist.id})")
 
-# Remapeo de reglas existentes
-cr.execute("SELECT count(*) FROM product_pricelist_item WHERE product_id = ANY(%s)", (prods_in_batch,))
-ex_count = cr.fetchone()[0]
-if ex_count > 0:
-    for old_pid, new_vid in old_to_new_variant_map.items():
-        cr.execute("UPDATE product_pricelist_item SET product_id = %s WHERE product_id = %s", (new_vid, old_pid))
-    print(f"  * Remapeadas {ex_count} reglas por variante hacia nuevas variantes.")
+# 8.1. Remapeo masivo de reglas existentes a nivel de variante (tabla temporal para máxima velocidad)
+remapped_variant_rules = 0
+remapped_tmpl_rules = 0
 
-if tmpls_in_batch:
-    cr.execute("SELECT count(*) FROM product_pricelist_item WHERE product_tmpl_id = ANY(%s)", (list(tmpls_in_batch),))
-    ex_tmpl_count = cr.fetchone()[0]
-    if ex_tmpl_count > 0:
-        for old_tid, new_tid in old_tmpl_to_new_tmpl_map.items():
-            cr.execute("UPDATE product_pricelist_item SET product_tmpl_id = %s WHERE product_tmpl_id = %s", (new_tid, old_tid))
-        print(f"  * Remapeadas {ex_tmpl_count} reglas por plantilla hacia nuevas plantillas.")
+if old_to_new_variant_map:
+    cr.execute("""
+        CREATE TEMP TABLE IF NOT EXISTS _tmp_eyelit_mig_map (
+            old_pid INT,
+            old_tid INT,
+            new_vid INT
+        );
+        TRUNCATE _tmp_eyelit_mig_map;
+    """)
+    map_rows = [
+        (opid, old_pid_to_old_tid.get(opid), nvid)
+        for opid, nvid in old_to_new_variant_map.items()
+    ]
+    for i in range(0, len(map_rows), 1000):
+        chunk = map_rows[i:i+1000]
+        placeholders = ','.join(['(%s,%s,%s)'] * len(chunk))
+        flat_params = [val for row in chunk for val in row]
+        cr.execute(f"INSERT INTO _tmp_eyelit_mig_map (old_pid, old_tid, new_vid) VALUES {placeholders};", tuple(flat_params))
 
+    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_pid ON _tmp_eyelit_mig_map (old_pid);")
+    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_tid ON _tmp_eyelit_mig_map (old_tid);")
+
+    # 1) Reglas por product_id existente -> nuevas variantes (evitando duplicados)
+    cr.execute("""
+        WITH candidates AS (
+            SELECT ppi.id, ppi.pricelist_id, m.new_vid, ppi.min_quantity,
+                   ROW_NUMBER() OVER (PARTITION BY ppi.pricelist_id, m.new_vid, ppi.min_quantity ORDER BY ppi.id DESC) AS rn
+            FROM product_pricelist_item ppi
+            JOIN _tmp_eyelit_mig_map m ON m.old_pid = ppi.product_id
+        )
+        UPDATE product_pricelist_item ppi
+        SET product_id = c.new_vid
+        FROM candidates c
+        WHERE ppi.id = c.id
+          AND c.rn = 1
+          AND NOT EXISTS (
+              SELECT 1 FROM product_pricelist_item ppi2
+              WHERE ppi2.pricelist_id = c.pricelist_id
+                AND ppi2.product_id = c.new_vid
+                AND ppi2.min_quantity = c.min_quantity
+                AND ppi2.id != c.id
+          );
+    """)
+    remapped_variant_rules = cr.rowcount
+
+    cr.execute("""
+        DELETE FROM product_pricelist_item ppi
+        USING _tmp_eyelit_mig_map m
+        WHERE ppi.product_id = m.old_pid;
+    """)
+
+    # 2) Reglas por product_tmpl_id existente -> convertir a nivel variante (0_product_variant) en new_vid
+    cr.execute("""
+        WITH candidates AS (
+            SELECT ppi.id, ppi.pricelist_id, m.new_vid, ppi.min_quantity,
+                   ROW_NUMBER() OVER (PARTITION BY ppi.pricelist_id, m.new_vid, ppi.min_quantity ORDER BY ppi.id DESC) AS rn
+            FROM product_pricelist_item ppi
+            JOIN _tmp_eyelit_mig_map m ON m.old_tid = ppi.product_tmpl_id
+            WHERE m.old_tid IS NOT NULL
+        )
+        UPDATE product_pricelist_item ppi
+        SET applied_on = '0_product_variant',
+            product_id = c.new_vid,
+            product_tmpl_id = NULL
+        FROM candidates c
+        WHERE ppi.id = c.id
+          AND c.rn = 1
+          AND NOT EXISTS (
+              SELECT 1 FROM product_pricelist_item ppi2
+              WHERE ppi2.pricelist_id = c.pricelist_id
+                AND ppi2.product_id = c.new_vid
+                AND ppi2.min_quantity = c.min_quantity
+          );
+    """)
+    remapped_tmpl_rules = cr.rowcount
+
+    cr.execute("""
+        DELETE FROM product_pricelist_item ppi
+        USING _tmp_eyelit_mig_map m
+        WHERE m.old_tid IS NOT NULL AND ppi.product_tmpl_id = m.old_tid;
+    """)
+
+    PricelistItem.invalidate_model()
+
+if remapped_variant_rules > 0:
+    print(f"  * Remapeadas {remapped_variant_rules} reglas existentes por producto hacia nuevas variantes.")
+if remapped_tmpl_rules > 0:
+    print(f"  * Convertidas {remapped_tmpl_rules} reglas de plantillas viejas a reglas de variante en nuevas variantes.")
+
+# 8.2. Asegurar cobertura en 'Lista de Precios con Variantes'
 item_fields = set(PricelistItem._fields.keys())
 existing_vids = set(PricelistItem.search([('pricelist_id', '=', pricelist.id), ('applied_on', '=', '0_product_variant')]).mapped('product_id.id'))
 batch_items = []
@@ -608,7 +766,35 @@ for i in range(0, len(batch_items), 500):
     b = batch_items[i:i+500]
     PricelistItem.create(b)
     created_rules += len(b)
-print(f"Reglas por variante creadas: {created_rules}")
+print(f"  + Reglas creadas en '{pl_name}': {created_rules}")
+
+# 8.3. Asegurar cobertura completa en la lista principal de TPV si existe (ej: 'Lista Precios AR 2')
+if main_pos_pricelist and main_pos_pricelist.id != pricelist.id:
+    existing_in_main = set(
+        PricelistItem.search([
+            ('pricelist_id', '=', main_pos_pricelist.id),
+            ('applied_on', '=', '0_product_variant'),
+            ('product_id', 'in', list(new_variant_to_price_map.keys()))
+        ]).mapped('product_id.id')
+    )
+    missing_in_main = [vid for vid in new_variant_to_price_map if vid not in existing_in_main]
+    if missing_in_main:
+        print(f"  + Completando {len(missing_in_main)} variantes en lista principal de TPV '{main_pos_pricelist.name}'...")
+        batch_main = []
+        for vid in missing_in_main:
+            iv = {
+                'pricelist_id': main_pos_pricelist.id,
+                'applied_on': '0_product_variant',
+                'product_id': vid,
+                'compute_price': 'fixed',
+                'fixed_price': new_variant_to_price_map[vid],
+                'min_quantity': 0,
+            }
+            if 'company_id' in item_fields:
+                iv['company_id'] = env.company.id
+            batch_main.append(iv)
+        for i in range(0, len(batch_main), 500):
+            PricelistItem.create(batch_main[i:i+500])
 
 # 9. Sincronizar Cajas de TPV
 sub('9. Sincronización de Cajas de TPV')
@@ -619,11 +805,17 @@ for cfg in PosConfig.search([]):
         uvals['limit_categories'] = True
     if hasattr(cfg, 'pos_category_ids'):
         uvals['pos_category_ids'] = [(6, 0, all_pos_cats)]
+    
+    available_pls = set(cfg.available_pricelist_ids.ids) if hasattr(cfg, 'available_pricelist_ids') else set()
+    available_pls.add(pricelist.id)
+    if main_pos_pricelist:
+        available_pls.add(main_pos_pricelist.id)
     if hasattr(cfg, 'available_pricelist_ids'):
-        if pricelist.id not in cfg.available_pricelist_ids.ids:
-            uvals['available_pricelist_ids'] = [(4, pricelist.id)]
+        uvals['available_pricelist_ids'] = [(6, 0, list(available_pls))]
+
     if hasattr(cfg, 'pricelist_id'):
-        uvals['pricelist_id'] = pricelist.id
+        if not cfg.pricelist_id:
+            uvals['pricelist_id'] = main_pos_pricelist.id if main_pos_pricelist else pricelist.id
     if hasattr(cfg, 'use_pricelist'):
         uvals['use_pricelist'] = True
     if not uvals:
@@ -661,9 +853,12 @@ for cfg in PosConfig.search([]):
 
             if 'available_pricelist_ids' in cfg._fields:
                 f_pls = cfg._fields['available_pricelist_ids']
-                cr.execute(f"SELECT 1 FROM {f_pls.relation} WHERE {f_pls.column1} = %s AND {f_pls.column2} = %s", (cfg.id, pricelist.id))
-                if not cr.fetchone():
-                    cr.execute(f"INSERT INTO {f_pls.relation} ({f_pls.column1}, {f_pls.column2}) VALUES (%s, %s)", (cfg.id, pricelist.id))
+                for pl_target_id in [pricelist.id, main_pos_pl_id]:
+                    if not pl_target_id:
+                        continue
+                    cr.execute(f"SELECT 1 FROM {f_pls.relation} WHERE {f_pls.column1} = %s AND {f_pls.column2} = %s", (cfg.id, pl_target_id))
+                    if not cr.fetchone():
+                        cr.execute(f"INSERT INTO {f_pls.relation} ({f_pls.column1}, {f_pls.column2}) VALUES (%s, %s)", (cfg.id, pl_target_id))
 
             cfg.invalidate_recordset()
             print(f"  [✓] TPV '{cfg.name}' sincronizado exitosamente vía SQL directo (sesión abierta respetada).")
@@ -679,12 +874,41 @@ if 'pos.session' in env:
             print(f"    - Sesión [ID {s.id}] '{s.name}' (Usuario: {s.user_id.name})")
         print("    * Los cajeros deberán recargar la página (Ctrl+F5) o cerrar/reabrir sesión para actualizar catálogo.")
 
+# 9.1. Verificación de Precios en Variantes Migradas (dentro de la transacción)
+sub('9.1. Verificación de Precios en Nuevas Variantes')
+real_price_count = sum(1 for p in new_variant_to_price_map.values() if p and p > 1.0)
+dummy_or_zero_count = sum(1 for p in new_variant_to_price_map.values() if not p or p <= 1.0)
+print(f"Variantes migradas con precio real (> $1.00): {real_price_count}/{len(new_variant_to_price_map)}")
+if dummy_or_zero_count > 0:
+    print(f"  [!] Variantes sin precio real (<= $1.00): {dummy_or_zero_count}")
+else:
+    print("  [✓] ¡100% DE LAS VARIANTES TIENEN PRECIO REAL ASIGNADO!")
+
+sample_vids = list(new_variant_to_price_map.keys())[:5]
+if sample_vids:
+    print("\nMuestra de verificación de precios en nuevas variantes (Base vs Listas):")
+    for sv in Product.browse(sample_vids):
+        r_var = PricelistItem.search([('pricelist_id', '=', pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+        p_var_str = f"${r_var.fixed_price:,.2f}" if r_var else "N/A"
+        p_pos_str = "N/A"
+        if main_pos_pricelist:
+            r_pos = PricelistItem.search([('pricelist_id', '=', main_pos_pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+            if r_pos:
+                p_pos_str = f"${r_pos.fixed_price:,.2f}"
+        print(f"  [{sv.default_code}] Base (list_price): ${sv.list_price:,.2f} | Lista Variantes: {p_var_str} | TPV ({main_pos_pricelist.name if main_pos_pricelist else '-'}): {p_pos_str}")
+
 sub('RESUMEN DE OPERACIÓN')
 print(f"Plantillas maestras creadas: {count_templates}")
 print(f"Variantes activas creadas: {count_variants}")
 print(f"Productos viejos archivados: {len(prods_in_batch)}")
 print(f"Stock interno migrado (WH): {total_migrated_internal:,.2f} unidades")
-print(f"Reglas de precios creadas: {created_rules}")
+print(f"Reglas remapeadas por producto hacia variantes: {remapped_variant_rules}")
+print(f"Reglas convertidas de plantillas viejas a variantes: {remapped_tmpl_rules}")
+print(f"Reglas nuevas creadas en '{pl_name}': {created_rules}")
+print(f"Variantes con precio real (> $1.00): {real_price_count}/{len(new_variant_to_price_map)}")
+
+if old_to_new_variant_map:
+    cr.execute("DROP TABLE IF EXISTS _tmp_eyelit_mig_map;")
 
 if DRY_RUN:
     cr.execute("ROLLBACK TO SAVEPOINT unificado_migracion_sp")

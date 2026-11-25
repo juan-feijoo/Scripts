@@ -78,12 +78,50 @@ for cfg in configs:
     cat_names = [c.name for c in cfg.pos_category_ids] if hasattr(cfg, 'pos_category_ids') else []
     print(f"  - Caja '{cfg.name}': limit_categories={limit_cats} | Categorías permitidas ({len(cat_names)}): {cat_names[:5]}...")
 
-# 6. Listas de Precios (product.pricelist)
-sub('5. Listas de Precios Existentes')
+# 6. Listas de Precios y Análisis de Precios de Productos
+sub('5. Listas de Precios Existentes y Precios de Productos')
+pos_pl_ids = {cfg.pricelist_id.id for cfg in configs if hasattr(cfg, 'pricelist_id') and cfg.pricelist_id}
 pricelists = Pricelist.search([])
 for pl in pricelists:
-    rules_count = PricelistItem.search_count([('pricelist_id', '=', pl.id)])
-    print(f"  - [ID {pl.id}] '{pl.name}' ({pl.currency_id.name}): {rules_count} reglas activas")
+    rules = PricelistItem.search([('pricelist_id', '=', pl.id)])
+    rules_tmpl = sum(1 for r in rules if r.applied_on == '1_product')
+    rules_var = sum(1 for r in rules if r.applied_on == '0_product_variant')
+    rules_cat = sum(1 for r in rules if r.applied_on == '2_product_category')
+    rules_glob = sum(1 for r in rules if r.applied_on == '3_global')
+    rules_fixed = sum(1 for r in rules if r.compute_price == 'fixed')
+    pos_tag = " [DEFAULT TPV]" if pl.id in pos_pl_ids else ""
+    comp_name = pl.company_id.name if pl.company_id else "Todas"
+    print(f"  - [ID {pl.id}] '{pl.name}' ({pl.currency_id.name} | Cía: {comp_name}){pos_tag}: {len(rules)} reglas activas")
+    print(f"      * Por plantilla (1_product): {rules_tmpl} | Por variante (0_product_variant): {rules_var}")
+    print(f"      * Por categoría: {rules_cat} | Globales: {rules_glob} | Precios fijos: {rules_fixed}")
+
+# Auditoría de precios en ficha de productos
+prods_real_price = Product.search_count([('active', '=', True), ('list_price', '>', 1.0)])
+prods_dummy_one = Product.search_count([('active', '=', True), ('list_price', '>', 0), ('list_price', '<=', 1.0)])
+prods_without_price = Product.search_count([('active', '=', True), ('list_price', '<=', 0)])
+print(f"\nEstado de precios base en catálogo (list_price):")
+print(f"  - Productos con list_price > $1.00: {prods_real_price}")
+print(f"  - Productos con list_price dummy (<= $1.00): {prods_dummy_one}")
+print(f"  - Productos con list_price == $0.00: {prods_without_price}")
+
+# Muestra de 5 productos con sus precios en catálogo y en listas de precios
+sample_prods = Product.search([('active', '=', True), ('default_code', '=like', '%.%')], limit=5)
+if not sample_prods:
+    sample_prods = Product.search([('active', '=', True), ('default_code', '!=', False)], limit=5)
+print("\nMuestra de 5 productos y sus precios:")
+for sp in sample_prods:
+    prices_info = []
+    for pl in pricelists:
+        rule = PricelistItem.search([
+            ('pricelist_id', '=', pl.id),
+            '|',
+            '&', ('applied_on', '=', '0_product_variant'), ('product_id', '=', sp.id),
+            '&', ('applied_on', '=', '1_product'), ('product_tmpl_id', '=', sp.product_tmpl_id.id)
+        ], limit=1)
+        if rule and rule.compute_price == 'fixed':
+            prices_info.append(f"{pl.name} (ID {pl.id}): ${rule.fixed_price:,.2f}")
+    pl_str = " | ".join(prices_info) if prices_info else "Sin reglas específicas"
+    print(f"  [{sp.default_code}] {sp.name[:30]}: list_price=${sp.list_price:,.2f} -> {pl_str}")
 
 # 7. Sesiones de TPV abiertas (pos.session)
 sub('6. Estado de Sesiones de TPV (pos.session)')
