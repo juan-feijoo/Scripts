@@ -29,15 +29,18 @@ if [ -n "$DB" ]; then DB_ARG="-d $DB"; fi
 
 DRY_RUN="${DRY_RUN:-1}"
 LIMIT_FAMILIES="${LIMIT_FAMILIES:-0}"
-export DRY_RUN LIMIT_FAMILIES
+ALLOW_OPEN_POS="${ALLOW_OPEN_POS:-0}"
+FORCE_RERUN="${FORCE_RERUN:-0}"
+export DRY_RUN LIMIT_FAMILIES ALLOW_OPEN_POS FORCE_RERUN
 
 # NN - Scripts Python dentro de odoo-bin shell
 for f in "$BASE"/scripts/[0-9]*.py; do
   [ -f "$f" ] || continue
   n="$(basename "$f" .py)"
-  echo ">> Ejecutando $n (DRY_RUN=$DRY_RUN, LIMIT_FAMILIES=$LIMIT_FAMILIES) ..."
+  echo ">> Ejecutando $n (DRY_RUN=$DRY_RUN, LIMIT_FAMILIES=$LIMIT_FAMILIES, ALLOW_OPEN_POS=$ALLOW_OPEN_POS) ..."
   echo "exec(open('$BASE/scripts/_lib.py').read()); exec(open('$f').read())" \
-    | DRY_RUN="$DRY_RUN" LIMIT_FAMILIES="$LIMIT_FAMILIES" odoo-bin shell $DB_ARG --no-http --log-level=warn > "$OUT/$n.txt" 2>&1
+    | DRY_RUN="$DRY_RUN" LIMIT_FAMILIES="$LIMIT_FAMILIES" ALLOW_OPEN_POS="$ALLOW_OPEN_POS" FORCE_RERUN="$FORCE_RERUN" \
+      odoo-bin shell $DB_ARG --no-http --log-level=warn > "$OUT/$n.txt" 2>&1
 done
 
 # 99 - Logs filtrados (opcional)

@@ -6,6 +6,7 @@ Control: DRY_RUN=1 (Simulación) o DRY_RUN=0 (Commit en producción).
 """
 import os
 import re
+import sys
 import json
 from collections import defaultdict, Counter
 
@@ -14,6 +15,8 @@ h('02 - EJECUCIÓN DEL PIPELINE UNIFICADO DE MIGRACIÓN')
 # Configuración: variable de entorno o fallback a True para máxima seguridad
 env_dry_run = os.environ.get('DRY_RUN', '1').strip().lower()
 DRY_RUN = env_dry_run in ('1', 'true', 'yes')
+ALLOW_OPEN_POS = os.environ.get('ALLOW_OPEN_POS', '0').strip().lower() in ('1', 'true', 'yes')
+FORCE_RERUN = os.environ.get('FORCE_RERUN', '0').strip().lower() in ('1', 'true', 'yes')
 SEPARAR_POR_LINEA = True
 LIMIT_FAMILIES = int(os.environ.get('LIMIT_FAMILIES', '0')) or None
 EXPORT_STOCK_JSON = True
@@ -83,22 +86,82 @@ def clean_base_name(name):
     n = (name or '').strip()
     return re.sub(r'(\s*\([A-Z0-9]+\))+\s*$', '', n).strip()
 
+def is_sku_like_name(name, code=''):
+    n = (name or '').strip()
+    if not n:
+        return True
+    if code and n.upper() == code.strip().upper():
+        return True
+    return bool(re.match(r'^[0-9A-Z]{5,}\.[0-9A-Z/]+$', n, re.IGNORECASE))
+
 cr = env.cr
 cr.execute("SAVEPOINT unificado_migracion_sp")
 
-Product = env['product.product']
-Template = env['product.template']
-Attribute = env['product.attribute']
-AttrValue = env['product.attribute.value']
-PosCategory = env['pos.category']
-PosConfig = env['pos.config']
-ProductCategory = env['product.category']
-Pricelist = env['product.pricelist']
-PricelistItem = env['product.pricelist.item']
+# Detectar idioma español activo en la base (crítico: en_US puede tener códigos SKU donde es_AR tiene el nombre real)
+active_langs = env['res.lang'].search([('active', '=', True)]).mapped('code')
+target_lang = next((l for l in ['es_AR', 'es_419', 'es_ES'] if l in active_langs), env.lang or 'en_US')
+print(f"[*] IDIOMA DE TRABAJO (NOMBRES): {target_lang} (activos: {active_langs})")
+
+Product = env['product.product'].with_context(lang=target_lang)
+Template = env['product.template'].with_context(lang=target_lang)
+Attribute = env['product.attribute'].with_context(lang=target_lang)
+AttrValue = env['product.attribute.value'].with_context(lang=target_lang)
+PosCategory = env['pos.category'].with_context(lang=target_lang)
+PosConfig = env['pos.config'].with_context(lang=target_lang)
+ProductCategory = env['product.category'].with_context(lang=target_lang)
+Pricelist = env['product.pricelist'].with_context(lang=target_lang)
+PricelistItem = env['product.pricelist.item'].with_context(lang=target_lang)
 Quant = env['stock.quant']
 
 has_pos_available = 'available_in_pos' in Template._fields
 has_pos_categ_ids = 'pos_categ_ids' in Template._fields
+
+# 0. Guardas de Seguridad en Producción y Activación del Check de Variantes
+sub('0. Guardas de Producción y Activación de Check Variantes')
+
+# 0.1. Verificar sesiones de TPV abiertas (CRÍTICO en producción)
+if 'pos.session' in env:
+    open_pos_sessions = env['pos.session'].search([('state', '!=', 'closed')])
+    if open_pos_sessions:
+        print(f"[!] DETECTADAS {len(open_pos_sessions)} SESIONES DE TPV ABIERTAS:")
+        for s in open_pos_sessions:
+            print(f"    - Sesión [ID {s.id}] '{s.name}' (Caja: {s.config_id.name}, Usuario: {s.user_id.name}, Estado: {s.state})")
+        if not DRY_RUN and not ALLOW_OPEN_POS:
+            cr.execute("ROLLBACK TO SAVEPOINT unificado_migracion_sp")
+            print("\n!! ERROR DE SEGURIDAD EN PRODUCCIÓN: No se puede ejecutar DRY_RUN=0 con sesiones de TPV abiertas.")
+            print("   Motivo: Las ventas de una sesión abierta descontarían stock sobre los productos viejos archivados al cerrar la caja.")
+            print("   Acción requerida: Cierre todas las cajas en Punto de Venta (sin tickets pendientes) y vuelva a correr DRY_RUN=0.")
+            print("   (Si necesita forzarlo conscientemente, pase ALLOW_OPEN_POS=1 DRY_RUN=0 bash run_all.sh)")
+            sys.exit(1)
+        elif DRY_RUN:
+            print("    * En modo DRY_RUN se continúa la simulación, pero en PRODUCCIÓN (DRY_RUN=0) deberá cerrar la caja antes.")
+
+# 0.2. Protección anti-doble ejecución accidental en producción
+already_archived_old = Product.search_count([('active', '=', False), ('barcode', '=like', '%_OLD')])
+if already_archived_old >= 100 and not DRY_RUN and not FORCE_RERUN:
+    cr.execute("ROLLBACK TO SAVEPOINT unificado_migracion_sp")
+    print(f"\n!! ERROR DE SEGURIDAD: Ya existen {already_archived_old} productos archivados con sufijo '_OLD'.")
+    print("   La migración parece haberse ejecutado previamente sobre esta base de datos.")
+    print("   (Si realmente desea re-ejecutarla, pase FORCE_RERUN=1 DRY_RUN=0 bash run_all.sh)")
+    sys.exit(1)
+
+# 0.3. Activar Check de 'Variantes' (Ajustes -> Ventas -> Variantes: product.group_product_variant)
+group_user = env.ref('base.group_user', raise_if_not_found=False)
+group_variant = env.ref('product.group_product_variant', raise_if_not_found=False)
+if group_user and group_variant:
+    if group_variant not in group_user.implied_ids:
+        group_user.write({'implied_ids': [(4, group_variant.id)]})
+        print("  + Activado check 'Variantes' (product.group_product_variant -> base.group_user).")
+    else:
+        print("  * Check 'Variantes' (product.group_product_variant) ya se encontraba activo.")
+
+group_pricelist = env.ref('product.group_product_pricelist', raise_if_not_found=False)
+if group_user and group_pricelist:
+    if group_pricelist not in group_user.implied_ids:
+        group_user.write({'implied_ids': [(4, group_pricelist.id)]})
+        print("  + Activado check 'Listas de precios' (product.group_product_pricelist -> base.group_user).")
+    else:
+        print("  * Check 'Listas de precios' (product.group_product_pricelist) ya se encontraba activo.")
 
 # 1. Atributos Talle y Color
 sub('1. Configuración de Atributos Globales')
@@ -188,6 +251,10 @@ def classify_pos_category(name):
     else:
         return resolved_pos_cats.get('otros')
 
+all_categ = env.ref('product.product_category_all', raise_if_not_found=False)
+ropa_int_categ = ProductCategory.search([('name', '=ilike', 'Ropa Interior')], limit=1)
+parent_default_categ_id = ropa_int_categ.id if ropa_int_categ else (all_categ.id if all_categ else False)
+all_categ_id = all_categ.id if all_categ else False
 prod_cat_cache = {c.name.strip().lower(): c.id for c in ProductCategory.search([])}
 resolved_prod_cats = {}
 for canon_name in REQUIRED_CATEGORIES:
@@ -199,24 +266,44 @@ for canon_name in REQUIRED_CATEGORIES:
             found_id = prod_cat_cache[s]
             break
     if not found_id:
-        pcat = ProductCategory.create({'name': canon_name})
+        pcat_vals = {'name': canon_name}
+        if parent_default_categ_id:
+            pcat_vals['parent_id'] = parent_default_categ_id
+        pcat = ProductCategory.create(pcat_vals)
         found_id = pcat.id
         prod_cat_cache[k] = found_id
         print(f"  + Creada categoría interna de producto: '{canon_name}' (ID {found_id})")
     resolved_prod_cats[k] = found_id
 
-default_prod_cat_id = resolved_prod_cats.get('otros') or env.ref('product.product_category_all').id
+default_prod_cat_id = resolved_prod_cats.get('otros') or all_categ_id
 
-# 3. Escaneo y agrupación
+# 3. Escaneo y agrupación (usando nombres en español + fallback a nombre hermano por art+linea si viene código SKU)
 sub('3. Escaneo y Agrupación del Catálogo')
 fields_to_read = ['id', 'name', 'default_code', 'barcode', 'product_tmpl_id', 'list_price', 'standard_price', 'categ_id', 'uom_id']
+has_taxes_id = 'taxes_id' in Product._fields
+has_supplier_taxes_id = 'supplier_taxes_id' in Product._fields
+has_uom_po_id = 'uom_po_id' in Product._fields
+has_sale_ok = 'sale_ok' in Product._fields
+has_purchase_ok = 'purchase_ok' in Product._fields
+
 if has_pos_categ_ids:
     fields_to_read.append('pos_categ_ids')
+if has_taxes_id:
+    fields_to_read.append('taxes_id')
+if has_supplier_taxes_id:
+    fields_to_read.append('supplier_taxes_id')
+if has_uom_po_id:
+    fields_to_read.append('uom_po_id')
+if has_sale_ok:
+    fields_to_read.append('sale_ok')
+if has_purchase_ok:
+    fields_to_read.append('purchase_ok')
 
 all_prods = Product.search_read([('active', '=', True)], fields_to_read)
-families = defaultdict(list)
+parsed_items = []
 old_prod_ids_to_archive = []
 skipped = 0
+human_names_by_art_linea = defaultdict(Counter)
 
 for p in all_prods:
     code = (p.get('default_code') or p.get('barcode') or '').strip()
@@ -233,9 +320,29 @@ for p in all_prods:
     parsed['categ_id'] = p.get('categ_id')[0] if p.get('categ_id') else False
     parsed['uom_id'] = p.get('uom_id')[0] if p.get('uom_id') else False
     parsed['pos_categ_ids'] = p.get('pos_categ_ids') or [] if has_pos_categ_ids else []
+    parsed['taxes_id'] = p.get('taxes_id') or [] if has_taxes_id else []
+    parsed['supplier_taxes_id'] = p.get('supplier_taxes_id') or [] if has_supplier_taxes_id else []
+    parsed['uom_po_id'] = p['uom_po_id'][0] if (has_uom_po_id and p.get('uom_po_id')) else False
+    parsed['sale_ok'] = p.get('sale_ok', True) if has_sale_ok else True
+    parsed['purchase_ok'] = p.get('purchase_ok', True) if has_purchase_ok else True
+
+    base_name = clean_base_name(parsed['name'])
+    parsed['base_name'] = base_name
+    if not is_sku_like_name(base_name, code):
+        al_key = (parsed['art'], parsed['linea'] if SEPARAR_POR_LINEA else '')
+        human_names_by_art_linea[al_key][base_name] += 1
 
     old_prod_ids_to_archive.append(p['id'])
-    base_name = clean_base_name(parsed['name'])
+    parsed_items.append(parsed)
+
+families = defaultdict(list)
+fixed_sku_names = 0
+for parsed in parsed_items:
+    base_name = parsed['base_name']
+    al_key = (parsed['art'], parsed['linea'] if SEPARAR_POR_LINEA else '')
+    if is_sku_like_name(base_name, parsed['code']) and human_names_by_art_linea.get(al_key):
+        base_name = human_names_by_art_linea[al_key].most_common(1)[0][0]
+        fixed_sku_names += 1
     if SEPARAR_POR_LINEA and parsed['linea']:
         family_key = (parsed['art'], parsed['linea'], base_name)
     else:
@@ -244,6 +351,8 @@ for p in all_prods:
 
 print(f"Total familias detectadas: {len(families)} ({len(old_prod_ids_to_archive)} productos)")
 print(f"Productos especiales omitidos: {skipped}")
+if fixed_sku_names > 0:
+    print(f"  * Nombres SKU resueltos con nombre de familia hermana: {fixed_sku_names}")
 
 if LIMIT_FAMILIES:
     families_to_process = list(families.items())[:LIMIT_FAMILIES]
@@ -262,7 +371,7 @@ for _, items in families_to_process:
             old_pid_to_old_tid[it['old_product_id']] = it['old_tmpl_id']
 old_tid_to_old_pid = {tid: pid for pid, tid in old_pid_to_old_tid.items()}
 
-# 3.1. Extracción y Verificación de Precios Pre-Migración
+# 3.1. Extracción y Verificación de Precios Pre-Migración (SIN alterar list_price base de producción)
 sub('3.1. Extracción y Verificación de Precios Pre-Migración')
 pos_configs = PosConfig.search([])
 main_pos_pricelist = None
@@ -312,26 +421,19 @@ for r_id, pl_id, p_id, pt_id, comp_price, fix_price, app_on, pl_active in existi
             elif target_pid not in old_prod_any_pl_price:
                 old_prod_any_pl_price[target_pid] = fix_price
 
-rescued_dummy = 0
-synced_main_pl = 0
+captured_pl_prices = 0
 for _, items in families_to_process:
     for it in items:
         pid = it['old_product_id']
-        orig_lp = it.get('list_price') or 0.0
-        main_p = old_prod_main_pl_price.get(pid)
-        any_p = old_prod_any_pl_price.get(pid)
-        best_pl_price = main_p or any_p
+        best_pl_price = old_prod_main_pl_price.get(pid) or old_prod_any_pl_price.get(pid)
         if best_pl_price and best_pl_price > 0:
-            if orig_lp <= 1.0:
-                it['list_price'] = best_pl_price
-                rescued_dummy += 1
-            elif main_p and abs(orig_lp - main_p) > 0.01:
-                it['list_price'] = main_p
-                synced_main_pl += 1
+            it['pricelist_price'] = best_pl_price
+            captured_pl_prices += 1
+        else:
+            it['pricelist_price'] = it.get('list_price') or 0.0
 
-print(f"  * Precios base rescatados desde listas (list_price <= $1.00): {rescued_dummy} productos.")
-if synced_main_pl > 0:
-    print(f"  * Precios sincronizados desde lista principal de TPV: {synced_main_pl} productos.")
+print(f"  * Precios de lista capturados para reglas de variantes: {captured_pl_prices} productos.")
+print("  * Campo 'Precio de venta' (list_price) en ficha de producto se preserva tal como viene de producción ($1.00).")
 
 # 4. Extracción de Stock antes de archivar (Tickets 1 & 3)
 sub('4. Extracción de Stock a la Fecha antes de Archivar')
@@ -410,6 +512,7 @@ old_to_new_variant_map = {}
 old_to_new_tmpl_map = {}
 old_tmpl_to_new_tmpl_map = {}
 new_variant_to_price_map = {}
+new_variant_to_tmpl_map = {}
 assigned_pos_cats = Counter()
 
 for (art, linea, base_name), items in families_to_process:
@@ -434,9 +537,10 @@ for (art, linea, base_name), items in families_to_process:
     if not target_categ_id:
         target_categ_id = sample.get('categ_id') or default_prod_cat_id
 
+    # Precio base en ficha (list_price): se preserva exacto tal como viene de producción ($1.00)
     tmpl_list_price = sample.get('list_price') or 0.0
-    if tmpl_list_price <= 1.0 and any((it.get('list_price') or 0.0) > 1.0 for it in items):
-        tmpl_list_price = max(it.get('list_price') or 0.0 for it in items)
+    # Precio real de lista de precios de la familia (para reglas en Listas de Precios)
+    family_pl_price = max((it.get('pricelist_price') or 0.0 for it in items), default=0.0)
 
     vals = {
         'name': tmpl_name,
@@ -449,6 +553,17 @@ for (art, linea, base_name), items in families_to_process:
             (0, 0, {'attribute_id': attr_color.id, 'value_ids': [(6, 0, color_val_ids)]})
         ]
     }
+    if has_taxes_id:
+        vals['taxes_id'] = [(6, 0, sample.get('taxes_id') or [])]
+    if has_supplier_taxes_id:
+        vals['supplier_taxes_id'] = [(6, 0, sample.get('supplier_taxes_id') or [])]
+    if has_uom_po_id and sample.get('uom_po_id'):
+        vals['uom_po_id'] = sample['uom_po_id']
+    if has_sale_ok:
+        vals['sale_ok'] = sample.get('sale_ok', True)
+    if has_purchase_ok:
+        vals['purchase_ok'] = sample.get('purchase_ok', True)
+
     if 'is_storable' in Template._fields:
         vals['is_storable'] = True
         vals['type'] = 'consu'
@@ -466,6 +581,10 @@ for (art, linea, base_name), items in families_to_process:
             vals['pos_categ_ids'] = [(6, 0, [assigned_pos_cat])]
 
     new_tmpl = Template.create(vals)
+    # Sincronizar también nombre en en_US para consistencia entre idiomas
+    if 'en_US' in active_langs and target_lang != 'en_US':
+        new_tmpl.with_context(lang='en_US').write({'name': tmpl_name})
+
     catalog_items_map = defaultdict(list)
     for it in items:
         catalog_items_map[(it['talle'], it['color'])].append(it)
@@ -482,9 +601,9 @@ for (art, linea, base_name), items in families_to_process:
         matching_items = catalog_items_map.get((v_talle, v_color))
         if matching_items:
             orig_item = matching_items[0]
-            v_price = orig_item.get('list_price') or 0.0
-            if v_price <= 1.0 and tmpl_list_price > 1.0:
-                v_price = tmpl_list_price
+            v_pl_price = orig_item.get('pricelist_price') or 0.0
+            if v_pl_price <= 1.0 and family_pl_price > 1.0:
+                v_pl_price = family_pl_price
             variant.write({
                 'default_code': orig_item['code'],
                 'barcode': orig_item['code'],
@@ -496,7 +615,8 @@ for (art, linea, base_name), items in families_to_process:
                 old_to_new_tmpl_map[it['old_product_id']] = new_tmpl.id
                 if it.get('old_tmpl_id'):
                     old_tmpl_to_new_tmpl_map[it['old_tmpl_id']] = new_tmpl.id
-            new_variant_to_price_map[variant.id] = v_price
+            new_variant_to_price_map[variant.id] = v_pl_price
+            new_variant_to_tmpl_map[variant.id] = new_tmpl.id
         else:
             variant.write({'active': False})
 
@@ -589,20 +709,53 @@ for dest_key, q_list in quants_by_dest_key.items():
             cr.execute("UPDATE stock_quant SET product_id = %s WHERE id = %s", (new_vid, primary_qid))
         transferred_quants_count += 1
 
+# Crear tabla temporal de mapeo masivo (old_pid, old_tid, new_vid, new_tid) para SVL y Listas de Precios
+if old_to_new_variant_map:
+    cr.execute("""
+        CREATE TEMP TABLE IF NOT EXISTS _tmp_eyelit_mig_map (
+            old_pid INT,
+            old_tid INT,
+            new_vid INT,
+            new_tid INT
+        );
+        TRUNCATE _tmp_eyelit_mig_map;
+    """)
+    map_rows = [
+        (opid, old_pid_to_old_tid.get(opid), nvid, old_to_new_tmpl_map.get(opid))
+        for opid, nvid in old_to_new_variant_map.items()
+    ]
+    for i in range(0, len(map_rows), 1000):
+        chunk = map_rows[i:i+1000]
+        placeholders = ','.join(['(%s,%s,%s,%s)'] * len(chunk))
+        flat_params = [val for row in chunk for val in row]
+        cr.execute(f"INSERT INTO _tmp_eyelit_mig_map (old_pid, old_tid, new_vid, new_tid) VALUES {placeholders};", tuple(flat_params))
+
+    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_pid ON _tmp_eyelit_mig_map (old_pid);")
+    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_tid ON _tmp_eyelit_mig_map (old_tid);")
+
 cr.execute("SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'stock_valuation_layer');")
-if cr.fetchone()[0]:
+if cr.fetchone()[0] and old_to_new_variant_map:
     cr.execute("""
         SELECT column_name 
         FROM information_schema.columns 
         WHERE table_name = 'stock_valuation_layer' AND column_name = 'product_tmpl_id';
     """)
     has_svl_tmpl_id = bool(cr.fetchone())
-    for old_pid, new_vid in old_to_new_variant_map.items():
-        new_tid = old_to_new_tmpl_map.get(old_pid)
-        if has_svl_tmpl_id and new_tid:
-            cr.execute("UPDATE stock_valuation_layer SET product_id = %s, product_tmpl_id = %s WHERE product_id = %s", (new_vid, new_tid, old_pid))
-        else:
-            cr.execute("UPDATE stock_valuation_layer SET product_id = %s WHERE product_id = %s", (new_vid, old_pid))
+    if has_svl_tmpl_id:
+        cr.execute("""
+            UPDATE stock_valuation_layer svl
+            SET product_id = m.new_vid,
+                product_tmpl_id = m.new_tid
+            FROM _tmp_eyelit_mig_map m
+            WHERE svl.product_id = m.old_pid;
+        """)
+    else:
+        cr.execute("""
+            UPDATE stock_valuation_layer svl
+            SET product_id = m.new_vid
+            FROM _tmp_eyelit_mig_map m
+            WHERE svl.product_id = m.old_pid;
+        """)
 
 Quant.invalidate_model()
 Product.invalidate_model()
@@ -649,42 +802,23 @@ if not pricelist:
 else:
     print(f"  * Usando lista de precios existente: '{pl_name}' (ID {pricelist.id})")
 
-# 8.1. Remapeo masivo de reglas existentes a nivel de variante (tabla temporal para máxima velocidad)
+# 8.1. Remapeo masivo de reglas existentes a nivel de variante (Odoo 18 requiere product_id + product_tmpl_id)
 remapped_variant_rules = 0
 remapped_tmpl_rules = 0
 
 if old_to_new_variant_map:
-    cr.execute("""
-        CREATE TEMP TABLE IF NOT EXISTS _tmp_eyelit_mig_map (
-            old_pid INT,
-            old_tid INT,
-            new_vid INT
-        );
-        TRUNCATE _tmp_eyelit_mig_map;
-    """)
-    map_rows = [
-        (opid, old_pid_to_old_tid.get(opid), nvid)
-        for opid, nvid in old_to_new_variant_map.items()
-    ]
-    for i in range(0, len(map_rows), 1000):
-        chunk = map_rows[i:i+1000]
-        placeholders = ','.join(['(%s,%s,%s)'] * len(chunk))
-        flat_params = [val for row in chunk for val in row]
-        cr.execute(f"INSERT INTO _tmp_eyelit_mig_map (old_pid, old_tid, new_vid) VALUES {placeholders};", tuple(flat_params))
-
-    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_pid ON _tmp_eyelit_mig_map (old_pid);")
-    cr.execute("CREATE INDEX IF NOT EXISTS _idx_tmp_mig_tid ON _tmp_eyelit_mig_map (old_tid);")
-
-    # 1) Reglas por product_id existente -> nuevas variantes (evitando duplicados)
+    # 1) Reglas por product_id existente -> nuevas variantes + nueva plantilla (evitando duplicados)
     cr.execute("""
         WITH candidates AS (
-            SELECT ppi.id, ppi.pricelist_id, m.new_vid, ppi.min_quantity,
+            SELECT ppi.id, ppi.pricelist_id, m.new_vid, m.new_tid, ppi.min_quantity,
                    ROW_NUMBER() OVER (PARTITION BY ppi.pricelist_id, m.new_vid, ppi.min_quantity ORDER BY ppi.id DESC) AS rn
             FROM product_pricelist_item ppi
             JOIN _tmp_eyelit_mig_map m ON m.old_pid = ppi.product_id
         )
         UPDATE product_pricelist_item ppi
-        SET product_id = c.new_vid
+        SET applied_on = '0_product_variant',
+            product_id = c.new_vid,
+            product_tmpl_id = c.new_tid
         FROM candidates c
         WHERE ppi.id = c.id
           AND c.rn = 1
@@ -704,10 +838,10 @@ if old_to_new_variant_map:
         WHERE ppi.product_id = m.old_pid;
     """)
 
-    # 2) Reglas por product_tmpl_id existente -> convertir a nivel variante (0_product_variant) en new_vid
+    # 2) Reglas por product_tmpl_id existente -> convertir a nivel variante (0_product_variant) con product_id + product_tmpl_id
     cr.execute("""
         WITH candidates AS (
-            SELECT ppi.id, ppi.pricelist_id, m.new_vid, ppi.min_quantity,
+            SELECT ppi.id, ppi.pricelist_id, m.new_vid, m.new_tid, ppi.min_quantity,
                    ROW_NUMBER() OVER (PARTITION BY ppi.pricelist_id, m.new_vid, ppi.min_quantity ORDER BY ppi.id DESC) AS rn
             FROM product_pricelist_item ppi
             JOIN _tmp_eyelit_mig_map m ON m.old_tid = ppi.product_tmpl_id
@@ -716,7 +850,7 @@ if old_to_new_variant_map:
         UPDATE product_pricelist_item ppi
         SET applied_on = '0_product_variant',
             product_id = c.new_vid,
-            product_tmpl_id = NULL
+            product_tmpl_id = c.new_tid
         FROM candidates c
         WHERE ppi.id = c.id
           AND c.rn = 1
@@ -753,6 +887,7 @@ for vid, price in new_variant_to_price_map.items():
         'pricelist_id': pricelist.id,
         'applied_on': '0_product_variant',
         'product_id': vid,
+        'product_tmpl_id': new_variant_to_tmpl_map[vid],
         'compute_price': 'fixed',
         'fixed_price': price,
         'min_quantity': 0,
@@ -786,6 +921,7 @@ if main_pos_pricelist and main_pos_pricelist.id != pricelist.id:
                 'pricelist_id': main_pos_pricelist.id,
                 'applied_on': '0_product_variant',
                 'product_id': vid,
+                'product_tmpl_id': new_variant_to_tmpl_map[vid],
                 'compute_price': 'fixed',
                 'fixed_price': new_variant_to_price_map[vid],
                 'min_quantity': 0,
@@ -808,8 +944,8 @@ for cfg in PosConfig.search([]):
     
     available_pls = set(cfg.available_pricelist_ids.ids) if hasattr(cfg, 'available_pricelist_ids') else set()
     available_pls.add(pricelist.id)
-    if main_pos_pricelist:
-        available_pls.add(main_pos_pricelist.id)
+    if hasattr(cfg, 'pricelist_id') and cfg.pricelist_id:
+        available_pls.add(cfg.pricelist_id.id)
     if hasattr(cfg, 'available_pricelist_ids'):
         uvals['available_pricelist_ids'] = [(6, 0, list(available_pls))]
 
@@ -874,28 +1010,59 @@ if 'pos.session' in env:
             print(f"    - Sesión [ID {s.id}] '{s.name}' (Usuario: {s.user_id.name})")
         print("    * Los cajeros deberán recargar la página (Ctrl+F5) o cerrar/reabrir sesión para actualizar catálogo.")
 
-# 9.1. Verificación de Precios en Variantes Migradas (dentro de la transacción)
-sub('9.1. Verificación de Precios en Nuevas Variantes')
+# 9.1. Verificación de Precios y Nombres en Variantes Migradas (dentro de la transacción)
+sub('9.1. Verificación de Precios y Nombres en Nuevas Variantes')
 real_price_count = sum(1 for p in new_variant_to_price_map.values() if p and p > 1.0)
 dummy_or_zero_count = sum(1 for p in new_variant_to_price_map.values() if not p or p <= 1.0)
-print(f"Variantes migradas con precio real (> $1.00): {real_price_count}/{len(new_variant_to_price_map)}")
+print(f"Variantes migradas con precio real (> $1.00) en Listas de Precios: {real_price_count}/{len(new_variant_to_price_map)}")
 if dummy_or_zero_count > 0:
-    print(f"  [!] Variantes sin precio real (<= $1.00): {dummy_or_zero_count}")
+    print(f"  [i] Variantes sin regla de precio previo en origen (<= $1.00): {dummy_or_zero_count}")
 else:
-    print("  [✓] ¡100% DE LAS VARIANTES TIENEN PRECIO REAL ASIGNADO!")
+    print("  [✓] ¡100% DE LAS VARIANTES TIENEN PRECIO REAL ASIGNADO EN LISTAS DE PRECIOS!")
+
+# Verificar que ninguna plantilla nueva haya quedado nombrada como código SKU
+new_tmpl_ids_set = list(set(new_variant_to_tmpl_map.values()))
+sku_named_new = Template.browse(new_tmpl_ids_set).filtered(lambda t: is_sku_like_name(clean_base_name(t.name)))
+if sku_named_new:
+    print(f"  [!] Aviso: {len(sku_named_new)} plantillas nuevas tienen nombre tipo código SKU (sin nombre humano en {target_lang}):")
+    for st in sku_named_new[:5]:
+        print(f"      - [ID {st.id}] {st.name}")
+else:
+    print(f"  [✓] 0 plantillas nuevas con nombre de código SKU (100% agrupadas con nombre humano en {target_lang}).")
+
+# Verificar integridad Odoo 18 de product_tmpl_id en reglas de variantes
+cr.execute("""
+    SELECT count(*)
+    FROM product_pricelist_item ppi
+    JOIN product_product pp ON pp.id = ppi.product_id
+    WHERE ppi.applied_on = '0_product_variant'
+      AND pp.active = TRUE
+      AND (ppi.product_tmpl_id IS NULL OR ppi.product_tmpl_id != pp.product_tmpl_id);
+""")
+misaligned_pl_count = cr.fetchone()[0]
+if misaligned_pl_count > 0:
+    print(f"  [!] Alerta: {misaligned_pl_count} reglas de variante sin product_tmpl_id alineado.")
+else:
+    print("  [✓] 100% de las reglas de variantes tienen product_tmpl_id alineado (UI + POS Odoo 18 OK).")
 
 sample_vids = list(new_variant_to_price_map.keys())[:5]
 if sample_vids:
-    print("\nMuestra de verificación de precios en nuevas variantes (Base vs Listas):")
+    print("\nMuestra de verificación de precios en nuevas variantes (Base preservado vs Listas):")
     for sv in Product.browse(sample_vids):
-        r_var = PricelistItem.search([('pricelist_id', '=', pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
-        p_var_str = f"${r_var.fixed_price:,.2f}" if r_var else "N/A"
+        try:
+            p_var_str = f"${pricelist._get_product_price(sv, 1.0):,.2f}"
+        except Exception:
+            r_var = PricelistItem.search([('pricelist_id', '=', pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+            p_var_str = f"${r_var.fixed_price:,.2f}" if r_var else "N/A"
         p_pos_str = "N/A"
         if main_pos_pricelist:
-            r_pos = PricelistItem.search([('pricelist_id', '=', main_pos_pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
-            if r_pos:
-                p_pos_str = f"${r_pos.fixed_price:,.2f}"
-        print(f"  [{sv.default_code}] Base (list_price): ${sv.list_price:,.2f} | Lista Variantes: {p_var_str} | TPV ({main_pos_pricelist.name if main_pos_pricelist else '-'}): {p_pos_str}")
+            try:
+                p_pos_str = f"${main_pos_pricelist._get_product_price(sv, 1.0):,.2f}"
+            except Exception:
+                r_pos = PricelistItem.search([('pricelist_id', '=', main_pos_pricelist.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+                if r_pos:
+                    p_pos_str = f"${r_pos.fixed_price:,.2f}"
+        print(f"  [{sv.default_code}] {sv.name[:25]} | Base (list_price): ${sv.list_price:,.2f} | Lista Variantes: {p_var_str} | TPV ({main_pos_pricelist.name if main_pos_pricelist else '-'}): {p_pos_str}")
 
 sub('RESUMEN DE OPERACIÓN')
 print(f"Plantillas maestras creadas: {count_templates}")

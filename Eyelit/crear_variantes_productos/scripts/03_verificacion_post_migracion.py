@@ -16,8 +16,17 @@ PosConfig = env['pos.config']
 Pricelist = env['product.pricelist']
 PricelistItem = env['product.pricelist.item']
 
-# 1. Verificación de Plantillas y Variantes Activas
-sub('1. Estado de Plantillas y Variantes')
+active_langs = env['res.lang'].search([('active', '=', True)]).mapped('code')
+target_lang = next((l for l in ['es_AR', 'es_419', 'es_ES'] if l in active_langs), env.lang or 'en_US')
+
+# 1. Verificación de Plantillas, Variantes y Ajustes Globales
+sub('1. Estado de Plantillas, Variantes y Ajustes')
+group_user = env.ref('base.group_user', raise_if_not_found=False)
+group_variant = env.ref('product.group_product_variant', raise_if_not_found=False)
+if group_user and group_variant:
+    var_on = group_variant in group_user.implied_ids
+    print(f"Check 'Variantes' (product.group_product_variant): {'[✓] ACTIVO' if var_on else '[!] INACTIVO'}")
+
 active_tmpls = Template.search([('active', '=', True)])
 active_variants = Product.search([('active', '=', True)])
 archived_prods = Product.search([('active', '=', False), ('barcode', '=like', '%_OLD')])
@@ -41,12 +50,22 @@ if without_pos_cats:
 else:
     print("  [✓] 100% de las plantillas en TPV tienen categoría asignada.")
 
-# Configuración de cajas registradoras
+# Configuración completa de cajas registradoras (preservación de ajustes POS de producción)
 configs = PosConfig.search([])
 for cfg in configs:
-    pl_name = cfg.pricelist_id.name if hasattr(cfg, 'pricelist_id') and cfg.pricelist_id else 'Sin lista por defecto'
+    pl_def = cfg.pricelist_id if hasattr(cfg, 'pricelist_id') else False
+    pl_name = f"[{pl_def.id}] {pl_def.with_context(lang=target_lang).name}" if pl_def else 'Sin lista por defecto'
+    avail_pls = [f"[{p.id}] {p.with_context(lang=target_lang).name}" for p in cfg.available_pricelist_ids] if hasattr(cfg, 'available_pricelist_ids') else []
     cats_count = len(cfg.pos_category_ids) if hasattr(cfg, 'pos_category_ids') else 0
-    print(f"  * TPV '{cfg.name}': Lista por defecto='{pl_name}' | Categorías habilitadas={cats_count}")
+    tax_inc = getattr(cfg, 'iface_tax_included', 'N/A')
+    man_disc = getattr(cfg, 'manual_discount', False)
+    glob_disc = getattr(cfg, 'module_pos_discount', False)
+    disc_prod = getattr(cfg, 'discount_product_id', False)
+    disc_ok = bool(disc_prod and disc_prod.active) if glob_disc else True
+    print(f"  * TPV '{cfg.name}':")
+    print(f"      - Lista predeterminada: {pl_name} | Listas disponibles ({len(avail_pls)}): {avail_pls}")
+    print(f"      - Categorías habilitadas: {cats_count} | Precios c/impuestos (iface_tax_included): '{tax_inc}'")
+    print(f"      - Línea descuentos: {man_disc} | Descuentos globales: {glob_disc} | Producto descuento activo: {disc_ok}")
 
 # 3. Verificación de Stock Actual
 sub('3. Stock Físico en Variantes Activas y Plantillas')
@@ -143,34 +162,84 @@ if main_pos_pl:
     items_pos_count = PricelistItem.search_count([('pricelist_id', '=', main_pos_pl.id), ('applied_on', '=', '0_product_variant')])
     print(f"  [✓] Lista principal de TPV '{main_pos_pl.name}' (ID {main_pos_pl.id}) con {items_pos_count} reglas de variantes.")
 
-# Comprobar cobertura de precios en variantes Eyelit activas (con punto en código)
-eyelit_vars = Product.search([('active', '=', True), ('default_code', '=like', '%.%')])
-vars_real_price = eyelit_vars.filtered(lambda v: v.list_price > 1.0)
-vars_dummy_or_zero = eyelit_vars.filtered(lambda v: v.list_price <= 1.0)
-
-print(f"\nCobertura de precios en variantes Eyelit ({len(eyelit_vars)} variantes):")
-print(f"  - Variantes con precio real (list_price > $1.00): {len(vars_real_price)}")
-if vars_dummy_or_zero:
-    print(f"  [!] Alerta: Hay {len(vars_dummy_or_zero)} variantes Eyelit con precio <= $1.00:")
-    for zv in vars_dummy_or_zero[:5]:
-        print(f"      - [{zv.default_code}] {zv.name} (${zv.list_price:,.2f})")
+# Verificación de integridad de product_tmpl_id en product_pricelist_item (Odoo 18 requiere ambos en 0_product_variant)
+env.cr.execute("""
+    SELECT count(*)
+    FROM product_pricelist_item ppi
+    JOIN product_product pp ON pp.id = ppi.product_id
+    WHERE ppi.applied_on = '0_product_variant'
+      AND pp.active = TRUE
+      AND (ppi.product_tmpl_id IS NULL OR ppi.product_tmpl_id != pp.product_tmpl_id);
+""")
+misaligned_pl_items = env.cr.fetchone()[0]
+if misaligned_pl_items > 0:
+    print(f"  [!] Alerta: Hay {misaligned_pl_items} reglas de variante con product_tmpl_id nulo o desalineado.")
 else:
-    print("  [✓] 100% de las variantes Eyelit tienen precio real (> $1.00).")
+    print("  [✓] 100% de las reglas de variantes tienen product_tmpl_id perfectamente alineado (compatible Odoo 18 UI y POS).")
 
-# Muestra de precios en 5 variantes Eyelit
+# Comprobar cobertura de precios en variantes Eyelit (list_price preservado + precios reales en Listas de Precios)
+eyelit_vars = Product.search([('active', '=', True), ('default_code', '=like', '%.%')])
+vars_lp_one = eyelit_vars.filtered(lambda v: abs(v.list_price - 1.0) < 0.01)
+print(f"\nEstado de precio base (list_price) en variantes Eyelit ({len(eyelit_vars)} variantes):")
+print(f"  - Variantes manteniendo list_price = $1.00 (como producción): {len(vars_lp_one)}")
+
+# Verificar cuántas plantillas activas quedaron con nombre de código SKU (debe ser 0)
+import re as _re
+sku_named_tmpls = Template.with_context(lang=target_lang).search([('active', '=', True)]).filtered(
+    lambda t: bool(_re.match(r'^[0-9A-Z]{5,}\.[0-9A-Z/]+(\s*\([A-Z0-9]+\))?$', (t.name or '').strip()))
+)
+if sku_named_tmpls:
+    print(f"  [!] Alerta: Hay {len(sku_named_tmpls)} plantillas con nombre tipo código SKU:")
+    for st in sku_named_tmpls[:5]:
+        print(f"      - [ID {st.id}] {st.name}")
+else:
+    print("  [✓] 0 plantillas con nombre de código SKU (100% agrupadas con nombre humano en español).")
+
+# Cobertura real de precios en las listas de precios (> $1.00)
+if pl_var:
+    pl_var_real = PricelistItem.search_count([
+        ('pricelist_id', '=', pl_var.id),
+        ('applied_on', '=', '0_product_variant'),
+        ('fixed_price', '>', 1.0),
+    ])
+    print(f"  - Reglas con precio real (> $1.00) en '{pl_var.name}': {pl_var_real}/{len(eyelit_vars)}")
+if main_pos_pl:
+    pl_pos_real = PricelistItem.search_count([
+        ('pricelist_id', '=', main_pos_pl.id),
+        ('applied_on', '=', '0_product_variant'),
+        ('fixed_price', '>', 1.0),
+    ])
+    print(f"  - Reglas con precio real (> $1.00) en '{main_pos_pl.with_context(lang=target_lang).name}': {pl_pos_real}/{len(eyelit_vars)}")
+
+# Muestra de precios e IVA en 5 variantes Eyelit (probando TODAS las listas disponibles en POS con _get_product_price)
+pos_eval_pls = []
+seen_pl_ids = set()
+for cfg in configs:
+    if hasattr(cfg, 'available_pricelist_ids'):
+        for p in cfg.available_pricelist_ids:
+            if p.id not in seen_pl_ids:
+                pos_eval_pls.append(p)
+                seen_pl_ids.add(p.id)
+for fallback_pl in [main_pos_pl, pl_var]:
+    if fallback_pl and fallback_pl.id not in seen_pl_ids:
+        pos_eval_pls.append(fallback_pl)
+        seen_pl_ids.add(fallback_pl.id)
+
 sample_vars = eyelit_vars[:5]
-print("\nMuestra de precios verificados en 5 variantes Eyelit:")
+print("\nMuestra de precios e IVA verificados en 5 variantes Eyelit (todas las listas del POS):")
 for sv in sample_vars:
-    p_info = [f"Base: ${sv.list_price:,.2f}"]
-    if pl_var:
-        r_v = PricelistItem.search([('pricelist_id', '=', pl_var.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
-        if r_v:
-            p_info.append(f"Lista Variantes: ${r_v.fixed_price:,.2f}")
-    if main_pos_pl:
-        r_p = PricelistItem.search([('pricelist_id', '=', main_pos_pl.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
-        if r_p:
-            p_info.append(f"{main_pos_pl.name}: ${r_p.fixed_price:,.2f}")
-    print(f"  [{sv.default_code}] {sv.name[:25]}: {' | '.join(p_info)}")
+    taxes_str = ", ".join(t.name for t in sv.taxes_id) if hasattr(sv, 'taxes_id') and sv.taxes_id else "Sin impuestos"
+    p_info = [f"IVA: [{taxes_str}]", f"Base: ${sv.list_price:,.2f}"]
+    for eval_pl in pos_eval_pls:
+        pl_lbl = f"{eval_pl.with_context(lang=target_lang).name} (ID {eval_pl.id})"
+        try:
+            computed_val = eval_pl._get_product_price(sv, 1.0)
+            p_info.append(f"{pl_lbl}: ${computed_val:,.2f}")
+        except Exception:
+            r_x = PricelistItem.search([('pricelist_id', '=', eval_pl.id), ('applied_on', '=', '0_product_variant'), ('product_id', '=', sv.id)], limit=1)
+            if r_x:
+                p_info.append(f"{pl_lbl}: ${r_x.fixed_price:,.2f}")
+    print(f"  [{sv.default_code}] {sv.name[:22]} | {' | '.join(p_info)}")
 
 # 5. Sesiones de TPV abiertas
 sub('5. Sesiones de TPV')
